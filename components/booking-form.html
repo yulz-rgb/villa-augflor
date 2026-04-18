@@ -1,0 +1,82 @@
+<section class="book" id="book">
+  <div class="wrap">
+    <div class="book-grid">
+      <div>
+        <span class="eyebrow" style="color:var(--gold)">Book direct · fewer fees</span>
+        <h2>Reserve your week.<br>Reply within 24 hours.</h2>
+        <p style="color:rgba(246,242,235,.85);max-width:48ch">
+          A direct enquiry is the fastest way to secure your dates — no platform queue, no Airbnb guest service fee,
+          and a straight conversation with Lana about the week you want in our family villa.
+        </p>
+        <ul class="book-perks">
+          <li>Keep what Airbnb would charge you as a guest service fee — see the rates page for a week-by-week comparison</li>
+          <li>Personal reply from Lana, usually in under 3 hours</li>
+          <li>After Lana confirms your dates: pay the 30% deposit securely on <a href="pay.html" style="color:var(--gold);text-decoration:underline">Stripe</a> — balance 30 days before arrival</li>
+          <li>€500 security deposit — fully refunded within 1–2 days post-stay</li>
+          <li>Optional local help on request: transfer contacts, chef recommendations, local activities</li>
+          <li>Instant answer on <a href="https://wa.me/33623777333" style="color:var(--gold);text-decoration:underline">WhatsApp +33 6 23 77 73 33</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <form id="booking-form" class="form-card" novalidate>
+          <div class="form-row">
+            <div class="field">
+              <label for="firstName">First name</label>
+              <input id="firstName" name="firstName" type="text" required autocomplete="given-name">
+            </div>
+            <div class="field">
+              <label for="lastName">Last name</label>
+              <input id="lastName" name="lastName" type="text" required autocomplete="family-name">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required autocomplete="email">
+            </div>
+            <div class="field">
+              <label for="phone">Phone / WhatsApp</label>
+              <input id="phone" name="phone" type="tel" autocomplete="tel">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="field">
+              <label for="arrival">Arrival</label>
+              <input id="arrival" name="arrival" type="date" required>
+            </div>
+            <div class="field">
+              <label for="departure">Departure</label>
+              <input id="departure" name="departure" type="date" required>
+            </div>
+          </div>
+          <div class="field">
+            <label for="guests">Guests</label>
+            <select id="guests" name="guests" required>
+              <option value="">Select…</option>
+              <option>1–2 adults</option>
+              <option>3–4 adults</option>
+              <option>5–6 adults</option>
+              <option>Adults + children</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="message">Anything we should know?</label>
+            <textarea id="message" name="message" placeholder="Bed preferences, airport transfer, chef, special occasion…"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block btn-lg">Send enquiry — reply in 24h</button>
+          <p class="form-fine">
+            7-night minimum · min. age 25 for lead booker · no pets · no parties.<br>
+            By sending you agree to our Terms. We never share your details.
+          </p>
+        </form>
+
+        <div class="form-success" style="display:none">
+          <h3>Enquiry received — thank you.</h3>
+          <p>Lana will reply within 24 hours. For an immediate answer, message her on
+            <a href="https://wa.me/33623777333"><strong>WhatsApp +33 6 23 77 73 33</strong></a>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

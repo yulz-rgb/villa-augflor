@@ -1,0 +1,8 @@
+{
+  "name": "villa-augflor",
+  "private": true,
+  "description": "Static site + Vercel serverless (Stripe deposit + merged iCal calendar)",
+  "dependencies": {
+    "stripe": "^17.7.0"
+  }
+}
