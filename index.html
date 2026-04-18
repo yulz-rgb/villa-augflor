@@ -152,7 +152,19 @@ nav.scrolled .nav-links a { color: var(--muted); }
 }
 .hero-img { background-size: cover; background-position: center; }
 
-.hero-content { position: relative; z-index: 2; padding: 0 2.5rem; max-width: 560px; opacity: 0; transform: translateY(24px); animation: riseIn 1s ease .6s forwards; }
+/* Match first grid column (1fr + 3px gaps) so copy never sits over the photo strip */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  box-sizing: border-box;
+  width: calc((100% - 6px) / 3);
+  max-width: 560px;
+  margin-right: auto;
+  padding: 0 2rem 0 2.5rem;
+  opacity: 0;
+  transform: translateY(24px);
+  animation: riseIn 1s ease .6s forwards;
+}
 .hero-eyebrow { font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 1rem; }
 .hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(48px, 8vw, 88px); font-weight: 300; line-height: 1; color: var(--white); margin-bottom: 1.25rem; }
 .hero-title em { font-style: italic; color: rgba(255,255,255,0.75); }
@@ -409,6 +421,7 @@ footer { background: #141210; padding: 3.5rem 2.5rem 2rem; color: rgba(255,255,2
   .footer-inner { grid-template-columns: 1fr; }
   .hero-imgs { grid-template-columns: 1fr 1fr; }
   .hero-col-left { grid-column: 1 / 3; grid-row: 1; }
+  .hero-content { width: 100%; max-width: none; padding: 0 1.25rem; }
   .hi2, .hi3 { display: none; }
   .guidebook-tabs { gap: 0; }
   .gtab { padding: .6rem .75rem; font-size: 11px; }
