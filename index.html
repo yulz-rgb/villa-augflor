@@ -50,7 +50,7 @@
   "description": "Villa Augflor is a private 3-bedroom villa with pool and designer Mediterranean garden in Cagnes-sur-Mer, Côte d'Azur. Centrally located between Nice, Antibes, and Cannes, 15 minutes from Nice Côte d'Azur Airport. Sleeps up to 6 guests.",
   "url": "https://villa-augflor.com",
   "telephone": "+33623777333",
-  "email": "contact@villa-augflor.com",
+  "email": "villa.augflor@gmail.com",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "26 Chemin des Collines",
@@ -370,6 +370,8 @@ h2 em { font-style: italic; }
 .form-success { display: none; text-align: center; padding: 2rem; color: var(--white); }
 .form-success h3 { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 300; margin-bottom: .75rem; }
 .form-success p { color: rgba(255,255,255,0.6); font-size: 14px; }
+.form-error { display: none; background: rgba(120,40,40,0.35); border: 1px solid rgba(255,140,140,0.45); color: rgba(255,235,235,0.95); padding: 1rem 1.1rem; border-radius: 2px; margin-bottom: 1rem; font-size: 14px; line-height: 1.5; }
+.form-submit:disabled { opacity: 0.65; cursor: not-allowed; }
 
 /* WHATSAPP */
 .whatsapp-float { position: fixed; bottom: 2rem; right: 2rem; z-index: 200; width: 52px; height: 52px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(37,211,102,0.4); text-decoration: none; transition: transform .25s, box-shadow .25s; }
@@ -1087,6 +1089,7 @@ footer { background: #141210; padding: 3.5rem 2.5rem 2rem; color: rgba(255,255,2
     </div>
     <div>
       <form id="bookingForm" onsubmit="submitForm(event)">
+        <div id="formError" class="form-error" role="alert"></div>
         <div class="form-row">
           <div class="form-group"><label>First name</label><input type="text" id="fname" placeholder="Marie" required></div>
           <div class="form-group"><label>Last name</label><input type="text" id="lname" placeholder="Dupont" required></div>
@@ -1105,11 +1108,15 @@ footer { background: #141210; padding: 3.5rem 2.5rem 2rem; color: rgba(255,255,2
           </select>
         </div>
         <div class="form-group"><label>Message (optional)</label><textarea id="message" placeholder="Any questions, special requests, or things we should know about your stay…"></textarea></div>
-        <button type="submit" class="form-submit">Send Enquiry — Book Direct &amp; Save 20%</button>
+        <div class="form-group" style="position:absolute;left:-8000px;width:1px;height:1px;overflow:hidden;" aria-hidden="true">
+          <label for="bookingHp">Leave blank</label>
+          <input type="text" id="bookingHp" tabindex="-1" autocomplete="off">
+        </div>
+        <button type="submit" class="form-submit" id="bookingSubmit">Send Enquiry — Book Direct &amp; Save 20%</button>
       </form>
       <div class="form-success" id="formSuccess">
         <h3>Thank you for your enquiry</h3>
-        <p>Lana will be in touch within 24 hours to confirm availability.</p>
+        <p>Your message was sent to <strong>villa.augflor@gmail.com</strong>. Lana will reply within 24 hours to confirm availability.</p>
         <p style="margin-top:.75rem">Immediate response: <a href="https://wa.me/33623777333" style="color:var(--accent-light);">WhatsApp +33 623 777 333</a></p>
       </div>
     </div>
@@ -1126,7 +1133,7 @@ footer { background: #141210; padding: 3.5rem 2.5rem 2rem; color: rgba(255,255,2
       <div class="footer-logo" itemprop="name">Villa Augflor</div>
       <p class="footer-tagline" itemprop="description">A private villa with pool and designer Mediterranean garden at the heart of the Côte d'Azur. Between Nice, Antibes and Cannes. 15 minutes from Nice Airport. Book direct and save 20%.</p>
       <p style="font-size:13px;margin-top:1.25rem;">
-        <a href="mailto:villa-augflor@gmail.com" style="color:rgba(255,255,255,0.4);text-decoration:none;">villa-augflor@gmail.com</a><br>
+        <a href="mailto:villa.augflor@gmail.com" style="color:rgba(255,255,255,0.4);text-decoration:none;">villa.augflor@gmail.com</a><br>
         <a href="tel:+33623777333" style="color:rgba(255,255,255,0.4);text-decoration:none;">+33 623 777 333</a>
       </p>
       <p style="font-size:12px;margin-top:.75rem;color:rgba(255,255,255,0.2);" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
@@ -1265,22 +1272,116 @@ document.addEventListener('keydown', e => {
   if (e.key === 'ArrowLeft') lightboxNav(-1);
 });
 
-// Booking form
+// Booking form — emails villa.augflor@gmail.com via FormSubmit (server-side relay). Old behaviour was mailto-only + fake success.
+const BOOKING_TO_EMAIL = 'villa.augflor@gmail.com';
+const FORMSUBMIT_ENDPOINT = 'https://formsubmit.co/ajax/' + BOOKING_TO_EMAIL;
+
+function showFormError(msg) {
+  const el = document.getElementById('formError');
+  el.textContent = msg;
+  el.style.display = 'block';
+}
+
+function hideFormError() {
+  const el = document.getElementById('formError');
+  el.textContent = '';
+  el.style.display = 'none';
+}
+
 function submitForm(e) {
   e.preventDefault();
-  const fname = document.getElementById('fname').value;
-  const lname = document.getElementById('lname').value;
-  const email = document.getElementById('email').value;
-  const phone = document.getElementById('phone').value;
+  hideFormError();
+
+  const fname = document.getElementById('fname').value.trim();
+  const lname = document.getElementById('lname').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const phone = document.getElementById('phone').value.trim();
   const arrival = document.getElementById('arrival').value;
   const departure = document.getElementById('departure').value;
   const guests = document.getElementById('guests').value;
-  const message = document.getElementById('message').value;
+  const message = document.getElementById('message').value.trim();
+  const hp = document.getElementById('bookingHp');
+  if (hp && hp.value) return;
+
   const subject = encodeURIComponent('Villa Augflor — Booking Enquiry');
   const body = encodeURIComponent(`Hello Lana,\n\nI would like to enquire about booking Villa Augflor.\n\nName: ${fname} ${lname}\nEmail: ${email}\nPhone: ${phone}\n\nArrival: ${arrival}\nDeparture: ${departure}\nGuests: ${guests}\n\nMessage: ${message}\n\nThank you`);
-  window.location.href = `mailto:villa-augflor@gmail.com?subject=${subject}&body=${body}`;
-  document.getElementById('bookingForm').style.display = 'none';
-  document.getElementById('formSuccess').style.display = 'block';
+  const mailto = `mailto:${BOOKING_TO_EMAIL}?subject=${subject}&body=${body}`;
+
+  const btn = document.getElementById('bookingSubmit');
+  btn.disabled = true;
+
+  const payload = {
+    _subject: 'Villa Augflor — Booking Enquiry',
+    _template: 'table',
+    _captcha: 'false',
+    _honey: '',
+    _replyto: email,
+    name: fname + ' ' + lname,
+    email: email,
+    phone: phone || '—',
+    arrival: arrival,
+    departure: departure,
+    guests: guests,
+    message: message || '—',
+  };
+
+  fetch(FORMSUBMIT_ENDPOINT, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+    body: JSON.stringify(payload),
+  })
+    .then(function (res) {
+      return res.json().then(function (data) {
+        return { ok: res.ok, status: res.status, data: data };
+      }).catch(function () {
+        return { ok: res.ok, status: res.status, data: {} };
+      });
+    })
+    .then(function (result) {
+      var d = result.data || {};
+      var ok = result.ok && (
+        d.success === true || d.success === 'true' ||
+        /submitted successfully|thank you/i.test(String(d.message || ''))
+      );
+      if (ok) {
+        document.getElementById('bookingForm').style.display = 'none';
+        document.getElementById('formSuccess').style.display = 'block';
+        return;
+      }
+      var msg = (result.data && result.data.message) ? String(result.data.message) : '';
+      if (result.status === 422 || /activate|confirm/i.test(msg)) {
+        showFormError('One-time setup: check villa.augflor@gmail.com for an email from FormSubmit and click Activate. Then try again. Or use WhatsApp below.');
+      } else if (msg) {
+        showFormError(msg + ' You can still reach Lana at villa.augflor@gmail.com or WhatsApp +33 623 777 333.');
+      } else {
+        showFormError('Could not send automatically. Use the button below to open your email app, or WhatsApp +33 623 777 333.');
+        var p = document.createElement('p');
+        p.style.marginTop = '0.75rem';
+        var a = document.createElement('a');
+        a.href = mailto;
+        a.className = 'btn-outline btn-sm';
+        a.style.display = 'inline-block';
+        a.style.marginTop = '0.5rem';
+        a.textContent = 'Open email draft to villa.augflor@gmail.com';
+        p.appendChild(a);
+        document.getElementById('formError').appendChild(p);
+      }
+    })
+    .catch(function () {
+      showFormError('Network error. Tap below to draft an email in your mail app, or use WhatsApp +33 623 777 333.');
+      var p = document.createElement('p');
+      p.style.marginTop = '0.75rem';
+      var a = document.createElement('a');
+      a.href = mailto;
+      a.className = 'btn-outline btn-sm';
+      a.style.display = 'inline-block';
+      a.style.marginTop = '0.5rem';
+      a.textContent = 'Open email draft';
+      document.getElementById('formError').appendChild(p);
+    })
+    .finally(function () {
+      btn.disabled = false;
+    });
 }
 
 // Lazy background images
