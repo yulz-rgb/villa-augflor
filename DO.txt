@@ -1,0 +1,1 @@
+Open this folder in Finder, then drag `index.html` and the `images` folder into your GitHub repo in the browser (or run `git push` from a normal Terminal checkout — Cursor’s agent can’t create `.git` here).
