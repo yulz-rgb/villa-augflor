@@ -60,7 +60,9 @@
 
   /* ---------- Lightbox for gallery ---------- */
   function lightbox() {
-    const figs = document.querySelectorAll(".gallery-grid figure img");
+    const figs = document.querySelectorAll(
+      ".gallery-grid figure img, .ed-story-grid figure img"
+    );
     if (!figs.length) return;
     const box  = document.createElement("div");
     box.className = "lightbox";
@@ -74,7 +76,18 @@
     const imgs = Array.from(figs).map(i => i.dataset.full || i.src);
     let idx = 0;
     const show = (i) => { idx = (i + imgs.length) % imgs.length; img.src = imgs[idx]; box.classList.add("open"); };
-    figs.forEach((el, i) => el.addEventListener("click", () => show(i)));
+    figs.forEach((el, i) => {
+      el.setAttribute("tabindex", "0");
+      el.setAttribute("role", "button");
+      el.setAttribute("aria-label", "Open image");
+      el.addEventListener("click", () => show(i));
+      el.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          show(i);
+        }
+      });
+    });
     box.querySelector(".close").addEventListener("click", () => box.classList.remove("open"));
     box.querySelector(".nav-prev").addEventListener("click", (e) => { e.stopPropagation(); show(idx - 1); });
     box.querySelector(".nav-next").addEventListener("click", (e) => { e.stopPropagation(); show(idx + 1); });
@@ -133,6 +146,7 @@
     if (!host) return;
     const year = 2026;
     const months = [
+      { name: "May", idx: 4, price: "€480" },
       { name: "Jun", idx: 5, price: "€480" },
       { name: "Jul", idx: 6, price: "€520" },
       { name: "Aug", idx: 7, price: "€520" },

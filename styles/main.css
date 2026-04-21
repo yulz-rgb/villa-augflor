@@ -128,8 +128,7 @@ section .wrap-sm > h2 {
   transition: border-color .2s ease, background-color .2s ease;
 }
 .site-header.is-scrolled { border-bottom-color: var(--line); }
-.site-header:has(+ .home-editorial),
-.site-header:has(+ main.home-editorial) {
+.page-home-editorial .site-header {
   position: absolute;
   top: 0;
   left: 0;
@@ -139,24 +138,31 @@ section .wrap-sm > h2 {
   -webkit-backdrop-filter: none;
   border-bottom-color: transparent;
 }
-.site-header:has(+ main.home-editorial) .logo,
-.site-header:has(+ main.home-editorial) .nav-links a,
-.site-header:has(+ main.home-editorial) .menu-toggle span,
-.site-header:has(+ main.home-editorial) .menu-toggle span::before,
-.site-header:has(+ main.home-editorial) .menu-toggle span::after {
+.page-home-editorial .site-header .logo,
+.page-home-editorial .site-header .nav-links a,
+.page-home-editorial .site-header .menu-toggle {
   color: #f7f5f2;
+}
+.page-home-editorial .site-header .menu-toggle span,
+.page-home-editorial .site-header .menu-toggle span::before,
+.page-home-editorial .site-header .menu-toggle span::after {
   background-color: #f7f5f2;
 }
-.site-header:has(+ main.home-editorial) .logo small {
+.page-home-editorial .site-header .logo small {
   color: rgba(247,245,242,.72);
 }
-.site-header:has(+ main.home-editorial) .nav-cta .btn-primary {
+.page-home-editorial .site-header .nav-cta .btn-primary {
   background: #c6a96b;
   color: #1a1a1a;
 }
-.site-header:has(+ main.home-editorial) .nav-cta .btn-ghost {
+.page-home-editorial .site-header .nav-cta .btn-ghost {
   border-color: rgba(247,245,242,.72);
   color: #f7f5f2;
+}
+.page-home-editorial .site-header.is-scrolled {
+  background: rgba(20,22,20,.56);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 .nav {
   display: flex; align-items: center; justify-content: space-between;
@@ -1103,23 +1109,27 @@ section .wrap-sm > h2 {
 }
 .home-editorial .ed-hero {
   position: relative;
-  min-height: 92vh;
+  min-height: 88vh;
   display: grid;
   align-items: center;
   color: #f7f5f2;
+  isolation: isolate;
+  background-color: #1a1a1a;
 }
 .home-editorial .ed-hero::before {
   content: "";
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(20,22,20,.68) 0%, rgba(20,22,20,.5) 34%, rgba(20,22,20,.15) 70%),
-    linear-gradient(180deg, rgba(0,0,0,.2) 0%, rgba(0,0,0,.48) 100%),
+    linear-gradient(90deg, rgba(20,22,20,.48) 0%, rgba(20,22,20,.30) 36%, rgba(20,22,20,.08) 72%),
+    linear-gradient(180deg, rgba(0,0,0,.14) 0%, rgba(0,0,0,.30) 100%),
     url("../assets/photos/optimized/photo-swimming-pool-backyard-patio-garden.jpg") center/cover no-repeat;
-  z-index: -1;
+  z-index: 0;
 }
 .home-editorial .ed-hero-inner {
-  padding-block: 7rem 5rem;
+  position: relative;
+  z-index: 1;
+  padding-block: 5.2rem 4.2rem;
 }
 .home-editorial .ed-hero h1 {
   font-size: clamp(2.3rem, 6vw, 4.3rem);
@@ -1179,6 +1189,10 @@ section .wrap-sm > h2 {
   padding: 0;
   font-size: .9rem;
 }
+.home-editorial .ed-experience li::before {
+  content: "- ";
+  color: #c6a96b;
+}
 
 .home-editorial .ed-story {
   background: #f7f5f2;
@@ -1189,7 +1203,7 @@ section .wrap-sm > h2 {
 }
 .home-editorial .ed-story-grid {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(7, 1fr);
   gap: .45rem;
 }
 .home-editorial .ed-story-grid figure {
@@ -1202,6 +1216,7 @@ section .wrap-sm > h2 {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  cursor: zoom-in;
 }
 .home-editorial .ed-story-grid figcaption {
   position: absolute;
@@ -1226,7 +1241,7 @@ section .wrap-sm > h2 {
 .home-editorial .ed-reviews-grid {
   padding-block: 1.8rem;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1.1rem;
   text-align: center;
 }
@@ -1280,6 +1295,10 @@ section .wrap-sm > h2 {
 .home-editorial .ed-value li {
   padding: .33rem 0;
 }
+.home-editorial .ed-value li::before {
+  content: "- ";
+  color: #c6a96b;
+}
 
 .home-editorial .ed-location {
   background: #f7f5f2;
@@ -1303,10 +1322,35 @@ section .wrap-sm > h2 {
 .home-editorial .ed-location li {
   padding: .38rem 0;
 }
+.home-editorial .ed-location li::before {
+  content: "- ";
+  color: #c6a96b;
+}
 .home-editorial .ed-location img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.home-editorial .ed-availability {
+  background: #f3eee5;
+  padding-block: 2.8rem 3.1rem;
+  text-align: center;
+}
+.home-editorial .ed-availability .ed-kicker {
+  color: #6d695e;
+}
+.home-editorial .ed-availability h2 {
+  margin-inline: auto;
+  max-width: 18ch;
+}
+.home-editorial .ed-availability p {
+  margin-inline: auto;
+  color: var(--ink-soft);
+}
+.home-editorial .ed-availability .calendar {
+  margin-top: 1.2rem;
+  text-align: left;
 }
 
 .home-editorial .ed-final {
@@ -1354,7 +1398,16 @@ section .wrap-sm > h2 {
 
 @media (max-width: 640px) {
   .home-editorial .ed-hero {
-    min-height: 84vh;
+    min-height: 80vh;
+  }
+  .home-editorial .ed-hero-inner {
+    padding-block: 4.4rem 3.3rem;
+  }
+  .home-editorial .ed-experience ul {
+    grid-template-columns: 1fr;
+  }
+  .home-editorial .ed-story-grid {
+    gap: .35rem;
   }
   .home-editorial .ed-cta .btn {
     width: 100%;
