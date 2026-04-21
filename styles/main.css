@@ -128,6 +128,36 @@ section .wrap-sm > h2 {
   transition: border-color .2s ease, background-color .2s ease;
 }
 .site-header.is-scrolled { border-bottom-color: var(--line); }
+.site-header:has(+ .home-editorial),
+.site-header:has(+ main.home-editorial) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-bottom-color: transparent;
+}
+.site-header:has(+ main.home-editorial) .logo,
+.site-header:has(+ main.home-editorial) .nav-links a,
+.site-header:has(+ main.home-editorial) .menu-toggle span,
+.site-header:has(+ main.home-editorial) .menu-toggle span::before,
+.site-header:has(+ main.home-editorial) .menu-toggle span::after {
+  color: #f7f5f2;
+  background-color: #f7f5f2;
+}
+.site-header:has(+ main.home-editorial) .logo small {
+  color: rgba(247,245,242,.72);
+}
+.site-header:has(+ main.home-editorial) .nav-cta .btn-primary {
+  background: #c6a96b;
+  color: #1a1a1a;
+}
+.site-header:has(+ main.home-editorial) .nav-cta .btn-ghost {
+  border-color: rgba(247,245,242,.72);
+  color: #f7f5f2;
+}
 .nav {
   display: flex; align-items: center; justify-content: space-between;
   height: 68px;
@@ -1055,4 +1085,278 @@ section .wrap-sm > h2 {
   .home-luxe section { padding-block: 3rem; }
   .home-luxe .luxe-hero { min-height: min(86vh, 760px); }
   .home-luxe .luxe-cta .btn { width: 100%; }
+}
+
+/* ---------- Homepage editorial reference ---------- */
+.home-editorial {
+  background: #f2f0ec;
+}
+.home-editorial section {
+  padding-block: 0;
+}
+.home-editorial .ed-kicker {
+  font-size: .65rem;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.8);
+  margin-bottom: .9rem;
+}
+.home-editorial .ed-hero {
+  position: relative;
+  min-height: 92vh;
+  display: grid;
+  align-items: center;
+  color: #f7f5f2;
+}
+.home-editorial .ed-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(20,22,20,.68) 0%, rgba(20,22,20,.5) 34%, rgba(20,22,20,.15) 70%),
+    linear-gradient(180deg, rgba(0,0,0,.2) 0%, rgba(0,0,0,.48) 100%),
+    url("../assets/photos/optimized/photo-swimming-pool-backyard-patio-garden.jpg") center/cover no-repeat;
+  z-index: -1;
+}
+.home-editorial .ed-hero-inner {
+  padding-block: 7rem 5rem;
+}
+.home-editorial .ed-hero h1 {
+  font-size: clamp(2.3rem, 6vw, 4.3rem);
+  max-width: 10ch;
+  color: #f7f5f2;
+  margin-bottom: .35em;
+}
+.home-editorial .ed-sub {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: rgba(247,245,242,.88);
+}
+.home-editorial .ed-cta {
+  display: flex;
+  gap: .75rem;
+  flex-wrap: wrap;
+  margin-top: 1.6rem;
+}
+.home-editorial .ed-hero .btn-primary {
+  background: #c6a96b;
+  color: #1a1a1a;
+}
+.home-editorial .ed-hero .btn-ghost {
+  border-color: rgba(247,245,242,.8);
+  color: #f7f5f2;
+}
+
+.home-editorial .ed-experience {
+  background: #f7f5f2;
+  border-bottom: 1px solid #ddd4c7;
+}
+.home-editorial .ed-experience-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr 1.1fr;
+  gap: 1.5rem;
+  align-items: center;
+  padding-block: 2.4rem;
+}
+.home-editorial .ed-experience h2 {
+  font-size: clamp(1.9rem, 3vw, 2.6rem);
+  color: #1a1a1a;
+}
+.home-editorial .ed-experience .ed-kicker {
+  color: #6d695e;
+}
+.home-editorial .ed-experience p {
+  color: #2f3a34;
+  margin: 0;
+}
+.home-editorial .ed-experience ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .65rem 1rem;
+  margin: 0;
+  padding: 0;
+  font-size: .9rem;
+}
+
+.home-editorial .ed-story {
+  background: #f7f5f2;
+  padding-block: 2.2rem 2.8rem;
+}
+.home-editorial .ed-story .ed-kicker {
+  color: #6d695e;
+}
+.home-editorial .ed-story-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: .45rem;
+}
+.home-editorial .ed-story-grid figure {
+  position: relative;
+  margin: 0;
+  aspect-ratio: .75;
+  overflow: hidden;
+}
+.home-editorial .ed-story-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.home-editorial .ed-story-grid figcaption {
+  position: absolute;
+  left: .7rem;
+  bottom: .7rem;
+  color: #f7f5f2;
+  text-transform: uppercase;
+  font-size: .72rem;
+  letter-spacing: .1em;
+}
+.home-editorial .ed-story-grid figcaption span {
+  display: block;
+  font-family: var(--serif);
+  font-size: 1.1rem;
+}
+
+.home-editorial .ed-reviews {
+  background: #f7f5f2;
+  border-top: 1px solid #ddd4c7;
+  border-bottom: 1px solid #ddd4c7;
+}
+.home-editorial .ed-reviews-grid {
+  padding-block: 1.8rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.1rem;
+  text-align: center;
+}
+.home-editorial .ed-reviews article {
+  padding: .4rem 1rem;
+}
+.home-editorial .ed-reviews .stars {
+  margin: 0 0 .5rem;
+  color: #c6a96b;
+  font-weight: 600;
+}
+.home-editorial .ed-reviews blockquote {
+  margin: 0 0 .6rem;
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  line-height: 1.35;
+}
+.home-editorial .ed-reviews p {
+  margin: 0;
+  font-size: .82rem;
+  color: #5f5a50;
+}
+
+.home-editorial .ed-value {
+  background: #f3eee5;
+}
+.home-editorial .ed-value-grid {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  align-items: stretch;
+}
+.home-editorial .ed-value-grid > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.home-editorial .ed-value-grid > div {
+  padding: clamp(2rem, 4vw, 3.2rem);
+}
+.home-editorial .ed-value .ed-kicker {
+  color: #6d695e;
+}
+.home-editorial .ed-value h2 {
+  font-size: clamp(2rem, 3vw, 3rem);
+}
+.home-editorial .ed-value ul {
+  list-style: none;
+  padding: 0;
+  margin: 1.1rem 0 1.5rem;
+}
+.home-editorial .ed-value li {
+  padding: .33rem 0;
+}
+
+.home-editorial .ed-location {
+  background: #f7f5f2;
+}
+.home-editorial .ed-location-grid {
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  align-items: stretch;
+}
+.home-editorial .ed-location-grid > div {
+  padding: clamp(1.8rem, 4vw, 3rem);
+}
+.home-editorial .ed-location .ed-kicker {
+  color: #6d695e;
+}
+.home-editorial .ed-location ul {
+  list-style: none;
+  padding: 0;
+  margin: 1.1rem 0 0;
+}
+.home-editorial .ed-location li {
+  padding: .38rem 0;
+}
+.home-editorial .ed-location img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.home-editorial .ed-final {
+  background:
+    linear-gradient(180deg, rgba(22,25,23,.7) 0%, rgba(22,25,23,.8) 100%),
+    url("../assets/photos/optimized/photo-house-swimming-pool-night.jpg") center/cover no-repeat;
+  color: #f7f5f2;
+}
+.home-editorial .ed-final-inner {
+  padding-block: 3.3rem;
+  display: flex;
+  gap: 1.4rem;
+  justify-content: space-between;
+  align-items: center;
+}
+.home-editorial .ed-final h2 {
+  max-width: 16ch;
+  color: #f7f5f2;
+  margin: 0;
+}
+.home-editorial .ed-final .btn-primary {
+  background: #c6a96b;
+  color: #1a1a1a;
+}
+.home-editorial .ed-final .btn-ghost {
+  border-color: rgba(247,245,242,.78);
+  color: #f7f5f2;
+}
+
+@media (max-width: 980px) {
+  .home-editorial .ed-experience-grid,
+  .home-editorial .ed-value-grid,
+  .home-editorial .ed-location-grid,
+  .home-editorial .ed-reviews-grid {
+    grid-template-columns: 1fr;
+  }
+  .home-editorial .ed-story-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .home-editorial .ed-final-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 640px) {
+  .home-editorial .ed-hero {
+    min-height: 84vh;
+  }
+  .home-editorial .ed-cta .btn {
+    width: 100%;
+  }
 }
