@@ -4,3 +4,4 @@ node_modules/
 .DS_Store
 .vercel
 README.md.bak
+.env*.local

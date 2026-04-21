@@ -29,23 +29,18 @@ villa.html             layout, bedrooms, amenities, honest notes, FAQ
 rates.html             prices, direct-vs-Airbnb maths, 2026 calendar, cancellation
 gallery.html           full visual proof (outdoor, interior, bedrooms) with lightbox
 area.html              distances + Lana's Riviera playbook
-pay.html               Stripe Checkout — 30% deposit (after you confirm dates)
-pay-success.html       post-payment thank-you
 
 api/calendar.js        serverless: merge Airbnb + Booking iCals → JSON busy dates
-api/create-deposit-session.js   serverless: Stripe Checkout Session for deposit
 lib/ical-busy.js       tiny iCal parser (no extra npm deps)
 
 components/
   header.html          sticky nav + mobile menu
   footer.html          4-col footer, trust, legal
   sticky-cta.html      mobile bottom bar + desktop WhatsApp float
-  booking-form.html    enquiry form (mailto + WhatsApp fallback)
 
 styles/main.css        full design system (≈ 18 KB)
-scripts/main.js        components, live/mock calendar, lightbox, sticky CTA, form
-scripts/pay-deposit.js pay.html only — posts to Stripe API
-package.json           stripe SDK for serverless
+scripts/main.js        components, live/mock calendar, lightbox, sticky CTA
+package.json           runtime dependencies
 .env.example           copy to .env locally; mirror vars in Vercel dashboard
 assets/photos/         put optimised real villa images here
 ```
@@ -80,7 +75,7 @@ When Vercel asks to link the directory, choose **Create new project** and name i
 1. Create a **new** empty repository (e.g. `villa-augflor-rebuild`) — do **not** reuse `yulz-rgb/villa-augflor`.
 2. Push this codebase to `main` on that repo.
 3. In [Vercel Dashboard](https://vercel.com/new) → **Add New…** → **Project** → **Import** that repository. Framework preset: **Other** (no build command; root is the site).
-4. Add environment variables from `.env.example` if you use Stripe or live iCal (`STRIPE_SECRET_KEY`, `SITE_URL`, `AIRBNB_ICAL_URL`, `BOOKING_ICAL_URL`).
+4. Add environment variables from `.env.example` if you use live iCal (`SITE_URL`, `AIRBNB_ICAL_URL`, `BOOKING_ICAL_URL`).
 
 ## Photos — where to put them (fastest path)
 
@@ -125,30 +120,6 @@ The API response is **cached ~5 minutes** at the edge so we do not hammer Airbnb
 
 ---
 
-## Stripe — 30% deposit after you accept a guest
-
-**Flow:** Guest enquires → you confirm dates on WhatsApp/email → you send them `**pay.html`** → they pay on Stripe Checkout → money hits your Stripe account.
-
-**What was added:**
-
-- `**POST /api/create-deposit-session`** — creates a Checkout Session. Amounts are **fixed on the server** (never trust a browser for €):
-  - `peak-week` → **€1,092.00** (30% of €3,640)
-  - `shoulder-week` → **€1,008.00** (30% of €3,360)
-- `**pay.html`** — simple form → redirects to Stripe.
-- `**pay-success.html`** — return landing after payment.
-
-### Stripe setup (first time)
-
-1. Create a [Stripe](https://stripe.com) account → **Developers → API keys** → copy **Secret key** (`sk_test_…` for testing).
-2. In Vercel → Environment Variables → add `**STRIPE_SECRET_KEY`** (test key first).
-3. Ensure `**SITE_URL`** matches your deployed URL (e.g. `https://villa-augflor.vercel.app` during tests).
-4. Deploy, open `**/pay.html**`, pay with [Stripe test card](https://docs.stripe.com/testing) `4242 4242 4242 4242`.
-5. When ready for real money: switch to **live keys** in Vercel and turn on Stripe **live mode**.
-
-**Optional next step (not required day 1):** add a **Stripe webhook** to email you when `checkout.session.completed` fires — I can add that in a follow-up if you want automated “deposit received” emails.
-
----
-
 ## Replacing placeholder images
 
 Every `<img>` currently points at Unsplash. To swap to real photos:
@@ -156,14 +127,6 @@ Every `<img>` currently points at Unsplash. To swap to real photos:
 1. Drop optimised files into `/assets/photos/` (see above).
 2. Global find-and-replace `https://images.unsplash.com/...` → `assets/photos/your-file.webp`.
 3. Preserve `loading="lazy"` and `data-full=""` for the lightbox.
-
-## Wiring the booking form to a backend
-
-Currently the form opens a pre-filled `mailto:` and shows a success state. For production:
-
-1. Replace the `mailto` fallback in `scripts/main.js` (`bookingForm()`) with a `fetch()` POST to
-  your endpoint of choice — Formspree, Getform, or a simple serverless function.
-2. Keep the WhatsApp CTA above the form as an always-available escape hatch.
 
 ## Conversion primitives in use
 
@@ -174,7 +137,6 @@ Currently the form opens a pre-filled `mailto:` and shows a success state. For p
 | Direct vs Airbnb delta (€707)   | `index.html` + `rates.html` compare sections                            |
 | Urgency strip                   | `index.html` under hero                                                 |
 | Live / mock calendar            | `data-calendar` + `GET /api/calendar` (Vercel) or demo fallback locally |
-| Stripe deposit                  | `pay.html` + `POST /api/create-deposit-session`                         |
 | Sticky CTA (mobile)             | component — shown after 60% of hero scrolled                            |
 | WhatsApp float (desktop)        | component — always visible                                              |
 | Objection pre-emption           | `index.html` + `villa.html`                                             |
@@ -194,8 +156,6 @@ Currently the form opens a pre-filled `mailto:` and shows a success state. For p
 ## Next improvements (ranked by conversion impact)
 
 1. **Real photos** — replace Unsplash URLs with `assets/photos/`* (still the #1 trust upgrade).
-2. **Stripe webhook → email** — auto-notify you on `checkout.session.completed` (I can add this next).
-3. **Video hero** — 8-second silent loop of the pool at golden hour.
-4. **Hosted enquiry form** — Formspree / serverless email so guests are not forced through `mailto:`.
-5. **Custom deposit amounts** — if rates change, update the cent amounts in `api/create-deposit-session.js` only.
+2. **Video hero** — 8-second silent loop of the pool at golden hour.
+3. **Hosted enquiry form** — Formspree / serverless email so guests are not forced through `mailto:`.
 

@@ -65,7 +65,7 @@
     const box  = document.createElement("div");
     box.className = "lightbox";
     box.innerHTML = `
-      <button class="close" aria-label="Close">✕</button>
+      <button class="close" aria-label="Close">X</button>
       <button class="nav-prev" aria-label="Previous">‹</button>
       <button class="nav-next" aria-label="Next">›</button>
       <img alt="">`;
@@ -205,50 +205,6 @@
     els.forEach(e => io.observe(e));
   }
 
-  /* ---------- Booking form ---------- */
-  function bookingForm() {
-    const form = document.querySelector("#booking-form");
-    if (!form) return;
-
-    // Set date min = today
-    const today = new Date().toISOString().slice(0, 10);
-    form.querySelectorAll('input[type="date"]').forEach(i => i.min = today);
-
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      const data = Object.fromEntries(new FormData(form).entries());
-
-      // Build a pre-filled WhatsApp message as a fallback. No backend needed.
-      const body = [
-        "Hello Lana,",
-        "",
-        "I would like to enquire about Villa Augflor.",
-        "",
-        `Name: ${(data.firstName || "").trim()} ${(data.lastName || "").trim()}`.trim(),
-        `Arrival: ${data.arrival || "—"}`,
-        `Departure: ${data.departure || "—"}`,
-        `Guests: ${data.guests || "—"}`,
-        `Email: ${data.email || "—"}`,
-        `Phone: ${data.phone || "—"}`,
-        "",
-        (data.message || "").trim(),
-      ].join("\n");
-
-      const params = new URLSearchParams();
-      params.set("subject", "Booking enquiry — Villa Augflor");
-      params.set("body", body);
-      const mailto = `mailto:villa.augflor@gmail.com?${params.toString()}`;
-
-      // Show success state
-      form.style.display = "none";
-      const ok = document.querySelector(".form-success");
-      if (ok) ok.style.display = "block";
-
-      // Open mail client so the enquiry actually reaches the host
-      window.location.href = mailto;
-    });
-  }
-
   /* ---------- Boot ---------- */
   document.addEventListener("DOMContentLoaded", async () => {
     await loadComponents();
@@ -257,6 +213,5 @@
     lightbox();
     await calendar();
     reveal();
-    bookingForm();
   });
 })();
