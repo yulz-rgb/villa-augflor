@@ -5,21 +5,21 @@
 
 :root {
   /* Palette */
-  --ivory:      #FCF8F2;
-  --bone:       #F4EDE2;
-  --ink:        #3A342E;
-  --ink-soft:   #544D44;
-  --mute:       #7A7268;
-  --line:       #E2D8C8;
-  --forest:     #708F7A;
-  --cognac:     #C98A55;
-  --cognac-ink: #B07442;
-  --gold:       #D6B37A;
-  --red:        #C86A5A;
-  --green:      #6F9B7E;
+  --ivory:      #F7F5F2;
+  --bone:       #F7F5F2;
+  --ink:        #1A1A1A;
+  --ink-soft:   #2F3A34;
+  --mute:       #2F3A34;
+  --line:       #C6A96B;
+  --forest:     #2F3A34;
+  --cognac:     #2F3A34;
+  --cognac-ink: #2F3A34;
+  --gold:       #C6A96B;
+  --red:        #C6A96B;
+  --green:      #2F3A34;
 
   /* Type */
-  --serif: "Cormorant Garamond", "Didot", "Playfair Display", Georgia, serif;
+  --serif: "Playfair Display", "Didot", Georgia, serif;
   --sans:  "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
 
   /* Scale */
@@ -107,12 +107,12 @@ section .wrap-sm > h2 {
   white-space: nowrap;
   min-height: 48px;
 }
-.btn-primary   { background: linear-gradient(135deg, var(--cognac), #d49a68); color: #fff; box-shadow: var(--shadow-sm); }
-.btn-primary:hover { background: linear-gradient(135deg, var(--cognac-ink), var(--cognac)); transform: translateY(-2px); box-shadow: var(--shadow-md); }
-.btn-dark      { background: #9fb8a6; color: #fff; }
-.btn-dark:hover{ background: #89a996; }
+.btn-primary   { background: var(--forest); color: var(--ivory); box-shadow: var(--shadow-sm); }
+.btn-primary:hover { background: var(--ink-soft); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.btn-dark      { background: var(--forest); color: var(--ivory); }
+.btn-dark:hover{ background: var(--ink-soft); }
 .btn-ghost     { background: transparent; color: var(--ink); border: 1px solid var(--ink); }
-.btn-ghost:hover { background: #e9dfd0; color: var(--ink); border-color: #d6cab6; }
+.btn-ghost:hover { background: rgba(47,58,52,.06); color: var(--ink); border-color: var(--forest); }
 .btn-whatsapp  { background: #25D366; color: #fff; }
 .btn-whatsapp:hover { background: #1DA851; }
 .btn-lg        { padding: 1.15rem 1.9rem; font-size: var(--step-1); }
@@ -512,18 +512,18 @@ section .wrap-sm > h2 {
 /* ---------- Sticky CTA (mobile bottom bar) ---------- */
 .sticky-cta {
   position: fixed; left: 0; right: 0; bottom: 0; z-index: 45;
-  background: #fff; border-top: 1px solid var(--line);
+  background: var(--ivory); border-top: 1px solid var(--line);
   padding: .6rem var(--gutter);
   display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; justify-content: space-between;
   transform: translateY(100%); transition: transform .3s ease;
-  box-shadow: 0 -8px 24px rgba(0,0,0,.08);
+  box-shadow: 0 -8px 24px rgba(26,26,26,.08);
 }
 .sticky-cta.visible { transform: translateY(0); }
 .sticky-cta .price-line { line-height: 1.1; }
 .sticky-cta .price-line strong { font-family: var(--serif); font-size: 1.3rem; display: block; }
 .sticky-cta .price-line span { font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; color: var(--mute); }
 .sticky-cta .btn { min-height: 44px; padding: .7rem 1rem; font-size: .9rem; white-space: nowrap; }
-.sticky-cta .sticky-actions { display: flex; gap: .5rem; align-items: center; flex: 1 1 auto; justify-content: flex-end; }
+.sticky-cta .sticky-actions { display: flex; gap: .5rem; align-items: center; flex: 1 1 auto; justify-content: center; width: 100%; }
 .sticky-cta .wa-btn {
   width: 44px; height: 44px; border-radius: 50%;
   background: #25D366; color: #fff;
@@ -564,6 +564,10 @@ section .wrap-sm > h2 {
 
   .calendar { padding: 1rem; }
   .cal-month { padding: .75rem; }
+}
+
+@media (min-width: 861px) {
+  .sticky-cta { display: none; }
 }
 
 @media (max-width: 520px) {
@@ -920,7 +924,7 @@ section .wrap-sm > h2 {
   inset: 0;
   z-index: -1;
   background:
-    linear-gradient(180deg, rgba(252,248,242,.2) 0%, rgba(252,248,242,.54) 58%, rgba(252,248,242,.8) 100%),
+    linear-gradient(180deg, rgba(247,245,242,.22) 0%, rgba(247,245,242,.56) 58%, rgba(247,245,242,.84) 100%),
     url("../assets/photos/optimized/photo-swimming-pool-backyard-garden-lounge.jpg") center 52%/cover no-repeat;
 }
 .home-luxe .luxe-hero-inner { padding-block: clamp(3rem, 8vw, 5.8rem); }
@@ -944,7 +948,7 @@ section .wrap-sm > h2 {
 
 .home-luxe .luxe-trust {
   border-block: 1px solid var(--line);
-  background: #f5eee2;
+  background: var(--ivory);
   padding-block: 1.3rem;
 }
 .home-luxe .luxe-trust-grid {
@@ -997,6 +1001,7 @@ section .wrap-sm > h2 {
 }
 
 .home-luxe .luxe-gallery { background: #f2e8d9; }
+.home-luxe .luxe-gallery { background: var(--ivory); }
 .home-luxe .luxe-gallery h2 {
   max-width: 24ch;
   margin-bottom: 1.7rem;
@@ -1019,8 +1024,17 @@ section .wrap-sm > h2 {
   color: var(--ink-soft);
 }
 
+.home-luxe .luxe-value {
+  background: var(--ivory);
+  text-align: center;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.home-luxe .luxe-value h2 { margin-inline: auto; max-width: 18ch; }
+.home-luxe .luxe-value p { margin-inline: auto; color: var(--ink-soft); }
+
 .home-luxe .luxe-booking {
-  background: #ece0ce;
+  background: var(--ivory);
   text-align: center;
 }
 .home-luxe .luxe-booking h2 { margin-inline: auto; }
