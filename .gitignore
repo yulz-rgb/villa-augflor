@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 node_modules/
 .env
 .env.local
@@ -5,3 +6,7 @@ node_modules/
 .vercel
 README.md.bak
 .env*.local
+=======
+.vercel
+.DS_Store
+>>>>>>> a7b7b8b (Refine rustic-luxury polish for static-live homepage.)
