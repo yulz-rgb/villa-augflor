@@ -1,3 +1,0 @@
-Open this folder in Finder, then drag `index.html` and the `images` folder into your GitHub repo in the browser (or run `git push` from a normal Terminal checkout — Cursor’s agent can’t create `.git` here).
-
-Booking form: first-time FormSubmit — check villa.augflor@gmail.com for “Activate Form” from formsubmit.co and click the link once so enquiries are delivered.
