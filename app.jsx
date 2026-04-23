@@ -93,7 +93,6 @@ function App() {
       <ScrollProgress />
       <Nav lang={lang} setLang={setLang} />
       <Hero lang={lang} heroImg={tweakVals.heroImage} />
-      <Ticker />
       <TrustBar />
       <TheVilla lang={lang} onOpenImg={setLightboxIdx} />
       <PullQuote />
