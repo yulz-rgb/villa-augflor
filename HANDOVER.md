@@ -1,8 +1,65 @@
 # Handover: Villa Augflor SEO & Deployment Complete
 
 **Status:** ✅ PRODUCTION LIVE  
-**Date:** May 24, 2026  
-**Custom Domain:** https://villa-augflor.com
+**Date:** May 20, 2026  
+**Custom Domain:** https://villa-augflor.com  
+**Latest commit:** `fe1e614` on `main` (pushed to GitHub)
+
+---
+
+## Quick Start (read this first)
+
+| Item | Value |
+|------|-------|
+| Local repo | `/Users/lana/Projects/villa-augflor-live` |
+| GitHub | `yulz-rgb/villa-augflor` → branch `main` |
+| Production URL | https://villa-augflor.com |
+| Vercel project (custom domain) | `villa-augflor-static-live` |
+| Deploy | `git push origin main` → auto-deploy; fallback: `npx vercel deploy --prod` |
+| Full photo gallery | https://villa-augflor.com/gallery.html |
+| Homepage photo preview | https://villa-augflor.com/#gallery |
+| Photo source (new picks) | `~/Desktop/Images/House Photos` (May 2023+ only) |
+| Optimize command | `sips -s format jpeg -Z 1600 in.jpg --out assets/photos/optimized/name.jpg` |
+
+**Rules for any update:** browser-verify on villa-augflor.com before saying "done"; gallery changes belong on `gallery.html`; Airbnb listing is separate from this site.
+
+---
+
+## Session Update — May 24, 2026 (Top 15 booking accelerators)
+
+Goal: increase qualified enquiries and bookings ASAP by reducing friction, improving trust clarity, and speeding up date-check conversations.
+
+### Top 15 factors implemented
+1. Fixed conversion-leaking nav paths in shared header (`components/header.html`) to point to live high-intent pages (`villa.html`, `rates.html`, `area.html`).
+2. Added structured WhatsApp prefill template in floating CTA (`components/sticky-cta.html`) to capture dates/guests/country from first click.
+3. Strengthened homepage hero with booking-fit subcopy (`index.html`) for couples/families and direct-booking clarity.
+4. Replaced generic hero CTA link with a prefilled availability message template (`index.html`) to shorten enquiry loop.
+5. Added immediate trust microcopy under hero CTA (response speed, payment methods, minimum-stay clarity) (`index.html`).
+6. Added booking-momentum demand block to nudge earlier action on summer dates (`index.html`).
+7. Added profile-routing section (family/couple/adults/EU/accessibility/not-fit) for faster self-qualification (`index.html`).
+8. Added "Fast Quote Checklist" with 5 required details + one-click template (`index.html`) to improve lead quality.
+9. Added direct fallback contact options (email + phone) near conversion CTA (`index.html`).
+10. Improved rates-page hero with explicit "what to send first" guidance (`rates.html`) to speed quote turnaround.
+11. Added audience-specific WhatsApp templates (couples/family/group) (`rates.html`) to reduce decision paralysis.
+12. Added no-hidden-fees reassurance line after pricing detail sections (`rates.html`) to reduce checkout fear.
+13. Expanded EU landing with practical arrival-logistics section for German/Dutch travelers (`eu-summer-2026-villa.html`).
+14. Added language-support + alternative-channel reassurance in EU fit-check section (`eu-summer-2026-villa.html`).
+15. Added/kept internal links from homepage/rates/footer + sitemap support for EU summer page discovery and SEO crawl flow (`index.html`, `rates.html`, `components/footer.html`, `sitemap.xml`).
+
+### Files touched in this conversion pass
+- `index.html`
+- `rates.html`
+- `eu-summer-2026-villa.html`
+- `components/header.html`
+- `components/sticky-cta.html`
+- `components/footer.html`
+- `sitemap.xml`
+
+### Why this matters
+- Faster first response with complete enquiry info
+- Fewer unqualified clicks and less booking confusion
+- Better trust and risk-reduction before payment discussion
+- Better routing for high-intent DE/NL summer audience
 
 ---
 
@@ -54,7 +111,7 @@ All pages created, optimized, and deployed successfully:
 
 ### 2. Modified Pages - Enhanced CTAs & Pricing
 - **villa.html** — CTA upgraded from "Enquire Now" to "Check Availability Now" with pre-filled WhatsApp message
-- **rates.html** — Added cost comparison calculator: €4,227 (Airbnb) vs €3,788 (Direct) = **€439 savings highlighted**
+- **rates.html** — Added cost comparison calculator highlighting direct-booking savings (currently **€439** on live page)
 - **components/footer.html** — Complete reorganization with 5-section navigation to all new pages
 
 ### 3. Deployment Infrastructure
@@ -77,7 +134,8 @@ All pages created, optimized, and deployed successfully:
 |------|--------|-------|
 | gallery.html | ✅ LIVE | 9 room areas, 30+ photos, AC note in intro |
 | index.html `#gallery` | ✅ LIVE | Optimized photos; "View full gallery by room" button |
-| rates.html | ✅ LIVE | Shows €450 (shoulder) & €480 (peak) |
+| rates.html | ✅ LIVE | Shoulder €450 · peak €520 · savings €439 |
+| index.html pricing | ⚠️ MISMATCH | Shows €480/n for all summer months — differs from `rates.html` |
 | guest-reviews.html | ✅ LIVE | Shows 4.79★ rating, 100+ guests |
 | All 13 booking pages | ✅ LIVE | Fully deployed and accessible |
 
@@ -122,8 +180,21 @@ All pages created, optimized, and deployed successfully:
 - **Owner:** yulz-rgb
 - **Repo:** villa-augflor
 - **Branch:** main
-- **Latest commit:** `5d65697` (May 24, 2026)
+- **Latest commit:** `fe1e614` — HANDOVER.md + gallery/AC work through `5d65697`
 - **Connected to Vercel:** Yes — `villa-augflor-static-live` linked to GitHub `main`
+
+### Local files not yet in git
+These exist on disk but are **untracked** — do not assume they are deployed:
+
+| Path | Notes |
+|------|-------|
+| `api/booking-agent.js`, `scripts/booking-chat.js`, `styles/booking-chat.css` | AI booking agent (may be deployed via Vercel CLI separately) |
+| `sitemap.xml`, `robots.txt`, `.htaccess` | SEO files — verify if live matches local |
+| `vercel.json`, `package.json` | Vercel/serverless config |
+| `assets/photos/` (raw), `_images/` | Source photos — only `assets/photos/optimized/` in git |
+| `SEO-IMPROVEMENTS.md`, `README.md`, other docs | Reference only |
+
+When adding photos: commit only new files under `assets/photos/optimized/` plus HTML changes.
 
 ### Domain Routing
 ```
@@ -142,7 +213,7 @@ villa-augflor-static-live (Vercel project, GitHub-connected)
 - **13 new pages created** for high-intent keywords
 - **AggregateRating schema** on guest-reviews.html (4.79★)
 - **FAQPage schema** on villa.html and faq-booking.html (40+ Q&As)
-- **Cost comparison section** emphasizing €439 savings on direct booking
+- **Cost comparison section** emphasizing direct-booking savings (€439 on `rates.html`)
 - **Pre-filled WhatsApp CTAs** on all pages directing to Lana: +33 6 23 77 73 33
 
 ### Performance Targets
@@ -159,7 +230,7 @@ villa-augflor-static-live (Vercel project, GitHub-connected)
 - [ ] Load https://villa-augflor.com/ — verify AC text and "View full gallery by room" button
 - [ ] Load https://villa-augflor.com/ — verify all CTAs work
 - [ ] Test WhatsApp button on any page (should open chat with +33 6 23 77 73 33)
-- [ ] Load /rates.html — verify €405 savings comparison displays
+- [ ] Load /rates.html — verify direct-booking savings comparison displays (€439)
 - [ ] Load /guest-reviews.html — verify 6 testimonials show with 4.79★
 - [ ] Run Lighthouse audit (target 90+ all categories)
 - [ ] Submit sitemap.xml to Google Search Console
@@ -380,13 +451,6 @@ To activate: add the standard GA4 `gtag.js` snippet to `<head>` of all pages (me
 
 ---
 
-**Last Updated:** May 20, 2026 — Pricing corrected, API key rotated, copy + amenity fixes live  
-**Status:** ✅ Production Verified & Live + SEO Optimized + AI Booking Agent Active (Claude-powered)
-
----
-
----
-
 ## Session Updates — May 20, 2026 (latest)
 
 ### Goal: Fill Summer 2026 — Urgency + Conversion Pass
@@ -426,12 +490,7 @@ Updated across all files site-wide:
 
 ---
 
-**Last Updated:** May 24, 2026 — Gallery overhaul + deployment pipeline fixed + AC in all rooms  
-**Status:** ✅ Production live · Gallery by room · GitHub → villa-augflor.com auto-deploy
-
----
-
-## Session Updates — May 20–24, 2026 (Gallery & Deployment)
+## Session Updates — May 20, 2026 (Gallery & Deployment)
 
 ### Goal
 Replace placeholder gallery images with real villa photos organized by room area. Fix deployment so changes appear on villa-augflor.com.
@@ -484,6 +543,13 @@ Also copied from `_images/`: `garden-room-*.jpg`, `kitchen-corner-wide.jpg`.
 | `86249c1` | Add 7 new House Photos (2025–2026) |
 | `f5496b4` | Link homepage to full gallery page |
 | `5d65697` | AC in all rooms + gallery CTA button + hero fix |
+| `fe1e614` | Add HANDOVER.md (this file) |
+
+### Known issues / follow-ups
+- **Pricing inconsistency:** `index.html` shows €480/n for Jun–Sep; `rates.html` shows €450 shoulder / €520 peak. Align before next deploy.
+- `photo-stone-house-blue-gate-number-26.jpg` — red mark on wall; candidate for swap
+- Homepage `#gallery` mosaic can look similar to before (pool/bathroom shots) — direct users to `/gallery.html` for room-by-room layout
+- Some SEO/booking-agent files may exist locally but not be in git — check before editing
 
 ### Verification Checklist (run after any gallery/deploy change)
 - [ ] https://villa-augflor.com/gallery.html — shows "Master Bedroom — Barcelona" heading
@@ -491,3 +557,8 @@ Also copied from `_images/`: `garden-room-*.jpg`, `kitchen-corner-wide.jpg`.
 - [ ] https://villa-augflor.com/ — The Villa section mentions AC in every bedroom, living room, garden room
 - [ ] https://villa-augflor.com/ — "View full gallery by room" button visible under photo grid
 - [ ] Hard refresh (Cmd+Shift+R) if cached version appears
+
+---
+
+**Last Updated:** May 20, 2026  
+**Status:** ✅ Production live · Gallery by room · AC in all bedrooms + living room + garden room · GitHub → villa-augflor.com auto-deploy
