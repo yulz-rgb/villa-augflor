@@ -3,7 +3,7 @@
 **Status:** ✅ PRODUCTION LIVE  
 **Date:** May 29, 2026  
 **Custom Domain:** https://villa-augflor.com  
-**Latest commit:** `db3dd8f` on `main` (feature: Area Guide `84de3fe`, deployed & verified May 29, 2026)
+**Latest commit:** run `git log -1 --oneline` on `main` (Area Guide feature: `84de3fe`, production verified May 29, 2026)
 
 ---
 
