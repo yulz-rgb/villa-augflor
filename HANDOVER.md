@@ -3,7 +3,7 @@
 **Status:** ✅ PRODUCTION LIVE  
 **Date:** May 29, 2026  
 **Custom Domain:** https://villa-augflor.com  
-**Latest commit:** `d2d934a` on `main` (Area Guide in `84de3fe`, May 29, 2026)
+**Latest commit:** `6845e16` on `main` (Area Guide in `84de3fe`, deployed & verified May 29, 2026)
 
 ---
 
@@ -43,7 +43,7 @@
 - **`assets/photos/area/`** — ~65 CC photos from Wikimedia Commons (see on-page credit).
 - **`riviera-area-guide.html`** — HTTP redirect to `area.html`.
 - **`scripts/download-area-photos.py`** — Re-download / refresh Commons images (`User-Agent` required).
-- **`scripts/verify-production.sh`** — Still checks homepage; after area deploy, confirm `/area.html` and a sample image URL manually or extend script.
+- **`scripts/verify-production.sh`** — Checks homepage (no old rates block), `/area.html` (`ag-grid`), and `assets/photos/area/nice.jpg` returns 200.
 
 ### Categories (filter chips)
 Must-see towns · Hill villages · Beaches · Family · Water sports · Museums & culture · Wine · Foodie · Nature & hiking · Day trips · Shopping · Nightlife
