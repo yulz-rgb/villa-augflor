@@ -3,7 +3,7 @@
 **Status:** ✅ PRODUCTION LIVE  
 **Date:** May 29, 2026  
 **Custom Domain:** https://villa-augflor.com  
-**Latest commit:** run `git log -1 --oneline` on `main` (Area Guide feature: `84de3fe`, production verified May 29, 2026)
+**Latest commit:** `cc73d22` on `main` — run `git log -1 --oneline` for newer. Production verified May 29, 2026 (`bash scripts/verify-production.sh`).
 
 ---
 
@@ -36,7 +36,37 @@
 | Peak summer | July · August | **€480** direct (was **€520** list) | Label: **Peak summer** — not "High Season" |
 | 7-night peak comparison | Jul/Aug | Save **~€719** vs Airbnb | See cost grid on `rates.html` |
 
-**Agent pitfalls (past chats):** see `docs/agent-lessons-learned.md`. If Cursor opened empty `villa-augflor/`, use repo `villa-augflor-live` only. Do not claim "live" without `bash scripts/verify-production.sh` (and spot-check `/area.html` after area-guide changes). **Do not use `./images/` paths** — hero and about photos live under `assets/photos/optimized/` only.
+**Agent pitfalls (past chats):** see `docs/agent-lessons-learned.md`. If Cursor opened empty `villa-augflor/`, use repo `villa-augflor-live` only. Do not claim "live" without `bash scripts/verify-production.sh` (checks `/`, `/area.html`, and **`/rates.html`** pricing). **Do not use `./images/` paths** — hero and about photos live under `assets/photos/optimized/` only.
+
+**Pricing deploy rule:** Any rate change must commit **`index.html` and `rates.html` in the same commit** before deploy. Subpage assets (`styles/subpage.css`, `scripts/subpage.js`, `components/nav-subpage.html`, `components/footer-subpage.html`) must be in git if `rates.html` depends on them.
+
+---
+
+## Session Update — May 29, 2026 (HANDOVER fixes + full pricing deploy)
+
+**Goal:** Fix top HANDOVER flaws (stale doc, broken `./images/`, pricing drift) and get changes visible on villa-augflor.com.
+
+### What shipped (live after `cc73d22`)
+- **`index.html`** — Title/meta/schema `€420–€480`; hero/about preloads → `assets/photos/optimized/`; calendar Jun/Sep €420, Jul/Aug €480; outdoor dining (no BBQ in about copy).
+- **`rates.html`** + **`styles/subpage.css`**, **`scripts/subpage.js`**, **`components/nav-subpage.html`**, **`components/footer-subpage.html`** — Shoulder **€420**, peak **€480** direct (€520 struck through), comparison save **~€719**.
+- **`fr/index.html`** — FR pricing + OG images aligned.
+- **`api/booking-agent.js`**, **`scripts/booking-chat.js`**, **`styles/booking-chat.css`**, **`vercel.json`**, **`package.json`** — In git; booking agent uses €420/€480 and ~€719 savings.
+- **Landing pages** — `family-villa`, `last-minute-villa`, etc.: from **€420/nt**, schema `€420–€480`.
+- **`faq-booking.html`**, **`book-villas-without-overpaying.html`**, **`corporate-retreats.html`** — Savings math aligned with `rates.html`.
+- **`scripts/verify-production.sh`** — Fails if homepage has `./images/` or `/rates.html` lacks €420/€480.
+
+### Deploy incident (learn from this)
+1. First deploy (`c5923b8`) updated **homepage only** — user saw “no changes” because **`rates.html` was still uncommitted** (live stayed €450/€520).
+2. Git push triggered Vercel Git deploy of old `rates.html` from GitHub.
+3. Second deploy (`cc73d22`) committed rates + subpage assets; verify script now catches `/rates.html`.
+
+**Deploy command used:** `bash scripts/deploy-production.sh` from repo root (project `villa-augflor-static-live`).
+
+### Key commits
+| Commit | Description |
+|--------|-------------|
+| `c5923b8` | HANDOVER flaws: index images/pricing, booking agent/chat, landing pages |
+| `cc73d22` | Rates page + subpage CSS/JS/nav — **required for visible pricing fix** |
 
 ---
 
@@ -51,7 +81,7 @@
 - **`assets/photos/area/`** — ~65 CC photos from Wikimedia Commons (see on-page credit).
 - **`riviera-area-guide.html`** — HTTP redirect to `area.html`.
 - **`scripts/download-area-photos.py`** — Re-download / refresh Commons images (`User-Agent` required).
-- **`scripts/verify-production.sh`** — Checks homepage (no old rates block), `/area.html` (`ag-grid`), and `assets/photos/area/nice.jpg` returns 200.
+- **`scripts/verify-production.sh`** — Checks homepage (no old rates block, no `./images/`), `/area.html` (`ag-grid`), `/rates.html` (€420/€480), and `assets/photos/area/nice.jpg` returns 200.
 
 ### Categories (filter chips)
 Must-see towns · Hill villages · Beaches · Family · Water sports · Museums & culture · Wine · Foodie · Nature & hiking · Day trips · Shopping · Nightlife
@@ -164,21 +194,26 @@ All pages created, optimized, and deployed successfully:
 - **GitHub → custom domain:** `villa-augflor-static-live` is now connected to GitHub (May 20, 2026). Pushes to `main` should auto-deploy to villa-augflor.com.
 - **If auto-deploy fails:** run `bash scripts/deploy-production.sh` from the project root (build + prebuilt deploy + live verify).
 - **Always verify live after deploy:** `bash scripts/verify-production.sh` must exit 0 before telling anyone a change is live. Browser-check visual changes too.
-- **May 24 2026 incident:** Homepage rates removal was committed locally but `villa-augflor.com` stayed old for ~1h because production alias on `villa-augflor-static-live` pointed at a stale deployment while new deploys sat **Queued**. Fix: `vercel alias set <fixed-deployment-url> villa-augflor-static-live.vercel.app` (updates custom domain). Agents must not say "done" without `verify-production.sh` passing.
+- **May 24 2026 incident:** Homepage rates removal was committed locally but `villa-augflor.com` stayed old for ~1h because production alias on `villa-augflor-static-live` pointed at a stale deployment while new deploys sat **Queued**. Fix: `vercel alias set <fixed-deployment-url> villa-augflor-static-live.vercel.app` (updates custom domain).
+- **May 29 2026 incident:** Partial deploy (index only, `rates.html` not in git) — homepage updated but `/rates.html` still showed €450/€520 until `cc73d22`. **Always commit `rates.html` with `index.html` and run verify** (checks both URLs).
+- Agents must not say "done" without `verify-production.sh` passing.
 
 ---
 
 ## Current State Verification
 
 ### ✅ Custom Domain villa-augflor.com
-**Last verification:** May 24, 2026
+**Last verification:** May 29, 2026 (`verify-production.sh` exit 0)
 
 | Page | Status | Notes |
 |------|--------|-------|
+| index.html `/` | ✅ LIVE | Title “from €420/night”; calendar €420/€480; no `./images/` |
+| rates.html | ✅ LIVE | Shoulder €420 · peak €480 direct (€520 list) · savings ~€719 |
+| area.html | ✅ LIVE | `ag-grid`, area photos 200 |
 | gallery.html | ✅ LIVE | 9 room areas, 30+ photos, AC note in intro |
 | index.html `#gallery` | ✅ LIVE | Optimized photos; "View full gallery by room" button |
-| rates.html | ✅ LIVE | Shoulder €420 · peak €480 direct (€520 list) · savings ~€719 |
-| index.html homepage pricing cards | ✅ REMOVED | Section removed; pricing only on `rates.html` |
+| index.html homepage pricing cards | ✅ REMOVED | Section removed; pricing on `rates.html` + calendar on home |
+| fr/index.html | ✅ LIVE | FR pricing aligned (dès €420/nuit) |
 | guest-reviews.html | ✅ LIVE | Shows 4.79★ rating, 100+ guests |
 | All 13 booking pages | ✅ LIVE | Fully deployed and accessible |
 
@@ -196,20 +231,30 @@ All pages created, optimized, and deployed successfully:
 .
 ├── index.html (7 sections: hero, amenities, split layouts, etc.)
 ├── villa.html (Layout, bedrooms, amenities, honest notes, FAQ)
-├── rates.html (Rate cards, direct vs platform comparison, availability calendar)
+├── rates.html (Subpage layout — rate cards, €719 comparison, WhatsApp templates)
 ├── gallery.html
-├── area.html
-├── [13 new pages].html (See list above)
+├── area.html (Uses subpage nav + area-guide.js)
+├── fr/index.html
+├── [13 booking pages].html
+├── api/booking-agent.js (Vercel serverless — needs ANTHROPIC_API_KEY)
 ├── components/
 │   ├── header.html
-│   ├── footer.html (UPDATED)
-│   └── sticky-cta.html
+│   ├── footer.html
+│   ├── sticky-cta.html
+│   ├── nav-subpage.html
+│   └── footer-subpage.html
 ├── styles/
 │   ├── main.css
-│   └── [utilities, layout, typography]
+│   ├── subpage.css
+│   ├── area-guide.css
+│   └── booking-chat.css
 ├── scripts/
 │   ├── main.js
-│   └── [calendar, form handlers]
+│   ├── subpage.js
+│   ├── area-guide.js
+│   ├── booking-chat.js
+│   ├── deploy-production.sh
+│   └── verify-production.sh
 ├── assets/
 │   └── photos/
 │       ├── optimized/ (~60 JPEGs — all gallery images)
@@ -223,12 +268,12 @@ All pages created, optimized, and deployed successfully:
 - **Owner:** yulz-rgb
 - **Repo:** villa-augflor
 - **Branch:** main
-- **Latest commit:** `fe1e614` — HANDOVER.md + gallery/AC work through `5d65697`
-- **Connected to Vercel:** Yes — `villa-augflor-static-live` linked to GitHub `main`
+- **Latest commit:** `cc73d22` (pricing + rates subpage) — run `git log -1 --oneline`
+- **Connected to Vercel:** Yes — `villa-augflor-static-live` linked to GitHub `main` (push auto-deploys; confirm with verify script)
 
 ### Local vs deployed
 - **`sitemap.xml`** is in git — update when adding major pages (e.g. `area.html`).
-- **`api/booking-agent.js`**, **`scripts/booking-chat.js`**, **`styles/booking-chat.css`** — serverless + widget; deploy with `scripts/deploy-production.sh`.
+- **`api/booking-agent.js`**, **`scripts/booking-chat.js`**, **`styles/booking-chat.css`** — now in git; deploy via `scripts/deploy-production.sh` or push to `main`.
 - **Photos:** commit new files under `assets/photos/optimized/` only; do not reference missing `./images/` paths.
 - **`robots.txt`**, **`.htaccess`** — confirm on live if you change crawl or redirect rules.
 
@@ -268,7 +313,8 @@ villa-augflor-static-live (Vercel project, GitHub-connected)
 - [ ] Load https://villa-augflor.com/ — verify AC text and "View full gallery by room" button
 - [ ] Load https://villa-augflor.com/ — verify all CTAs work
 - [ ] Test WhatsApp button on any page (should open chat with +33 6 23 77 73 33)
-- [ ] Load /rates.html — verify direct-booking savings comparison displays (~€719 peak week)
+- [ ] Load /rates.html — Shoulder **€420**, Peak **€480** (€520 struck through), savings **~€719** on 7-night grid
+- [ ] Run `bash scripts/verify-production.sh` — must exit 0 (checks `/`, `/area.html`, `/rates.html`)
 - [ ] Load /guest-reviews.html — verify 6 testimonials show with 4.79★
 - [ ] Run Lighthouse audit (target 90+ all categories)
 - [ ] Submit sitemap.xml to Google Search Console
@@ -589,14 +635,15 @@ Also copied from `_images/`: `garden-room-*.jpg`, `kitchen-corner-wide.jpg`.
 - ~13 area-guide cards still use gradient tiles until more Commons images are fetched (see Area Guide session above)
 - Older session notes below may mention superseded prices (€450, €439, flat €480) — use **Canonical pricing** at top of this file
 
-### Verification Checklist (run after any gallery/deploy change)
-- [ ] https://villa-augflor.com/gallery.html — shows "Master Bedroom — Barcelona" heading
-- [ ] https://villa-augflor.com/gallery.html — Exterior section includes "Entrance gate" and "Garden archway"
-- [ ] https://villa-augflor.com/ — The Villa section mentions AC in every bedroom, living room, garden room
-- [ ] https://villa-augflor.com/ — "View full gallery by room" button visible under photo grid
-- [ ] Hard refresh (Cmd+Shift+R) if cached version appears
+### Verification Checklist (run after any deploy)
+- [ ] `bash scripts/verify-production.sh` exits 0
+- [ ] https://villa-augflor.com/rates.html — €420 shoulder / €480 peak (not €450/€520)
+- [ ] https://villa-augflor.com/ — title contains “from €420”; no broken `./images/` in page source
+- [ ] https://villa-augflor.com/gallery.html — room sections + AC note
+- [ ] https://villa-augflor.com/area.html — filters and place cards load
+- [ ] Hard refresh (Cmd+Shift+R) or private window if browser cache shows old pricing
 
 ---
 
-**Last Updated:** May 29, 2026  
-**Status:** ✅ Production live · Area guide · Gallery by room · Canonical pricing €420 shoulder / €480 peak · GitHub → villa-augflor.com auto-deploy
+**Last Updated:** May 29, 2026 (evening — post `cc73d22` full pricing deploy)  
+**Status:** ✅ Production live · Area guide · Gallery by room · Pricing €420/€480 on index + rates · verify script checks both URLs
