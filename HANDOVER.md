@@ -1,9 +1,9 @@
 # Handover: Villa Augflor SEO & Deployment Complete
 
 **Status:** ✅ PRODUCTION LIVE  
-**Date:** May 20, 2026  
+**Date:** May 29, 2026  
 **Custom Domain:** https://villa-augflor.com  
-**Latest commit:** `fe1e614` on `main` (pushed to GitHub)
+**Latest commit:** `c7c8721` on `main` — Area Guide + photos (May 29, 2026)
 
 ---
 
@@ -11,17 +11,51 @@
 
 | Item | Value |
 |------|-------|
-| Local repo | `/Users/lana/Projects/villa-augflor-live` |
+| **Edit here (only)** | `/Users/lana/Projects/villa-augflor-live` |
+| **Do not edit** | `/Users/lana/Projects/villa-augflor` (Cursor workspace pointer; not the site) |
 | GitHub | `yulz-rgb/villa-augflor` → branch `main` |
 | Production URL | https://villa-augflor.com |
 | Vercel project (custom domain) | `villa-augflor-static-live` |
-| Deploy | `git push origin main` → auto-deploy; fallback: `npx vercel deploy --prod` |
+| Deploy (preferred) | `bash scripts/deploy-production.sh` (build + deploy + verify) |
+| Deploy (alternate) | `git push origin main` if Vercel Git integration is enabled |
+| **Area guide (live page)** | https://villa-augflor.com/area.html |
+| Legacy area URL | `riviera-area-guide.html` → redirects to `area.html` |
 | Full photo gallery | https://villa-augflor.com/gallery.html |
 | Homepage photo preview | https://villa-augflor.com/#gallery |
-| Photo source (new picks) | `~/Desktop/Images/House Photos` (May 2023+ only) |
-| Optimize command | `sips -s format jpeg -Z 1600 in.jpg --out assets/photos/optimized/name.jpg` |
+| Villa room photos | `assets/photos/optimized/` and `~/Desktop/Images/House Photos` |
+| Area-guide destination photos | `assets/photos/area/` (Wikimedia Commons, CC) |
+| Refresh area photos | `python3 scripts/download-area-photos.py` |
 
-**Rules for any update:** browser-verify on villa-augflor.com before saying "done"; gallery changes belong on `gallery.html`; Airbnb listing is separate from this site.
+**Rules for any update:** browser-verify on villa-augflor.com before saying "done"; gallery changes belong on `gallery.html`; Airbnb listing is separate from this site. **Update this HANDOVER.md whenever you change the live site.**
+
+**Agent pitfalls (past chats):** see `docs/agent-lessons-learned.md`. If Cursor opened empty `villa-augflor/`, use repo `villa-augflor-live` only. Do not claim "live" without `bash scripts/verify-production.sh` (and spot-check `/area.html` after area-guide changes).
+
+---
+
+## Session Update — May 29, 2026 (Area Guide redesign + photos)
+
+**Goal:** Replace the basic area page with a full concierge-style French Riviera guide (78 places, filters, SEO, photos).
+
+### What shipped
+- **`area.html`** — New hero, sticky category filters, sort (distance / rating / family / luxury / hidden gem), seasonal block, FAQ, JSON-LD (`FAQPage` + `BreadcrumbList`), concierge CTA.
+- **`scripts/area-guide.js`** — Structured `PLACES` data (drive times from Cagnes-sur-Mer), dynamic cards, Google Maps route + map links, `ItemList` schema injection.
+- **`styles/area-guide.css`** — Premium card layout, badges, mobile-first grid.
+- **`assets/photos/area/`** — ~65 CC photos from Wikimedia Commons (see on-page credit).
+- **`riviera-area-guide.html`** — HTTP redirect to `area.html`.
+- **`scripts/download-area-photos.py`** — Re-download / refresh Commons images (`User-Agent` required).
+- **`scripts/verify-production.sh`** — Still checks homepage; after area deploy, confirm `/area.html` and a sample image URL manually or extend script.
+
+### Categories (filter chips)
+Must-see towns · Hill villages · Beaches · Family · Water sports · Museums & culture · Wine · Foodie · Nature & hiking · Day trips · Shopping · Nightlife
+
+### Content notes
+- Distances/drive times from **villa base (Cagnes-sur-Mer / Villeneuve-Loubet)**, not city centres.
+- **Marineland Antibes** listed as closed Jan 2025 with alternatives.
+- Ratings are indicative; official hours on linked websites.
+- ~13 cards still use gradient tiles until more Commons images are fetched.
+
+### Files touched
+- `area.html`, `scripts/area-guide.js`, `styles/area-guide.css`, `assets/photos/area/*`, `riviera-area-guide.html`, `scripts/download-area-photos.py`, `HANDOVER.md`
 
 ---
 
@@ -120,8 +154,9 @@ All pages created, optimized, and deployed successfully:
   - `villa-augflor-static-live` — serves **villa-augflor.com** (custom domain)
 - **GitHub repo:** yulz-rgb/villa-augflor (branch: `main`)
 - **GitHub → custom domain:** `villa-augflor-static-live` is now connected to GitHub (May 20, 2026). Pushes to `main` should auto-deploy to villa-augflor.com.
-- **If auto-deploy fails:** run `npx vercel deploy --prod` from the project root (`.vercel/project.json` points to `villa-augflor-static-live`).
-- **Always verify live after deploy:** open the URL in a browser and confirm specific changes (do not rely on curl alone).
+- **If auto-deploy fails:** run `bash scripts/deploy-production.sh` from the project root (build + prebuilt deploy + live verify).
+- **Always verify live after deploy:** `bash scripts/verify-production.sh` must exit 0 before telling anyone a change is live. Browser-check visual changes too.
+- **May 24 2026 incident:** Homepage rates removal was committed locally but `villa-augflor.com` stayed old for ~1h because production alias on `villa-augflor-static-live` pointed at a stale deployment while new deploys sat **Queued**. Fix: `vercel alias set <fixed-deployment-url> villa-augflor-static-live.vercel.app` (updates custom domain). Agents must not say "done" without `verify-production.sh` passing.
 
 ---
 
@@ -135,7 +170,7 @@ All pages created, optimized, and deployed successfully:
 | gallery.html | ✅ LIVE | 9 room areas, 30+ photos, AC note in intro |
 | index.html `#gallery` | ✅ LIVE | Optimized photos; "View full gallery by room" button |
 | rates.html | ✅ LIVE | Shoulder €450 · peak €520 · savings €439 |
-| index.html pricing | ⚠️ MISMATCH | Shows €480/n for all summer months — differs from `rates.html` |
+| index.html homepage pricing cards | ✅ REMOVED | Section removed; pricing only on `rates.html` |
 | guest-reviews.html | ✅ LIVE | Shows 4.79★ rating, 100+ guests |
 | All 13 booking pages | ✅ LIVE | Fully deployed and accessible |
 
