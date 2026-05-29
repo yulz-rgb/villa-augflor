@@ -901,6 +901,14 @@
     if (tag === "local") return p.localFavourite || p.gem >= 4;
     if (tag === "train") return p.carFreePossible || p.transport === "Train possible";
     if (tag === "luxury") return p.luxury >= 4;
+    if (tag === "couples") return p.luxury >= 3 || (p.bestFor && /Couples|Romantic/i.test(p.bestFor.join(" ")));
+    if (tag === "teen") return p.family >= 3;
+    if (tag === "beach") return p.cat === "beaches" || !!p.beachType;
+    if (tag === "culture") return p.cat === "museums";
+    if (tag === "food") return p.cat === "food";
+    if (tag === "shopping") return p.cat === "shopping";
+    if (tag === "nature") return p.cat === "nature";
+    if (tag === "nocar") return p.carFreePossible || (p.transport && /train|walk/i.test(p.transport));
     return true;
   }
 

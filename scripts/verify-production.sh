@@ -46,12 +46,8 @@ check_present_file() {
   fi
 }
 
-# Homepage CRO pricing section (Phase A May 2026)
-check_present "Homepage pricing section" 'id="rates"'
-check_present "Homepage WhatsApp CTA" "Check dates on WhatsApp"
-check_present "Homepage book-direct strip" "Why book direct"
-check_absent "Homepage inline guidebook tabs" 'id="guidebook"'
-check_present "Homepage area guide CTA" "70+ curated places"
+# Homepage pricing cards section (removed May 2026)
+check_absent "Homepage duplicate rates section" 'id="rates"|Simple,\s*<em>transparent rates</em>'
 
 # Broken legacy image paths
 if echo "$HTML" | grep -qE 'href="\./images/|data-bg="\./images/'; then
@@ -63,15 +59,25 @@ fi
 
 if [[ "$PATH_TO_CHECK" == "/" ]]; then
   check_present "Homepage book-direct-safely link" "book-direct-safely.html"
-  check_present "Homepage ideal 4 guests" "Ideal 4"
+  check_present "Homepage ideal 4 guests" "ideal 4"
   check_present "Homepage live calendar" "data-calendar"
   check_present "Homepage area guide link" "area.html"
   check_present "Homepage availability anchor" "id=\"availability\""
+  check_present "Homepage hero headline" "Private pool villa in Cagnes-sur-Mer, near Nice Airport"
+  check_absent "Homepage save 20% footer" "save 20%"
+
+  echo "==> Fetching ${SITE%/}/contact.html"
+  CONTACT_HTML=$(curl -fsSL -H "Cache-Control: no-cache" "$SITE/contact.html")
+  check_present_file "Contact enquiry form" "data-enquiry-form" "$CONTACT_HTML"
+
+  echo "==> Fetching ${SITE%/}/family-villa.html"
+  FV_HTML=$(curl -fsSL -H "Cache-Control: no-cache" "$SITE/family-villa.html")
+  check_present_file "Family villa page" "ground-floor" "$FV_HTML"
+  check_absent "Family villa redirect stub" "location.replace" "$FV_HTML"
 
   echo "==> Fetching ${SITE%/}/area.html"
   AREA_HTML=$(curl -fsSL -H "Cache-Control: no-cache" "$SITE/area.html")
-  check_present_file "Area guide tag filters" 'data-tag="free"' "$AREA_HTML"
-  check_present_file "Area guide itineraries" 'id="itineraries"' "$AREA_HTML"
+  check_present_file "Area guide ag-grid" 'id="ag-grid"' "$AREA_HTML"
 
   PHOTO_CODE=$(curl -s -o /dev/null -w "%{http_code}" -H "Cache-Control: no-cache" "$SITE/assets/photos/area/nice.jpg")
   if [[ "$PHOTO_CODE" == "200" ]]; then
@@ -96,7 +102,8 @@ if [[ "$PATH_TO_CHECK" == "/" ]]; then
 
   echo "==> Fetching ${SITE%/}/gallery.html"
   GALLERY_HTML=$(curl -fsSL -H "Cache-Control: no-cache" "$SITE/gallery.html")
-  check_present_file "Gallery page room sections" 'Barcelona' "$GALLERY_HTML"
+  check_present_file "Gallery pool section" "Pool &amp; garden" "$GALLERY_HTML"
+  check_present_file "Gallery loft caption" "steep staircase" "$GALLERY_HTML"
   check_absent "Gallery redirect stub" 'url=/#gallery' "$GALLERY_HTML"
 
   CERT_CODE=$(curl -s -o /dev/null -w "%{http_code}" -H "Cache-Control: no-cache" "$SITE/assets/documents/gites-de-france-4-star-classification.jpg")
@@ -108,15 +115,20 @@ if [[ "$PATH_TO_CHECK" == "/" ]]; then
   fi
 
   echo "==> Legacy WordPress redirects"
-  for legacy in "/about/" "/contact/" "/check-availability/"; do
-    LOC=$(curl -sI -H "Cache-Control: no-cache" "${SITE}${legacy}" | grep -i '^location:' | tr -d '\r' | awk '{print $2}')
-    if [[ -n "$LOC" ]] && [[ "$LOC" != *"/about/"* ]] && [[ "$LOC" != *"/contact/"* ]]; then
-      echo "OK:   ${legacy} redirects to ${LOC}"
+  check_redirect() {
+    local path="$1"
+    local expect_fragment="$2"
+    LOC=$(curl -sI -H "Cache-Control: no-cache" "${SITE}${path}" | grep -i '^location:' | tr -d '\r' | awk '{print $2}')
+    if [[ -n "$LOC" ]] && [[ "$LOC" == *"$expect_fragment"* ]]; then
+      echo "OK:   ${path} redirects to ${LOC}"
     else
-      echo "FAIL: ${legacy} not redirecting (location: ${LOC:-none})"
+      echo "FAIL: ${path} expected redirect containing ${expect_fragment} (got: ${LOC:-none})"
       FAIL=1
     fi
-  done
+  }
+  check_redirect "/about/" "rates.html"
+  check_redirect "/contact/" "contact.html"
+  check_redirect "/check-availability/" "gallery.html"
 fi
 
 if [[ "$FAIL" -ne 0 ]]; then

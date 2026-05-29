@@ -48,11 +48,11 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": ["LodgingBusiness", "House", "VacationRental"],
+  "@type": ["LodgingBusiness", "House"],
   "@id": "https://villa-augflor.com/#villa",
   "name": "Villa Augflor",
   "alternateName": ["Villa Augflor Cagnes-sur-Mer", "Villa Augflor Côte d'Azur", "Villa Augflor French Riviera"],
-  "description": "Villa Augflor is a private 3-bedroom pool villa in Cagnes-sur-Mer — a practical central Riviera base. Sleeps up to 6 (most comfortable for 4–5). Direct from €420/night. 15 minutes from Nice Airport. Gîtes de France 4-star.",
+  "description": "Villa Augflor is a private 3-bedroom villa with pool and designer Mediterranean garden in Cagnes-sur-Mer, Côte d'Azur. Centrally located between Nice, Antibes, and Cannes, 15 minutes from Nice Côte d'Azur Airport. Sleeps up to 6 guests.",
   "url": "https://villa-augflor.com",
   "telephone": "+33623777333",
   "email": "villa.augflor@gmail.com",
@@ -116,9 +116,7 @@
     {"@type": "Question", "name": "Are pets allowed at Villa Augflor?", "acceptedAnswer": {"@type": "Answer", "text": "Unfortunately pets are not permitted at Villa Augflor."}},
     {"@type": "Question", "name": "How much does it cost to rent Villa Augflor per night?", "acceptedAnswer": {"@type": "Answer", "text": "Villa Augflor is priced at €420/night in June and September, and €480/night in July and August. All rates are for up to 6 guests."}},
     {"@type": "Question", "name": "How far is Villa Augflor from Nice Airport?", "acceptedAnswer": {"@type": "Answer", "text": "Villa Augflor is approximately 15 minutes from Nice Côte d'Azur Airport by car."}},
-    {"@type": "Question", "name": "How many guests can stay at Villa Augflor?", "acceptedAnswer": {"@type": "Answer", "text": "Villa Augflor sleeps up to 6 guests in 3 bedrooms — most comfortable for 4–5. Children are welcome."}},
-    {"@type": "Question", "name": "How far is the nearest beach from Villa Augflor?", "acceptedAnswer": {"@type": "Answer", "text": "Cros-de-Cagnes beach is about 8–15 minutes by car depending on traffic and parking."}},
-    {"@type": "Question", "name": "What is the direct booking process?", "acceptedAnswer": {"@type": "Answer", "text": "Send dates on WhatsApp or email for a written quote, sign the rental agreement, pay 30% deposit, balance 30 days before arrival, and €500 refundable deposit on arrival only."}}
+    {"@type": "Question", "name": "How many guests can stay at Villa Augflor?", "acceptedAnswer": {"@type": "Answer", "text": "Villa Augflor sleeps up to 6 guests in 3 bedrooms. Children are welcome."}}
   ]
 }
 </script>
@@ -278,7 +276,10 @@ nav.scrolled .nav-links a { color: var(--muted); }
 .hero-eyebrow { font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 1rem; }
 .hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(48px, 8vw, 88px); font-weight: 300; line-height: 1; color: var(--white); margin-bottom: 1.25rem; }
 .hero-title em { font-style: italic; color: rgba(255,255,255,0.75); letter-spacing: 0.06em; }
-.hero-sub { font-size: 15px; font-weight: 300; color: rgba(255,255,255,0.82); max-width: 480px; margin-bottom: .75rem; line-height: 1.65; }
+.hero-sub { font-size: 15px; font-weight: 300; color: rgba(255,255,255,0.82); max-width: 520px; margin-bottom: .75rem; line-height: 1.65; }
+.hero-title-line { font-size: clamp(28px, 4.5vw, 52px); line-height: 1.12; max-width: 18ch; }
+.hero-facts { font-size: 12px; letter-spacing: .06em; color: rgba(255,255,255,0.88); margin: 0 0 1rem; line-height: 1.7; max-width: 520px; }
+.trust-strip { grid-template-columns: repeat(4, 1fr) !important; }
 .hero-location-pills { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1.5rem; }
 .hero-pill { font-size: 11px; letter-spacing: .08em; padding: .3rem .75rem; border: 1px solid rgba(255,255,255,0.25); border-radius: 20px; color: rgba(255,255,255,0.75); }
 .hero-price-tag { display: inline-block; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.28); color: white; font-size: 13px; letter-spacing: .06em; padding: .4rem 1rem; border-radius: 2px; margin-bottom: 1.75rem; backdrop-filter: blur(4px); }
@@ -575,6 +576,7 @@ footer { background: #141210; padding: 3.5rem 2.5rem 2rem; color: rgba(255,255,2
 }
 </style>
 <link rel="stylesheet" href="styles/cro-home.css">
+<link rel="stylesheet" href="styles/enquiry-form.css">
 </head>
 <body class="rustic-texture">
 
@@ -587,7 +589,7 @@ footer { background: #141210; padding: 3.5rem 2.5rem 2rem; color: rgba(255,255,2
     <a href="gallery.html" class="nav-hide">Gallery</a>
     <a href="area.html" class="nav-hide">Area Guide</a>
     <a href="#availability" class="nav-hide">Availability</a>
-    <a href="#rates">Rates</a>
+    <a href="rates.html">Rates</a>
     <a href="https://wa.me/33623777333" class="nav-cta">Book Direct</a>
   </div>
 </nav>
@@ -604,15 +606,15 @@ footer { background: #141210; padding: 3.5rem 2.5rem 2rem; color: rgba(255,255,2
   </div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
-    <p class="hero-eyebrow">Cagnes-sur-Mer · Côte d'Azur · France</p>
-    <h1 class="hero-title">Villa<br><em>Augflor</em></h1>
-    <p class="hero-sub">Private pool villa · sleeps up to 6 · most comfortable for 4–5. A practical central Riviera base — pool, garden, and honest direct booking with Lana.</p>
+    <p class="hero-eyebrow">Villa Augflor · Cagnes-sur-Mer · Côte d'Azur</p>
+    <h1 class="hero-title hero-title-line">Private pool villa in Cagnes-sur-Mer, near Nice Airport</h1>
+    <p class="hero-sub">A quiet 3-bedroom Riviera base for families and couples, with private pool, garden, terraces, parking, and direct host support.</p>
+    <p class="hero-facts">3 bedrooms · 2 bathrooms · private pool · 15 min Nice Airport · ideal 4 / max 6 · from €420/night</p>
     <div class="hero-actions" style="margin-top:2rem;">
-      <a href="https://wa.me/33623777333?text=Hi%20Lana%2C%20please%20check%20Villa%20Augflor%20availability.%20Dates%3A%20%5Bcheck-in%5D%20to%20%5Bcheck-out%5D.%20Guests%3A%20%5Bnumber%5D." class="btn-primary btn-sm">Check dates on WhatsApp</a>
-      <a href="mailto:villa.augflor@gmail.com?subject=Villa%20Augflor%20enquiry%20-%20formal%20quote" class="btn-outline btn-sm">Request formal quote by email</a>
+      <a href="#availability" class="btn-primary btn-sm">Check dates</a>
+      <a href="gallery.html" class="btn-outline btn-sm">View photos</a>
     </div>
-    <p style="margin-top:1rem;font-size:12px;color:rgba(255,255,255,0.75);letter-spacing:.04em;">From €420/n direct · 7-night min Jun–Aug · <a href="#rates" style="color:rgba(255,255,255,0.9);text-decoration:underline">See pricing</a> · <a href="book-direct-safely.html" style="color:rgba(255,255,255,0.9);text-decoration:underline">Why book direct safely</a></p>
-    <p style="margin-top:.65rem;font-size:13px;color:rgba(255,255,255,0.9);">Summer 2026 open windows — <a href="#availability" style="color:#fff;text-decoration:underline">live calendar</a></p>
+    <p style="margin-top:1rem;font-size:12px;color:rgba(255,255,255,0.75);letter-spacing:.04em;"><a href="contact.html" style="color:rgba(255,255,255,0.9);text-decoration:underline">Ask for a quote</a> · <a href="book-direct-safely.html" style="color:rgba(255,255,255,0.9);text-decoration:underline">Book direct safely</a> · <a href="#availability" style="color:rgba(255,255,255,0.9);text-decoration:underline">Live calendar</a></p>
   </div>
 </section>
 
@@ -620,50 +622,21 @@ footer { background: #141210; padding: 3.5rem 2.5rem 2rem; color: rgba(255,255,2
 <div class="trust-strip">
   <div class="trust-item">
     <div class="trust-num">4.79★</div>
-    <div class="trust-label">38 verified reviews</div>
+    <div class="trust-label"><a href="https://www.airbnb.fr/rooms/26836386/reviews" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none">Airbnb reviews</a></div>
   </div>
   <div class="trust-item">
     <div class="trust-num"><a href="assets/documents/gites-de-france-4-star-classification.jpg" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none">4★</a></div>
-    <div class="trust-label">Gîtes de France meublé</div>
+    <div class="trust-label">Classified meublé de tourisme</div>
   </div>
   <div class="trust-item">
-    <div class="trust-num">15'</div>
-    <div class="trust-label">Nice Airport by car</div>
+    <div class="trust-num">Quote</div>
+    <div class="trust-label">Written quote before payment</div>
   </div>
   <div class="trust-item">
-    <div class="trust-num">€420</div>
-    <div class="trust-label">From / night direct</div>
+    <div class="trust-num">Pay</div>
+    <div class="trust-label">Secure card / bank transfer</div>
   </div>
 </div>
-
-<!-- HERO PHOTO STRIP -->
-<div class="hero-gallery-strip" aria-hidden="true">
-  <img src="assets/photos/optimized/swimming-pool.jpg" alt="" loading="eager" decoding="async" width="400" height="160">
-  <img src="assets/photos/optimized/garden-dining-patio.jpg" alt="" loading="eager" decoding="async" width="400" height="160">
-  <img src="assets/photos/optimized/interior-lounge-2.jpg" alt="" loading="lazy" decoding="async" width="400" height="160">
-  <img src="assets/photos/optimized/upstairs-master-bedroom-3.jpg" alt="" loading="lazy" decoding="async" width="400" height="160">
-  <img src="assets/photos/optimized/garden-archway-path.jpg" alt="" loading="lazy" decoding="async" width="400" height="160">
-  <img src="assets/photos/optimized/pool-patio-yellow-awning.jpg" alt="" loading="lazy" decoding="async" width="400" height="160">
-  <img src="assets/photos/optimized/entrance-gate-cypress.jpg" alt="" loading="lazy" decoding="async" width="400" height="160">
-  <img src="assets/photos/optimized/kitchen-corner-wide.jpg" alt="" loading="lazy" decoding="async" width="400" height="160">
-</div>
-
-<!-- WHY BOOK DIRECT -->
-<section class="book-direct-strip">
-  <div class="book-direct-inner">
-    <p class="eyebrow">Book direct with Lana</p>
-    <h2 style="max-width:20ch;">Why book direct <em>safely?</em></h2>
-    <div class="book-direct-grid">
-      <div class="book-direct-item"><strong>No platform fees</strong>Save versus Airbnb-style listings — full quote before you pay.</div>
-      <div class="book-direct-item"><strong>Written quote first</strong>Nightly rate, cleaning €120, taxe de séjour, and payment schedule itemised.</div>
-      <div class="book-direct-item"><strong>Secure payment</strong>30% deposit · balance 30 days before · card link or bank transfer.</div>
-      <div class="book-direct-item"><strong>€500 on arrival only</strong>Refundable security deposit — not charged at booking.</div>
-      <div class="book-direct-item"><strong>Signed rental agreement</strong>Dates, rules, cancellation — everything in writing.</div>
-      <div class="book-direct-item"><strong>Local host on WhatsApp</strong>Airport tips, restaurants, area guide — one person, not a call centre.</div>
-    </div>
-    <p style="margin-top:1.5rem;font-size:14px;color:var(--muted);"><a href="book-direct-safely.html" style="color:var(--accent);text-decoration:underline">Full direct-booking guide →</a> · Same villa as on Airbnb · <a href="https://www.airbnb.fr/rooms/26836386" target="_blank" rel="noopener noreferrer" style="color:var(--accent);text-decoration:underline">Compare on Airbnb</a></p>
-  </div>
-</section>
 
 <!-- BOOKING MOMENTUM -->
 <section style="padding:2rem 2.5rem 1.5rem;max-width:1100px;margin:0 auto;">
@@ -674,58 +647,61 @@ footer { background: #141210; padding: 3.5rem 2.5rem 2rem; color: rgba(255,255,2
   </div>
 </section>
 
-<!-- WHO FITS -->
+<!-- WHY GUESTS CHOOSE (features follows in about flow) -->
 <section style="padding:3rem 2.5rem 2rem;max-width:1100px;margin:0 auto;">
-  <p class="eyebrow reveal">Who it's for</p>
-  <h2 class="reveal" style="max-width:18ch;">Quiet families, couples &amp; <em>respectful groups</em></h2>
-  <p class="lead reveal" style="max-width:720px;margin-bottom:1.5rem;">Sleeps up to 6 · most comfortable for 4–5. Not for party groups or pets. Lead booker minimum age 25.</p>
-  <div class="layout-strip reveal">
-    <div class="layout-card-sm"><h4>Families</h4>Ground-floor bedrooms, enclosed garden, pool supervised by adults. Cot &amp; high chair on request.</div>
-    <div class="layout-card-sm"><h4>Couples</h4>Private pool evenings, garden dining, curated restaurant tips in the area guide.</div>
-    <div class="layout-card-sm"><h4>Adult friends</h4>Calm residential setting — quiet hours 22:00–08:00 strictly observed.</div>
-  </div>
-  <p class="reveal" style="margin-top:1.25rem;font-size:14px;color:var(--muted);">Send dates + guest count on WhatsApp for a same-day availability check. <a href="book-direct-safely.html" style="color:var(--accent);text-decoration:underline">How booking works →</a></p>
+  <p class="eyebrow reveal">Why guests choose Villa Augflor</p>
+  <h2 class="reveal" style="max-width:20ch;">Pool, garden, and a <em>calm Riviera base</em></h2>
+  <p class="lead reveal" style="max-width:720px;margin-bottom:1.5rem;">Exclusive use of the pool, terraces, and parking. A practical address between Nice, Antibes, Saint-Paul-de-Vence, and Cannes — 15 minutes from Nice Airport.</p>
 </section>
 
-<!-- FEATURES -->
-<div class="features-bg section-full">
-  <div class="features-inner">
-    <p class="eyebrow">Why Villa Augflor</p>
-    <h2 style="color:white">The location. <em>The garden.<br>The privacy.</em></h2>
-    <div class="features-grid reveal">
-      <div class="feature-card">
-        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><circle cx="12" cy="11" r="3"/></svg>
-        <div class="feature-title">Central Riviera Location</div>
-        <div class="feature-desc">A practical central Riviera base in Cagnes-sur-Mer. Nice, Antibes, Saint-Paul-de-Vence, Cannes, and Monaco are all within easy reach — 15 minutes from the airport.</div>
+<!-- BEST FOR / NOT FOR -->
+<section style="padding:0 2.5rem 3rem;max-width:1100px;margin:0 auto;">
+  <p class="eyebrow reveal">Best for / not best for</p>
+  <h2 class="reveal" style="max-width:18ch;">Who this villa <em>fits</em></h2>
+  <div class="layout-strip reveal">
+    <div class="layout-card-sm"><h4>Families</h4>Ideal 4 guests · max 6. Ground-floor Le Provance bedroom, pool supervised by adults. Cot on request · no stair gate. <a href="family-villa.html" style="color:var(--accent)">Family page →</a></div>
+    <div class="layout-card-sm"><h4>Couples</h4>Private pool evenings and garden dining. <a href="anniversary-getaway.html" style="color:var(--accent)">Couples page →</a></div>
+    <div class="layout-card-sm"><h4>Quiet adult friends</h4>Calm residential area · quiet hours 22:00–08:00 · lead booker 25+. <a href="adults-only-villa.html" style="color:var(--accent)">Friends page →</a></div>
+  </div>
+  <p class="reveal" style="margin-top:1rem;font-size:14px;color:var(--muted);"><strong>Not for:</strong> parties, pets, or guests needing a fenced pool. <a href="#rules" style="color:var(--accent);text-decoration:underline">House rules</a> · <a href="villa-no-stairs.html" style="color:var(--accent);text-decoration:underline">Layout &amp; stairs</a> · <a href="eu-summer-2026-villa.html" style="color:var(--accent);text-decoration:underline">EU summer guests</a></p>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-grid">
+    <div class="about-imgs reveal">
+      <div class="about-img-main lazy-bg" data-bg="assets/photos/optimized/garden-archway-path.jpg"></div>
+      <div class="about-img-accent lazy-bg" data-bg="assets/photos/optimized/garden-dining-patio.jpg"></div>
+    </div>
+    <div class="about-text reveal">
+      <p class="eyebrow">The Villa</p>
+      <h2>A designer garden,<br><em>a perfect address</em></h2>
+      <p>Tucked into the peaceful hills above Cagnes-sur-Mer, Villa Augflor is professionally prepared for guests — a private family home with owner storage locked away. The <strong>pool, garden, terraces, and parking are exclusively for your group</strong> — no shared facilities.</p>
+      <p>The architecture and interiors carry the same distinctive eye: thoughtfully styled bedrooms, a luminous open-plan living area, and terraces oriented for morning coffee, afternoon sunbathing, and starlit dinners alike.</p>
+
+      <div class="loft-note">
+        <strong>A note on the layout:</strong> Villa Augflor has a proper, spacious ground floor with the main living spaces, kitchen, pool, and terraces. The upper level is a loft-style space — intimate and characterful, but with lower ceilings and a steep staircase to reach it. Guests who prefer ground-floor sleeping may wish to note this when requesting specific rooms.
       </div>
-      <div class="feature-card">
-        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0112 2a8 8 0 018 8.2c0 7.3-8 11.8-8 11.8z"/></svg>
-        <div class="feature-title">The Designer Garden</div>
-        <div class="feature-desc">This is not a standard rental garden. The landscape at Villa Augflor has been carefully composed — a Mediterranean tapestry of scents, textures, and shade that makes the outdoor spaces as memorable as any nearby destination.</div>
+
+      <div style="margin-top: 1.5rem;">
+        <div class="about-detail"><div class="detail-dot"></div><span>Private pool &amp; sun terraces</span></div>
+        <div class="about-detail"><div class="detail-dot"></div><span>3 bedrooms · 2 bathrooms · ideal 4 guests · max 6</span></div>
+        <div class="about-detail"><div class="detail-dot"></div><span>Partial sea &amp; valley views from selected terraces (not a full sea-view villa)</span></div>
+        <div class="about-detail"><div class="detail-dot"></div><span>Designer Mediterranean garden with fruit trees</span></div>
+        <div class="about-detail"><div class="detail-dot"></div><span>Kitchen: dishwasher, oven, coffee machine, fridge-freezer, outdoor dining</span></div>
+        <div class="about-detail"><div class="detail-dot"></div><span>Washing machine · iron · high-speed Wi-Fi (fibre)</span></div>
+        <div class="about-detail"><div class="detail-dot"></div><span>Private parking for 2 cars · car recommended for daily outings</span></div>
+        <div class="about-detail"><div class="detail-dot"></div><span>Air conditioning in every bedroom, the living room, and the garden room</span></div>
+        <div class="about-detail"><div class="detail-dot"></div><span>Security cameras on exterior · key-locker entry</span></div>
+        <div class="about-detail"><div class="detail-dot"></div><span>Hosted by Lana · 10+ years experience</span></div>
       </div>
-      <div class="feature-card">
-        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"><path d="M3 12l9-9 9 9M5 10v10h14V10"/></svg>
-        <div class="feature-title">Private Pool</div>
-        <div class="feature-desc">Your own pool in a walled garden. Sunny from morning to evening. No shared facilities, no strangers. Outdoor dining, sun loungers, and total privacy all day.</div>
-      </div>
-      <div class="feature-card">
-        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
-        <div class="feature-title">Personal Hosting</div>
-        <div class="feature-desc">Lana brings 10+ years of hospitality experience. Airport transfers, private chef arrangements, wine tastings, local insider knowledge — a concierge, not just a host.</div>
-      </div>
-      <div class="feature-card">
-        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
-        <div class="feature-title">Family &amp; Groups</div>
-        <div class="feature-desc">Three bedrooms, enclosed private garden (children supervised near pool), outdoor dining for evening meals. Sleeps up to 6 · most comfortable for 4–5. Lead booker minimum age 25. Rated by families year after year.</div>
-      </div>
-      <div class="feature-card">
-        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-        <div class="feature-title">Book Direct &amp; Save 20%</div>
-        <div class="feature-desc">No platform fees. Save up to 20% versus Airbnb (example estimate — platform fees vary). €500 security deposit on arrival, refunded post-stay. <a href="book-direct-safely.html" style="color:rgba(255,255,255,0.85);text-decoration:underline">See how direct booking works</a>.</div>
+      <div class="no-pets-note">
+        <span>🐾</span>
+        <span>We love animals — but unfortunately <strong>pets are not permitted</strong> at Villa Augflor. We appreciate your understanding.</span>
       </div>
     </div>
   </div>
-</div>
+</section>
 
 <!-- GALLERY — all photos on-site, no external link -->
 <section id="gallery">
@@ -736,7 +712,7 @@ footer { background: #141210; padding: 3.5rem 2.5rem 2rem; color: rgba(255,255,2
     <div class="g-img g1 tall" onclick="openLightbox(0)"><img src="assets/photos/optimized/swimming-pool.jpg" alt="Private pool and garden terrace" loading="eager" decoding="async" fetchpriority="high"></div>
     <div class="g-img g2" onclick="openLightbox(1)"><img src="assets/photos/optimized/interior-lounge-2.jpg" alt="Living room with L-shaped sofa" loading="lazy" decoding="async"></div>
     <div class="g-img g3" onclick="openLightbox(2)"><img src="assets/photos/optimized/ground-floor-bedroom-3.jpg" alt="Le Provance ground floor bedroom" loading="lazy" decoding="async"></div>
-    <div class="g-img g10" onclick="openLightbox(9)"><img src="assets/photos/optimized/ground-floor-bedroom-3.jpg" alt="Ground floor bedroom Le Provance" loading="lazy" decoding="async"></div>
+    <div class="g-img g10" onclick="openLightbox(9)"><img src="assets/photos/optimized/entrance-gate-cypress.jpg" alt="Entrance gate with stone steps" loading="lazy" decoding="async"></div>
     <div class="g-img g4" onclick="openLightbox(3)"><img src="assets/photos/optimized/pool-patio-yellow-awning.jpg" alt="Pool patio with sun awning" loading="lazy" decoding="async"></div>
     <div class="g-img g5 tall" onclick="openLightbox(4)"><img src="assets/photos/optimized/garden-dining-patio.jpg" alt="Outdoor dining pergola with grape vines" loading="lazy" decoding="async"></div>
     <div class="g-img g11" onclick="openLightbox(10)"><img src="assets/photos/optimized/upstairs-master-bedroom-3.jpg" alt="Barcelona master bedroom upstairs" loading="lazy" decoding="async"></div>
@@ -745,12 +721,60 @@ footer { background: #141210; padding: 3.5rem 2.5rem 2rem; color: rgba(255,255,2
     <div class="g-img g13" onclick="openLightbox(12)"><img src="assets/photos/optimized/upstairs-bathroom.jpg" alt="Upstairs spa bathroom" loading="lazy" decoding="async"></div>
     <div class="g-img g7" onclick="openLightbox(6)"><img src="assets/photos/optimized/garden-room-lounge.jpg" alt="Garden room papasan chair overlooking pool" loading="lazy" decoding="async"></div>
     <div class="g-img g8 tall" onclick="openLightbox(7)"><img src="assets/photos/optimized/ground-floor-bathroom.jpg" alt="Ground floor bathroom double vanity" loading="lazy" decoding="async"></div>
-    <div class="g-img g9" onclick="openLightbox(8)"><img src="assets/photos/optimized/entrance-gate-cypress.jpg" alt="Stone entrance gate and cypress trees" loading="lazy" decoding="async"></div>
+    <div class="g-img g9" onclick="openLightbox(8)"><img src="assets/photos/optimized/outdoor-parking.jpg" alt="Vine-covered entrance path" loading="lazy" decoding="async"></div>
     <div class="g-img g14" onclick="openLightbox(13)"><img src="assets/photos/optimized/photo-house-swimming-pool-night.jpg" alt="Pool and villa at night" loading="lazy" decoding="async"></div>
   </div>
   <p class="reveal" style="text-align:center;margin-top:1.5rem">
     <a href="gallery.html" style="display:inline-block;padding:.75rem 1.5rem;background:var(--accent);color:#fff;text-decoration:none;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;border-radius:2px">View full gallery by room</a>
   </p>
+</section>
+
+<!-- LAYOUT AT A GLANCE -->
+<section id="layout" style="padding:4rem 2.5rem;background:#f0ebe3;max-width:none;">
+  <div style="max-width:1100px;margin:0 auto;">
+    <p class="eyebrow reveal">Layout at a glance</p>
+    <h2 class="reveal">Ground floor &amp; <em>loft</em></h2>
+    <p class="lead reveal" style="max-width:68ch;margin-bottom:1.5rem;">One ground-floor bedroom (Le Provance). Two loft bedrooms (Barcelona, Asian) via a <strong>steep staircase</strong> with lower ceilings. Private pool has <strong>no barrier or alarm</strong> — children must be supervised.</p>
+    <div class="layout-diagram reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;max-width:800px;">
+      <div style="background:#fff;border:1px solid var(--sand);padding:1.25rem;font-size:13px;line-height:1.6;">
+        <strong style="font-family:'Cormorant Garamond',serif;font-size:1.25rem;display:block;margin-bottom:.5rem">Ground floor</strong>
+        Kitchen · living room · garden room · Le Provance bedroom · ground-floor bathroom · pool &amp; garden access
+      </div>
+      <div style="background:#fff;border:1px solid var(--sand);padding:1.25rem;font-size:13px;line-height:1.6;">
+        <strong style="font-family:'Cormorant Garamond',serif;font-size:1.25rem;display:block;margin-bottom:.5rem">Loft (steep stairs)</strong>
+        Barcelona bedroom · Asian bedroom · upstairs bathroom
+      </div>
+    </div>
+    <p style="margin-top:1rem;font-size:14px;"><a href="gallery.html" style="color:var(--accent);text-decoration:underline">Photos by room →</a> · <a href="villa-no-stairs.html" style="color:var(--accent);text-decoration:underline">Accessibility notes →</a></p>
+  </div>
+</section>
+
+<!-- RATES PREVIEW -->
+<section class="pricing-section" id="rates-preview">
+  <div class="pricing-inner">
+    <p class="eyebrow reveal">Rates preview</p>
+    <h2 class="reveal">From <em>€420/night</em> direct</h2>
+    <div class="pricing-card-main reveal">
+      <div class="pricing-line"><strong>Shoulder</strong><br>June · September · €420/night</div>
+      <div class="pricing-line peak"><strong>Peak summer</strong><br>July · August · €480/night</div>
+    </div>
+    <p class="reveal" style="font-size:14px;color:var(--muted);margin-top:1rem;">+ €120 cleaning · taxe de séjour itemised · €500 refundable deposit on arrival</p>
+    <p class="reveal" style="margin-top:1.25rem"><a href="rates.html" class="btn-primary" style="display:inline-block">Full rates &amp; calculator</a></p>
+  </div>
+</section>
+
+<!-- BOOK DIRECT SAFETY (compact) -->
+<section class="book-direct-strip">
+  <div class="book-direct-inner">
+    <p class="eyebrow">Direct booking safety</p>
+    <h2 style="max-width:22ch;">Written quote before you pay</h2>
+    <div class="book-direct-grid">
+      <div class="book-direct-item"><strong>1 · Enquire</strong>WhatsApp or <a href="contact.html" style="color:var(--accent)">email form</a> with dates and guests.</div>
+      <div class="book-direct-item"><strong>2 · Quote</strong>Itemised rent, cleaning, taxe, payment schedule.</div>
+      <div class="book-direct-item"><strong>3 · Agreement &amp; pay</strong>30% deposit · balance 30 days before · card or bank transfer.</div>
+    </div>
+    <p style="margin-top:1rem;font-size:14px;"><a href="book-direct-safely.html" style="color:var(--accent);text-decoration:underline">Full book-direct guide →</a></p>
+  </div>
 </section>
 
 <!-- LIGHTBOX -->
@@ -768,12 +792,12 @@ footer { background: #141210; padding: 3.5rem 2.5rem 2rem; color: rgba(255,255,2
     <div class="reveal">
       <p class="eyebrow">Location &amp; distances</p>
       <h2>The Riviera's<br><em>most practical base</em></h2>
-      <p class="lead" style="margin-bottom:0">Cagnes-sur-Mer sits at the geographic heart of the Côte d'Azur — quietly residential, yet within striking distance of every iconic destination. A car is recommended for daily outings; some shops and bakeries are walkable with a short uphill walk. <a href="area.html" style="color:var(--accent);text-decoration:underline">Browse the full area guide (70+ places, maps, filters) →</a></p>
+      <p class="lead" style="margin-bottom:0">Cagnes-sur-Mer sits at the geographic heart of the Côte d'Azur — quietly residential, yet within striking distance of every iconic destination. A car is recommended for daily outings; some shops and bakeries are walkable with a short uphill walk. <a href="area.html" style="color:var(--accent);text-decoration:underline">Browse the full area guide (78 places, maps, filters) →</a></p>
       <div class="location-list">
         <div class="loc-item"><span class="loc-name">Nice Côte d'Azur Airport</span><span class="loc-time">15 min</span></div>
         <div class="loc-item"><span class="loc-name">Haut-de-Cagnes medieval village</span><span class="loc-time">5 min</span></div>
         <div class="loc-item"><span class="loc-name">Polygone Riviera (shopping)</span><span class="loc-time">4 min</span></div>
-        <div class="loc-item"><span class="loc-name">Cros-de-Cagnes beach</span><span class="loc-time">8–15 min</span></div>
+        <div class="loc-item"><span class="loc-name">Cros-de-Cagnes beach</span><span class="loc-time">15 min</span></div>
         <div class="loc-item"><span class="loc-name">Saint-Paul-de-Vence</span><span class="loc-time">15 min</span></div>
         <div class="loc-item"><span class="loc-name">Nice city centre</span><span class="loc-time">25 min</span></div>
         <div class="loc-item"><span class="loc-name">Antibes old town &amp; port</span><span class="loc-time">25 min</span></div>
@@ -788,37 +812,11 @@ footer { background: #141210; padding: 3.5rem 2.5rem 2rem; color: rgba(255,255,2
   </div>
 </section>
 
-<!-- AREA GUIDE CTA -->
+<!-- AREA GUIDE PREVIEW -->
 <section class="area-cta-compact" id="area-guide">
-  <p class="eyebrow" style="color:rgba(255,255,255,0.7);">70+ curated places</p>
-  <h2>Your Riviera playbook — <em>on its own page</em></h2>
-  <p>Beaches, hill villages, museums, family days, and day trips — each with drive times, ratings, price levels, and one-tap routes from the villa.</p>
-  <a href="area.html" class="btn-primary" style="display:inline-block;background:#fff;color:var(--accent-dark);">Open the full area guide →</a>
-  <p style="margin-top:1rem;font-size:12px;opacity:0.75;"><a href="https://www.villa-augflor.com/area.html" style="color:#fff;text-decoration:underline">villa-augflor.com/area.html</a></p>
-</section>
-
-<!-- PRICING -->
-<section class="pricing-section" id="rates">
-  <div class="pricing-inner">
-    <p class="eyebrow">Direct rates 2026</p>
-    <h2>Transparent pricing — <em>no surprises</em></h2>
-    <p class="lead" style="max-width:640px;margin-bottom:0;">All rates for up to 6 guests. Cleaning €120 per stay · taxe de séjour billed separately · €500 refundable deposit on arrival only.</p>
-    <div class="pricing-card-main reveal">
-      <div class="pricing-line">
-        <div style="font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--deep);">€420<span style="font-size:14px;font-family:Jost,sans-serif;color:var(--muted);"> / night</span></div>
-        <p style="font-size:14px;color:var(--muted);margin:.5rem 0 0;">Shoulder · June &amp; September</p>
-      </div>
-      <div class="pricing-line peak">
-        <div style="font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--deep);">€480<span style="font-size:14px;font-family:Jost,sans-serif;color:var(--muted);"> / night</span></div>
-        <p style="font-size:14px;color:var(--muted);margin:.5rem 0 0;">Peak · July &amp; August</p>
-      </div>
-    </div>
-    <div class="pricing-total-grid reveal">
-      <div class="pricing-total-box"><strong>7 nights · shoulder example</strong>€420 × 7 + €120 cleaning + taxe ≈ <strong>€3,068</strong> total</div>
-      <div class="pricing-total-box"><strong>7 nights · peak example</strong>€480 × 7 + €120 cleaning + taxe ≈ <strong>€3,508</strong> total</div>
-    </div>
-    <p style="margin-top:1.5rem;font-size:14px;color:var(--muted);">7-night minimum Jun–Aug · 3 nights possible in September · <a href="rates.html" style="color:var(--accent);text-decoration:underline">Full rates &amp; calendar →</a> · <a href="book-direct-safely.html" style="color:var(--accent);text-decoration:underline">Payment terms →</a></p>
-  </div>
+  <h2>Explore the Riviera from the villa</h2>
+  <p>78 places with drive times, price ratings (Free · € · €€ · €€€), filters for families, couples, beaches, and rainy days — plus a 7-day itinerary.</p>
+  <a href="area.html" class="btn-primary" style="display:inline-block;margin-top:1rem">Open area guide</a>
 </section>
 
 <!-- LIVE AVAILABILITY CALENDAR -->
@@ -872,60 +870,25 @@ footer { background: #141210; padding: 3.5rem 2.5rem 2rem; color: rgba(255,255,2
   </div>
 </div>
 
-<!-- BOOKING CONFIDENCE -->
-<section style="padding-top:2.5rem;padding-bottom:4rem;">
-  <p class="eyebrow reveal">Book with confidence</p>
-  <h2 class="reveal" style="max-width:18ch;">Direct booking — <em>safe &amp; clear</em></h2>
-  <div class="guide-panel active reveal" style="display:grid;margin-top:1.5rem;">
-    <div class="guide-card">
-      <div class="guide-card-title">Step 1 · Enquiry</div>
-      <div class="guide-card-dist">WhatsApp or email</div>
-      <p>Send dates, guest count, and trip type. Lana usually replies within a few hours.</p>
-    </div>
-    <div class="guide-card">
-      <div class="guide-card-title">Step 2 · Written quote</div>
-      <div class="guide-card-dist">Full total before payment</div>
-      <p>Nightly rate, cleaning (€120), taxe de séjour, and payment schedule — all itemised.</p>
-    </div>
-    <div class="guide-card">
-      <div class="guide-card-title">Step 3 · Agreement</div>
-      <div class="guide-card-dist">Signed summary by email</div>
-      <p>Rental agreement covering dates, rules, cancellation, and contact details.</p>
-    </div>
-    <div class="guide-card">
-      <div class="guide-card-title">Step 4 · Secure payment</div>
-      <div class="guide-card-dist">30% deposit · balance 30 days before</div>
-      <p>Visa, MasterCard (secure link), or bank transfer. €500 security deposit on arrival only.</p>
-    </div>
-    <div class="guide-card">
-      <div class="guide-card-title">Step 5 · Confirmation</div>
-      <div class="guide-card-dist">Pre-arrival guide</div>
-      <p>Booking confirmation, check-in details, and local tips before you travel.</p>
-    </div>
-    <div class="guide-card">
-      <div class="guide-card-title">Full guide</div>
-      <div class="guide-card-dist">All terms in one place</div>
-      <p><a href="book-direct-safely.html" style="color:var(--accent);text-decoration:underline">Book Direct Safely page →</a> · <a href="rates.html" style="color:var(--accent);text-decoration:underline">Rates &amp; calendar →</a></p>
-    </div>
-  </div>
-  <p class="reveal" style="margin-top:1.5rem;font-size:14px;color:var(--muted);max-width:850px;">Payments: Visa, MasterCard, bank transfer (IBAN after agreement). Languages: English, French, German, Dutch. <strong>Travel insurance recommended.</strong> <a href="mailto:villa.augflor@gmail.com" style="color:var(--accent);text-decoration:underline">villa.augflor@gmail.com</a></p>
-</section>
-
-<!-- GOOD TO KNOW -->
+<!-- HOUSE RULES -->
 <div class="rules-bg section-full" id="rules">
   <div class="rules-inner">
-    <p class="eyebrow">Good to know</p>
-    <h2 style="color:white">Before you <em>book</em></h2>
-    <p style="color:rgba(255,255,255,0.5);font-size:16px;max-width:600px;margin-bottom:0">Six essentials — full house rules and cancellation policy are in the terms below.</p>
-    <div class="good-to-know-grid reveal">
-      <div class="good-to-know-item"><strong>Quiet residential area</strong>No parties or loud outdoor music. Quiet hours 22:00–08:00.</div>
-      <div class="good-to-know-item"><strong>Pool safety</strong>Children supervised at all times. No glass poolside — plastic cups provided.</div>
-      <div class="good-to-know-item"><strong>No smoking indoors</strong>Exterior ash trays only. No butts on the grounds (fire risk in summer).</div>
-      <div class="good-to-know-item"><strong>Sleeps up to 6</strong>Most comfortable for 4–5. Lead booker minimum age 25.</div>
-      <div class="good-to-know-item"><strong>Check-in / out</strong>From 15:00 · by 10:00. Early/late by prior arrangement.</div>
-      <div class="good-to-know-item"><strong>No pets</strong>Strictly no pets on the property.</div>
+    <p class="eyebrow">House rules</p>
+    <h2 style="color:white">A home we <em>share with care</em></h2>
+    <p style="color:rgba(255,255,255,0.5);font-size:16px;max-width:600px;margin-bottom:0">We ask all guests to read and respect these rules, which help ensure that every stay — yours and those that follow — is exceptional.</p>
+    <div class="rules-grid reveal">
+      <div class="rule-card"><div class="rule-num">01</div>No parties or events. This is a quiet residential neighbourhood and we ask all guests to be respectful of our community.</div>
+      <div class="rule-card"><div class="rule-num">02</div>No noise or loud music outside. Quiet hours 22:00–08:00 strictly observed.</div>
+      <div class="rule-card"><div class="rule-num">03</div>No smoking inside the property. Ash trays are provided on exterior terraces. No cigarette butts to be discarded anywhere on the grounds — dry summer conditions create a genuine fire risk.</div>
+      <div class="rule-card"><div class="rule-num">04</div>Please use air conditioning consciously and mindfully — only when needed, and always close all windows and doors when it is on. Switch off all appliances before leaving the property for the day.</div>
+      <div class="rule-card"><div class="rule-num">05</div>Please flush only human waste and toilet paper — nothing else (no wipes or sanitary products). These block the system; repair costs may be deducted from the security deposit if a plumber call-out is required.</div>
+      <div class="rule-card"><div class="rule-num">06</div>No glass in or around the pool area at any time — plastic cups are provided for poolside use.</div>
+      <div class="rule-card"><div class="rule-num">07</div>Children and infants must be supervised at all times near the pool (approx. 1.8 m at deepest end; no pool alarm or barrier).</div>
+      <div class="rule-card"><div class="rule-num">08</div>Do not leave hats, clothing, or small items in the pool — they can clog the filtration system. Repair costs may apply if damage occurs.</div>
+      <div class="rule-card"><div class="rule-num">09</div>Netflix is included for your use during your stay. For any other streaming services, please use your own accounts and log out before departure.</div>
+      <div class="rule-card"><div class="rule-num">10</div>The locked storage room marked "Private" is a private space for the owners and is not accessible to guests. Please respect this boundary.</div>
     </div>
-    <p style="color:rgba(255,255,255,0.4);font-size:14px;margin-top:2rem;"><a href="#terms" style="color:rgba(255,255,255,0.7);text-decoration:underline">Full terms, cancellation &amp; pool safety →</a> · After-hours: WhatsApp +33 623 777 333</p>
+    <p style="color:rgba(255,255,255,0.3);font-size:13px;margin-top:2rem;max-width:700px;">Check-in from 15:00 · Check-out by 10:00 · Early/late by prior arrangement · Lost keys: €80 replacement charge · After-hours contact: WhatsApp +33 623 777 333</p>
   </div>
 </div>
 
@@ -1039,7 +1002,7 @@ footer { background: #141210; padding: 3.5rem 2.5rem 2rem; color: rgba(255,255,2
     </div>
     <div class="faq-item">
       <div class="faq-q" onclick="toggleFaq(this)"><span>How much does booking direct save?</span><span class="faq-toggle">+</span></div>
-      <div class="faq-a">Booking directly through this website, by email, or via WhatsApp saves up to 20% compared to Airbnb and other platforms (which charge a 14–17% guest service fee). You also get direct communication with Lana, flexible payment terms, and access to concierge services not available through third parties.</div>
+      <div class="faq-a">Direct booking avoids platform guest service fees and gives you a written quote before payment. You deal with Lana directly — flexible payment by secure card link or bank transfer, and optional help arranging transfers, chefs, and local experiences.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q" onclick="toggleFaq(this)"><span>Is there parking? How do we get from Nice Airport?</span><span class="faq-toggle">+</span></div>
@@ -1057,12 +1020,24 @@ footer { background: #141210; padding: 3.5rem 2.5rem 2rem; color: rgba(255,255,2
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ENQUIRY -->
+<section id="enquiry" style="padding:5rem 2.5rem;background:#f0ebe3;max-width:none;">
+  <div style="max-width:720px;margin:0 auto;">
+    <p class="eyebrow reveal">Enquire</p>
+    <h2 class="reveal" style="max-width:16ch;">Check dates &amp; <em>get a quote</em></h2>
+    <p class="lead reveal" style="margin-bottom:1.5rem;">Send your trip details — Lana replies on WhatsApp or email with availability and a written quote before any payment.</p>
+    <div data-enquiry-form data-compact="true" class="reveal"></div>
+    <p style="margin-top:1.25rem;font-size:14px;color:var(--muted);text-align:center;">Prefer WhatsApp? <a href="https://wa.me/33623777333" style="color:var(--accent);text-decoration:underline">+33 623 777 333</a> · Full form on <a href="contact.html" style="color:var(--accent);text-decoration:underline">contact page</a></p>
+  </div>
+</section>
+
 <div class="mobile-sticky-cta" aria-label="Quick contact">
+  <a class="msc-dates" href="#availability">Check dates</a>
   <a class="msc-wa" href="https://wa.me/33623777333?text=Hi%20Lana%2C%20please%20check%20Villa%20Augflor%20availability.%20Dates%3A%20%5Bcheck-in%5D%20to%20%5Bcheck-out%5D.%20Guests%3A%20%5Bnumber%5D.">WhatsApp</a>
-  <a class="msc-email" href="mailto:villa.augflor@gmail.com?subject=Villa%20Augflor%20enquiry">Email quote</a>
+  <a class="msc-email" href="contact.html">Email</a>
 </div>
 
+<!-- FOOTER -->
 <footer itemscope itemtype="https://schema.org/LodgingBusiness">
   <div style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);" aria-hidden="true">
     <p>Location villa avec piscine privée Côte d'Azur — Villa Augflor Cagnes-sur-Mer. Villa 3 chambres piscine privée jardin méditerranéen designer. Entre Nice et Cannes, 15 minutes aéroport Nice. Réservation directe été 2026. Animaux non acceptés.</p>
@@ -1070,7 +1045,7 @@ footer { background: #141210; padding: 3.5rem 2.5rem 2rem; color: rgba(255,255,2
   <div class="footer-inner">
     <div>
       <div class="footer-logo" itemprop="name">Villa Augflor</div>
-      <p class="footer-tagline" itemprop="description">A private villa with pool and designer Mediterranean garden at the heart of the Côte d'Azur. Between Nice, Antibes and Cannes. 15 minutes from Nice Airport. Book direct and save 20%.</p>
+      <p class="footer-tagline" itemprop="description">Private 3-bedroom pool villa in Cagnes-sur-Mer — a practical Riviera base between Nice, Antibes, Saint-Paul-de-Vence and Cannes. 15 minutes from Nice Airport. Direct booking with written quote before payment.</p>
       <p style="font-size:13px;margin-top:1.25rem;">
         <a href="mailto:villa.augflor@gmail.com" style="color:rgba(255,255,255,0.4);text-decoration:none;">villa.augflor@gmail.com</a><br>
         <a href="tel:+33623777333" style="color:rgba(255,255,255,0.4);text-decoration:none;">+33 623 777 333</a>
@@ -1086,10 +1061,11 @@ footer { background: #141210; padding: 3.5rem 2.5rem 2rem; color: rgba(255,255,2
         <li><a href="gallery.html">Photo gallery by room</a></li>
         <li><a href="#location">Location &amp; distances</a></li>
         <li><a href="area.html">Full area guide (78 places)</a></li>
-        <li><a href="#guidebook">Quick area tips</a></li>
+        <li><a href="area.html">Area guide</a></li>
         <li><a href="#availability">Live calendar</a></li>
         <li><a href="rates.html">Rates &amp; availability</a></li>
         <li><a href="book-direct-safely.html">Book direct safely</a></li>
+        <li><a href="contact.html">Contact / enquiry</a></li>
         <li><a href="#rules">House rules</a></li>
         <li><a href="#terms">Terms &amp; conditions</a></li>
         <li><a href="privacy-policy.html">Privacy policy</a></li>
@@ -1183,7 +1159,8 @@ const galleryImages = [
   'assets/photos/optimized/garden-archway-path.jpg',
   'assets/photos/optimized/garden-room-lounge.jpg',
   'assets/photos/optimized/ground-floor-bathroom.jpg',
-    'assets/photos/optimized/entrance-gate-cypress.jpg',
+  'assets/photos/optimized/outdoor-parking.jpg',
+  'assets/photos/optimized/entrance-gate-cypress.jpg',
   'assets/photos/optimized/upstairs-master-bedroom-3.jpg',
   'assets/photos/optimized/kitchen-corner-wide.jpg',
   'assets/photos/optimized/upstairs-bathroom.jpg',
@@ -1253,6 +1230,7 @@ if (accentImg) {
 }
 </script>
 <script defer src="scripts/calendar-widget.js"></script>
+<script defer src="scripts/enquiry-form.js"></script>
 <script defer src="scripts/booking-chat.js"></script>
 </body>
 </html>

@@ -90,7 +90,7 @@ const IMGS = [
 ];
 
 const CALENDAR = [
-  {month:'June',rate:480,rateGBP:412,rateUSD:525,weeks:[
+  {month:'June',rate:420,rateGBP:361,rateUSD:459,weeks:[
     {label:'Jun 1–7',status:'av'},{label:'Jun 8–14',status:'bk'},
     {label:'Jun 15–21',status:'av'},{label:'Jun 22–28',status:'av'},
   ]},
@@ -102,7 +102,7 @@ const CALENDAR = [
     {label:'Aug 3–9',status:'bk'},{label:'Aug 10–16',status:'bk'},
     {label:'Aug 17–23',status:'av'},{label:'Aug 24–30',status:'bk'},
   ]},
-  {month:'September',rate:480,rateGBP:412,rateUSD:525,weeks:[
+  {month:'September',rate:420,rateGBP:361,rateUSD:459,weeks:[
     {label:'Sep 7–13',status:'av'},{label:'Sep 14–20',status:'av'},
     {label:'Sep 21–27',status:'bk'},{label:'Sep 28–Oct 4',status:'av'},
   ]},

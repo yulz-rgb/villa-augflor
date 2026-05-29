@@ -1,68 +1,92 @@
 # Handover: Villa Augflor SEO & Deployment Complete
 
-**Status:** ✅ PRODUCTION LIVE  
+**Status:** ✅ PRODUCTION LIVE — CRO Phase 2 deployed (`dpl_48gGY6pjnFsEoaCHEwh8dco6VjYV`, verify exit 0)  
 **Date:** May 29, 2026  
 **Custom Domain:** https://villa-augflor.com  
-**Latest commit:** run `git log -1 --oneline` for current. **CRO Phases A/B/C deployed May 29, 2026** (`bash scripts/verify-production.sh` exit 0).
+**Latest commit:** `b513848` — CRO Phase 2 (homepage trim, enquiry, landing pages, gallery, area)
 
 ---
 
-## Session Update — May 29, 2026 (CRO Phases A, B, C)
+## Session Update — May 29, 2026 (CRO Phase 2 complete — homepage trim, gallery, area, landing pages)
 
-**Goal:** Implement senior CRO audit Phases A (homepage conversion), B (area guide enrichment), C (SEO/schema/verify) — then deploy and verify production.
+**Goal:** Complete conversion rebuild: concise homepage, enquiry funnel, gallery reorder, area filters/itineraries, real SEO landing pages, deploy + verify.
 
-### Phase A — Homepage conversion
-| Change | Detail |
-|--------|--------|
-| Hero | Shorter copy · CTAs: “Check dates on WhatsApp” + “Request formal quote by email” |
-| Trust strip | 4 badges: 4.79★ · Gîtes 4★ · 15′ airport · From €420 |
-| Photo strip | 8-image hero gallery immediately after trust strip |
-| Book direct | 6-point “Why book direct safely?” block → `book-direct-safely.html` |
-| Inline guidebook | **Removed** `#guidebook` tabs — single banner → `area.html` |
-| Pricing | New `#rates` section: €420 shoulder / €480 peak · 7-night examples €3,068 / €3,508 |
-| Who fits | Compact 3-card layout (families / couples / friends) — removed 6 landing-page cards + EU duplicate block |
-| Good to know | 6 essentials + link to `#terms` (replaced 10 rule cards) |
-| Gallery | Removed weak `outdoor-parking.jpg` · entrance gate featured |
-| Mobile | Sticky WhatsApp + email CTA bar |
-| CSS | `styles/cro-home.css` linked from homepage |
+### Shipped
 
-### Phase B — Area guide
-| Change | Detail |
-|--------|--------|
-| Enrichment | `scripts/area-place-enrichment.js` — price levels, transport, parking, bestFor, booking tips |
-| Cards | Price tags, rainy-day/local/train chips, expanded meta rows |
-| Filters | Second row: Free / € / €€ / family / rainy / local / train / luxury |
-| Sort | Added “By price (low first)” |
-| Itineraries | 6 sample day plans (`#itineraries`) |
-| Essentials | Supermarkets, bakery, navette, station cards |
-| Noscript | Top 20 places static list |
-| Beach FAQ | Standardised **8–15 min by car** (traffic/parking) |
-| Copy | **70+ curated places** (78 in data) |
+| Area | Change |
+|------|--------|
+| **Homepage** | ~1,236 lines (was ~1,550): removed inline guidebook (~200 lines), WHO/FAST/EU/duplicate booking blocks, features grid; added layout schematic, rates preview, compact book-direct, enquiry form, hero/trust per spec |
+| **Gallery** | Reordered: pool → dining → exterior → rooms → parking/stairs; floor schematic; safety captions |
+| **Area guide** | Expanded tag filters (couples, teen, beach, culture, food, nocar, etc.); 7-day itinerary + curated plan section |
+| **Landing pages** | Real HTML: `villa-no-stairs.html`, `adults-only-villa.html`, `eu-summer-2026-villa.html`; updated `family-villa.html`, `anniversary-getaway.html` |
+| **Contact** | `contact.html` + `scripts/enquiry-form.js` (mailto + WhatsApp) |
+| **Rates** | Canonical table, calculator, no struck-through €520 on card |
+| **Verify** | Hero headline, contact.html, family-villa, gallery pool section, `/contact/` → contact.html |
 
-### Phase C — SEO / verify
-| Change | Detail |
-|--------|--------|
-| Schema | Homepage: `VacationRental` type · FAQ beach + booking process · occupancy “4–5 comfortable” |
-| Schema | Area: `Article` + `dateModified` on ItemList |
-| Verify | `verify-production.sh` — expects `#rates`, WhatsApp CTA, no `#guidebook`, area tag filters + itineraries |
+### Deploy
 
-### Files touched
-- `index.html` — Phase A homepage restructure
-- `styles/cro-home.css` — **new**
-- `scripts/area-place-enrichment.js` — **new**
-- `scripts/area-guide.js` — enrichment, tags, price sort, richer cards
-- `styles/area-guide.css` — tag chips, itineraries, noscript
-- `area.html` — filters, itineraries, essentials, FAQ, enrichment script
-- `scripts/verify-production.sh` — CRO production checks
+```bash
+cd /Users/lana/Projects/villa-augflor-live
+bash scripts/deploy-production.sh
+```
 
-### Canonical facts (unchanged)
-- Shoulder Jun/Sep **€420/n** · Peak Jul/Aug **€480/n** · Cleaning **€120** · **€500** refundable deposit on arrival · 7-night min Jun–Aug
-- Sleeps up to **6** · most comfortable **4–5**
-- Beach **8–15 min by car** · Area guide marketing **70+ places**
-- Only separate content page: **`area.html`**
+---
 
-### HANDOVER policy (mandatory)
-**Every agent session that changes the live site must update this HANDOVER.md before marking done.**
+## Session Update — May 29, 2026 (CRO audit + conversion rebuild — Phase 1)
+
+**Goal:** Premium, concise, conversion-focused site per full brief — hero/trust/enquiry funnel, honest copy, real SEO landing pages, rates clarity.
+
+### HANDOVER.md critique (what was wrong)
+
+| Issue | Risk | Action taken |
+|-------|------|--------------|
+| Claimed “13 SEO pages” live but `vercel.json` **301’d** `family-villa.html`, `anniversary-getaway.html`, etc. to homepage anchors | Google sees thin redirects; wasted content | Removed redirects for 5 audience URLs; sitemap updated |
+| Contradictory pricing history (€450, €439, €480) in old session notes | Agent pricing drift | Canonical table on `rates.html`; struck-through €520 removed from peak card |
+| “–20%” trust strip + “save 20%” footer/FAQ | Bargain tone vs premium brief | Replaced with quote-before-payment trust row |
+| “Concierge, not just a host” | Overpromise | Direct local support copy |
+| `family-villa.html` claimed “no steep stairs” | Legal/trust risk | Fixed to ground-floor + loft honesty |
+| No `contact.html`; `/contact/` → book-direct only | Email-only guests under-served | New `contact.html` + mailto enquiry form |
+| Homepage still ~1,500 lines with inline guidebook + duplicate booking blocks | 30-second comprehension fail | Phase 1 hero/trust/enquiry; **Phase 2** = trim duplicate sections (see follow-ups) |
+| HANDOVER “done” without noting homepage length / redirect conflict | False confidence | This block |
+
+### Shipped locally (files)
+
+| File | Change |
+|------|--------|
+| `index.html` | Spec hero H1/sub/facts; trust row; enquiry `#enquiry` + `enquiry-form.js`; mobile sticky (dates / WA / email); copy fixes |
+| `contact.html` | **New** — full enquiry form |
+| `scripts/enquiry-form.js`, `styles/enquiry-form.css` | Mailto + WhatsApp prefill |
+| `rates.html` | Canonical pricing table; 7-night examples; `rates-calculator.js`; cancellation wording |
+| `book-direct-safely.html` | Host-cancel protection; sample agreement section; single savings mention |
+| `vercel.json` | Audience pages serve real HTML; `/contact/` → `contact.html` |
+| `family-villa.html` | Honest stairs/bedroom copy |
+| `sitemap.xml` | `contact.html` + audience pages |
+| `components/footer-subpage.html` | Contact + legal links |
+| `styles/cro-home.css` | 3-column mobile sticky |
+
+### Target sitemap (post Phase 2)
+
+| Page | URL |
+|------|-----|
+| Homepage | `/` |
+| Gallery | `/gallery.html` |
+| Rates & availability | `/rates.html` |
+| Book direct safely | `/book-direct-safely.html` |
+| Area guide | `/area.html` |
+| Contact / enquiry | `/contact.html` |
+| Family | `/family-villa.html` |
+| Couples | `/anniversary-getaway.html` |
+| Quiet adults | `/adults-only-villa.html` |
+| Layout / stairs | `/villa-no-stairs.html` |
+| EU summer | `/eu-summer-2026-villa.html` |
+| Terms (canonical) | `/index.html#terms` or future `terms.html` |
+| Legal / privacy | `/legal-notice.html`, `/privacy-policy.html` |
+
+### Follow-ups
+
+1. **Platform listings** — sync ideal 4 / pricing on Airbnb, Booking, Agoda (manual).
+2. **Area photos** — replace remaining gradient tiles (~13) via `scripts/download-area-photos.py`.
+3. **Optional** — move `#terms` to standalone `terms.html` for cleaner homepage.
 
 ---
 
