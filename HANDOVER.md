@@ -3,7 +3,66 @@
 **Status:** ✅ PRODUCTION LIVE  
 **Date:** May 29, 2026  
 **Custom Domain:** https://villa-augflor.com  
-**Latest commit:** run `git log -1 --oneline` for current. **Certificate + calendar + gallery fix deployed May 29, 2026** (`bash scripts/verify-production.sh` exit 0).
+**Latest commit:** run `git log -1 --oneline` for current. **CRO Phases A/B/C deployed May 29, 2026** (`bash scripts/verify-production.sh` exit 0).
+
+---
+
+## Session Update — May 29, 2026 (CRO Phases A, B, C)
+
+**Goal:** Implement senior CRO audit Phases A (homepage conversion), B (area guide enrichment), C (SEO/schema/verify) — then deploy and verify production.
+
+### Phase A — Homepage conversion
+| Change | Detail |
+|--------|--------|
+| Hero | Shorter copy · CTAs: “Check dates on WhatsApp” + “Request formal quote by email” |
+| Trust strip | 4 badges: 4.79★ · Gîtes 4★ · 15′ airport · From €420 |
+| Photo strip | 8-image hero gallery immediately after trust strip |
+| Book direct | 6-point “Why book direct safely?” block → `book-direct-safely.html` |
+| Inline guidebook | **Removed** `#guidebook` tabs — single banner → `area.html` |
+| Pricing | New `#rates` section: €420 shoulder / €480 peak · 7-night examples €3,068 / €3,508 |
+| Who fits | Compact 3-card layout (families / couples / friends) — removed 6 landing-page cards + EU duplicate block |
+| Good to know | 6 essentials + link to `#terms` (replaced 10 rule cards) |
+| Gallery | Removed weak `outdoor-parking.jpg` · entrance gate featured |
+| Mobile | Sticky WhatsApp + email CTA bar |
+| CSS | `styles/cro-home.css` linked from homepage |
+
+### Phase B — Area guide
+| Change | Detail |
+|--------|--------|
+| Enrichment | `scripts/area-place-enrichment.js` — price levels, transport, parking, bestFor, booking tips |
+| Cards | Price tags, rainy-day/local/train chips, expanded meta rows |
+| Filters | Second row: Free / € / €€ / family / rainy / local / train / luxury |
+| Sort | Added “By price (low first)” |
+| Itineraries | 6 sample day plans (`#itineraries`) |
+| Essentials | Supermarkets, bakery, navette, station cards |
+| Noscript | Top 20 places static list |
+| Beach FAQ | Standardised **8–15 min by car** (traffic/parking) |
+| Copy | **70+ curated places** (78 in data) |
+
+### Phase C — SEO / verify
+| Change | Detail |
+|--------|--------|
+| Schema | Homepage: `VacationRental` type · FAQ beach + booking process · occupancy “4–5 comfortable” |
+| Schema | Area: `Article` + `dateModified` on ItemList |
+| Verify | `verify-production.sh` — expects `#rates`, WhatsApp CTA, no `#guidebook`, area tag filters + itineraries |
+
+### Files touched
+- `index.html` — Phase A homepage restructure
+- `styles/cro-home.css` — **new**
+- `scripts/area-place-enrichment.js` — **new**
+- `scripts/area-guide.js` — enrichment, tags, price sort, richer cards
+- `styles/area-guide.css` — tag chips, itineraries, noscript
+- `area.html` — filters, itineraries, essentials, FAQ, enrichment script
+- `scripts/verify-production.sh` — CRO production checks
+
+### Canonical facts (unchanged)
+- Shoulder Jun/Sep **€420/n** · Peak Jul/Aug **€480/n** · Cleaning **€120** · **€500** refundable deposit on arrival · 7-night min Jun–Aug
+- Sleeps up to **6** · most comfortable **4–5**
+- Beach **8–15 min by car** · Area guide marketing **70+ places**
+- Only separate content page: **`area.html`**
+
+### HANDOVER policy (mandatory)
+**Every agent session that changes the live site must update this HANDOVER.md before marking done.**
 
 ---
 

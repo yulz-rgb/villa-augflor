@@ -22,6 +22,7 @@
 <link rel="stylesheet" href="styles/subpage.css">
 <link rel="stylesheet" href="styles/area-guide.css">
 <script defer src="scripts/subpage.js"></script>
+<script defer src="scripts/area-place-enrichment.js"></script>
 <script defer src="scripts/area-guide.js"></script>
 
 <script type="application/ld+json">
@@ -47,7 +48,7 @@
     {
       "@type": "Question",
       "name": "What are the best beaches near Cagnes-sur-Mer?",
-      "acceptedAnswer": { "@type": "Answer", "text": "The closest swim is Cros-de-Cagnes beach (8 minutes). For sand and clear water, head to Plage de la Garoupe on Cap d'Antibes (25 minutes) or the sheltered, family-friendly Plage de Passable on Cap-Ferrat (35 minutes). For a hidden turquoise cove, Plage Mala at Cap d'Ail (45 minutes) is the most beautiful, and Juan-les-Pins offers long sandy beaches with full amenities." }
+      "acceptedAnswer": { "@type": "Answer", "text": "The closest swim is Cros-de-Cagnes beach (8–15 minutes by car depending on traffic and parking). For sand and clear water, head to Plage de la Garoupe on Cap d'Antibes (25 minutes) or the sheltered, family-friendly Plage de Passable on Cap-Ferrat (35 minutes). For a hidden turquoise cove, Plage Mala at Cap d'Ail (45 minutes) is the most beautiful, and Juan-les-Pins offers long sandy beaches with full amenities." }
     },
     {
       "@type": "Question",
@@ -93,7 +94,7 @@
     <div class="wrap">
       <span class="eyebrow">First, get your bearings</span>
       <h2>Everything is closer than you think.</h2>
-      <p class="lead" style="margin-bottom:.5rem">Drive times below are measured from the villa in Cagnes-sur-Mer (off-peak). You can be on a beach in eight minutes, in a medieval village in twenty, and at the Casino de Monte-Carlo in under an hour.</p>
+      <p class="lead" style="margin-bottom:.5rem">Drive times below are measured from the villa in Cagnes-sur-Mer (off-peak). In summer traffic or event days, add 5–15 minutes. You can be on a beach in 8–15 minutes by car, in a medieval village in twenty, and at the Casino de Monte-Carlo in under an hour.</p>
       <div class="grid grid-3" style="margin-top:2rem">
         <div class="area-card"><span class="km">8 min</span><h3>Haut-de-Cagnes &amp; the beach</h3><p>Our medieval hill village and the sandy seafront at Cros-de-Cagnes — your easiest first day.</p></div>
         <div class="area-card"><span class="km">20 min</span><h3>Antibes &amp; Saint-Paul-de-Vence</h3><p>The best market on the coast and the most beautiful walled village, both close by.</p></div>
@@ -134,20 +135,93 @@
           <select id="ag-sort" aria-label="Sort places">
             <option value="distance">By distance</option>
             <option value="rating">By rating</option>
+            <option value="priceLow">By price (low first)</option>
             <option value="family">By family-friendly</option>
             <option value="luxury">By luxury</option>
             <option value="gem">By hidden gem</option>
           </select>
         </div>
       </div>
+      <div class="wrap ag-toolbar-inner" style="padding-top:.5rem;border-top:1px solid var(--sand);margin-top:.5rem;">
+        <div class="ag-filters ag-tag-filters" id="ag-tag-filters" role="tablist" aria-label="Filter by trip type">
+          <button class="ag-chip active" data-tag="all">All budgets</button>
+          <button class="ag-chip" data-tag="free">Free</button>
+          <button class="ag-chip" data-tag="budget">€</button>
+          <button class="ag-chip" data-tag="mid">€€</button>
+          <button class="ag-chip" data-tag="family">Family-friendly</button>
+          <button class="ag-chip" data-tag="rainy">Rainy day</button>
+          <button class="ag-chip" data-tag="local">Local picks</button>
+          <button class="ag-chip" data-tag="train">Train-friendly</button>
+          <button class="ag-chip" data-tag="luxury">Luxury</button>
+        </div>
+      </div>
     </div>
 
     <div class="wrap">
       <div class="ag-grid" id="ag-grid" aria-live="polite">
-        <!-- Cards rendered by scripts/area-guide.js -->
-        <noscript><p class="note">Enable JavaScript to browse the full interactive guide, or message us on WhatsApp for our complete recommendations.</p></noscript>
+        <noscript>
+          <div class="ag-noscript-list">
+            <h3>Top places near Villa Augflor (no JavaScript)</h3>
+            <ol>
+              <li><strong>Haut-de-Cagnes</strong> — 8 min · medieval village</li>
+              <li><strong>Cros-de-Cagnes beach</strong> — 8–15 min · nearest swim</li>
+              <li><strong>Antibes old town &amp; market</strong> — 20 min</li>
+              <li><strong>Saint-Paul-de-Vence</strong> — 20 min · Fondation Maeght nearby</li>
+              <li><strong>Nice old town &amp; Cours Saleya</strong> — 25 min · train possible</li>
+              <li><strong>Plage de la Garoupe</strong> — 25 min · Cap d'Antibes</li>
+              <li><strong>Èze village</strong> — 35 min</li>
+              <li><strong>Cannes &amp; La Croisette</strong> — 35 min</li>
+              <li><strong>Monaco</strong> — 45 min · train possible</li>
+              <li><strong>Gorges du Loup</strong> — 45 min · family canyon</li>
+              <li><strong>Mougins</strong> — 28 min · dining village</li>
+              <li><strong>Grasse</strong> — 35 min · perfume capital</li>
+              <li><strong>Vence &amp; Matisse Chapel</strong> — 20 min</li>
+              <li><strong>Cap-Ferrat coastal walk</strong> — 35 min</li>
+              <li><strong>Oceanographic Museum Monaco</strong> — 45 min · families</li>
+              <li><strong>Polygone Riviera</strong> — 4 min · shopping</li>
+              <li><strong>Plage Mala</strong> — 45 min · hidden cove</li>
+              <li><strong>Verdon Gorge</strong> — 2 hrs · day trip</li>
+              <li><strong>Menton</strong> — 55 min · Italian border</li>
+              <li><strong>Domaine de Toasc</strong> — 25 min · Bellet wine</li>
+            </ol>
+            <p><a href="https://wa.me/33623777333">Message Lana on WhatsApp</a> for a tailored itinerary, or enable JavaScript for the full interactive guide with filters and maps.</p>
+          </div>
+        </noscript>
       </div>
       <p class="note" style="margin-top:1.5rem">Destination photos are from <a href="https://commons.wikimedia.org/" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a> under Creative Commons licences.</p>
+    </div>
+  </section>
+
+  <!-- SAMPLE ITINERARIES -->
+  <section class="block alt" id="itineraries">
+    <div class="wrap">
+      <span class="eyebrow">Sample plans</span>
+      <h2>Six ways to use the villa as your base.</h2>
+      <p class="lead">Mix and match — Lana can tailor any of these before you arrive.</p>
+      <div class="ag-itinerary-grid">
+        <div class="ag-itinerary"><h3>First evening</h3><p>Haut-de-Cagnes village walk (8 min) · dinner on the ramparts · free navette line 44 from town.</p></div>
+        <div class="ag-itinerary"><h3>Beach day</h3><p>Cros-de-Cagnes morning swim (8–15 min) · lunch at La Pesquière · afternoon pool at the villa.</p></div>
+        <div class="ag-itinerary"><h3>Art &amp; villages</h3><p>Saint-Paul-de-Vence · Fondation Maeght · Vence Matisse Chapel — all within 20–25 min.</p></div>
+        <div class="ag-itinerary"><h3>Nice without a car</h3><p>Train from Cagnes-sur-Mer (≈12 min) · old town · Cours Saleya market · rooftop sundowners.</p></div>
+        <div class="ag-itinerary"><h3>Monaco glamour</h3><p>Train or drive · Oceanographic Museum · Casino terrace · Larvotto beach lunch.</p></div>
+        <div class="ag-itinerary"><h3>Family adventure</h3><p>Gorges du Loup canyon morning · Aquasplash or Parc Phoenix · early pool return.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ESSENTIALS -->
+  <section class="block">
+    <div class="wrap">
+      <span class="eyebrow">Everyday essentials</span>
+      <h2>Shops &amp; services within minutes.</h2>
+      <div class="grid grid-3" style="margin-top:2rem">
+        <div class="area-card"><span class="km">4 min</span><h3>Polygone Riviera</h3><p>Major shopping centre — Zara, Apple, restaurants, supermarket.</p></div>
+        <div class="area-card"><span class="km">5 min</span><h3>Casino Supermarché</h3><p>Open until midnight — handy evening top-ups.</p></div>
+        <div class="area-card"><span class="km">2 min</span><h3>Patisserie des Travails</h3><p>Local boulangerie — croissants from 06:30.</p></div>
+        <div class="area-card"><span class="km">8 min</span><h3>Leclerc La Colle</h3><p>Large hypermarket + cheapest fuel in the area.</p></div>
+        <div class="area-card"><span class="km">Free</span><h3>Navette line 44</h3><p>Shuttle to Haut-de-Cagnes every 20 min — skip village parking.</p></div>
+        <div class="area-card"><span class="km">12 min</span><h3>Cagnes-sur-Mer station</h3><p>Direct trains to Nice, Antibes, Cannes, Monaco.</p></div>
+      </div>
     </div>
   </section>
 
@@ -239,7 +313,7 @@
         </details>
         <details>
           <summary>What are the best beaches near Cagnes-sur-Mer?</summary>
-          <p>The closest swim is Cros-de-Cagnes beach (8 minutes). For sand and clear water, head to Plage de la Garoupe on Cap d'Antibes (25 minutes) or the sheltered, family-friendly Plage de Passable on Cap-Ferrat (35 minutes). For a hidden turquoise cove, Plage Mala at Cap d'Ail (45 minutes) is the most beautiful, and Juan-les-Pins has long sandy beaches with full amenities.</p>
+          <p>The closest swim is Cros-de-Cagnes beach (8–15 minutes by car depending on traffic and parking). For sand and clear water, head to Plage de la Garoupe on Cap d'Antibes (25 minutes) or the sheltered, family-friendly Plage de Passable on Cap-Ferrat (35 minutes). For a hidden turquoise cove, Plage Mala at Cap d'Ail (45 minutes) is the most beautiful, and Juan-les-Pins has long sandy beaches with full amenities.</p>
         </details>
         <details>
           <summary>What are the most beautiful villages on the French Riviera?</summary>

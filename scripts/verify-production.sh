@@ -46,8 +46,12 @@ check_present_file() {
   fi
 }
 
-# Homepage pricing cards section (removed May 2026)
-check_absent "Homepage duplicate rates section" 'id="rates"|Simple,\s*<em>transparent rates</em>'
+# Homepage CRO pricing section (Phase A May 2026)
+check_present "Homepage pricing section" 'id="rates"'
+check_present "Homepage WhatsApp CTA" "Check dates on WhatsApp"
+check_present "Homepage book-direct strip" "Why book direct"
+check_absent "Homepage inline guidebook tabs" 'id="guidebook"'
+check_present "Homepage area guide CTA" "70+ curated places"
 
 # Broken legacy image paths
 if echo "$HTML" | grep -qE 'href="\./images/|data-bg="\./images/'; then
@@ -59,14 +63,15 @@ fi
 
 if [[ "$PATH_TO_CHECK" == "/" ]]; then
   check_present "Homepage book-direct-safely link" "book-direct-safely.html"
-  check_present "Homepage ideal 4 guests" "ideal 4"
+  check_present "Homepage ideal 4 guests" "Ideal 4"
   check_present "Homepage live calendar" "data-calendar"
   check_present "Homepage area guide link" "area.html"
   check_present "Homepage availability anchor" "id=\"availability\""
 
   echo "==> Fetching ${SITE%/}/area.html"
   AREA_HTML=$(curl -fsSL -H "Cache-Control: no-cache" "$SITE/area.html")
-  check_present_file "Area guide ag-grid" 'id="ag-grid"' "$AREA_HTML"
+  check_present_file "Area guide tag filters" 'data-tag="free"' "$AREA_HTML"
+  check_present_file "Area guide itineraries" 'id="itineraries"' "$AREA_HTML"
 
   PHOTO_CODE=$(curl -s -o /dev/null -w "%{http_code}" -H "Cache-Control: no-cache" "$SITE/assets/photos/area/nice.jpg")
   if [[ "$PHOTO_CODE" == "200" ]]; then

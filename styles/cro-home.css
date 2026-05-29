@@ -1,0 +1,169 @@
+/* CRO Phase A — homepage conversion modules */
+
+.hero { min-height: 72vh; }
+.trust-strip { grid-template-columns: repeat(4, 1fr) !important; }
+
+.hero-gallery-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+  background: var(--deep);
+  padding: 4px;
+}
+.hero-gallery-strip img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  display: block;
+  border-radius: 1px;
+}
+@media (min-width: 900px) {
+  .hero-gallery-strip { grid-template-columns: repeat(8, 1fr); }
+  .hero-gallery-strip img { height: 160px; }
+}
+
+.book-direct-strip {
+  background: #f0ebe3;
+  padding: 3.5rem 2.5rem;
+}
+.book-direct-inner { max-width: 1100px; margin: 0 auto; }
+.book-direct-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 1.75rem;
+}
+.book-direct-item {
+  background: var(--white);
+  padding: 1.25rem 1.35rem;
+  border-radius: 2px;
+  border-left: 3px solid var(--accent);
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.55;
+}
+.book-direct-item strong {
+  display: block;
+  color: var(--deep);
+  font-weight: 500;
+  margin-bottom: 0.35rem;
+  font-size: 15px;
+}
+
+.pricing-section {
+  background: #f0ebe3;
+  padding: 5rem 2.5rem;
+  max-width: none;
+}
+.pricing-inner { max-width: 1100px; margin: 0 auto; }
+.pricing-card-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin-top: 2rem;
+  max-width: 720px;
+}
+.pricing-line {
+  background: var(--white);
+  border: 1px solid var(--sand);
+  padding: 1.5rem;
+  border-radius: 2px;
+}
+.pricing-line.peak { border-color: var(--accent); }
+.pricing-total-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  max-width: 720px;
+}
+.pricing-total-box {
+  background: var(--white);
+  border: 1px solid var(--sand);
+  padding: 1.25rem;
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--muted);
+}
+.pricing-total-box strong { color: var(--deep); }
+
+.good-to-know-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.good-to-know-item {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 1.25rem;
+  font-size: 14px;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.55;
+  border-radius: 2px;
+}
+.good-to-know-item strong { color: rgba(255,255,255,0.9); display: block; margin-bottom: 0.35rem; }
+
+.area-cta-compact {
+  background: linear-gradient(135deg, var(--accent-dark), #1a4a58);
+  color: #fff;
+  padding: 4rem 2.5rem;
+  text-align: center;
+}
+.area-cta-compact h2 { color: #fff; margin-bottom: 0.75rem; }
+.area-cta-compact p { color: rgba(255,255,255,0.85); max-width: 52ch; margin: 0 auto 1.5rem; }
+
+.layout-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.layout-card-sm {
+  background: var(--white);
+  border: 1px solid var(--sand);
+  padding: 1.25rem;
+  font-size: 13px;
+  color: var(--muted);
+  border-radius: 2px;
+}
+.layout-card-sm h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  color: var(--deep);
+  margin: 0 0 0.5rem;
+  font-weight: 400;
+}
+
+.mobile-sticky-cta {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 150;
+  background: rgba(28,26,23,0.96);
+  padding: 0.65rem 1rem calc(0.65rem + env(safe-area-inset-bottom));
+  gap: 0.5rem;
+  grid-template-columns: 1fr 1fr;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+.mobile-sticky-cta a {
+  text-align: center;
+  padding: 0.75rem 0.5rem;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 2px;
+}
+.mobile-sticky-cta .msc-wa { background: #25D366; color: #fff; }
+.mobile-sticky-cta .msc-email { background: rgba(255,255,255,0.12); color: #fff; border: 1px solid rgba(255,255,255,0.25); }
+
+@media (max-width: 900px) {
+  .book-direct-grid, .pricing-card-main, .pricing-total-grid, .good-to-know-grid, .layout-strip {
+    grid-template-columns: 1fr;
+  }
+  .mobile-sticky-cta { display: grid; }
+  body { padding-bottom: 4.5rem; }
+}

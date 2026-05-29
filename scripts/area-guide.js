@@ -760,16 +760,27 @@
       family: 2, luxury: 4, gem: 3, tags: ["Rooftop","Cocktails","Sunset"] }
   ];
 
+  /* Enrich with price levels, transport, best-for tags (area-place-enrichment.js) */
+  if (typeof enrichPlace === "function") {
+    PLACES = PLACES.map(enrichPlace);
+  }
+
   /* ---- Sort helpers ---- */
+  var PO = typeof PRICE_ORDER !== "undefined" ? PRICE_ORDER : { Free: 0, "€": 1, "€€": 2, "€€€": 3, "€€€€": 4 };
   var SORTS = {
     distance: function (a, b) { return a.drive - b.drive; },
     rating: function (a, b) { return (b.rating || 0) - (a.rating || 0); },
     family: function (a, b) { return b.family - a.family || (b.rating || 0) - (a.rating || 0); },
     luxury: function (a, b) { return b.luxury - a.luxury || (b.rating || 0) - (a.rating || 0); },
-    gem: function (a, b) { return b.gem - a.gem || (b.rating || 0) - (a.rating || 0); }
+    gem: function (a, b) { return b.gem - a.gem || (b.rating || 0) - (a.rating || 0); },
+    priceLow: function (a, b) {
+      var pa = PO[a.priceLevel] != null ? PO[a.priceLevel] : 2;
+      var pb = PO[b.priceLevel] != null ? PO[b.priceLevel] : 2;
+      return pa - pb || a.drive - b.drive;
+    }
   };
 
-  var state = { cat: "all", sort: "distance" };
+  var state = { cat: "all", tag: "all", sort: "distance" };
 
   function stars(score) {
     var full = Math.round(score);
@@ -803,11 +814,28 @@
       '<i class="ag-dots">' + stars(score) + '</i></span>';
   }
 
+  function tagChips(p) {
+    var chips = [];
+    if (p.priceLevel) chips.push('<span class="ag-tag ag-tag-price">' + p.priceLevel + '</span>');
+    if (p.beachType) chips.push('<span class="ag-tag">' + p.beachType + '</span>');
+    if (p.rainyDay) chips.push('<span class="ag-tag">Rainy day</span>');
+    if (p.localFavourite) chips.push('<span class="ag-tag">Local pick</span>');
+    if (p.bookAhead) chips.push('<span class="ag-tag">Book ahead</span>');
+    if (p.carFreePossible) chips.push('<span class="ag-tag">Train-friendly</span>');
+    if (p.bestFor && p.bestFor.length) {
+      p.bestFor.slice(0, 2).forEach(function (b) {
+        chips.push('<span class="ag-tag">' + b + '</span>');
+      });
+    }
+    return chips.length ? '<div class="ag-tags">' + chips.join("") + '</div>' : "";
+  }
+
   function card(p) {
     var c = CATEGORIES[p.cat];
     var imgSrc = p.image || IMAGES[p.id];
+    var alt = p.imageAlt || (p.name + " near Villa Augflor");
     var media = imgSrc
-      ? '<div class="ag-media" style="background-image:url(\'' + imgSrc + '\')">'
+      ? '<div class="ag-media" style="background-image:url(\'' + imgSrc + '\')" role="img" aria-label="' + alt + '">'
       : '<div class="ag-media" style="background:' + c.tile + '">' +
         '<span class="ag-media-icon">' + svgIcon(ICONS[p.cat], "ag-i-lg") + '</span>';
     var ratingBadge = p.rating
@@ -826,10 +854,16 @@
           '<h3>' + p.name + '</h3>' +
           '<p class="ag-blurb">' + p.blurb + '</p>' +
           '<p class="ag-why"><b>Why go:</b> ' + p.why + '</p>' +
+          tagChips(p) +
           '<div class="ag-badges">' + timeBadges(p) + '</div>' +
           '<div class="ag-metas">' +
+            metaRow("Typical cost", (p.priceLevel || "—") + (p.priceNote ? " · " + p.priceNote : "")) +
             metaRow("Time needed", p.duration) +
             metaRow("Best time", p.best) +
+            metaRow("Transport", p.transport) +
+            metaRow("Parking", p.parking) +
+            metaRow("Season", p.seasonNote) +
+            (p.bookingAdvice ? metaRow("Tip", p.bookingAdvice) : "") +
           '</div>' +
           (p.family || p.luxury || p.gem
             ? '<div class="ag-scores">' +
@@ -857,11 +891,25 @@
     return n + " reviews";
   }
 
+  function matchesTag(p, tag) {
+    if (tag === "all") return true;
+    if (tag === "free") return p.priceLevel === "Free";
+    if (tag === "budget") return p.priceLevel === "€";
+    if (tag === "mid") return p.priceLevel === "€€";
+    if (tag === "family") return p.family >= 4 || (p.bestFor && p.bestFor.indexOf("Families") >= 0);
+    if (tag === "rainy") return p.rainyDay || (p.bestFor && p.bestFor.indexOf("Rainy day") >= 0);
+    if (tag === "local") return p.localFavourite || p.gem >= 4;
+    if (tag === "train") return p.carFreePossible || p.transport === "Train possible";
+    if (tag === "luxury") return p.luxury >= 4;
+    return true;
+  }
+
   function render() {
     var grid = document.getElementById("ag-grid");
     if (!grid) return;
     var list = PLACES.filter(function (p) {
-      return state.cat === "all" || p.cat === state.cat;
+      if (state.cat !== "all" && p.cat !== state.cat) return false;
+      return matchesTag(p, state.tag);
     }).slice().sort(SORTS[state.sort] || SORTS.distance);
 
     grid.innerHTML = list.map(card).join("");
@@ -877,6 +925,18 @@
         if (!btn) return;
         state.cat = btn.getAttribute("data-cat");
         filters.querySelectorAll("[data-cat]").forEach(function (b) {
+          b.classList.toggle("active", b === btn);
+        });
+        render();
+      });
+    }
+    var tagFilters = document.getElementById("ag-tag-filters");
+    if (tagFilters) {
+      tagFilters.addEventListener("click", function (e) {
+        var btn = e.target.closest("[data-tag]");
+        if (!btn) return;
+        state.tag = btn.getAttribute("data-tag");
+        tagFilters.querySelectorAll("[data-tag]").forEach(function (b) {
           b.classList.toggle("active", b === btn);
         });
         render();
@@ -914,9 +974,23 @@
     var data = {
       "@context": "https://schema.org",
       "@type": "ItemList",
-      name: "Villa Augflor Area Guide — the French Riviera",
+      name: "Villa Augflor Area Guide — 70+ French Riviera places",
+      dateModified: "2026-05-29",
       itemListElement: items
     };
+    var article = {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      headline: "French Riviera Area Guide from Villa Augflor",
+      datePublished: "2025-01-01",
+      dateModified: "2026-05-29",
+      author: { "@type": "Person", name: "Lana" },
+      publisher: { "@type": "Organization", name: "Villa Augflor", url: "https://villa-augflor.com" }
+    };
+    var s2 = document.createElement("script");
+    s2.type = "application/ld+json";
+    s2.textContent = JSON.stringify(article);
+    document.head.appendChild(s2);
     var s = document.createElement("script");
     s.type = "application/ld+json";
     s.textContent = JSON.stringify(data);
