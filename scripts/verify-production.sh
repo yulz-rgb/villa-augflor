@@ -63,7 +63,7 @@ if [[ "$PATH_TO_CHECK" == "/" ]]; then
   check_present "Homepage live calendar" "data-calendar"
   check_present "Homepage area guide link" "area.html"
   check_present "Homepage availability anchor" "id=\"availability\""
-  check_present "Homepage hero headline" "Private pool villa in Cagnes-sur-Mer, near Nice Airport"
+  check_present "Homepage hero headline" "Private pool villa in the South of France, near Nice Airport"
   check_absent "Homepage save 20% footer" "save 20%"
 
   echo "==> Fetching ${SITE%/}/contact.html"
@@ -129,6 +129,15 @@ if [[ "$PATH_TO_CHECK" == "/" ]]; then
   check_redirect "/about/" "rates.html"
   check_redirect "/contact/" "contact.html"
   check_redirect "/check-availability/" "gallery.html"
+
+  echo "==> SEO landing pages"
+  SEO_HTML=$(curl -fsSL -H "Cache-Control: no-cache" "$SITE/villa-near-nice-airport.html")
+  check_present_file "Nice Airport SEO page" "South of France" "$SEO_HTML"
+  check_present_file "Nice Airport SEO H1" "near Nice Airport" "$SEO_HTML"
+
+  LLMS=$(curl -fsSL -H "Cache-Control: no-cache" "$SITE/llms.txt")
+  check_present_file "llms.txt for AI crawlers" "Villa Augflor" "$LLMS"
+  check_present_file "llms.txt Nice Airport query" "villa-near-nice-airport.html" "$LLMS"
 fi
 
 if [[ "$FAIL" -ne 0 ]]; then

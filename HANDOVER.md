@@ -1,10 +1,44 @@
 # Handover: Villa Augflor SEO & Deployment Complete
 
-**Status:** ✅ PRODUCTION LIVE — CRO Phase 2 on https://villa-augflor.com (`verify-production.sh` exit 0, May 29 2026)  
+**Status:** ✅ PRODUCTION LIVE — SEO Nice Airport pass on https://villa-augflor.com  
 **Date:** May 29, 2026  
 **Custom Domain:** https://villa-augflor.com  
-**Latest commit:** `e77ae90` on `origin/main` — CRO Phase 2 (homepage trim, enquiry, landing pages, gallery, area)  
-**Deploy:** `dpl_48gGY6pjnFsEoaCHEwh8dco6VjYV` (serving); later CLI deploys may show Queued in Vercel — verify custom domain, not CLI “Building…”
+**Latest commit:** pending — SEO landing page + llms.txt + sitemap  
+**Deploy:** run `bash scripts/deploy-production.sh` after this session
+
+---
+
+## Session Update — May 29, 2026 (SEO: South of France near Nice Airport)
+
+**Goal:** Maximize discoverability for “villa in south of France near Nice airport” on Google and AI search (ChatGPT, Claude, etc.).
+
+### Root cause fixed
+- `villa-near-nice.html` was **301 redirecting to homepage** in `vercel.json` — Google and AI crawlers never saw location content.
+
+### Shipped
+| Item | Change |
+|------|--------|
+| **`villa-near-nice-airport.html`** | New canonical SEO page — H1, FAQ schema, VacationRental schema, airport transfer section, premium copy (no bargain framing) |
+| **`llms.txt`** | AI-readable site summary with quick facts, drive times, canonical URLs for citation |
+| **`vercel.json`** | `villa-near-nice.html` + `villa-near-cannes.html` → `villa-near-nice-airport.html` (not homepage) |
+| **`sitemap.xml`** | Added `villa-near-nice-airport.html` priority 0.98 |
+| **`robots.txt`** | Explicit Allow for GPTBot, ClaudeBot, anthropic-ai, Google-Extended + `/llms.txt` |
+| **`index.html`** | Title/meta/H1/schema FAQ targeting “South of France near Nice Airport”; footer link; `llms.txt` link |
+| **`fr/index.html`** | FR meta for “villa sud france aéroport nice” |
+| **`verify-production.sh`** | Checks SEO page + `llms.txt` live |
+
+### Manual follow-ups (cannot fix in repo alone)
+1. **Google Search Console** — submit `sitemap.xml`, request indexing of `/villa-near-nice-airport.html` and `/llms.txt`
+2. **Google Business Profile** — if not set up, create listing for the rental address
+3. **Backlinks** — Airbnb listing, Instagram bio, Gîtes de France directory should link to villa-augflor.com
+4. **Platform sync** — ensure Airbnb/Booking descriptions mention “15 min Nice Airport” + link to direct site
+5. **Realistic expectation** — page 1 for competitive head terms takes months + authority; long-tail “villa near Nice Airport private pool” is the near-term win
+
+### Deploy
+```bash
+cd /Users/lana/Projects/villa-augflor-live
+bash scripts/deploy-production.sh
+```
 
 ---
 

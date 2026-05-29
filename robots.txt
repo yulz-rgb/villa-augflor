@@ -1,0 +1,49 @@
+User-agent: *
+Allow: /
+Allow: /llms.txt
+Allow: /images/
+Allow: /assets/
+Allow: /styles/
+Allow: /scripts/
+Disallow: /api/
+Disallow: /.env
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.json$
+Disallow: /*?*sort=
+Disallow: /*?*filter=
+
+User-agent: GPTBot
+Allow: /
+Allow: /llms.txt
+
+User-agent: ChatGPT-User
+Allow: /
+Allow: /llms.txt
+
+User-agent: ClaudeBot
+Allow: /
+Allow: /llms.txt
+
+User-agent: anthropic-ai
+Allow: /
+Allow: /llms.txt
+
+User-agent: Google-Extended
+Allow: /
+Allow: /llms.txt
+
+User-agent: AdsBot-Google
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /images/
+Allow: /assets/
+
+User-agent: bingbot
+Allow: /
+
+Crawl-delay: 1
+Request-rate: 30/60
+
+Sitemap: https://villa-augflor.com/sitemap.xml

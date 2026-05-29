@@ -34,8 +34,8 @@
     { "source": "/french-riviera-guide.html", "destination": "/area.html", "permanent": true },
     { "source": "/riviera-vacation-tips.html", "destination": "/area.html", "permanent": true },
     { "source": "/villa-antibes-weekend.html", "destination": "/", "permanent": true },
-    { "source": "/villa-near-cannes.html", "destination": "/", "permanent": true },
-    { "source": "/villa-near-nice.html", "destination": "/", "permanent": true },
+    { "source": "/villa-near-cannes.html", "destination": "/villa-near-nice-airport.html", "permanent": true },
+    { "source": "/villa-near-nice.html", "destination": "/villa-near-nice-airport.html", "permanent": true },
     { "source": "/fr/villa.html", "destination": "/#about", "permanent": true },
     { "source": "/riviera-area-guide.html", "destination": "/area.html", "permanent": true }
   ]
