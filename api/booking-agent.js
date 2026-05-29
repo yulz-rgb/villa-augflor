@@ -27,7 +27,8 @@ const SYSTEM_PROMPT = `You are the booking assistant for Villa Augflor, a luxury
 - September: €420/night (minimum 3 nights)
 - Cleaning fee: €120 (once)
 - Direct booking saves guests approx. €719 vs Airbnb on a 7-night peak stay (no guest service fees)
-- No deposit for direct bookings; full payment via bank transfer 6 weeks before arrival
+- Direct booking: 30% deposit to confirm; balance 30 days before arrival; €500 refundable security deposit on arrival (not at booking)
+- Payment: Visa, MasterCard (secure payment link), or bank transfer after signed agreement
 
 ## TODAY'S DATE & URGENCY CONTEXT
 Today is late May 2026. Summer peak season is imminent.

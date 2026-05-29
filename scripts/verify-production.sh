@@ -5,18 +5,17 @@ set -euo pipefail
 SITE="${VERIFY_SITE:-https://villa-augflor.com}"
 PATH_TO_CHECK="${VERIFY_PATH:-/}"
 URL="${SITE%/}${PATH_TO_CHECK}"
-TMP=$(mktemp)
-trap 'rm -f "$TMP"' EXIT
 
 echo "==> Fetching ${URL}"
-curl -fsSL -H "Cache-Control: no-cache" -H "Pragma: no-cache" "$URL" -o "$TMP"
+HTML=$(curl -fsSL -H "Cache-Control: no-cache" -H "Pragma: no-cache" "$URL")
 
 FAIL=0
 
 check_absent() {
   local label="$1"
   local pattern="$2"
-  if grep -qiE "$pattern" "$TMP"; then
+  local content="${3:-$HTML}"
+  if printf '%s' "$content" | grep -qiE "$pattern"; then
     echo "FAIL: ${label} still present on live site (matched: ${pattern})"
     FAIL=1
   else
@@ -27,30 +26,31 @@ check_absent() {
 check_present() {
   local label="$1"
   local pattern="$2"
-  if grep -qiE "$pattern" "$TMP"; then
+  if [[ "$HTML" == *"$pattern"* ]]; then
     echo "OK:   ${label} present"
   else
-    echo "FAIL: ${label} missing on live site (expected: ${pattern})"
+    echo "FAIL: ${label} missing (expected: ${pattern})"
     FAIL=1
   fi
 }
 
-check_present_f() {
+check_present_file() {
   local label="$1"
-  local fixed="$2"
-  if grep -qF "$fixed" "$TMP"; then
+  local pattern="$2"
+  local content="$3"
+  if printf '%s' "$content" | grep -Fq "$pattern"; then
     echo "OK:   ${label} present"
   else
-    echo "FAIL: ${label} missing on live site (expected: ${fixed})"
+    echo "FAIL: ${label} missing (expected: ${pattern})"
     FAIL=1
   fi
 }
 
-# Old standalone pricing cards section (removed — rates now at #rates with merged content)
-check_absent "Legacy homepage rates block" 'Simple,\s*<em>transparent rates</em>|transparent rates'
+# Homepage pricing cards section (removed May 2026)
+check_absent "Homepage duplicate rates section" 'id="rates"|Simple,\s*<em>transparent rates</em>'
 
-# Broken legacy image paths (./images/ removed from repo)
-if grep -qE 'href="\./images/|data-bg="\./images/' "$TMP"; then
+# Broken legacy image paths
+if echo "$HTML" | grep -qE 'href="\./images/|data-bg="\./images/'; then
   echo "FAIL: Homepage still references missing ./images/ paths"
   FAIL=1
 else
@@ -58,21 +58,16 @@ else
 fi
 
 if [[ "$PATH_TO_CHECK" == "/" ]]; then
-  check_present "Homepage rates section" 'id="rates"'
-  check_present_f "Homepage €420 shoulder pricing" 'From €420 / night'
-  check_present_f "Homepage €480 peak pricing" 'From €480 / night'
-  check_present_f "Area guide link" 'area.html'
-  check_present "Interactive gallery grid" 'id="galleryRoomGrid"'
-  check_absent "Legacy gallery.html link in nav" 'href="gallery\.html"'
+  check_present "Homepage book-direct-safely link" "book-direct-safely.html"
+  check_present "Homepage ideal 4 guests" "ideal 4"
+  check_present "Homepage live calendar" "data-calendar"
+  check_present "Homepage area guide link" "area.html"
+  check_present "Homepage availability anchor" "id=\"availability\""
 
   echo "==> Fetching ${SITE%/}/area.html"
-  curl -fsSL -H "Cache-Control: no-cache" "$SITE/area.html" -o "$TMP"
-  if grep -q 'id="ag-grid"' "$TMP"; then
-    echo "OK:   Area guide ag-grid present"
-  else
-    echo "FAIL: Area guide missing ag-grid on /area.html"
-    FAIL=1
-  fi
+  AREA_HTML=$(curl -fsSL -H "Cache-Control: no-cache" "$SITE/area.html")
+  check_present_file "Area guide ag-grid" 'id="ag-grid"' "$AREA_HTML"
+
   PHOTO_CODE=$(curl -s -o /dev/null -w "%{http_code}" -H "Cache-Control: no-cache" "$SITE/assets/photos/area/nice.jpg")
   if [[ "$PHOTO_CODE" == "200" ]]; then
     echo "OK:   Area guide sample photo (nice.jpg) returns 200"
@@ -81,13 +76,42 @@ if [[ "$PATH_TO_CHECK" == "/" ]]; then
     FAIL=1
   fi
 
-  echo "==> Checking rates.html redirect"
-  RATES_LOC=$(curl -sI -H "Cache-Control: no-cache" "$SITE/rates.html" | tr -d '\r' | grep -i '^location:' | head -1 || true)
-  if echo "$RATES_LOC" | grep -qiE '#rates|/$'; then
-    echo "OK:   rates.html redirects to homepage"
+  echo "==> Fetching ${SITE%/}/rates.html"
+  RATES_HTML=$(curl -fsSL -H "Cache-Control: no-cache" -H "Pragma: no-cache" "$SITE/rates.html")
+  check_present_file "Rates page €420 shoulder" "From €420 / night" "$RATES_HTML"
+  check_present_file "Rates page €480 peak" "€480<small>/ night</small>" "$RATES_HTML"
+  check_absent "Rates page old €450 pricing" 'From €450 / night' "$RATES_HTML"
+  check_present_file "Rates page calendar" "data-calendar" "$RATES_HTML"
+  check_present_file "Rates page open dates summary" "data-open-windows" "$RATES_HTML"
+
+  echo "==> Fetching ${SITE%/}/book-direct-safely.html"
+  BDS_HTML=$(curl -fsSL -H "Cache-Control: no-cache" "$SITE/book-direct-safely.html")
+  check_present_file "Book direct safely page" "Book direct" "$BDS_HTML"
+  check_present_file "30% deposit on book-direct page" "30% deposit" "$BDS_HTML"
+
+  echo "==> Fetching ${SITE%/}/gallery.html"
+  GALLERY_HTML=$(curl -fsSL -H "Cache-Control: no-cache" "$SITE/gallery.html")
+  check_present_file "Gallery page room sections" 'Barcelona' "$GALLERY_HTML"
+  check_absent "Gallery redirect stub" 'url=/#gallery' "$GALLERY_HTML"
+
+  CERT_CODE=$(curl -s -o /dev/null -w "%{http_code}" -H "Cache-Control: no-cache" "$SITE/assets/documents/gites-de-france-4-star-classification.jpg")
+  if [[ "$CERT_CODE" == "200" ]]; then
+    echo "OK:   Gîtes de France certificate returns 200"
   else
-    echo "WARN: rates.html redirect not confirmed (${RATES_LOC:-no Location header}) — may still serve old page until deploy"
+    echo "FAIL: Certificate image returned HTTP ${CERT_CODE}"
+    FAIL=1
   fi
+
+  echo "==> Legacy WordPress redirects"
+  for legacy in "/about/" "/contact/" "/check-availability/"; do
+    LOC=$(curl -sI -H "Cache-Control: no-cache" "${SITE}${legacy}" | grep -i '^location:' | tr -d '\r' | awk '{print $2}')
+    if [[ -n "$LOC" ]] && [[ "$LOC" != *"/about/"* ]] && [[ "$LOC" != *"/contact/"* ]]; then
+      echo "OK:   ${legacy} redirects to ${LOC}"
+    else
+      echo "FAIL: ${legacy} not redirecting (location: ${LOC:-none})"
+      FAIL=1
+    fi
+  done
 fi
 
 if [[ "$FAIL" -ne 0 ]]; then

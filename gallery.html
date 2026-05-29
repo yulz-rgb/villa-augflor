@@ -1,13 +1,494 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta http-equiv="refresh" content="0; url=/#gallery">
-<link rel="canonical" href="https://villa-augflor.com/#gallery">
-<title>Redirecting — Villa Augflor</title>
-<script>location.replace("/#gallery");</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Villa Augflor Gallery | Areas and Layout</title>
+<meta name="description" content="Explore Villa Augflor by area: arrival, pool, garden, terraces, living spaces, bedrooms, bathrooms, and layout notes for where each photo is taken.">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta name="geo.region" content="FR-06">
+<meta name="geo.placename" content="Cagnes-sur-Mer, Alpes-Maritimes, France">
+<meta name="geo.position" content="43.6647;7.1387">
+<meta name="ICBM" content="43.6647, 7.1387">
+<link rel="canonical" href="https://villa-augflor.com/gallery.html">
+<meta name="theme-color" content="#3d7a8a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream: #f7f3ee;
+  --sand: #e8dfd3;
+  --accent: #3d7a8a;
+  --accent-dark: #2d5f6d;
+  --deep: #1c1a17;
+  --muted: #7a7269;
+  --white: #ffffff;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: "Jost", sans-serif;
+  background: var(--cream);
+  color: var(--deep);
+  line-height: 1.7;
+}
+a { color: inherit; text-decoration: none; }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 1.25rem; }
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(247,243,238,0.94);
+  border-bottom: 1px solid rgba(28,26,23,0.08);
+  backdrop-filter: blur(8px);
+}
+.topbar-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .95rem 0;
+}
+.brand {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.5rem;
+  letter-spacing: .03em;
+}
+.top-actions {
+  display: flex;
+  gap: .75rem;
+  align-items: center;
+}
+.btn {
+  display: inline-block;
+  padding: .55rem 1rem;
+  border: 1px solid rgba(28,26,23,0.18);
+  font-size: .72rem;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+}
+.btn-primary {
+  background: var(--accent);
+  color: var(--white);
+  border-color: var(--accent);
+}
+.hero {
+  padding: clamp(3rem, 7vw, 5rem) 0 2.5rem;
+}
+.eyebrow {
+  display: inline-block;
+  font-size: .65rem;
+  text-transform: uppercase;
+  letter-spacing: .2em;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+h1 {
+  margin: 0 0 .8rem;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2rem, 5vw, 3.8rem);
+  font-weight: 400;
+  line-height: 1.05;
+}
+.lead {
+  margin: 0;
+  max-width: 68ch;
+  color: var(--muted);
+}
+.legend {
+  margin-top: 1.35rem;
+  display: grid;
+  gap: .45rem;
+  font-size: .92rem;
+  color: var(--muted);
+}
+.section {
+  padding: 2.75rem 0;
+  border-top: 1px solid rgba(28,26,23,0.08);
+}
+h2 {
+  margin: 0 0 .65rem;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(1.7rem, 3.4vw, 2.5rem);
+  font-weight: 400;
+}
+.section-note {
+  margin: 0 0 1.45rem;
+  color: var(--muted);
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+figure {
+  margin: 0;
+  background: var(--white);
+  border: 1px solid rgba(28,26,23,0.08);
+}
+.img-link {
+  display: block;
+  height: 220px;
+}
+img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+figcaption {
+  padding: .8rem .9rem 1rem;
+}
+.cap-title {
+  margin: 0;
+  font-size: .95rem;
+  font-weight: 500;
+}
+.cap-meta {
+  margin: .2rem 0 0;
+  font-size: .76rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--accent-dark);
+}
+.footer-cta {
+  text-align: center;
+  padding: 2.7rem 0 4rem;
+}
+@media (max-width: 980px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .grid { grid-template-columns: 1fr; }
+  .img-link { height: 250px; }
+  .top-actions .btn:first-child { display: none; }
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Photo Gallery",
+  "description": "Expert guide to our villa on the Côte d'Azur. Villa Augflor — luxury direct villa bookings, no platform fees.",
+  "url": "https://villa-augflor.com/gallery.html",
+  "datePublished": "2026-05-20",
+  "dateModified": "2026-05-20",
+  "author": {"@type": "LocalBusiness", "name": "Villa Augflor"},
+  "publisher": {"@type": "LocalBusiness", "name": "Villa Augflor"}
+}
+</script>
 </head>
 <body>
-<p>This page has moved to our unified homepage. <a href="/#gallery">Continue to Villa Augflor</a>.</p>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="index.html">Villa Augflor</a>
+      <div class="top-actions">
+        <a class="btn" href="index.html">Back Home</a>
+        <a class="btn btn-primary" href="https://wa.me/33623777333">Enquire on WhatsApp</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero wrap">
+      <span class="eyebrow">Villa map gallery</span>
+      <h1>See every area clearly before you enquire.</h1>
+      <p class="lead">Each photo is labeled by exact area so guests can understand the layout quickly: where to swim, where to dine, where each bedroom sits, and which spaces are upstairs loft level.</p>
+      <div class="legend">
+        <div><strong>Comfort:</strong> air conditioning in all three bedrooms, the living room, and the garden room.</div>
+        <div><strong>Ground floor:</strong> garden room, living room, kitchen, Le Provance bedroom, and ground-floor bathroom.</div>
+        <div><strong>Loft level:</strong> Barcelona master suite, Asian double bedroom, and upstairs bathroom — reached by a steeper staircase with lower ceilings.</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <h2>Master Bedroom — &ldquo;Barcelona&rdquo;</h2>
+        <p class="section-note">Upstairs loft master suite with green marble feature wall, skylights, and an en-suite bathtub.</p>
+        <div class="grid">
+          <figure>
+            <a class="img-link" href="assets/photos/optimized/upstairs-master-bedroom-3.jpg" target="_blank" rel="noopener">
+              <img src="assets/photos/optimized/upstairs-master-bedroom-3.jpg" alt="Barcelona master bedroom with green marble wall and skylight" loading="lazy">
+            </a>
+            <figcaption><p class="cap-title">Master suite overview</p><p class="cap-meta">Upstairs · Barcelona · marble &amp; skylight</p></figcaption>
+          </figure>
+          <figure>
+            <a class="img-link" href="assets/photos/optimized/upstairs-master-bedroom-2.jpg" target="_blank" rel="noopener">
+              <img src="assets/photos/optimized/upstairs-master-bedroom-2.jpg" alt="Barcelona master bedroom with freestanding bathtub" loading="lazy">
+            </a>
+            <figcaption><p class="cap-title">Bed and en-suite tub</p><p class="cap-meta">Upstairs · Barcelona · loft beams</p></figcaption>
+          </figure>
+          <figure>
+            <a class="img-link" href="assets/photos/optimized/master-bedroom-c.jpg" target="_blank" rel="noopener">
+              <img src="assets/photos/optimized/master-bedroom-c.jpg" alt="Barcelona master bedroom dressing area with mirror and stag lamp" loading="lazy">
+            </a>
+            <figcaption><p class="cap-title">Dressing corner</p><p class="cap-meta">Upstairs · Barcelona · vanity detail</p></figcaption>
+          </figure>
+          <figure>
+            <a class="img-link" href="assets/photos/optimized/master-bedroom-barcelona-chairs.jpg" target="_blank" rel="noopener">
+              <img src="assets/photos/optimized/master-bedroom-barcelona-chairs.jpg" alt="Barcelona master bedroom with velvet chairs and marble wall" loading="lazy">
+            </a>
+            <figcaption><p class="cap-title">Bedroom seating view</p><p class="cap-meta">Upstairs · Barcelona · 2025 photo</p></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <h2>Upstairs Double Bedroom — &ldquo;Asian&rdquo;</h2>
+        <p class="section-note">Loft-level double room with peacock motifs, bamboo lantern, and woven textures.</p>
+        <div class="grid">
+          <figure>
+            <a class="img-link" href="assets/photos/optimized/upstairs-double-bedroom.jpg" target="_blank" rel="noopener">
+              <img src="assets/photos/optimized/upstairs-double-bedroom.jpg" alt="Asian double bedroom with peacock pillows and rattan headboard" loading="lazy">
+            </a>
+            <figcaption><p class="cap-title">Double bed overview</p><p class="cap-meta">Upstairs · Asian · peacock motif</p></figcaption>
+          </figure>
+          <figure>
+            <a class="img-link" href="assets/photos/optimized/asian-room-console.jpg" target="_blank" rel="noopener">
+              <img src="assets/photos/optimized/asian-room-console.jpg" alt="Asian bedroom console with bamboo lantern and patterned textiles" loading="lazy">
+            </a>
+            <figcaption><p class="cap-title">Console and lantern</p><p class="cap-meta">Upstairs · Asian · decor detail</p></figcaption>
+          </figure>
+          <figure>
+            <a class="img-link" href="assets/photos/optimized/asian-room-decor.jpg" target="_blank" rel="noopener">
+              <img src="assets/photos/optimized/asian-room-decor.jpg" alt="Asian bedroom decor with orchids and birdcage accents" loading="lazy">
+            </a>
+            <figcaption><p class="cap-title">Decor and lighting</p><p class="cap-meta">Upstairs · Asian · orchid detail</p></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <h2>Ground Floor Bedroom — &ldquo;Le Provance&rdquo;</h2>
+        <p class="section-note">Easiest-access bedroom on the main level with French-provincial styling and marble accent wall.</p>
+        <div class="grid">
+          <figure>
+            <a class="img-link" href="assets/photos/optimized/ground-floor-bedroom-3.jpg" target="_blank" rel="noopener">
+              <img src="assets/photos/optimized/ground-floor-bedroom-3.jpg" alt="Le Provance bedroom with marble wall and green armchair" loading="lazy">
+            </a>
+            <figcaption><p class="cap-title">Full room view</p><p class="cap-meta">Ground floor · Le Provance · marble wall</p></figcaption>
+          </figure>
+          <figure>
+            <a class="img-link" href="assets/photos/optimized/photo-bedroom-canopy-bed-with-teddy-bear.jpg" target="_blank" rel="noopener">
+              <img src="assets/photos/optimized/photo-bedroom-canopy-bed-with-teddy-bear.jpg" alt="Le Provance bedroom with canopy net and vintage mirrors" loading="lazy">
+            </a>
+            <figcaption><p class="cap-title">Canopy bed detail</p><p class="cap-meta">Ground floor · Le Provance · romantic styling</p></figcaption>
+          </figure>
+          <figure>
+            <a class="img-link" href="assets/photos/optimized/ground-floor-bedroom.jpg" target="_blank" rel="noopener">
+              <img src="assets/photos/optimized/ground-floor-bedroom.jpg" alt="Le Provance bedroom with ornate white furniture" loading="lazy">
+            </a>
+            <figcaption><p class="cap-title">Bed and seating</p><p class="cap-meta">Ground floor · Le Provance · provincial decor</p></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <h2>Living Room</h2>
+        <p class="section-note">Open-plan ground-floor lounge with dining area, wood stove, and pool-garden views.</p>
+        <div class="grid">
+          <figure>
+            <a class="img-link" href="assets/photos/optimized/interior-lounge-2.jpg" target="_blank" rel="noopener">
+              <img src="assets/photos/optimized/interior-lounge-2.jpg" alt="Living room with L-shaped sofa and crystal chandelier" loading="lazy">
+            </a>
+            <figcaption><p class="cap-title">Main seating area</p><p class="cap-meta">Ground floor · living room · open plan</p></figcaption>
+          </figure>
+          <figure>
+            <a class="img-link" href="assets/photos/optimized/interior-lounge.jpg" target="_blank" rel="noopener">
+              <img src="assets/photos/optimized/interior-lounge.jpg" alt="Living room with cowhide rug and wall-mounted TV" loading="lazy">
+            </a>
+            <figcaption><p class="cap-title">Lounge and TV wall</p><p class="cap-meta">Ground floor · living room · rustic beams</p></figcaption>
+          </figure>
+          <figure>
+            <a class="img-link" href="assets/photos/optimized/interior-dining.jpg" target="_blank" rel="noopener">
+              <img src="assets/photos/optimized/interior-dining.jpg" alt="Living and dining area with wood stove and birdcage chandelier" loading="lazy">
+            </a>
+            <figcaption><p class="cap-title">Dining and stove</p><p class="cap-meta">Ground floor · living room · shared space</p></figcaption>
+          </figure>
+          <figure>
+            <a class="img-link" href="assets/photos/optimized/interior-floating-staircase.jpg" target="_blank" rel="noopener">
+              <img src="assets/photos/optimized/interior-floating-staircase.jpg" alt="Custom floating wooden staircase with rope mirrors" loading="lazy">
+            </a>
+            <figcaption><p class="cap-title">Floating staircase</p><p class="cap-meta">Ground floor · circulation · 2025 photo</p></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <h2>Garden Room</h2>
+        <p class="section-note">Ground-floor room opening directly onto the pool terrace — piano, papasan chair, and garden views.</p>
+        <div class="grid">
+          <figure>
+            <a class="img-link" href="assets/photos/optimized/garden-room-piano-pool-view.jpg" target="_blank" rel="noopener">
+              <img src="assets/photos/optimized/garden-room-piano-pool-view.jpg" alt="Garden room with piano and swimming pool view through glass doors" loading="lazy">
+            </a>
+            <figcaption><p class="cap-title">Piano and pool view</p><p class="cap-meta">Ground floor · garden room · pool access</p></figcaption>
+          </figure>
+          <figure>
+            <a class="img-link" href="assets/photos/optimized/garden-room-lounge.jpg" target="_blank" rel="noopener">
+              <img src="assets/photos/optimized/garden-room-lounge.jpg" alt="Garden room papasan chair overlooking the pool and garden" loading="lazy">
+            </a>
+            <figcaption><p class="cap-title">Papasan lounge</p><p class="cap-meta">Ground floor · garden room · indoor-outdoor</p></figcaption>
+          </figure>
+          <figure>
+            <a class="img-link" href="assets/photos/optimized/garden-room-console-flowers.jpg" target="_blank" rel="noopener">
+              <img src="assets/photos/optimized/garden-room-console-flowers.jpg" alt="Garden room console with fresh flower arrangement and mirror" loading="lazy">
+            </a>
+            <figcaption><p class="cap-title">Floral console detail</p><p class="cap-meta">Ground floor · garden room · decor</p></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <h2>Upstairs Bathroom</h2>
+        <p class="section-note">Loft-level spa bathroom with natural stone wall, walk-in shower, and wooden vanity.</p>
+        <div class="grid">
+          <figure>
+            <a class="img-link" href="assets/photos/optimized/upstairs-bathroom.jpg" target="_blank" rel="noopener">
+              <img src="assets/photos/optimized/upstairs-bathroom.jpg" alt="Upstairs bathroom with rock wall and walk-in shower" loading="lazy">
+            </a>
+            <figcaption><p class="cap-title">Full bathroom view</p><p class="cap-meta">Upstairs · stone wall · walk-in shower</p></figcaption>
+          </figure>
+          <figure>
+            <a class="img-link" href="assets/photos/optimized/upstairs-bathrom-2.jpg" target="_blank" rel="noopener">
+              <img src="assets/photos/optimized/upstairs-bathrom-2.jpg" alt="Upstairs bathroom vanity with stone sink and circular mirror" loading="lazy">
+            </a>
+            <figcaption><p class="cap-title">Stone vanity</p><p class="cap-meta">Upstairs · live-edge wood · loft beams</p></figcaption>
+          </figure>
+          <figure>
+            <a class="img-link" href="assets/photos/optimized/photo-bathroom-rustic-stone-sink-interior.jpg" target="_blank" rel="noopener">
+              <img src="assets/photos/optimized/photo-bathroom-rustic-stone-sink-interior.jpg" alt="Upstairs bathroom stone vessel sink close-up" loading="lazy">
+            </a>
+            <figcaption><p class="cap-title">Vessel sink detail</p><p class="cap-meta">Upstairs · natural stone · spa finish</p></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <h2>Ground Floor Bathroom</h2>
+        <p class="section-note">Main-level bathroom with double vanity, live-edge counter, and LED-lit shower niches.</p>
+        <div class="grid">
+          <figure>
+            <a class="img-link" href="assets/photos/optimized/ground-floor-bathroom.jpg" target="_blank" rel="noopener">
+              <img src="assets/photos/optimized/ground-floor-bathroom.jpg" alt="Ground floor bathroom with double vanity and bamboo ladder" loading="lazy">
+            </a>
+            <figcaption><p class="cap-title">Double vanity</p><p class="cap-meta">Ground floor · live-edge counter</p></figcaption>
+          </figure>
+          <figure>
+            <a class="img-link" href="assets/photos/optimized/photo-bathroom-interior-shower-led-niches.jpg" target="_blank" rel="noopener">
+              <img src="assets/photos/optimized/photo-bathroom-interior-shower-led-niches.jpg" alt="Ground floor shower with LED-lit niches" loading="lazy">
+            </a>
+            <figcaption><p class="cap-title">LED shower niches</p><p class="cap-meta">Ground floor · rainfall shower</p></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <h2>Kitchen</h2>
+        <p class="section-note">Fully equipped ground-floor kitchen with blue-grey cabinets, wood counters, and marble backsplash.</p>
+        <div class="grid">
+          <figure>
+            <a class="img-link" href="assets/photos/optimized/kitchen-corner-wide.jpg" target="_blank" rel="noopener">
+              <img src="assets/photos/optimized/kitchen-corner-wide.jpg" alt="Kitchen with blue cabinets and wine-crate shelving" loading="lazy">
+            </a>
+            <figcaption><p class="cap-title">Kitchen overview</p><p class="cap-meta">Ground floor · blue-grey cabinets</p></figcaption>
+          </figure>
+          <figure>
+            <a class="img-link" href="assets/photos/optimized/photo-kitchen-light-blue-cabinets-wood-countertop.jpg" target="_blank" rel="noopener">
+              <img src="assets/photos/optimized/photo-kitchen-light-blue-cabinets-wood-countertop.jpg" alt="Kitchen counter with marble backsplash and window view" loading="lazy">
+            </a>
+            <figcaption><p class="cap-title">Counter and backsplash</p><p class="cap-meta">Ground floor · wood countertop detail</p></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <h2>Exterior</h2>
+        <p class="section-note">Stone facade, vine-covered entrance, pool, and outdoor dining under the pergola.</p>
+        <div class="grid">
+          <figure>
+            <a class="img-link" href="assets/photos/optimized/photo-stone-house-blue-gate-number-26.jpg" target="_blank" rel="noopener">
+              <img src="assets/photos/optimized/photo-stone-house-blue-gate-number-26.jpg" alt="Villa Augflor stone facade with blue gate" loading="lazy">
+            </a>
+            <figcaption><p class="cap-title">Stone facade and gate</p><p class="cap-meta">Exterior · arrival · blue shutters</p></figcaption>
+          </figure>
+          <figure>
+            <a class="img-link" href="assets/photos/optimized/outdoor-parking.jpg" target="_blank" rel="noopener">
+              <img src="assets/photos/optimized/outdoor-parking.jpg" alt="Vine-covered trellis entrance path to the villa" loading="lazy">
+            </a>
+            <figcaption><p class="cap-title">Trellis entrance path</p><p class="cap-meta">Exterior · driveway · Mediterranean planting</p></figcaption>
+          </figure>
+          <figure>
+            <a class="img-link" href="assets/photos/optimized/swimming-pool.jpg" target="_blank" rel="noopener">
+              <img src="assets/photos/optimized/swimming-pool.jpg" alt="Swimming pool with lounge area and garden" loading="lazy">
+            </a>
+            <figcaption><p class="cap-title">Pool and garden</p><p class="cap-meta">Exterior · pool terrace · sun loungers</p></figcaption>
+          </figure>
+          <figure>
+            <a class="img-link" href="assets/photos/optimized/garden-dining-patio.jpg" target="_blank" rel="noopener">
+              <img src="assets/photos/optimized/garden-dining-patio.jpg" alt="Outdoor dining pergola with grape vines" loading="lazy">
+            </a>
+            <figcaption><p class="cap-title">Pergola dining</p><p class="cap-meta">Exterior · outdoor kitchen · grape vines</p></figcaption>
+          </figure>
+          <figure>
+            <a class="img-link" href="assets/photos/optimized/photo-house-swimming-pool-night.jpg" target="_blank" rel="noopener">
+              <img src="assets/photos/optimized/photo-house-swimming-pool-night.jpg" alt="Pool and villa exterior at night with ambient lighting" loading="lazy">
+            </a>
+            <figcaption><p class="cap-title">Pool at night</p><p class="cap-meta">Exterior · evening ambiance</p></figcaption>
+          </figure>
+          <figure>
+            <a class="img-link" href="assets/photos/optimized/entrance-gate-cypress.jpg" target="_blank" rel="noopener">
+              <img src="assets/photos/optimized/entrance-gate-cypress.jpg" alt="Wrought iron entrance gate with stone steps and cypress trees" loading="lazy">
+            </a>
+            <figcaption><p class="cap-title">Entrance gate</p><p class="cap-meta">Exterior · stone steps · 2025 photo</p></figcaption>
+          </figure>
+          <figure>
+            <a class="img-link" href="assets/photos/optimized/garden-archway-path.jpg" target="_blank" rel="noopener">
+              <img src="assets/photos/optimized/garden-archway-path.jpg" alt="Garden path through rose archway to lawn lounge" loading="lazy">
+            </a>
+            <figcaption><p class="cap-title">Garden archway</p><p class="cap-meta">Exterior · hydrangeas · 2025 photo</p></figcaption>
+          </figure>
+          <figure>
+            <a class="img-link" href="assets/photos/optimized/exterior-terrace-lounge-roses.jpg" target="_blank" rel="noopener">
+              <img src="assets/photos/optimized/exterior-terrace-lounge-roses.jpg" alt="Shaded terrace lounge with climbing roses" loading="lazy">
+            </a>
+            <figcaption><p class="cap-title">Terrace lounge</p><p class="cap-meta">Exterior · pergola · climbing roses</p></figcaption>
+          </figure>
+          <figure>
+            <a class="img-link" href="assets/photos/optimized/pool-patio-yellow-awning.jpg" target="_blank" rel="noopener">
+              <img src="assets/photos/optimized/pool-patio-yellow-awning.jpg" alt="Pool patio with yellow sun awning and turquoise loungers" loading="lazy">
+            </a>
+            <figcaption><p class="cap-title">Pool patio</p><p class="cap-meta">Exterior · sun awning · 2025 photo</p></figcaption>
+          </figure>
+          <figure>
+            <a class="img-link" href="assets/photos/optimized/terrace-hillside-view-sunset.jpg" target="_blank" rel="noopener">
+              <img src="assets/photos/optimized/terrace-hillside-view-sunset.jpg" alt="Balcony bistro set overlooking hillside at sunset" loading="lazy">
+            </a>
+            <figcaption><p class="cap-title">Hillside view terrace</p><p class="cap-meta">Exterior · sunset · Côte d&rsquo;Azur panorama</p></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="footer-cta wrap">
+      <a class="btn btn-primary" href="https://wa.me/33623777333">Enquire About Available Dates</a>
+    </section>
+  </main>
 </body>
 </html>

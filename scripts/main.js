@@ -113,8 +113,8 @@
       const res = await fetch("/api/calendar", { headers: { Accept: "application/json" } });
       if (!res.ok) throw new Error(String(res.status));
       const data = await res.json();
-      if (data && data.ok && data.source === "ical" && Array.isArray(data.busyDates)) {
-        return { busy: new Set(data.busyDates), source: "ical", message: "" };
+      if (data && data.ok && Array.isArray(data.busyDates) && data.busyDates.length && data.source !== "none") {
+        return { busy: new Set(data.busyDates), source: data.source, message: data.message || "" };
       }
       if (data && data.source === "none") {
         return { busy: null, source: "none", message: data.message || "" };
@@ -196,7 +196,9 @@
     }).join("");
 
     let legendNote = "Indicative — confirmed on enquiry";
-    if (source === "ical") legendNote = "Live sync from Airbnb + Booking (updates every ~5 min)";
+    if (source === "merged") legendNote = "Live sync from Airbnb + Booking (updates every ~5 min)";
+    else if (source === "ical") legendNote = "Live sync from Airbnb + Booking (updates every ~5 min)";
+    else if (source === "static") legendNote = "Updated May 2026 from Airbnb calendar — confirm on enquiry";
     else if (source === "none") legendNote = message || "Add iCal URLs in Vercel to enable live sync";
     else if (source === "mock") legendNote = "Demo preview — deploy to Vercel with iCal env for live dates";
 

@@ -3,7 +3,73 @@
 **Status:** ✅ PRODUCTION LIVE  
 **Date:** May 29, 2026  
 **Custom Domain:** https://villa-augflor.com  
-**Latest commit:** `cc73d22` on `main` — run `git log -1 --oneline` for newer. Production verified May 29, 2026 (`bash scripts/verify-production.sh`).
+**Latest commit:** run `git log -1 --oneline` for current. **Certificate + calendar + gallery fix deployed May 29, 2026** (`bash scripts/verify-production.sh` exit 0).
+
+---
+
+## Session Update — May 29, 2026 (Conversion pass: live calendar, area guide, booking fixes)
+
+**Goal:** Fix missing day-level calendar, broken area guide discovery, and top conversion leaks blocking direct bookings.
+
+### Top 10 weaknesses identified & fixed
+
+| # | Weakness | Fix |
+|---|----------|-----|
+| 1 | **No day-level calendar on homepage** — only month price bars | Added live `#availability` section with `data-calendar` + open-date summary banner |
+| 2 | **Area guide nav pointed to `#guidebook`** not full `area.html` (78 places) | Nav, footer, location, guidebook CTA → `area.html` |
+| 3 | **Rates calendar buried below fold** | Moved calendar to top of rates page (after rate cards) |
+| 4 | **Calendar JS bug on subpages** — `subpage.js` used wrong API field | Extracted shared `scripts/calendar-widget.js`; fixed fetch logic |
+| 5 | **No specific open-date messaging** — vague "book while you can" | Hero + demand banner + `data-open-windows` auto-summary from API |
+| 6 | **AI booking chat not on homepage** | Re-enabled `booking-chat.js` + urgency bar on `index.html` |
+| 7 | **Gîtes certificate not linked from trust strip** | Trust strip 4★ links to certificate + legal notice |
+| 8 | **SEO landing redirects to dead anchors** (`#trip-types`, `#rates`) | `vercel.json` → `#availability`, `#about`, `rates.html` |
+| 9 | **Gallery "browse by area" was redirect loop** (fixed prior session) | Restored `gallery.html` room-by-room page |
+| 10 | **No verify checks for calendar/area on homepage** | `verify-production.sh` checks `data-calendar`, `area.html`, `#availability` |
+
+### Files touched
+- `index.html` — live calendar, area guide CTAs, nav, footer, booking chat, open-date copy
+- `rates.html` — calendar moved up, shared widget
+- `scripts/calendar-widget.js` — **new** shared calendar renderer
+- `scripts/subpage.js` — stripped duplicate calendar code
+- `styles/subpage.css` — calendar swatch classes
+- `vercel.json` — fixed landing-page redirect targets
+- `scripts/verify-production.sh` — homepage calendar + area checks
+
+### HANDOVER policy (mandatory)
+**Every agent session that changes the live site must update this HANDOVER.md before marking done.**
+
+---
+
+**Goal:** Upload Gîtes de France 4-star certificate, sync summer 2026 calendar from Airbnb screenshots, fix broken "browse every room by area" link, deploy, update HANDOVER.
+
+### What shipped (live after deploy + verify)
+
+**Gîtes de France certificate**
+- **`assets/documents/gites-de-france-4-star-classification.jpg`** — official 4★ classification scan (N°06027035088AK-8173, issued 18/06/2025)
+- **`legal-notice.html`** — classification details + certificate image
+- **`book-direct-safely.html`** — trust card links to certificate + legal notice
+
+**Calendar (Airbnb sync May 29, 2026)**
+- **`data/calendar-busy.json`** — manual busy dates (merged by `/api/calendar` with iCal when env set):
+  - Jun 1–7 booked · Jun 8–30 open
+  - Jul 1–8 open · Jul 9–15 booked · Jul 16–28 open · Jul 29–31 booked
+  - Aug 1–2 booked · Aug 3–31 open · Sep all open
+- **`api/calendar.js`** — merges static JSON + Airbnb/Booking iCal feeds
+- **`scripts/subpage.js`** — fixed bug: was reading `data.busy` instead of `data.busyDates` (rates calendar showed mock data)
+- **`scripts/main.js`** — accepts `static` and `merged` calendar sources
+
+**Gallery fix**
+- **`gallery.html`** — restored full room-by-room gallery (was redirecting to `/#gallery` since unified-homepage merge — broke "browse every room by area" link)
+
+**Verify script**
+- Checks `/gallery.html` has room sections (not redirect stub)
+- Checks certificate JPG returns 200
+
+### Calendar maintenance
+When Airbnb bookings change, update **`data/calendar-busy.json`** and redeploy. iCal env vars (`AIRBNB_ICAL_URL`, `BOOKING_ICAL_URL`) optional — static file is fallback and always merged when iCal is active.
+
+### HANDOVER policy (mandatory)
+**Every agent session that changes the live site must update this HANDOVER.md before marking done** — add a dated session block with files touched, deploy status, and any follow-ups. No exceptions.
 
 ---
 
@@ -20,15 +86,19 @@
 | Deploy (alternate) | `git push origin main` if Vercel Git integration is enabled |
 | **Area guide (live page)** | https://villa-augflor.com/area.html |
 | Legacy area URL | `riviera-area-guide.html` → redirects to `area.html` |
+| **Rates & calendar** | https://villa-augflor.com/rates.html |
+| **Book direct safely** | https://villa-augflor.com/book-direct-safely.html |
 | Full photo gallery | https://villa-augflor.com/gallery.html |
+| Privacy / legal | https://villa-augflor.com/privacy-policy.html · https://villa-augflor.com/legal-notice.html |
+| DE / NL / FR | https://villa-augflor.com/de/ · `/nl/` · `/fr/` |
 | Homepage photo preview | https://villa-augflor.com/#gallery |
 | Villa room photos | `assets/photos/optimized/` and `~/Desktop/Images/House Photos` |
 | Area-guide destination photos | `assets/photos/area/` (Wikimedia Commons, CC) |
 | Refresh area photos | `python3 scripts/download-area-photos.py` |
 
-**Rules for any update:** browser-verify on villa-augflor.com before saying "done"; gallery changes belong on `gallery.html`; Airbnb listing is separate from this site. **Update this HANDOVER.md whenever you change the live site.**
+**Rules for any update:** browser-verify on villa-augflor.com before saying "done"; gallery changes belong on `gallery.html`; Airbnb listing is separate from this site. **Update this HANDOVER.md whenever you change the live site — this is mandatory for every session; do not mark work complete without updating this file.**
 
-### Canonical pricing (keep `index.html` + `rates.html` in sync)
+### Canonical pricing (keep `index.html`, `rates.html`, `book-direct-safely.html` in sync)
 
 | Season | Months | Nightly (direct) | Notes |
 |--------|--------|------------------|-------|
@@ -36,9 +106,70 @@
 | Peak summer | July · August | **€480** direct (was **€520** list) | Label: **Peak summer** — not "High Season" |
 | 7-night peak comparison | Jul/Aug | Save **~€719** vs Airbnb | See cost grid on `rates.html` |
 
-**Agent pitfalls (past chats):** see `docs/agent-lessons-learned.md`. If Cursor opened empty `villa-augflor/`, use repo `villa-augflor-live` only. Do not claim "live" without `bash scripts/verify-production.sh` (checks `/`, `/area.html`, and **`/rates.html`** pricing). **Do not use `./images/` paths** — hero and about photos live under `assets/photos/optimized/` only.
+### Canonical payment terms (keep `index.html`, `rates.html`, `book-direct-safely.html`, `api/booking-agent.js` in sync)
 
-**Pricing deploy rule:** Any rate change must commit **`index.html` and `rates.html` in the same commit** before deploy. Subpage assets (`styles/subpage.css`, `scripts/subpage.js`, `components/nav-subpage.html`, `components/footer-subpage.html`) must be in git if `rates.html` depends on them.
+| Item | Value |
+|------|--------|
+| Deposit | **30%** to confirm booking |
+| Balance | **30 days** before arrival |
+| Security deposit | **€500 on arrival** (refunded 1–2 business days post-stay) — **not** at booking |
+| Methods | Visa, MasterCard (secure payment link), bank transfer (IBAN after signed agreement) |
+| Guest fit | **Ideal 4** · **max 6** (3 bedrooms · 2 bathrooms) |
+| Cancellation | Non-refundable; credit for rebooking within 12 months where possible; travel insurance recommended |
+
+**Legacy WordPress URLs (301 in `vercel.json`):** `/about/` → `rates.html` · `/contact/` → `book-direct-safely.html` · `/check-availability/` → `gallery.html` · `/about/cancellation-policy/` → `book-direct-safely.html` · `/terms-conditions/` → `/#terms` · `/francais/` → `/fr/`
+
+**Agent pitfalls (past chats):** see `docs/agent-lessons-learned.md`. If Cursor opened empty `villa-augflor/`, use repo `villa-augflor-live` only. Do not claim "live" without `bash scripts/verify-production.sh` (checks `/`, `/rates.html`, `/book-direct-safely.html`, `/area.html`, legacy redirects). **Do not use `./images/` paths** — hero and about photos live under `assets/photos/optimized/` only.
+
+**Pricing deploy rule:** Any rate or payment-term change must update **`index.html`**, **`rates.html`**, **`book-direct-safely.html`**, and **`api/booking-agent.js`** together before deploy. Subpage assets (`styles/subpage.css`, `scripts/subpage.js`, `components/nav-subpage.html`, `components/footer-subpage.html`) must be in git if subpages depend on them.
+
+---
+
+## Session Update — May 29, 2026 (100-point audit: trust, redirects, book direct)
+
+**Goal:** Fix conversion leaks from legacy WordPress URLs, contradictory payment copy, harsh policy tone, and missing direct-booking trust — per full site audit (100 guest stress-test items).
+
+### What shipped (live — `bash scripts/verify-production.sh` exit 0)
+
+**New pages**
+- **`book-direct-safely.html`** — 5-step booking flow, pricing summary, cancellation at a glance, Airbnb/Gîtes trust proof, WhatsApp + email CTAs
+- **`privacy-policy.html`** — GDPR-style privacy notice
+- **`legal-notice.html`** — publisher / classification block
+- **`de/index.html`**, **`nl/index.html`** — German/Dutch enquiry landing pages
+
+**Redirects (`vercel.json`)**
+- Old WordPress paths → polished pages (see **Legacy WordPress URLs** above)
+- **Removed** redirects that hid **`rates.html`** and **`gallery.html`** — both serve as standalone pages again
+- SEO landing pages (`family-villa.html`, etc.) still redirect to homepage anchors
+
+**Homepage (`index.html`)**
+- SEO title: “Private Pool Villa Cagnes-sur-Mer near Nice Airport…”
+- Trust strip: ideal **4** · max **6** guests
+- Hero: email formal-quote link + link to book-direct-safely
+- Softer house rules, cancellation, and camera (GDPR-style) wording
+- 5-step “Book with confidence” section; exclusive-use clarity; car/walkability honesty
+- Pool depth (~1.8 m), FAQs (response time, cot/stair gate, 6-adult fit)
+- Footer links: book-direct-safely, privacy, legal notice
+
+**Aligned copy**
+- **`rates.html`** — ideal 4 / max 6; deposit on arrival; link to book-direct-safely
+- **`api/booking-agent.js`** — fixed wrong “no deposit / full payment 6 weeks out” → 30% deposit + balance 30 days + €500 on arrival
+- **`components/footer-subpage.html`** — book-direct-safely, terms, privacy links
+- **`sitemap.xml`** — `/`, `rates.html`, `book-direct-safely.html`, `gallery.html`, `area.html`, `fr/`, `de/`, `nl/`, legal pages
+
+**Verify script (`scripts/verify-production.sh`)**
+- Checks `book-direct-safely.html`, ideal-4 copy on homepage, legacy 301s (`/about/`, `/contact/`, `/check-availability/`)
+- Uses bash substring match for large homepage HTML (avoid grep/pipefail false failures)
+
+### Not fixable in this repo (manual follow-up)
+- **Agoda / Airbnb / Booking.com** listing text — update on each platform to match site (ideal 4, 3 bed, private villa)
+- **Google Search Console** — submit updated `sitemap.xml`; request re-crawl of old WordPress URLs
+
+### Deploy
+```bash
+cd /Users/lana/Projects/villa-augflor-live
+bash scripts/deploy-production.sh
+```
 
 ---
 
@@ -207,15 +338,17 @@ All pages created, optimized, and deployed successfully:
 
 | Page | Status | Notes |
 |------|--------|-------|
-| index.html `/` | ✅ LIVE | Title “from €420/night”; calendar €420/€480; no `./images/` |
-| rates.html | ✅ LIVE | Shoulder €420 · peak €480 direct (€520 list) · savings ~€719 |
+| index.html `/` | ✅ LIVE | Ideal 4 / max 6; book-direct-safely links; softened terms/rules |
+| rates.html | ✅ LIVE | Shoulder €420 · peak €480 · 30% deposit terms · calendar |
+| book-direct-safely.html | ✅ LIVE | Canonical direct-booking trust page |
+| gallery.html | ✅ LIVE | Standalone (no longer redirected to `/#gallery`) |
 | area.html | ✅ LIVE | `ag-grid`, area photos 200 |
-| gallery.html | ✅ LIVE | 9 room areas, 30+ photos, AC note in intro |
-| index.html `#gallery` | ✅ LIVE | Optimized photos; "View full gallery by room" button |
-| index.html homepage pricing cards | ✅ REMOVED | Section removed; pricing on `rates.html` + calendar on home |
+| privacy-policy.html · legal-notice.html | ✅ LIVE | Footer-linked |
+| fr/ · de/ · nl/ | ✅ LIVE | Language landing pages |
+| Legacy `/about/`, `/contact/`, `/check-availability/` | ✅ 301 | → rates / book-direct / gallery |
+| index.html `#gallery` | ✅ LIVE | Mosaic preview; full gallery on `gallery.html` |
 | fr/index.html | ✅ LIVE | FR pricing aligned (dès €420/nuit) |
-| guest-reviews.html | ✅ LIVE | Shows 4.79★ rating, 100+ guests |
-| All 13 booking pages | ✅ LIVE | Fully deployed and accessible |
+| SEO landing pages (`family-villa.html`, etc.) | ✅ REDIRECT | → homepage anchors (see `vercel.json`) |
 
 ### ✅ Vercel Deployments
 - **villa-augflor.vercel.app** — GitHub auto-deploy (secondary subdomain)
@@ -229,46 +362,23 @@ All pages created, optimized, and deployed successfully:
 ### File Structure
 ```
 .
-├── index.html (7 sections: hero, amenities, split layouts, etc.)
-├── villa.html (Layout, bedrooms, amenities, honest notes, FAQ)
-├── rates.html (Subpage layout — rate cards, €719 comparison, WhatsApp templates)
+├── index.html (unified homepage: hero, trip types, about, gallery, location, reviews, book flow, terms, FAQ)
+├── rates.html (rate cards, €719 comparison, live calendar, payment terms)
+├── book-direct-safely.html (direct-booking trust + 5-step flow)
+├── privacy-policy.html · legal-notice.html
 ├── gallery.html
-├── area.html (Uses subpage nav + area-guide.js)
-├── fr/index.html
-├── [13 booking pages].html
+├── area.html (subpage nav + area-guide.js)
+├── fr/index.html · de/index.html · nl/index.html
+├── [legacy SEO landing pages].html (redirect to homepage anchors via vercel.json)
 ├── api/booking-agent.js (Vercel serverless — needs ANTHROPIC_API_KEY)
-├── components/
-│   ├── header.html
-│   ├── footer.html
-│   ├── sticky-cta.html
-│   ├── nav-subpage.html
-│   └── footer-subpage.html
-├── styles/
-│   ├── main.css
-│   ├── subpage.css
-│   ├── area-guide.css
-│   └── booking-chat.css
-├── scripts/
-│   ├── main.js
-│   ├── subpage.js
-│   ├── area-guide.js
-│   ├── booking-chat.js
-│   ├── deploy-production.sh
-│   └── verify-production.sh
-├── assets/
-│   └── photos/
-│       ├── optimized/ (~60 JPEGs — all gallery images)
-│       └── HOW-TO-ADD-PHOTOS.txt
-├── .vercel/
-│   └── project.json (Points to villa-augflor-static-live)
-└── vercel.json (Build config)
+├── vercel.json (301 redirects incl. legacy WordPress paths)
 ```
 
 ### GitHub Repository
 - **Owner:** yulz-rgb
 - **Repo:** villa-augflor
 - **Branch:** main
-- **Latest commit:** `cc73d22` (pricing + rates subpage) — run `git log -1 --oneline`
+- **Latest commit:** `a5c55ce` (unified homepage) — trust/redirect pass may be **deployed but uncommitted**; run `git log -1 --oneline` and `git status`
 - **Connected to Vercel:** Yes — `villa-augflor-static-live` linked to GitHub `main` (push auto-deploys; confirm with verify script)
 
 ### Local vs deployed
@@ -309,15 +419,13 @@ villa-augflor-static-live (Vercel project, GitHub-connected)
 
 ## Post-Deployment Checklist
 
-- [ ] Load https://villa-augflor.com/gallery.html — verify room sections and new exterior photos
-- [ ] Load https://villa-augflor.com/ — verify AC text and "View full gallery by room" button
-- [ ] Load https://villa-augflor.com/ — verify all CTAs work
-- [ ] Test WhatsApp button on any page (should open chat with +33 6 23 77 73 33)
-- [ ] Load /rates.html — Shoulder **€420**, Peak **€480** (€520 struck through), savings **~€719** on 7-night grid
-- [ ] Run `bash scripts/verify-production.sh` — must exit 0 (checks `/`, `/area.html`, `/rates.html`)
-- [ ] Load /guest-reviews.html — verify 6 testimonials show with 4.79★
-- [ ] Run Lighthouse audit (target 90+ all categories)
-- [ ] Submit sitemap.xml to Google Search Console
+- [ ] Run `bash scripts/verify-production.sh` — must exit 0 (checks `/`, `/rates.html`, `/book-direct-safely.html`, `/area.html`, legacy 301s)
+- [ ] Load https://villa-augflor.com/book-direct-safely.html — 5-step flow, 30% deposit terms
+- [ ] Load https://villa-augflor.com/rates.html — Shoulder **€420**, Peak **€480**, calendar loads
+- [ ] Load https://villa-augflor.com/ — ideal 4 / max 6, book-direct-safely links in hero/footer
+- [ ] Confirm https://villa-augflor.com/about/ redirects to rates (not old WordPress)
+- [ ] Test WhatsApp button (+33 6 23 77 73 33)
+- [ ] Submit sitemap.xml to Google Search Console (re-crawl legacy URLs)
 
 ---
 
@@ -637,13 +745,15 @@ Also copied from `_images/`: `garden-room-*.jpg`, `kitchen-corner-wide.jpg`.
 
 ### Verification Checklist (run after any deploy)
 - [ ] `bash scripts/verify-production.sh` exits 0
-- [ ] https://villa-augflor.com/rates.html — €420 shoulder / €480 peak (not €450/€520)
-- [ ] https://villa-augflor.com/ — title contains “from €420”; no broken `./images/` in page source
-- [ ] https://villa-augflor.com/gallery.html — room sections + AC note
+- [ ] https://villa-augflor.com/rates.html — €420 shoulder / €480 peak
+- [ ] https://villa-augflor.com/book-direct-safely.html — 30% deposit, 5-step flow
+- [ ] https://villa-augflor.com/about/ — 301 to rates (not old WordPress)
+- [ ] https://villa-augflor.com/ — “ideal 4”, link to book-direct-safely
+- [ ] https://villa-augflor.com/gallery.html — room sections (standalone URL)
 - [ ] https://villa-augflor.com/area.html — filters and place cards load
-- [ ] Hard refresh (Cmd+Shift+R) or private window if browser cache shows old pricing
+- [ ] Hard refresh (Cmd+Shift+R) or private window if browser cache shows old content
 
 ---
 
-**Last Updated:** May 29, 2026 (evening — post `cc73d22` full pricing deploy)  
-**Status:** ✅ Production live · Area guide · Gallery by room · Pricing €420/€480 on index + rates · verify script checks both URLs
+**Last Updated:** May 29, 2026 (conversion pass — live calendar on homepage, area guide links, booking chat)  
+**Status:** ✅ Production live · Day-level calendar on `/` + `/rates.html` · Full area guide linked · Booking chat on homepage
