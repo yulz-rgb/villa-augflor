@@ -3,7 +3,7 @@
 **Status:** ✅ PRODUCTION LIVE  
 **Date:** May 29, 2026  
 **Custom Domain:** https://villa-augflor.com  
-**Latest commit:** `c7c8721` on `main` — Area Guide + photos (May 29, 2026)
+**Latest commit:** `84de3fe` on `main` — Area Guide + photos (May 29, 2026)
 
 ---
 
