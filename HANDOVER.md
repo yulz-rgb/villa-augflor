@@ -1,9 +1,10 @@
 # Handover: Villa Augflor SEO & Deployment Complete
 
-**Status:** ✅ PRODUCTION LIVE — CRO Phase 2 deployed (`dpl_48gGY6pjnFsEoaCHEwh8dco6VjYV`, verify exit 0)  
+**Status:** ✅ PRODUCTION LIVE — CRO Phase 2 on https://villa-augflor.com (`verify-production.sh` exit 0, May 29 2026)  
 **Date:** May 29, 2026  
 **Custom Domain:** https://villa-augflor.com  
-**Latest commit:** `b513848` — CRO Phase 2 (homepage trim, enquiry, landing pages, gallery, area)
+**Latest commit:** `e77ae90` on `origin/main` — CRO Phase 2 (homepage trim, enquiry, landing pages, gallery, area)  
+**Deploy:** `dpl_48gGY6pjnFsEoaCHEwh8dco6VjYV` (serving); later CLI deploys may show Queued in Vercel — verify custom domain, not CLI “Building…”
 
 ---
 
@@ -23,7 +24,11 @@
 | **Rates** | Canonical table, calculator, no struck-through €520 on card |
 | **Verify** | Hero headline, contact.html, family-villa, gallery pool section, `/contact/` → contact.html |
 
-### Deploy
+### Deploy & git
+
+- **Pushed:** `git push origin main` → `e77ae90` (May 29, 2026).
+- **Verify:** `bash scripts/verify-production.sh` — all checks passed on custom domain.
+- **Redeploy (if needed):**
 
 ```bash
 cd /Users/lana/Projects/villa-augflor-live
