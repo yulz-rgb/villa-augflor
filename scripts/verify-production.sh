@@ -50,6 +50,19 @@ if [[ "$PATH_TO_CHECK" == "/" ]]; then
     echo "FAIL: Area guide photo nice.jpg returned HTTP ${PHOTO_CODE}"
     FAIL=1
   fi
+
+  echo "==> Fetching ${SITE%/}/rates.html"
+  RATES_HTML=$(curl -fsSL -H "Cache-Control: no-cache" -H "Pragma: no-cache" "$SITE/rates.html")
+  if echo "$RATES_HTML" | grep -q 'From €420 / night' && echo "$RATES_HTML" | grep -q '€480<small>/ night</small>'; then
+    echo "OK:   Rates page shows €420 shoulder / €480 peak direct"
+  else
+    echo "FAIL: Rates page missing canonical €420 / €480 pricing"
+    FAIL=1
+  fi
+  if echo "$RATES_HTML" | grep -q 'From €450 / night'; then
+    echo "FAIL: Rates page still shows old €450 shoulder pricing"
+    FAIL=1
+  fi
 fi
 
 if [[ "$FAIL" -ne 0 ]]; then

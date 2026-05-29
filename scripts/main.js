@@ -147,10 +147,10 @@
     const year = 2026;
     const months = [
       { name: "May", idx: 4, price: "€480" },
-      { name: "Jun", idx: 5, price: "€480" },
-      { name: "Jul", idx: 6, price: "€520" },
-      { name: "Aug", idx: 7, price: "€520" },
-      { name: "Sep", idx: 8, price: "€480" },
+      { name: "Jun", idx: 5, price: "€420" },
+      { name: "Jul", idx: 6, price: "€480" },
+      { name: "Aug", idx: 7, price: "€480" },
+      { name: "Sep", idx: 8, price: "€420" },
     ];
 
     const { busy, source, message } = await fetchBusyDates();
