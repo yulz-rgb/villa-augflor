@@ -5,5 +5,34 @@
       "memory": 256,
       "maxDuration": 15
     }
-  }
+  },
+  "redirects": [
+    { "source": "/rates.html", "destination": "/#rates", "permanent": true },
+    { "source": "/gallery.html", "destination": "/#gallery", "permanent": true },
+    { "source": "/villa.html", "destination": "/#about", "permanent": true },
+    { "source": "/villa-details.html", "destination": "/#about", "permanent": true },
+    { "source": "/guest-reviews.html", "destination": "/#reviews", "permanent": true },
+    { "source": "/faq-booking.html", "destination": "/#faq", "permanent": true },
+    { "source": "/booking-guide.html", "destination": "/#faq", "permanent": true },
+    { "source": "/family-villa.html", "destination": "/#trip-types", "permanent": true },
+    { "source": "/last-minute-villa.html", "destination": "/#rates", "permanent": true },
+    { "source": "/adults-only-villa.html", "destination": "/#trip-types", "permanent": true },
+    { "source": "/summer-family-vacation.html", "destination": "/#trip-types", "permanent": true },
+    { "source": "/girls-weekend-villa.html", "destination": "/#trip-types", "permanent": true },
+    { "source": "/anniversary-getaway.html", "destination": "/#trip-types", "permanent": true },
+    { "source": "/book-villas-without-overpaying.html", "destination": "/#rates", "permanent": true },
+    { "source": "/villa-no-stairs.html", "destination": "/#trip-types", "permanent": true },
+    { "source": "/solo-traveler-safety.html", "destination": "/#about", "permanent": true },
+    { "source": "/off-season-bookings.html", "destination": "/#rates", "permanent": true },
+    { "source": "/corporate-retreats.html", "destination": "/#about", "permanent": true },
+    { "source": "/eu-summer-2026-villa.html", "destination": "/#trip-types", "permanent": true },
+    { "source": "/french-riviera-guide.html", "destination": "/area.html", "permanent": true },
+    { "source": "/riviera-vacation-tips.html", "destination": "/area.html", "permanent": true },
+    { "source": "/villa-antibes-weekend.html", "destination": "/", "permanent": true },
+    { "source": "/villa-near-cannes.html", "destination": "/", "permanent": true },
+    { "source": "/villa-near-nice.html", "destination": "/", "permanent": true },
+    { "source": "/fr/index.html", "destination": "/", "permanent": true },
+    { "source": "/fr/villa.html", "destination": "/#about", "permanent": true },
+    { "source": "/riviera-area-guide.html", "destination": "/area.html", "permanent": true }
+  ]
 }

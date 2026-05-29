@@ -5,16 +5,18 @@ set -euo pipefail
 SITE="${VERIFY_SITE:-https://villa-augflor.com}"
 PATH_TO_CHECK="${VERIFY_PATH:-/}"
 URL="${SITE%/}${PATH_TO_CHECK}"
+TMP=$(mktemp)
+trap 'rm -f "$TMP"' EXIT
 
 echo "==> Fetching ${URL}"
-HTML=$(curl -fsSL -H "Cache-Control: no-cache" -H "Pragma: no-cache" "$URL")
+curl -fsSL -H "Cache-Control: no-cache" -H "Pragma: no-cache" "$URL" -o "$TMP"
 
 FAIL=0
 
 check_absent() {
   local label="$1"
   local pattern="$2"
-  if echo "$HTML" | grep -qiE "$pattern"; then
+  if grep -qiE "$pattern" "$TMP"; then
     echo "FAIL: ${label} still present on live site (matched: ${pattern})"
     FAIL=1
   else
@@ -22,22 +24,50 @@ check_absent() {
   fi
 }
 
-# Homepage pricing cards section (removed May 2026)
-check_absent "Homepage rates section" 'id="rates"|Simple,\s*<em>transparent rates</em>|transparent rates'
+check_present() {
+  local label="$1"
+  local pattern="$2"
+  if grep -qiE "$pattern" "$TMP"; then
+    echo "OK:   ${label} present"
+  else
+    echo "FAIL: ${label} missing on live site (expected: ${pattern})"
+    FAIL=1
+  fi
+}
+
+check_present_f() {
+  local label="$1"
+  local fixed="$2"
+  if grep -qF "$fixed" "$TMP"; then
+    echo "OK:   ${label} present"
+  else
+    echo "FAIL: ${label} missing on live site (expected: ${fixed})"
+    FAIL=1
+  fi
+}
+
+# Old standalone pricing cards section (removed — rates now at #rates with merged content)
+check_absent "Legacy homepage rates block" 'Simple,\s*<em>transparent rates</em>|transparent rates'
 
 # Broken legacy image paths (./images/ removed from repo)
-if echo "$HTML" | grep -qE 'href="\./images/|data-bg="\./images/'; then
+if grep -qE 'href="\./images/|data-bg="\./images/' "$TMP"; then
   echo "FAIL: Homepage still references missing ./images/ paths"
   FAIL=1
 else
   echo "OK:   No ./images/ references on homepage"
 fi
 
-# Area guide (May 2026 redesign)
 if [[ "$PATH_TO_CHECK" == "/" ]]; then
+  check_present "Homepage rates section" 'id="rates"'
+  check_present_f "Homepage €420 shoulder pricing" 'From €420 / night'
+  check_present_f "Homepage €480 peak pricing" 'From €480 / night'
+  check_present_f "Area guide link" 'area.html'
+  check_present "Interactive gallery grid" 'id="galleryRoomGrid"'
+  check_absent "Legacy gallery.html link in nav" 'href="gallery\.html"'
+
   echo "==> Fetching ${SITE%/}/area.html"
-  AREA_HTML=$(curl -fsSL -H "Cache-Control: no-cache" "$SITE/area.html")
-  if echo "$AREA_HTML" | grep -q 'id="ag-grid"'; then
+  curl -fsSL -H "Cache-Control: no-cache" "$SITE/area.html" -o "$TMP"
+  if grep -q 'id="ag-grid"' "$TMP"; then
     echo "OK:   Area guide ag-grid present"
   else
     echo "FAIL: Area guide missing ag-grid on /area.html"
@@ -51,17 +81,12 @@ if [[ "$PATH_TO_CHECK" == "/" ]]; then
     FAIL=1
   fi
 
-  echo "==> Fetching ${SITE%/}/rates.html"
-  RATES_HTML=$(curl -fsSL -H "Cache-Control: no-cache" -H "Pragma: no-cache" "$SITE/rates.html")
-  if echo "$RATES_HTML" | grep -q 'From €420 / night' && echo "$RATES_HTML" | grep -q '€480<small>/ night</small>'; then
-    echo "OK:   Rates page shows €420 shoulder / €480 peak direct"
+  echo "==> Checking rates.html redirect"
+  RATES_LOC=$(curl -sI -H "Cache-Control: no-cache" "$SITE/rates.html" | tr -d '\r' | grep -i '^location:' | head -1 || true)
+  if echo "$RATES_LOC" | grep -qiE '#rates|/$'; then
+    echo "OK:   rates.html redirects to homepage"
   else
-    echo "FAIL: Rates page missing canonical €420 / €480 pricing"
-    FAIL=1
-  fi
-  if echo "$RATES_HTML" | grep -q 'From €450 / night'; then
-    echo "FAIL: Rates page still shows old €450 shoulder pricing"
-    FAIL=1
+    echo "WARN: rates.html redirect not confirmed (${RATES_LOC:-no Location header}) — may still serve old page until deploy"
   fi
 fi
 

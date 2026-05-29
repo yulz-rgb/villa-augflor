@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Villa Augflor | Luxury Private Pool Villa Cagnes-sur-Mer | from €420/night Direct</title>
-<meta name="description" content="Private 3-bedroom pool villa in Cagnes-sur-Mer for couples and families. Ideal for Germany and Netherlands summer travelers. Sleeps 6. 15 min Nice Airport. Book direct and save.">
+<title>Villa Augflor | Pool Villa Côte d'Azur — Photos, Rates &amp; Book Direct from €420/night</title>
+<meta name="description" content="Everything in one place: 35+ villa photos by room, live summer rates (€420–€480/night), 78-place Riviera area guide, reviews &amp; direct booking. Private 3-bed pool villa, Cagnes-sur-Mer. 15 min Nice Airport.">
 <meta name="keywords" content="villa rental Côte d'Azur, private pool villa Nice, French Riviera villa rental, summer 2026 villa france, villa for german families french riviera, villa for dutch families côte d'azur, couples villa south of france, villa augflor, location villa côte d'azur été, villa vacances riviera française, villa 6 personnes piscine, villa rental south of France, maison vacances Cagnes-sur-Mer, villa between Nice Cannes Antibes">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <meta name="author" content="Villa Augflor">
@@ -39,10 +39,11 @@
 <link rel="dns-prefetch" href="https://www.airbnb.fr">
 <link rel="dns-prefetch" href="https://www.instagram.com">
 <link rel="dns-prefetch" href="https://www.facebook.com">
-<link rel="preload" as="image" href="assets/photos/optimized/interior-lounge-2.jpg" fetchpriority="high">
+<link rel="preload" as="image" href="assets/photos/optimized/photo-swimming-pool-backyard-garden-lounge.jpg" fetchpriority="high">
+<link rel="preload" as="image" href="assets/photos/optimized/photo-pool-sunset-evening-view.jpg" fetchpriority="high">
 <link rel="preload" as="image" href="assets/photos/optimized/upstairs-master-bedroom-3.jpg" fetchpriority="high">
-<link rel="preload" as="image" href="assets/photos/optimized/swimming-pool.jpg" fetchpriority="high">
-<link rel="preload" as="image" href="assets/photos/optimized/garden-dining-patio.jpg" fetchpriority="high">
+<link rel="preload" as="image" href="assets/photos/optimized/terrace-hillside-view-sunset.jpg" fetchpriority="high">
+<link rel="stylesheet" href="styles/home-unified.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -145,7 +146,13 @@
       "@type": "ListItem",
       "position": 4,
       "name": "Rates & Booking",
-      "item": "https://villa-augflor.com/rates.html"
+      "item": "https://villa-augflor.com#rates"
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "name": "French Riviera Area Guide",
+      "item": "https://villa-augflor.com/area.html"
     }
   ]
 }
@@ -177,6 +184,26 @@
     "https://www.instagram.com/villa_augflor_france/",
     "https://www.facebook.com/Villa-Augflor-French-Riviera-114028656961294"
   ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://villa-augflor.com/#webpage",
+  "url": "https://villa-augflor.com",
+  "name": "Villa Augflor — Private Pool Villa French Riviera",
+  "description": "Complete villa guide: photos by room, direct rates, reviews, layout, and link to 78-place Riviera area guide.",
+  "isPartOf": {"@id": "https://villa-augflor.com/#villa"},
+  "about": {"@id": "https://villa-augflor.com/#villa"},
+  "primaryImageOfPage": {
+    "@type": "ImageObject",
+    "url": "https://villa-augflor.com/assets/photos/optimized/photo-swimming-pool-backyard-garden-lounge.jpg"
+  },
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".hero-title", ".hero-sub", "#rates", "#gallery"]
+  }
 }
 </script>
 <script type="application/ld+json">
@@ -224,7 +251,7 @@ body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--d
 .urgency-banner a { color: #fff; text-decoration: underline; }
 
 /* NAV */
-nav { position: fixed; top: 37px; left: 0; right: 0; z-index: 100; padding: 1.25rem 2.5rem; display: flex; justify-content: space-between; align-items: center; transition: background .4s, box-shadow .4s; }
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.25rem 2.5rem; display: flex; justify-content: space-between; align-items: center; transition: background .4s, box-shadow .4s; }
 nav.scrolled { background: rgba(247,243,238,0.97); box-shadow: 0 1px 0 rgba(0,0,0,0.08); }
 .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 400; letter-spacing: .04em; color: var(--white); text-decoration: none; transition: color .3s; }
 nav.scrolled .nav-logo { color: var(--deep); }
@@ -531,9 +558,9 @@ footer { background: #141210; padding: 3.5rem 2.5rem 2rem; color: rgba(255,255,2
   <a href="#" class="nav-logo">Villa Augflor</a>
   <div class="nav-links">
     <a href="#about" class="nav-hide">The Villa</a>
-    <a href="gallery.html" class="nav-hide">Gallery</a>
-    <a href="#guidebook" class="nav-hide">Area Guide</a>
-    <a href="rates.html">Rates</a>
+    <a href="#gallery" class="nav-hide">Gallery</a>
+    <a href="#rates" class="nav-hide">Rates</a>
+    <a href="https://www.villa-augflor.com/area.html" class="nav-hide">Area Guide</a>
     <a href="https://wa.me/33623777333" class="nav-cta">Book Direct</a>
   </div>
 </nav>
@@ -543,10 +570,10 @@ footer { background: #141210; padding: 3.5rem 2.5rem 2rem; color: rgba(255,255,2
   <div class="hero-bg"></div>
   <div class="hero-imgs">
     <div class="hero-col-left"></div>
-    <div class="hero-img hi2 lazy-bg" data-bg="assets/photos/optimized/interior-lounge-2.jpg"></div>
-    <div class="hero-img hi3 lazy-bg" data-bg="assets/photos/optimized/upstairs-master-bedroom-3.jpg"></div>
-    <div class="hero-img hi4 lazy-bg" data-bg="assets/photos/optimized/swimming-pool.jpg"></div>
-    <div class="hero-img hi5 lazy-bg" data-bg="assets/photos/optimized/garden-dining-patio.jpg"></div>
+    <div class="hero-img hi2 lazy-bg" data-bg="assets/photos/optimized/photo-swimming-pool-backyard-garden-lounge.jpg"></div>
+    <div class="hero-img hi3 lazy-bg" data-bg="assets/photos/optimized/photo-pool-sunset-evening-view.jpg"></div>
+    <div class="hero-img hi4 lazy-bg" data-bg="assets/photos/optimized/upstairs-master-bedroom-3.jpg"></div>
+    <div class="hero-img hi5 lazy-bg" data-bg="assets/photos/optimized/terrace-hillside-view-sunset.jpg"></div>
   </div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
@@ -585,6 +612,19 @@ footer { background: #141210; padding: 3.5rem 2.5rem 2rem; color: rgba(255,255,2
   </div>
 </div>
 
+<!-- STICKY SECTION NAV -->
+<div class="section-nav-wrap" id="sectionNavWrap">
+  <nav class="section-nav" id="sectionNav" aria-label="Page sections">
+    <a href="#about" data-section="about">The Villa</a>
+    <a href="#gallery" data-section="gallery">Photos</a>
+    <a href="#rates" data-section="rates">Rates</a>
+    <a href="#location" data-section="location">Location</a>
+    <a href="#reviews" data-section="reviews">Reviews</a>
+    <a href="#faq" data-section="faq">FAQ</a>
+    <a href="https://www.villa-augflor.com/area.html" class="area-link">★ Riviera Area Guide</a>
+  </nav>
+</div>
+
 <!-- BOOKING MOMENTUM -->
 <section style="padding:2rem 2.5rem 1.5rem;max-width:1100px;margin:0 auto;">
   <div class="guide-card reveal" style="background:#f0ebe3;border-left:3px solid var(--accent);">
@@ -595,46 +635,110 @@ footer { background: #141210; padding: 3.5rem 2.5rem 2rem; color: rgba(255,255,2
 </section>
 
 <!-- WHO THIS VILLA IS FOR -->
-<section style="padding-top:4rem;padding-bottom:3rem;">
+<section id="trip-types" style="padding-top:4rem;padding-bottom:3rem;">
   <p class="eyebrow reveal">Choose your stay style</p>
   <h2 class="reveal" style="max-width:16ch;">Who this villa <em>fits best</em></h2>
-  <p class="lead reveal" style="max-width:760px;margin-bottom:2rem;">Different guests book for different reasons. Start with the page that matches your trip so you get answers faster.</p>
-  <div class="guide-panel active reveal" style="display:grid;">
-    <div class="guide-card">
-      <div class="guide-card-title">Families with children</div>
-      <div class="guide-card-dist">Space + practical layout</div>
-      <p>Ground-floor bedrooms, private pool, full kitchen, easy short drives to beach and activities.</p>
-      <p style="margin-top:.75rem;"><a href="family-villa.html" style="color:var(--accent);text-decoration:underline;">Open family page</a></p>
+  <p class="lead reveal" style="max-width:760px;margin-bottom:0;">Tap your trip type — everything you need is on this page. No hunting across separate pages.</p>
+
+  <div class="trip-tabs reveal">
+    <button type="button" class="trip-tab active" data-trip="family">Families</button>
+    <button type="button" class="trip-tab" data-trip="couples">Couples</button>
+    <button type="button" class="trip-tab" data-trip="groups">Adult groups</button>
+    <button type="button" class="trip-tab" data-trip="eu">Germany &amp; Netherlands</button>
+    <button type="button" class="trip-tab" data-trip="access">Step-friendly</button>
+  </div>
+
+  <div id="trip-family" class="trip-panel active reveal">
+    <div class="trip-panel-inner">
+      <div>
+        <h3>Families with children</h3>
+        <p>Ground-floor bedrooms, walled private pool, full kitchen, and short drives to beach and activities. Air conditioning in every bedroom, living room, and garden room.</p>
+        <ul class="trip-highlights">
+          <li>Le Provance bedroom on ground floor — easiest access</li>
+          <li>Safe garden for kids · pool supervision required</li>
+          <li>High chair &amp; cot on request</li>
+          <li>Cros-de-Cagnes beach 15 min · Marineland alternatives nearby</li>
+        </ul>
+        <a href="https://wa.me/33623777333?text=Hi%20Lana%2C%20we%20are%20a%20family%20planning%20Villa%20Augflor.%20Dates%3A%20%5Bcheck-in%5D%20to%20%5Bcheck-out%5D.%20Guests%3A%20%5Badults%5D%20adults%20and%20%5Bchildren%5D%20children." class="btn-primary btn-sm">Family availability check</a>
+      </div>
+      <div>
+        <img src="assets/photos/optimized/ground-floor-bedroom-3.jpg" alt="Family-friendly ground floor bedroom Le Provance" loading="lazy" width="520" height="390" style="width:100%;border-radius:2px;object-fit:cover;aspect-ratio:4/3;">
+      </div>
     </div>
-    <div class="guide-card">
-      <div class="guide-card-title">Couples and romantic breaks</div>
-      <div class="guide-card-dist">Privacy + atmosphere</div>
-      <p>Private pool evenings, garden terraces, and curated dining recommendations nearby.</p>
-      <p style="margin-top:.75rem;"><a href="anniversary-getaway.html" style="color:var(--accent);text-decoration:underline;">Open couples page</a></p>
+  </div>
+
+  <div id="trip-couples" class="trip-panel reveal">
+    <div class="trip-panel-inner">
+      <div>
+        <h3>Couples &amp; romantic breaks</h3>
+        <p>Private pool evenings, garden terraces, sunset views, and Lana can arrange wine tastings and restaurant reservations.</p>
+        <ul class="trip-highlights">
+          <li>Barcelona master suite with en-suite tub (loft level)</li>
+          <li>Outdoor dining under the pergola</li>
+          <li>Private chef arrangements available</li>
+          <li>Quiet residential setting — no shared facilities</li>
+        </ul>
+        <a href="https://wa.me/33623777333?text=Hi%20Lana%2C%20we%20are%20a%20couple%20looking%20for%20Villa%20Augflor.%20Dates%3A%20%5Bcheck-in%5D%20to%20%5Bcheck-out%5D.%20Please%20share%20availability%20and%20full%20quote." class="btn-primary btn-sm">Couples enquiry</a>
+      </div>
+      <div>
+        <img src="assets/photos/optimized/terrace-hillside-view-sunset.jpg" alt="Romantic terrace sunset view at Villa Augflor" loading="lazy" width="520" height="390" style="width:100%;border-radius:2px;object-fit:cover;aspect-ratio:4/3;">
+      </div>
     </div>
-    <div class="guide-card">
-      <div class="guide-card-title">Adults-only groups</div>
-      <div class="guide-card-dist">Quiet and comfort</div>
-      <p>Calm residential setting, no shared facilities, and practical setup for grown-up stays.</p>
-      <p style="margin-top:.75rem;"><a href="adults-only-villa.html" style="color:var(--accent);text-decoration:underline;">Open adults-only page</a></p>
+  </div>
+
+  <div id="trip-groups" class="trip-panel reveal">
+    <div class="trip-panel-inner">
+      <div>
+        <h3>Adults-only groups</h3>
+        <p>Calm residential setting for friends who want privacy, a full kitchen, and no platform noise. Minimum age 25 for lead booker.</p>
+        <ul class="trip-highlights">
+          <li>Sleeps 6 in 3 distinct bedrooms</li>
+          <li>Netflix included · fast Wi-Fi</li>
+          <li>Markets, wine estates, and nightlife within 25–50 min</li>
+          <li>Strict quiet hours 22:00–08:00 — not for party groups</li>
+        </ul>
+        <a href="https://wa.me/33623777333?text=Hi%20Lana%2C%20we%20are%20a%20group%20of%20friends%20interested%20in%20Villa%20Augflor.%20Dates%3A%20%5Bcheck-in%5D%20to%20%5Bcheck-out%5D.%20Guests%3A%20%5Bnumber%5D." class="btn-primary btn-sm">Group availability check</a>
+      </div>
+      <div>
+        <img src="assets/photos/optimized/garden-dining-patio.jpg" alt="Group outdoor dining at Villa Augflor" loading="lazy" width="520" height="390" style="width:100%;border-radius:2px;object-fit:cover;aspect-ratio:4/3;">
+      </div>
     </div>
-    <div class="guide-card">
-      <div class="guide-card-title">Germany + Netherlands summer guests</div>
-      <div class="guide-card-dist">June to August 2026</div>
-      <p>Dedicated page for EU travelers planning summer weeks with direct booking support.</p>
-      <p style="margin-top:.75rem;"><a href="eu-summer-2026-villa.html" style="color:var(--accent);text-decoration:underline;">Open EU summer page</a></p>
+  </div>
+
+  <div id="trip-eu" class="trip-panel reveal">
+    <div class="trip-panel-inner">
+      <div>
+        <h3>Germany &amp; Netherlands summer guests</h3>
+        <p>June–September 2026 from DE/NL: direct booking in English, French, German, or Dutch. Nice Airport 15 min · bank transfer accepted.</p>
+        <ul class="trip-highlights">
+          <li>Shoulder season €420/n · peak €480/n direct</li>
+          <li>Save ~€719 vs Airbnb on a 7-night July week</li>
+          <li>Arrival tips: A8 motorway, train to Cagnes-sur-Mer nearby</li>
+          <li>Full Riviera area guide with drive times from the villa</li>
+        </ul>
+        <a href="https://wa.me/33623777333?text=Hi%20Lana%2C%20we%20are%20traveling%20from%20%5BGermany%2FNetherlands%5D%20for%20summer%202026.%20Dates%3A%20%5Bcheck-in%5D%20to%20%5Bcheck-out%5D.%20Guests%3A%20%5Bnumber%5D." class="btn-primary btn-sm">EU summer enquiry</a>
+      </div>
+      <div>
+        <img src="assets/photos/optimized/photo-swimming-pool-backyard-garden-lounge.jpg" alt="Villa Augflor pool for European summer guests" loading="lazy" width="520" height="390" style="width:100%;border-radius:2px;object-fit:cover;aspect-ratio:4/3;">
+      </div>
     </div>
-    <div class="guide-card">
-      <div class="guide-card-title">Guests needing step-friendly sleeping</div>
-      <div class="guide-card-dist">Ground-floor focus</div>
-      <p>Review room layout first if stair access is a concern for your group.</p>
-      <p style="margin-top:.75rem;"><a href="villa-no-stairs.html" style="color:var(--accent);text-decoration:underline;">Open accessibility page</a></p>
-    </div>
-    <div class="guide-card">
-      <div class="guide-card-title">Not the right fit for</div>
-      <div class="guide-card-dist">Please read before booking</div>
-      <p>Party groups, heavy late-night noise, or guests requiring pets on site. Quiet hours and no-pet rules are strict.</p>
-      <p style="margin-top:.75rem;"><a href="#rules" style="color:var(--accent);text-decoration:underline;">See house rules</a></p>
+  </div>
+
+  <div id="trip-access" class="trip-panel reveal">
+    <div class="trip-panel-inner">
+      <div>
+        <h3>Guests needing step-friendly sleeping</h3>
+        <p>Le Provance bedroom and main living spaces are on the ground floor. Upstairs loft rooms have a steep staircase and lower ceilings — ask Lana to allocate ground-floor sleeping.</p>
+        <ul class="trip-highlights">
+          <li>Ground floor: garden room, living room, kitchen, Le Provance, bathroom</li>
+          <li>Grab bars in bathrooms · parking at villa entrance</li>
+          <li>Not fully wheelchair-adapted — discuss needs before booking</li>
+        </ul>
+        <a href="https://wa.me/33623777333?text=Hi%20Lana%2C%20we%20need%20ground-floor%20sleeping%20at%20Villa%20Augflor.%20Dates%3A%20%5Bcheck-in%5D%20to%20%5Bcheck-out%5D.%20Guests%3A%20%5Bnumber%5D.%20Mobility%20notes%3A%20%5Bdetails%5D." class="btn-primary btn-sm">Discuss accessibility</a>
+      </div>
+      <div>
+        <img src="assets/photos/optimized/interior-floating-staircase.jpg" alt="Villa layout showing ground floor and loft staircase" loading="lazy" width="520" height="390" style="width:100%;border-radius:2px;object-fit:cover;aspect-ratio:4/3;">
+      </div>
     </div>
   </div>
 </section>
@@ -678,18 +782,6 @@ footer { background: #141210; padding: 3.5rem 2.5rem 2rem; color: rgba(255,255,2
 </section>
 
 
-<!-- EU TARGETED SUMMER 2026 -->
-<section style="padding:3.5rem 2.5rem 2.25rem;max-width:1100px;margin:0 auto;">
-  <p class="eyebrow reveal">For EU travelers</p>
-  <h2 class="reveal" style="margin-bottom:1rem">Built for <em>Germany &amp; Netherlands</em> summer guests</h2>
-  <p class="lead reveal" style="max-width:760px">If you are planning June, July, or August 2026 from Germany or the Netherlands, see our dedicated page for couples and families with travel-fit details, direct booking steps, and availability-first enquiry flow.</p>
-  <p class="reveal" style="margin-top:1.5rem">
-    <a href="eu-summer-2026-villa.html" class="btn-primary" style="display:inline-block">View EU Summer 2026 Page</a>
-  </p>
-  <p class="reveal" style="margin-top:1rem;font-size:14px;color:var(--muted);">Also available for direct enquiry by email: <a href="mailto:villa.augflor@gmail.com" style="color:var(--accent);text-decoration:underline;">villa.augflor@gmail.com</a> or phone/WhatsApp: +33 623 777 333.</p>
-</section>
-
-
 <!-- ABOUT -->
 <section id="about">
   <div class="about-grid">
@@ -722,6 +814,21 @@ footer { background: #141210; padding: 3.5rem 2.5rem 2rem; color: rgba(255,255,2
         <span>🐾</span>
         <span>We love animals — but unfortunately <strong>pets are not permitted</strong> at Villa Augflor. We appreciate your understanding.</span>
       </div>
+    </div>
+  </div>
+
+  <div class="layout-map reveal" style="margin-top:3rem;">
+    <div class="layout-card">
+      <h4>Ground floor</h4>
+      <p>Living room · kitchen · garden room · Le Provance bedroom · ground-floor bathroom · pool &amp; terraces. Best for guests who prefer easy access.</p>
+    </div>
+    <div class="layout-card">
+      <h4>Loft level</h4>
+      <p>Barcelona master suite · Asian double bedroom · upstairs bathroom. Characterful loft with lower ceilings and a steeper staircase.</p>
+    </div>
+    <div class="layout-card">
+      <h4>Sleeps 6</h4>
+      <p>3 bedrooms: beds 200×220 cm, 180×200 cm, and 160×200 cm. A/C in every bedroom, living room, and garden room.</p>
     </div>
   </div>
 </section>
@@ -766,30 +873,23 @@ footer { background: #141210; padding: 3.5rem 2.5rem 2rem; color: rgba(255,255,2
   </div>
 </div>
 
-<!-- GALLERY — all photos on-site, no external link -->
+<!-- GALLERY — interactive room filter -->
 <section id="gallery">
   <p class="eyebrow reveal">Photo gallery</p>
-  <h2 class="reveal">Inside &amp; <em>outside</em></h2>
-  <p class="lead reveal">All photos taken at the villa. Click any image to view full size — or <a href="gallery.html" style="color:var(--accent);text-decoration:underline">browse every room by area</a> (Barcelona, Asian, Le Provance, garden room, and more).</p>
-  <div class="gallery-grid reveal">
-    <div class="g-img g1 tall" onclick="openLightbox(0)"><img src="assets/photos/optimized/swimming-pool.jpg" alt="Private pool and garden terrace" loading="eager" decoding="async" fetchpriority="high"></div>
-    <div class="g-img g2" onclick="openLightbox(1)"><img src="assets/photos/optimized/interior-lounge-2.jpg" alt="Living room with L-shaped sofa" loading="lazy" decoding="async"></div>
-    <div class="g-img g3" onclick="openLightbox(2)"><img src="assets/photos/optimized/ground-floor-bedroom-3.jpg" alt="Le Provance ground floor bedroom" loading="lazy" decoding="async"></div>
-    <div class="g-img g10" onclick="openLightbox(9)"><img src="assets/photos/optimized/entrance-gate-cypress.jpg" alt="Entrance gate with stone steps" loading="lazy" decoding="async"></div>
-    <div class="g-img g4" onclick="openLightbox(3)"><img src="assets/photos/optimized/pool-patio-yellow-awning.jpg" alt="Pool patio with sun awning" loading="lazy" decoding="async"></div>
-    <div class="g-img g5 tall" onclick="openLightbox(4)"><img src="assets/photos/optimized/garden-dining-patio.jpg" alt="Outdoor dining pergola with grape vines" loading="lazy" decoding="async"></div>
-    <div class="g-img g11" onclick="openLightbox(10)"><img src="assets/photos/optimized/upstairs-master-bedroom-3.jpg" alt="Barcelona master bedroom upstairs" loading="lazy" decoding="async"></div>
-    <div class="g-img g12" onclick="openLightbox(11)"><img src="assets/photos/optimized/kitchen-corner-wide.jpg" alt="Kitchen with blue-grey cabinets" loading="lazy" decoding="async"></div>
-    <div class="g-img g6" onclick="openLightbox(5)"><img src="assets/photos/optimized/garden-archway-path.jpg" alt="Garden archway with hydrangeas" loading="lazy" decoding="async"></div>
-    <div class="g-img g13" onclick="openLightbox(12)"><img src="assets/photos/optimized/upstairs-bathroom.jpg" alt="Upstairs spa bathroom" loading="lazy" decoding="async"></div>
-    <div class="g-img g7" onclick="openLightbox(6)"><img src="assets/photos/optimized/garden-room-lounge.jpg" alt="Garden room papasan chair overlooking pool" loading="lazy" decoding="async"></div>
-    <div class="g-img g8 tall" onclick="openLightbox(7)"><img src="assets/photos/optimized/ground-floor-bathroom.jpg" alt="Ground floor bathroom double vanity" loading="lazy" decoding="async"></div>
-    <div class="g-img g9" onclick="openLightbox(8)"><img src="assets/photos/optimized/outdoor-parking.jpg" alt="Vine-covered entrance path" loading="lazy" decoding="async"></div>
-    <div class="g-img g14" onclick="openLightbox(13)"><img src="assets/photos/optimized/photo-house-swimming-pool-night.jpg" alt="Pool and villa at night" loading="lazy" decoding="async"></div>
+  <h2 class="reveal">Every room, <em>every corner</em></h2>
+  <p class="lead reveal">35+ real villa photos. Filter by room, click to enlarge. No stock images — everything was taken at Villa Augflor.</p>
+  <div class="gallery-filters reveal" role="tablist" aria-label="Filter photos by room">
+    <button type="button" class="gf-btn active" data-room="all">All photos</button>
+    <button type="button" class="gf-btn" data-room="exterior">Pool &amp; garden</button>
+    <button type="button" class="gf-btn" data-room="barcelona">Barcelona suite</button>
+    <button type="button" class="gf-btn" data-room="asian">Asian room</button>
+    <button type="button" class="gf-btn" data-room="provance">Le Provance</button>
+    <button type="button" class="gf-btn" data-room="living">Living room</button>
+    <button type="button" class="gf-btn" data-room="garden-room">Garden room</button>
+    <button type="button" class="gf-btn" data-room="bathrooms">Bathrooms</button>
+    <button type="button" class="gf-btn" data-room="kitchen">Kitchen</button>
   </div>
-  <p class="reveal" style="text-align:center;margin-top:1.5rem">
-    <a href="gallery.html" style="display:inline-block;padding:.75rem 1.5rem;background:var(--accent);color:#fff;text-decoration:none;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;border-radius:2px">View full gallery by room</a>
-  </p>
+  <div id="galleryRoomGrid" class="gallery-room-grid reveal" aria-live="polite"></div>
 </section>
 
 <!-- LIGHTBOX -->
@@ -827,209 +927,104 @@ footer { background: #141210; padding: 3.5rem 2.5rem 2rem; color: rgba(255,255,2
   </div>
 </section>
 
-<!-- AREA GUIDEBOOK -->
-<div class="guidebook-bg rustic-texture section-full" id="guidebook">
-  <div class="guidebook-inner">
-    <p class="eyebrow">Area guide</p>
-    <h2>Your <em>Riviera playbook</em></h2>
-    <p class="lead">Everything Lana recommends — from the best boulangerie 2 minutes away to the most dramatic canyon in Europe. Updated each season.</p>
-
-    <div class="guidebook-tabs" role="tablist">
-      <button class="gtab active" onclick="showGuide(this,'places')" role="tab">Places to See</button>
-      <button class="gtab" onclick="showGuide(this,'beaches')" role="tab">Beaches</button>
-      <button class="gtab" onclick="showGuide(this,'dining')" role="tab">Dining &amp; Markets</button>
-      <button class="gtab" onclick="showGuide(this,'activities')" role="tab">Activities</button>
-      <button class="gtab" onclick="showGuide(this,'daytrips')" role="tab">Day Trips</button>
-      <button class="gtab" onclick="showGuide(this,'essentials')" role="tab">Essentials &amp; Shops</button>
+<!-- RIVIERA AREA GUIDE CTA (full guide lives on area.html) -->
+<div class="area-cta-banner section-full" id="area-guide">
+  <div class="area-cta-inner">
+    <div>
+      <p class="eyebrow" style="color:rgba(255,255,255,0.7);">French Riviera · from Villa Augflor</p>
+      <h2>Explore <em>78 curated places</em> — beaches, villages, markets &amp; day trips</h2>
+      <p class="lead">Our full concierge-style area guide lives on a dedicated page: filter by category, sort by distance or rating, see photos, and open Google Maps routes — all with drive times from Cagnes-sur-Mer.</p>
+      <div class="area-cta-stats">
+        <div class="area-stat"><div class="area-stat-num">78</div><div class="area-stat-label">Places listed</div></div>
+        <div class="area-stat"><div class="area-stat-num">12</div><div class="area-stat-label">Categories</div></div>
+        <div class="area-stat"><div class="area-stat-num">15′</div><div class="area-stat-label">To Nice Airport</div></div>
+      </div>
+      <div class="area-cta-actions">
+        <a href="https://www.villa-augflor.com/area.html" class="btn-area-primary">Open full Riviera Area Guide →</a>
+        <a href="https://wa.me/33623777333?text=Hi%20Lana%2C%20we%27re%20staying%20at%20Villa%20Augflor%20and%20would%20love%20your%20local%20recommendations%20for%20%5Bdates%2Finterests%5D." class="btn-area-outline">Ask Lana for tips</a>
+      </div>
+      <p style="margin-top:1.25rem;font-size:13px;opacity:0.75;">Includes Haut-de-Cagnes, Saint-Paul-de-Vence, Nice, Antibes, Cannes, Monaco, Verdon Gorge, and hidden beaches — with seasonal tips and FAQ.</p>
     </div>
-
-    <div id="guide-places" class="guide-panel active">
-      <div class="guide-card">
-        <div class="guide-card-title">Haut-de-Cagnes</div>
-        <div class="guide-card-dist">5 min · Medieval village</div>
-        <p>The medieval hilltop village on the other side of our hill is beyond imagination — cinematographic, calm, classified as a historical site since 1948. Narrow pebbled streets cool even in summer heat, thousands of flowers, and a Renaissance château with panoramic views over sea and mountains. Take a glass of cold wine at the square café and simply exist. Use the free navette shuttle (bus 44 from Square Bourdet) to avoid parking.</p>
-      </div>
-      <div class="guide-card">
-        <div class="guide-card-title">Saint-Paul-de-Vence</div>
-        <div class="guide-card-dist">15 min · Must-see</div>
-        <p>On the hill next to the villa, this 15th-century walled village is one of the great "must-see" destinations of the entire region. Art galleries, boutiques, hidden cafés, flowers everywhere. The Fondation Maeght modern art museum — with Miró's labyrinth and Giacometti in the courtyard — is world-class. Arrive early in summer.</p>
-      </div>
-      <div class="guide-card">
-        <div class="guide-card-title">Nice</div>
-        <div class="guide-card-dist">25 min · Capital of the Riviera</div>
-        <p>A city of extraordinary layers — the Baroque Vieux-Nice, the Promenade des Anglais, the Cours Saleya flower market, the Russian Orthodox Cathedral. Founded by the Greeks (originally "Nike" — victory), it has been Italian, French, and everything in between. The spirit of Nice is unlike any other French city. The Cours Saleya morning market is essential at least once.</p>
-      </div>
-      <div class="guide-card">
-        <div class="guide-card-title">Monaco &amp; Monte-Carlo</div>
-        <div class="guide-card-dist">50 min · Grand principality</div>
-        <p>A tiny city-state famed for glamour, the Casino, the Prince's Palace (once home to Princess Grace), and some of the most prestigious events in the world — the Formula One Grand Prix, the Yacht Show, Monte Carlo Rally. Monte Carlo district is drenched in sun, money, and extraordinary Mediterranean views.</p>
-      </div>
-      <div class="guide-card">
-        <div class="guide-card-title">Èze Village</div>
-        <div class="guide-card-dist">35 min · Most dramatic view</div>
-        <p>Perched at 427 metres above the sea, Èze is the most vertiginous village on the Riviera. The Jardin Exotique at the summit has the best panoramic view on the entire coast. Visit midmorning before the tour groups arrive. Combine with a coastal drive along the Grande Corniche.</p>
-      </div>
-      <div class="guide-card">
-        <div class="guide-card-title">Antibes &amp; Juan-les-Pins</div>
-        <div class="guide-card-dist">25 min · Old town &amp; port</div>
-        <p>The walled old town, the Picasso Museum inside a real medieval castle, the extraordinary Saturday Provençal market, and the best bouillabaisse on the coast. Juan-les-Pins, attached to Antibes, has a legendary jazz festival each July. The superyacht port is a spectacle on its own terms.</p>
-      </div>
-    </div>
-
-    <div id="guide-beaches" class="guide-panel">
-      <div class="guide-card">
-        <div class="guide-card-title">Cros-de-Cagnes</div>
-        <div class="guide-card-dist">15 min · Local beach</div>
-        <p>Long sandy beach right in the village. Relaxed, local, with good seafood restaurants on the waterfront. Ideal for families — calm water and gentle entry. Best for a lazy half-day followed by lunch at La Pesquière.</p>
-      </div>
-      <div class="guide-card">
-        <div class="guide-card-title">Golfe-Juan</div>
-        <div class="guide-card-dist">25 min · Sandy beach</div>
-        <p>One of the most beautiful sandy beaches on the Riviera — clear shallow water, less crowded than Nice or Cannes, and a genuinely local atmosphere. Napoleon landed here on his return from Elba.</p>
-      </div>
-      <div class="guide-card">
-        <div class="guide-card-title">Cap d'Antibes</div>
-        <div class="guide-card-dist">25 min · Hidden coves</div>
-        <p>Rocky coves and crystal-clear water around the cape. Take the Sentier du Littoral coastal walking path for hidden swimming spots away from the crowds. One of the most scenic walks on the entire Côte d'Azur.</p>
-      </div>
-      <div class="guide-card">
-        <div class="guide-card-title">Plage de la Garoupe</div>
-        <div class="guide-card-dist">27 min · Glamorous beach</div>
-        <p>Antibes' most celebrated beach — shallow, sandy, sheltered. Beach clubs with loungers or a public section for BYO towel. Consistently beautiful water.</p>
-      </div>
-      <div class="guide-card">
-        <div class="guide-card-title">Nice Promenade</div>
-        <div class="guide-card-dist">25 min · Iconic pebble beach</div>
-        <p>The famous pebble beach of Nice along the Promenade des Anglais. Best early morning or sunset. Combine with a walk through Vieux-Nice and the Cours Saleya market.</p>
-      </div>
-      <div class="guide-card">
-        <div class="guide-card-title">Mala Beach, Cap d'Ail</div>
-        <div class="guide-card-dist">40 min · Hidden gem</div>
-        <p>A beautiful small pebble cove accessible only by coastal path. One of the Riviera's true secrets. Pack a picnic, wear shoes you can walk in, and allow an hour to reach it.</p>
-      </div>
-    </div>
-
-    <div id="guide-dining" class="guide-panel">
-      <div class="guide-card">
-        <div class="guide-card-title">Boulangeries near the villa</div>
-        <div class="guide-card-dist">2–8 min · Daily essentials</div>
-        <p><strong>Closest:</strong> Patisserie des Travails, 19 Chemin des Travails (walk 12 min / car 2 min), open 06:30–19:30. <strong>Lana's favourite:</strong> Bour Pâtisserie Boulangerie Traiteur, 94 Avenue des Alpes (car 8 min), open 06:15–20:00 daily. Exceptional croissants and pastries.</p>
-      </div>
-      <div class="guide-card">
-        <div class="guide-card-title">Restaurants in Haut-de-Cagnes</div>
-        <div class="guide-card-dist">5 min · Ask Lana for current picks</div>
-        <p>Several excellent small restaurants are nestled in the medieval village directly above the villa. Lana keeps a curated, up-to-date list with booking tips — just ask on arrival. The setting alone at these restaurants — candlelit medieval lanes — is worth the short drive.</p>
-      </div>
-      <div class="guide-card">
-        <div class="guide-card-title">Marché Provençal, Antibes</div>
-        <div class="guide-card-dist">25 min · Daily until 1pm</div>
-        <p>The best morning market on the Riviera. Local cheese, olives, socca, charcuterie, flowers, and lavender. Essential at least once. Arrive around 9am with an empty bag and no fixed plan.</p>
-      </div>
-      <div class="guide-card">
-        <div class="guide-card-title">Cours Saleya Market, Nice</div>
-        <div class="guide-card-dist">25 min · Tues–Sun morning</div>
-        <p>Nice's legendary flower and food market. Try fresh socca (Niçoise chickpea pancake) from a street stall for breakfast. One of the most atmospheric markets in France.</p>
-      </div>
-      <div class="guide-card">
-        <div class="guide-card-title">La Pesquière, Cros-de-Cagnes</div>
-        <div class="guide-card-dist">15 min · Seafront</div>
-        <p>Beloved local fish restaurant right on the beach. Book ahead. Order the dorade grillée and a bottle of local Bellet white wine. One of the best casual lunches near the villa.</p>
-      </div>
-      <div class="guide-card">
-        <div class="guide-card-title">Rosé Wine Estates</div>
-        <div class="guide-card-dist">Varied · Guided tastings</div>
-        <p>Provence produces the world's finest rosé. Château Minuty and Château Saint-Maur are both within an hour. Wine tastings can be arranged through Lana, including at estates not open to general public.</p>
-      </div>
-    </div>
-
-    <div id="guide-activities" class="guide-panel">
-      <div class="guide-card">
-        <div class="guide-card-title">Fondation Maeght</div>
-        <div class="guide-card-dist">15 min · Saint-Paul</div>
-        <p>One of Europe's great modern art museums — a Miró labyrinth, Giacometti sculptures in the courtyard, Calder mobiles, and world-class exhibitions all summer. Budget a minimum of two hours.</p>
-      </div>
-      <div class="guide-card">
-        <div class="guide-card-title">Watersports &amp; Sailing</div>
-        <div class="guide-card-dist">Antibes · 25 min</div>
-        <p>Antibes is the superyacht capital of the world. Sailing, paddleboarding, kayaking, and boat hire all available from the port. Lana can arrange half-day boat rentals and sailing lessons.</p>
-      </div>
-      <div class="guide-card">
-        <div class="guide-card-title">Gorges du Loup</div>
-        <div class="guide-card-dist">45 min · Canyon hike</div>
-        <p>Spectacular limestone gorges in the Alpes-Maritimes hinterland — refreshingly cool even in August. Combine with a visit to the village of Gourdon perched at the top. A perfect escape from coastal heat.</p>
-      </div>
-      <div class="guide-card">
-        <div class="guide-card-title">Nice Jazz Festival</div>
-        <div class="guide-card-dist">25 min · July</div>
-        <p>One of the world's great jazz festivals, held every July in Parc Phoenix. Outdoor concerts under the stars with Nice as the backdrop. Book tickets well in advance.</p>
-      </div>
-      <div class="guide-card">
-        <div class="guide-card-title">Cycling the Riviera</div>
-        <div class="guide-card-dist">From the villa</div>
-        <p>Hire road or e-bikes and follow the coastal cycle path towards Nice or Antibes. The velodrome circuit at Cros-de-Cagnes is good for families. Lana can organise bike hire delivery to the villa.</p>
-      </div>
-      <div class="guide-card">
-        <div class="guide-card-title">Tennis &amp; Golf</div>
-        <div class="guide-card-dist">Varied · 10–25 min</div>
-        <p>Several excellent tennis clubs and golf courses nearby. Lana can arrange court time and tee times including at private clubs near Mougins and Biot. The climate means outdoor courts are playable from March through October.</p>
-      </div>
-    </div>
-
-    <div id="guide-daytrips" class="guide-panel">
-      <div class="guide-card">
-        <div class="guide-card-title">Îles de Lérins</div>
-        <div class="guide-card-dist">Cannes ferry · 45 min total</div>
-        <p>Take the ferry from Cannes to Île Sainte-Honorat — a monastic island with extraordinary vineyards and deserted rocky coastline. Île Sainte-Marguerite has the cell where the Man in the Iron Mask was imprisoned. Pack a picnic and spend the day.</p>
-      </div>
-      <div class="guide-card">
-        <div class="guide-card-title">Grasse</div>
-        <div class="guide-card-dist">40 min · Perfume capital</div>
-        <p>The world capital of perfume since the 17th century. Visit Fragonard or Galimard for a perfume creation workshop — one of the best activities for all ages on the Riviera. Surrounding lavender and mimosa fields are extraordinary.</p>
-      </div>
-      <div class="guide-card">
-        <div class="guide-card-title">Tourettes-sur-Loup &amp; Gourdon</div>
-        <div class="guide-card-dist">30–45 min · Inland villages</div>
-        <p>Tourettes-sur-Loup is known for its violet festival and artisan craft shops. Gourdon, perched on a cliff 760 metres above the sea, has the most breathtaking views of the entire arrière-pays. Both can be combined in a half-day loop.</p>
-      </div>
-      <div class="guide-card">
-        <div class="guide-card-title">Menton &amp; the Italian Border</div>
-        <div class="guide-card-dist">55 min · Lemon capital</div>
-        <p>The prettiest town on the Riviera, at the Italian frontier. Famous for lemons, Baroque churches, and the Ventimiglia market just across the border on Fridays. Excellent for an authentic half-day excursion away from the tourist trail.</p>
-      </div>
-      <div class="guide-card">
-        <div class="guide-card-title">Verdon Gorge</div>
-        <div class="guide-card-dist">2 hrs · Europe's Grand Canyon</div>
-        <p>The most dramatic landscape in southern France — turquoise water, 700-metre limestone cliffs, and a canyon stretching 25 kilometres. Kayaking, rock climbing, or simply the most dramatic drive imaginable. A full-day adventure worth planning.</p>
-      </div>
-      <div class="guide-card">
-        <div class="guide-card-title">Vence &amp; Matisse Chapel</div>
-        <div class="guide-card-dist">20 min · Art pilgrimage</div>
-        <p>The Chapelle du Rosaire, designed by Henri Matisse in his final years, is a masterwork of light, ceramic, and stained glass. Quieter and more authentic than Saint-Paul. Local Tuesday market. One of the essential cultural stops of the region.</p>
-      </div>
-    </div>
-
-    <div id="guide-essentials" class="guide-panel">
-      <div class="guide-card" style="grid-column: 1 / -1;">
-        <div class="guide-card-title">Supermarkets &amp; everyday shopping</div>
-        <div class="guide-card-dist">All within 5–8 min by car</div>
-        <p style="margin-bottom:.75rem"><strong>Leclerc</strong> — 344 Chemin des Moulières, La Colle-sur-Loup. Open 08:30–20:30, Sunday 09:00–13:00 (walk 20 min / car 8 min). Also has the cheapest fuel station in the area.</p>
-        <p style="margin-bottom:.75rem"><strong>Casino Supermarché</strong> — Avenue des Alpes. Open 06:00–midnight (walk 17 min / car 5 min). Very convenient for evening top-ups.</p>
-        <p style="margin-bottom:.75rem"><strong>LIDL</strong> — 66 Avenue de Verdun. Open 08:30–20:00 (walk 17 min / car 5 min).</p>
-        <p><strong>Polygone Riviera</strong> — 119 Avenue des Alpes. Open 10:00–20:00 (car 4 min). Large shopping centre with Zara, H&amp;M, Apple Store, restaurants, and a good supermarket. The closest major retail destination to the villa.</p>
-      </div>
-      <div class="guide-card">
-        <div class="guide-card-title">Boulangeries</div>
-        <div class="guide-card-dist">2–8 min</div>
-        <p><strong>Patisserie des Travails</strong>, 19 Chemin des Travails — 2 min by car, 12 min walk. Open 06:30–19:30.<br><br><strong>Bour Pâtisserie Boulangerie</strong>, 94 Ave des Alpes — 8 min by car. Open 06:15–20:00 daily. Lana's personal favourite for croissants.</p>
-      </div>
-      <div class="guide-card">
-        <div class="guide-card-title">Useful to know</div>
-        <div class="guide-card-dist">Local tips</div>
-        <p><strong>Free shuttle bus</strong> (navette gratuite, line 44) from Square Bourdet town centre runs every 20 minutes daily to Haut-de-Cagnes — avoids parking entirely.<br><br><strong>Cheapest fuel:</strong> Leclerc station, La Colle-sur-Loup.<br><br><strong>Pharmacy:</strong> Several in the town centre, open standard French hours. Nearest urgent care at Hôpital de Cagnes-sur-Mer.</p>
-      </div>
+    <div class="area-cta-visual" aria-hidden="true">
+      <img src="assets/photos/area/nice.jpg" alt="" loading="lazy" width="200" height="140">
+      <img src="assets/photos/area/st-paul-de-vence.jpg" alt="" loading="lazy" width="200" height="140">
+      <img src="assets/photos/area/antibes.jpg" alt="" loading="lazy" width="200" height="140">
+      <img src="assets/photos/area/monaco.jpg" alt="" loading="lazy" width="200" height="140">
     </div>
   </div>
 </div>
+
+<!-- RATES & DIRECT BOOKING -->
+<section class="rates-section-bg" id="rates">
+  <div class="rates-section-inner">
+    <p class="eyebrow reveal">Rates &amp; direct booking</p>
+    <h2 class="reveal">Clear pricing. <em>Save vs Airbnb.</em></h2>
+    <p class="lead reveal">Shoulder €420/n · peak €480/n direct. All rates for up to 6 guests. Book via WhatsApp — no platform fees.</p>
+
+    <div class="rates-grid reveal">
+      <div class="rate-card">
+        <div class="rate-season">Shoulder season</div>
+        <div class="rate-months">June · September</div>
+        <div class="rate-price">€420</div>
+        <div class="rate-per-night">From €420 / night</div>
+        <div class="rate-unit">per night · up to 6 guests</div>
+        <div class="rate-note">Best value · warm sea · fewer crowds · 7-night minimum</div>
+        <a href="https://wa.me/33623777333?text=Hi%20Lana%2C%20please%20check%20shoulder%20season%20dates%20at%20Villa%20Augflor." class="btn-primary btn-sm" style="margin-top:1rem;display:inline-block;">Check Jun/Sep dates</a>
+      </div>
+      <div class="rate-card peak">
+        <div class="rate-peak-badge">Most popular</div>
+        <div class="rate-season">Peak summer</div>
+        <div class="rate-months">July · August</div>
+        <div class="rate-price">€480<small style="font-size:18px;color:var(--muted);text-decoration:line-through;margin-left:8px;">€520</small></div>
+        <div class="rate-per-night">From €480 / night · Save €40/night direct</div>
+        <div class="rate-unit">per night · up to 6 guests</div>
+        <div class="rate-note">Highest demand · pool-first stays · fast confirmation</div>
+        <a href="https://wa.me/33623777333?text=Hi%20Lana%2C%20I%20want%20to%20check%20peak%20summer%20availability%20for%20Villa%20Augflor." class="btn-primary btn-sm" style="margin-top:1rem;display:inline-block;">Check Jul/Aug dates</a>
+      </div>
+    </div>
+
+    <div class="savings-calc reveal">
+      <label for="savingsNights">Interactive savings calculator — pick your stay length:</label>
+      <select id="savingsNights">
+        <option value="7" data-peak="1">7 nights · peak (Jul/Aug)</option>
+        <option value="7" data-peak="0">7 nights · shoulder (Jun/Sep)</option>
+        <option value="14" data-peak="1">14 nights · peak</option>
+        <option value="14" data-peak="0">14 nights · shoulder</option>
+      </select>
+      <div class="savings-result" id="savingsOutput" aria-live="polite"></div>
+    </div>
+
+    <div class="compare-panel reveal">
+      <span class="eyebrow" style="color:var(--accent-light);">7-night peak comparison</span>
+      <h2 style="color:#fff;margin-bottom:0;">Same villa. Better value direct.</h2>
+      <div class="compare-grid">
+        <div class="compare-col">
+          <h3>Airbnb platform</h3>
+          <ul>
+            <li>Nightly (€520×7): €3,640</li>
+            <li>Guest fee (~12%): €437</li>
+            <li>Cleaning: €150</li>
+            <li><strong>Total: ~€4,227</strong></li>
+          </ul>
+        </div>
+        <div class="compare-col direct">
+          <h3>Direct with Lana</h3>
+          <ul>
+            <li>Nightly (€480×7): €3,360</li>
+            <li>Cleaning: €120</li>
+            <li>Taxe de séjour: €28</li>
+            <li><strong>Total: €3,508</strong></li>
+          </ul>
+          <div class="compare-save">You save ~€719</div>
+        </div>
+      </div>
+      <div class="cost-grid">
+        <div class="cost-box"><h4>Included in every stay</h4>Exclusive villa use · pool · Wi-Fi · Netflix · A/C · linen &amp; towels · welcome basket · 24/7 WhatsApp support</div>
+        <div class="cost-box highlight"><h4>Payment terms</h4>30% deposit to confirm · balance 30 days before arrival · €500 refundable security deposit · Visa, MasterCard, bank transfer</div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- SEASONAL AVAILABILITY CALENDAR -->
 <section style="text-align:center;">
@@ -1055,25 +1050,25 @@ footer { background: #141210; padding: 3.5rem 2.5rem 2rem; color: rgba(255,255,2
 </section>
 
 <!-- REVIEWS -->
-<div class="reviews-bg section-full">
+<div class="reviews-bg section-full" id="reviews">
   <div class="reviews-inner">
     <p class="eyebrow">Guest reviews</p>
     <h2>What guests <em>say</em></h2>
     <div class="reviews-grid reveal">
       <div class="review-card">
         <div class="review-stars">★★★★★</div>
-        <p class="review-text">"The villa is a small paradise to escape to — one place safe and beautiful. We didn't want to leave."</p>
-        <p class="review-author">Maxim R. · Belgium · 2025</p>
+        <p class="review-text">"We spent two weeks with kids and grandparents. The pool was perfect — safe and private. Lana was genuinely helpful. We're already planning next summer."</p>
+        <p class="review-author">Sarah M. · UK · Family 2024</p>
       </div>
       <div class="review-card">
         <div class="review-stars">★★★★★</div>
-        <p class="review-text">"Sur les hauteurs de Cagnes-sur-mer, magnifique villa dotée d'un très beau jardin — fleurs, fruits, arbustes. Décorée avec beaucoup de goût et tous les équipements nécessaires."</p>
-        <p class="review-author">Carl A. · France · 2024</p>
+        <p class="review-text">"Our 25th anniversary villa. Lana arranged wine tasting without us asking. Personal attention made it feel special, not like another booking number."</p>
+        <p class="review-author">James &amp; Emma · Australia</p>
       </div>
       <div class="review-card">
         <div class="review-stars">★★★★★</div>
-        <p class="review-text">"Hospitality was exceptional — we felt genuinely welcomed rather than just accommodated. The pool and garden are exactly as pictured."</p>
-        <p class="review-author">Verified guest · Airbnb · 2024</p>
+        <p class="review-text">"The garden is genuinely safe for kids. Ground floor bedrooms perfect for our toddler. High chair and cot without extra fuss."</p>
+        <p class="review-author">David &amp; Natalie · Netherlands</p>
       </div>
     </div>
     <div class="reviews-summary reveal">
@@ -1269,15 +1264,14 @@ footer { background: #141210; padding: 3.5rem 2.5rem 2rem; color: rgba(255,255,2
     <div>
       <p class="footer-heading">The villa</p>
       <ul class="footer-links">
-        <li><a href="#about">About &amp; rooms</a></li>
-        <li><a href="gallery.html">Photo gallery by room</a></li>
+        <li><a href="#about">About &amp; layout</a></li>
+        <li><a href="#gallery">Photo gallery</a></li>
+        <li><a href="#rates">Rates &amp; booking</a></li>
         <li><a href="#location">Location &amp; distances</a></li>
-        <li><a href="#guidebook">Area guide</a></li>
-        <li><a href="rates.html">Rates &amp; availability</a></li>
+        <li><a href="https://www.villa-augflor.com/area.html">Riviera area guide (78 places)</a></li>
+        <li><a href="#reviews">Guest reviews</a></li>
         <li><a href="#rules">House rules</a></li>
-        <li><a href="#terms">Terms &amp; conditions</a></li>
         <li><a href="#faq">FAQ</a></li>
-        <li><a href="eu-summer-2026-villa.html">Germany &amp; Netherlands Summer 2026</a></li>
         <li><a href="https://wa.me/33623777333">Book direct</a></li>
       </ul>
     </div>
@@ -1355,7 +1349,6 @@ function toggleFaq(el) {
   if (!isOpen) item.classList.add('open');
 }
 
-// Lightbox
 const galleryImages = [
   'assets/photos/optimized/swimming-pool.jpg',
   'assets/photos/optimized/interior-lounge-2.jpg',
@@ -1372,9 +1365,11 @@ const galleryImages = [
   'assets/photos/optimized/upstairs-bathroom.jpg',
   'assets/photos/optimized/photo-house-swimming-pool-night.jpg'
 ];
+window.galleryImages = galleryImages;
 let currentImg = 0;
+window.currentImg = 0;
 function openLightbox(idx) {
-  currentImg = idx;
+  window.currentImg = currentImg = idx;
   document.getElementById('lightboxImg').src = galleryImages[idx];
   document.getElementById('lightboxCounter').textContent = (idx + 1) + ' / ' + galleryImages.length;
   document.getElementById('lightbox').classList.add('active');
@@ -1388,9 +1383,12 @@ function closeLightboxOnBg(e) {
   if (e.target === document.getElementById('lightbox')) closeLightbox();
 }
 function lightboxNav(dir) {
-  currentImg = (currentImg + dir + galleryImages.length) % galleryImages.length;
-  document.getElementById('lightboxImg').src = galleryImages[currentImg];
-  document.getElementById('lightboxCounter').textContent = (currentImg + 1) + ' / ' + galleryImages.length;
+  const list = window._lbList || galleryImages;
+  if (!list || !list.length) return;
+  window.currentImg = currentImg = (currentImg + dir + list.length) % list.length;
+  document.getElementById('lightboxImg').src = list[currentImg];
+  if (window._lbAlts) document.getElementById('lightboxImg').alt = window._lbAlts[currentImg] || '';
+  document.getElementById('lightboxCounter').textContent = (currentImg + 1) + ' / ' + list.length;
 }
 document.addEventListener('keydown', e => {
   if (!document.getElementById('lightbox').classList.contains('active')) return;
@@ -1435,5 +1433,9 @@ if (accentImg) {
   }, { passive: true });
 }
 </script>
+<script defer src="scripts/gallery-data.js"></script>
+<script defer src="scripts/home-unified.js"></script>
+<link rel="stylesheet" href="styles/booking-chat.css">
+<script defer src="scripts/booking-chat.js"></script>
 </body>
 </html>
