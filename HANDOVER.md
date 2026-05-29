@@ -28,7 +28,15 @@
 
 **Rules for any update:** browser-verify on villa-augflor.com before saying "done"; gallery changes belong on `gallery.html`; Airbnb listing is separate from this site. **Update this HANDOVER.md whenever you change the live site.**
 
-**Agent pitfalls (past chats):** see `docs/agent-lessons-learned.md`. If Cursor opened empty `villa-augflor/`, use repo `villa-augflor-live` only. Do not claim "live" without `bash scripts/verify-production.sh` (and spot-check `/area.html` after area-guide changes).
+### Canonical pricing (keep `index.html` + `rates.html` in sync)
+
+| Season | Months | Nightly (direct) | Notes |
+|--------|--------|------------------|-------|
+| Shoulder | June · September | **€420** | Label: **Shoulder season** on `rates.html` |
+| Peak summer | July · August | **€480** direct (was **€520** list) | Label: **Peak summer** — not "High Season" |
+| 7-night peak comparison | Jul/Aug | Save **~€719** vs Airbnb | See cost grid on `rates.html` |
+
+**Agent pitfalls (past chats):** see `docs/agent-lessons-learned.md`. If Cursor opened empty `villa-augflor/`, use repo `villa-augflor-live` only. Do not claim "live" without `bash scripts/verify-production.sh` (and spot-check `/area.html` after area-guide changes). **Do not use `./images/` paths** — hero and about photos live under `assets/photos/optimized/` only.
 
 ---
 
@@ -145,7 +153,7 @@ All pages created, optimized, and deployed successfully:
 
 ### 2. Modified Pages - Enhanced CTAs & Pricing
 - **villa.html** — CTA upgraded from "Enquire Now" to "Check Availability Now" with pre-filled WhatsApp message
-- **rates.html** — Added cost comparison calculator highlighting direct-booking savings (currently **€439** on live page)
+- **rates.html** — Cost comparison calculator highlighting direct-booking savings (**~€719** on 7-night peak stay)
 - **components/footer.html** — Complete reorganization with 5-section navigation to all new pages
 
 ### 3. Deployment Infrastructure
@@ -169,7 +177,7 @@ All pages created, optimized, and deployed successfully:
 |------|--------|-------|
 | gallery.html | ✅ LIVE | 9 room areas, 30+ photos, AC note in intro |
 | index.html `#gallery` | ✅ LIVE | Optimized photos; "View full gallery by room" button |
-| rates.html | ✅ LIVE | Shoulder €450 · peak €520 · savings €439 |
+| rates.html | ✅ LIVE | Shoulder €420 · peak €480 direct (€520 list) · savings ~€719 |
 | index.html homepage pricing cards | ✅ REMOVED | Section removed; pricing only on `rates.html` |
 | guest-reviews.html | ✅ LIVE | Shows 4.79★ rating, 100+ guests |
 | All 13 booking pages | ✅ LIVE | Fully deployed and accessible |
@@ -218,16 +226,11 @@ All pages created, optimized, and deployed successfully:
 - **Latest commit:** `fe1e614` — HANDOVER.md + gallery/AC work through `5d65697`
 - **Connected to Vercel:** Yes — `villa-augflor-static-live` linked to GitHub `main`
 
-### Local files not yet in git
-These exist on disk but are **untracked** — do not assume they are deployed:
-
-| Path | Notes |
-|------|-------|
-| `api/booking-agent.js`, `scripts/booking-chat.js`, `styles/booking-chat.css` | AI booking agent (may be deployed via Vercel CLI separately) |
-| `sitemap.xml`, `robots.txt`, `.htaccess` | SEO files — verify if live matches local |
-| `vercel.json`, `package.json` | Vercel/serverless config |
-| `assets/photos/` (raw), `_images/` | Source photos — only `assets/photos/optimized/` in git |
-| `SEO-IMPROVEMENTS.md`, `README.md`, other docs | Reference only |
+### Local vs deployed
+- **`sitemap.xml`** is in git — update when adding major pages (e.g. `area.html`).
+- **`api/booking-agent.js`**, **`scripts/booking-chat.js`**, **`styles/booking-chat.css`** — serverless + widget; deploy with `scripts/deploy-production.sh`.
+- **Photos:** commit new files under `assets/photos/optimized/` only; do not reference missing `./images/` paths.
+- **`robots.txt`**, **`.htaccess`** — confirm on live if you change crawl or redirect rules.
 
 When adding photos: commit only new files under `assets/photos/optimized/` plus HTML changes.
 
@@ -248,7 +251,7 @@ villa-augflor-static-live (Vercel project, GitHub-connected)
 - **13 new pages created** for high-intent keywords
 - **AggregateRating schema** on guest-reviews.html (4.79★)
 - **FAQPage schema** on villa.html and faq-booking.html (40+ Q&As)
-- **Cost comparison section** emphasizing direct-booking savings (€439 on `rates.html`)
+- **Cost comparison section** emphasizing direct-booking savings (~€719 on `rates.html` peak-week example)
 - **Pre-filled WhatsApp CTAs** on all pages directing to Lana: +33 6 23 77 73 33
 
 ### Performance Targets
@@ -265,7 +268,7 @@ villa-augflor-static-live (Vercel project, GitHub-connected)
 - [ ] Load https://villa-augflor.com/ — verify AC text and "View full gallery by room" button
 - [ ] Load https://villa-augflor.com/ — verify all CTAs work
 - [ ] Test WhatsApp button on any page (should open chat with +33 6 23 77 73 33)
-- [ ] Load /rates.html — verify direct-booking savings comparison displays (€439)
+- [ ] Load /rates.html — verify direct-booking savings comparison displays (~€719 peak week)
 - [ ] Load /guest-reviews.html — verify 6 testimonials show with 4.79★
 - [ ] Run Lighthouse audit (target 90+ all categories)
 - [ ] Submit sitemap.xml to Google Search Console
@@ -581,10 +584,10 @@ Also copied from `_images/`: `garden-room-*.jpg`, `kitchen-corner-wide.jpg`.
 | `fe1e614` | Add HANDOVER.md (this file) |
 
 ### Known issues / follow-ups
-- **Pricing inconsistency:** `index.html` shows €480/n for Jun–Sep; `rates.html` shows €450 shoulder / €520 peak. Align before next deploy.
 - `photo-stone-house-blue-gate-number-26.jpg` — red mark on wall; candidate for swap
-- Homepage `#gallery` mosaic can look similar to before (pool/bathroom shots) — direct users to `/gallery.html` for room-by-room layout
-- Some SEO/booking-agent files may exist locally but not be in git — check before editing
+- Homepage `#gallery` mosaic — direct users to `/gallery.html` for room-by-room layout
+- ~13 area-guide cards still use gradient tiles until more Commons images are fetched (see Area Guide session above)
+- Older session notes below may mention superseded prices (€450, €439, flat €480) — use **Canonical pricing** at top of this file
 
 ### Verification Checklist (run after any gallery/deploy change)
 - [ ] https://villa-augflor.com/gallery.html — shows "Master Bedroom — Barcelona" heading
@@ -595,5 +598,5 @@ Also copied from `_images/`: `garden-room-*.jpg`, `kitchen-corner-wide.jpg`.
 
 ---
 
-**Last Updated:** May 20, 2026  
-**Status:** ✅ Production live · Gallery by room · AC in all bedrooms + living room + garden room · GitHub → villa-augflor.com auto-deploy
+**Last Updated:** May 29, 2026  
+**Status:** ✅ Production live · Area guide · Gallery by room · Canonical pricing €420 shoulder / €480 peak · GitHub → villa-augflor.com auto-deploy

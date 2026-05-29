@@ -25,6 +25,14 @@ check_absent() {
 # Homepage pricing cards section (removed May 2026)
 check_absent "Homepage rates section" 'id="rates"|Simple,\s*<em>transparent rates</em>|transparent rates'
 
+# Broken legacy image paths (./images/ removed from repo)
+if echo "$HTML" | grep -qE 'href="\./images/|data-bg="\./images/'; then
+  echo "FAIL: Homepage still references missing ./images/ paths"
+  FAIL=1
+else
+  echo "OK:   No ./images/ references on homepage"
+fi
+
 # Area guide (May 2026 redesign)
 if [[ "$PATH_TO_CHECK" == "/" ]]; then
   echo "==> Fetching ${SITE%/}/area.html"
