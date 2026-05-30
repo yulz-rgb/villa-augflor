@@ -1,6 +1,6 @@
 # Handover: Villa Augflor SEO & Deployment Complete
 
-**Status:** ✅ PRODUCTION LIVE — CRO Phase 2 (terms page, trust FAQ, DE/NL) · run `verify-production.sh` after deploy  
+**Status:** ✅ PRODUCTION LIVE — CRO Phase 2 · `verify-production.sh` exit 0 · deploy `dpl_4rsxSYvFKmj9khUQvrqWLPEZi2qb`  
 **Date:** May 30, 2026  
 
 ---
@@ -14,7 +14,7 @@
 | File | Change |
 |------|--------|
 | **`terms.html`** | **New** — full booking/cancellation/pool terms (moved off homepage) |
-| **`index.html`** | Terms summary + link to `terms.html` · 9 trust FAQ items · updated FAQPage schema |
+| **`index.html`** | Terms summary + link to `terms.html` · 9 trust FAQ items · updated FAQPage schema · **removed inline guidebook tabs** (area promo only) |
 | **`de/index.html`**, **`nl/index.html`** | Full mirrors of FR structure — trust strip, layout, pricing €2.53, 5-step booking |
 | **`vercel.json`** | `/terms-conditions/` → `terms.html` |
 | **`book-direct-safely.html`**, **`rates.html`**, **`legal-notice.html`**, **`footer-subpage.html`** | Links → `terms.html` |
@@ -33,8 +33,8 @@ bash scripts/deploy-production.sh
 
 ---
 **Custom Domain:** https://villa-augflor.com  
-**Latest commit:** _(updated after this commit)_  
-**Deploy:** _(updated after deploy)_
+**Latest commit:** `90d7676` on `main` — CRO Phase 2 + guidebook trim  
+**Deploy:** `dpl_4rsxSYvFKmj9khUQvrqWLPEZi2qb` (terms, trust FAQ, DE/NL, guidebook removed)
 
 ---
 
