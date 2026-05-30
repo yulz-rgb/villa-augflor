@@ -41,7 +41,7 @@ Sync **`index.html`**, **`rates.html`**, **`book-direct-safely.html`**, **`api/b
 
 ---
 **Custom Domain:** https://villa-augflor.com  
-**Latest commit:** `bbc40df` on `main` — CRO Phase 1: 4★ taxe, CTAs, homepage trim  
+**Latest commit:** `1af7db0` on `main` — CRO Phase 1: 4★ taxe, CTAs, homepage trim  
 **Deploy:** `dpl_3i922ExnTGYdMdpKtEgH3QLUuJCX` (CRO Phase 1: 4★ taxe, CTAs, homepage trim)
 
 ---
