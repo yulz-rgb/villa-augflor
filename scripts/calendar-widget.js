@@ -153,7 +153,8 @@
     if (summaryEl && busy) {
       summaryEl.innerHTML = renderOpenSummary(openWindows(year, months, effectiveBusy));
     } else if (summaryEl && !busy) {
-      summaryEl.textContent = "Loading calendar… refresh if dates do not appear.";
+      summaryEl.innerHTML =
+        'Calendar temporarily unavailable — <a href="https://wa.me/33623777333?text=Hi%20Lana%2C%20please%20check%20Villa%20Augflor%20availability.%20Dates%3A%20%5Bcheck-in%5D%20to%20%5Bcheck-out%5D.%20Guests%3A%20%5Bnumber%5D.">message Lana on WhatsApp</a> with your dates.';
     }
   }
 

@@ -63,7 +63,10 @@ if [[ "$PATH_TO_CHECK" == "/" ]]; then
   check_present "Homepage live calendar" "data-calendar"
   check_present "Homepage area guide link" "area.html"
   check_present "Homepage availability anchor" "id=\"availability\""
+  check_present "Homepage primary WhatsApp CTA" "Check availability on WhatsApp"
   check_present "Homepage hero headline" "Private pool villa in the South of France, near Nice Airport"
+  check_absent "Homepage Le Provance typo" "Le Provance"
+  check_absent "Homepage inline guidebook tabs" "guidebook-tabs"
   check_absent "Homepage save 20% footer" "save 20%"
 
   echo "==> Fetching ${SITE%/}/contact.html"
@@ -91,6 +94,8 @@ if [[ "$PATH_TO_CHECK" == "/" ]]; then
   RATES_HTML=$(curl -fsSL -H "Cache-Control: no-cache" -H "Pragma: no-cache" "$SITE/rates.html")
   check_present_file "Rates page €420 shoulder" "From €420 / night" "$RATES_HTML"
   check_present_file "Rates page €480 peak" "€480<small>/ night</small>" "$RATES_HTML"
+  check_present_file "Rates 4-star taxe rate" "€2.53" "$RATES_HTML"
+  check_present_file "Rates peak example total" "€3,551" "$RATES_HTML"
   check_absent "Rates page old €450 pricing" 'From €450 / night' "$RATES_HTML"
   check_present_file "Rates page calendar" "data-calendar" "$RATES_HTML"
   check_present_file "Rates page open dates summary" "data-open-windows" "$RATES_HTML"

@@ -168,10 +168,10 @@
   }
 
   global.enrichPlace = function (p) {
-    return merge(merge(catDefaults(p), OVERRIDES[p.id] || {}), {
-      duration: p.duration || "Half day",
-      seasonNote: (OVERRIDES[p.id] && OVERRIDES[p.id].seasonNote) || catDefaults(p).seasonNote
-    });
+    var enriched = merge(catDefaults(p), OVERRIDES[p.id] || {});
+    enriched.duration = p.duration || enriched.duration || "Half day";
+    enriched.seasonNote = (OVERRIDES[p.id] && OVERRIDES[p.id].seasonNote) || enriched.seasonNote;
+    return merge(p, enriched);
   };
 
   global.PRICE_ORDER = PRICE_ORDER;

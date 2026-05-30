@@ -1,16 +1,90 @@
 # Handover: Villa Augflor SEO & Deployment Complete
 
-**Status:** ✅ PRODUCTION LIVE — SEO Nice Airport pass on https://villa-augflor.com  
-**Date:** May 29, 2026  
+**Status:** ✅ PRODUCTION LIVE — CRO Phase 1 (4★ taxe, CTAs, homepage trim) · `verify-production.sh` exit 0 · deploy `dpl_3i922ExnTGYdMdpKtEgH3QLUuJCX`  
+**Date:** May 30, 2026  
+
+---
+
+## Session Update — May 30, 2026 (CRO Phase 1: tax, CTAs, homepage trim)
+
+**Goal:** Implement CRO deliverables: unified 4★ taxe de séjour, canonical totals, primary WhatsApp CTA, Provence rename, homepage trim, FR page rebuild.
+
+### Taxe de séjour (canonical)
+- **Rate:** **€2.53 per paying adult per night** — 4-star classified meublé, Métropole Nice Côte d'Azur (incl. Cagnes-sur-Mer), 2025–2026. Under-18s exempt.
+- **Formula:** guests × €2.53 × nights (itemised on written quote)
+- **Example 7-night peak (4 adults):** €3,360 + €120 + €71 = **≈ €3,551** before €500 security deposit on arrival
+- **Illustrative Airbnb saving:** **~€676** on 7-night peak comparison (was incorrectly €719 with wrong tax math)
+
+### Shipped (live — deploy `dpl_3i922ExnTGYdMdpKtEgH3QLUuJCX`)
+
+| File | Change |
+|------|--------|
+| **`scripts/pricing.js`** | **New** — single source: rates, cleaning, 4★ tax, example totals, WA link |
+| **`scripts/rates-calculator.js`** | Uses pricing.js · €2.53/adult/night |
+| **`rates.html`** | Correct tax + totals €3,131 / €3,551 · save ~€676 · unified CTAs |
+| **`book-direct-safely.html`** | 4★ tax copy · €3,551 example |
+| **`index.html`** | Primary CTA WhatsApp · layout section · rates preview · area promo (removed ~200-line guidebook) · Provence rename · practical Riviera copy |
+| **`fr/index.html`** | Full FR mirror — no bargain framing · 2,53 € taxe · 5-step booking |
+| **`gallery.html`**, **`family-villa.html`**, **`villa-no-stairs.html`**, **`gallery-data.js`** | Le Provance → Provence bedroom |
+| **`api/booking-agent.js`**, **`scripts/booking-chat.js`** | €676 saving · taxe 4★ · no €719 urgency strip |
+| **`legal-notice.html`** | 4★ tax rate documented |
+| **`scripts/calendar-widget.js`** | WhatsApp fallback if calendar fails |
+| **`scripts/verify-production.sh`** | Checks €2.53, €3,551, no Le Provance, no guidebook tabs |
+
+### Deploy
+```bash
+cd /Users/lana/Projects/villa-augflor-live
+bash scripts/deploy-production.sh
+```
+
+Sync **`index.html`**, **`rates.html`**, **`book-direct-safely.html`**, **`api/booking-agent.js`** on any future pricing change.
+
+---
 **Custom Domain:** https://villa-augflor.com  
-**Latest commit:** pending — SEO landing page + llms.txt + sitemap  
-**Deploy:** run `bash scripts/deploy-production.sh` after this session
+**Latest commit:** `bbc40df` on `main` — CRO Phase 1: 4★ taxe, CTAs, homepage trim  
+**Deploy:** `dpl_3i922ExnTGYdMdpKtEgH3QLUuJCX` (CRO Phase 1: 4★ taxe, CTAs, homepage trim)
+
+---
+
+## Session Update — May 30, 2026 (Area guide filter bug + homepage promo)
+
+**Goal:** Restore full area guide on separate page; fix filters showing “0 places” and missing cards.
+
+### User report
+- Clicking category/tag filters on `/area.html` showed **0 places** and all photo cards disappeared.
+- User wanted area guide back on **separate page with images** (not duplicated on homepage).
+
+### Root cause
+- **`scripts/area-place-enrichment.js`** — `enrichPlace()` returned only enrichment metadata (priceLevel, bestFor, etc.) and **dropped core fields** (`cat`, `name`, `drive`, `family`, `blurb`, …). After `PLACES.map(enrichPlace)`, category filters matched nothing → empty grid.
+
+### Shipped (live)
+
+| Item | Change |
+|------|--------|
+| **`scripts/area-place-enrichment.js`** | Fix: `return merge(p, enriched)` so original place data is preserved |
+| **`area.html`** | Confirmed separate page — tag filters, 78 places, photos, itinerary (synced with live) |
+| **`scripts/area-guide.js`** | Full interactive guide with category + tag filters (synced with live) |
+| **`index.html`** | Removed ~200-line inline text-only `#guidebook`; replaced with short **area promo** (4 preview photos + CTA → `area.html`) |
+
+### Verify
+- Hard refresh https://villa-augflor.com/area.html
+- **All places** → ~78 cards with photos
+- **Hill villages** → 10 places
+- **Hill villages + Family** → 3 places (Haut-de-Cagnes, Biot, Valbonne)
+
+### Deploy
+```bash
+cd /Users/lana/Projects/villa-augflor-live
+bash scripts/deploy-production.sh
+```
 
 ---
 
 ## Session Update — May 29, 2026 (SEO: South of France near Nice Airport)
 
 **Goal:** Maximize discoverability for “villa in south of France near Nice airport” on Google and AI search (ChatGPT, Claude, etc.).
+
+**Status:** ✅ Live — commit `9d7d519`, deploy `dpl_4Mk9itDaZydATAShXgMHrijRbUTX`, verify passed.
 
 ### Root cause fixed
 - `villa-near-nice.html` was **301 redirecting to homepage** in `vercel.json` — Google and AI crawlers never saw location content.
@@ -34,11 +108,14 @@
 4. **Platform sync** — ensure Airbnb/Booking descriptions mention “15 min Nice Airport” + link to direct site
 5. **Realistic expectation** — page 1 for competitive head terms takes months + authority; long-tail “villa near Nice Airport private pool” is the near-term win
 
-### Deploy
-```bash
-cd /Users/lana/Projects/villa-augflor-live
-bash scripts/deploy-production.sh
-```
+---
+
+## Session Update — May 29, 2026 (Homepage area guide — user clarification)
+
+**Note (superseded May 30 fix above):** CRO Phase 2 claimed inline guidebook was removed from homepage, but a large text-only `#guidebook` block remained. May 30 session removed it and pointed all area content to **`area.html`**.
+
+**Canonical area guide URL:** https://villa-augflor.com/area.html  
+**Do not** rebuild area content on the homepage — use promo + link only.
 
 ---
 
@@ -206,7 +283,7 @@ When Airbnb bookings change, update **`data/calendar-busy.json`** and redeploy. 
 | Vercel project (custom domain) | `villa-augflor-static-live` |
 | Deploy (preferred) | `bash scripts/deploy-production.sh` (build + deploy + verify) |
 | Deploy (alternate) | `git push origin main` if Vercel Git integration is enabled |
-| **Area guide (live page)** | https://villa-augflor.com/area.html |
+| **Area guide (live page)** | https://villa-augflor.com/area.html — **78 places, photos, category + tag filters** (not on homepage) |
 | Legacy area URL | `riviera-area-guide.html` → redirects to `area.html` |
 | **Rates & calendar** | https://villa-augflor.com/rates.html |
 | **Book direct safely** | https://villa-augflor.com/book-direct-safely.html |
@@ -226,7 +303,8 @@ When Airbnb bookings change, update **`data/calendar-busy.json`** and redeploy. 
 |--------|--------|------------------|-------|
 | Shoulder | June · September | **€420** | Label: **Shoulder season** on `rates.html` |
 | Peak summer | July · August | **€480** direct (was **€520** list) | Label: **Peak summer** — not "High Season" |
-| 7-night peak comparison | Jul/Aug | Save **~€719** vs Airbnb | See cost grid on `rates.html` |
+| Taxe de séjour | **€2.53/adult/night** (4★ classified, Métropole Nice Côte d'Azur) | Under-18s exempt · itemised on quote |
+| 7-night peak comparison | Jul/Aug | Save **~€676** vs Airbnb (illustrative) | Direct ≈ **€3,551** before deposit · see `rates.html` |
 
 ### Canonical payment terms (keep `index.html`, `rates.html`, `book-direct-safely.html`, `api/booking-agent.js` in sync)
 
@@ -243,7 +321,7 @@ When Airbnb bookings change, update **`data/calendar-busy.json`** and redeploy. 
 
 **Agent pitfalls (past chats):** see `docs/agent-lessons-learned.md`. If Cursor opened empty `villa-augflor/`, use repo `villa-augflor-live` only. Do not claim "live" without `bash scripts/verify-production.sh` (checks `/`, `/rates.html`, `/book-direct-safely.html`, `/area.html`, legacy redirects). **Do not use `./images/` paths** — hero and about photos live under `assets/photos/optimized/` only.
 
-**Pricing deploy rule:** Any rate or payment-term change must update **`index.html`**, **`rates.html`**, **`book-direct-safely.html`**, and **`api/booking-agent.js`** together before deploy. Subpage assets (`styles/subpage.css`, `scripts/subpage.js`, `components/nav-subpage.html`, `components/footer-subpage.html`) must be in git if subpages depend on them.
+**Pricing deploy rule:** Any rate or payment-term change must update **`scripts/pricing.js`**, **`index.html`**, **`rates.html`**, **`book-direct-safely.html`**, and **`api/booking-agent.js`** together before deploy. Subpage assets (`styles/subpage.css`, `scripts/subpage.js`, `components/nav-subpage.html`, `components/footer-subpage.html`) must be in git if subpages depend on them.
 
 ---
 
@@ -401,7 +479,7 @@ Photos are organized by room area:
 |------|-------|
 | Master Bedroom — "Barcelona" | Upstairs loft; green marble wall, skylight, en-suite tub |
 | Upstairs Double Bedroom — "Asian" | Peacock motifs, bamboo lantern |
-| Ground Floor Bedroom — "Le Provance" | French-provincial styling, marble accent wall |
+| Ground Floor Bedroom — Provence | French-provincial styling, marble accent wall (ground floor) |
 | Living Room | Open-plan lounge, dining, wood stove |
 | Garden Room | Piano, papasan chair, direct pool access |
 | Upstairs Bathroom | Stone wall, walk-in shower |
@@ -725,7 +803,7 @@ To activate: add the standard GA4 `gtag.js` snippet to `<head>` of all pages (me
 
 ## Notes for Next Assistant
 
-1. **Gallery lives on `gallery.html`** — the homepage `#gallery` section is a photo mosaic preview only. Room-by-room layout (Barcelona, Asian, Le Provance, etc.) is on `/gallery.html`.
+1. **Gallery lives on `gallery.html`** — the homepage `#gallery` section is a photo mosaic preview only. Room-by-room layout (Barcelona, Asian, Provence, etc.) is on `/gallery.html`.
 2. **Airbnb photos are separate** — changes to villa-augflor.com do not update the Airbnb listing.
 3. **Photo source folder:** `~/Desktop/Images/House Photos` — only use files from May 2023 onward; skip duplicates of images already in `assets/photos/optimized/`.
 4. **Optimize before adding:** `sips -s format jpeg -Z 1600 input.jpg --out assets/photos/optimized/name.jpg`
@@ -814,7 +892,7 @@ Rebuilt with 9 sections and ~30 photos from `assets/photos/optimized/`:
 
 - Master Bedroom — "Barcelona" (upstairs)
 - Upstairs Double Bedroom — "Asian"
-- Ground Floor Bedroom — "Le Provance"
+- Ground Floor Bedroom — Provence
 - Living Room
 - Garden Room
 - Upstairs Bathroom
@@ -877,5 +955,5 @@ Also copied from `_images/`: `garden-room-*.jpg`, `kitchen-corner-wide.jpg`.
 
 ---
 
-**Last Updated:** May 29, 2026 (conversion pass — live calendar on homepage, area guide links, booking chat)  
-**Status:** ✅ Production live · Day-level calendar on `/` + `/rates.html` · Full area guide linked · Booking chat on homepage
+**Last Updated:** May 30, 2026 (area guide filter fix, homepage area promo, SEO Nice Airport live)  
+**Status:** ✅ Production live · Full area guide on `/area.html` · Filters working · SEO page + llms.txt live
