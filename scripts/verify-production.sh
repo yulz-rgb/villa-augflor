@@ -68,6 +68,23 @@ if [[ "$PATH_TO_CHECK" == "/" ]]; then
   check_absent "Homepage Le Provance typo" "Le Provance"
   check_absent "Homepage inline guidebook tabs" "guidebook-tabs"
   check_absent "Homepage save 20% footer" "save 20%"
+  check_present "Homepage trust FAQ pool private" "Is the pool private?"
+  check_absent "Homepage inline full terms tabs" "Guest Responsibility"
+
+  echo "==> Fetching ${SITE%/}/terms.html"
+  TERMS_HTML=$(curl -fsSL -H "Cache-Control: no-cache" "$SITE/terms.html")
+  check_present_file "Terms page cancellation policy" "Cancellation Policy" "$TERMS_HTML"
+  check_present_file "Terms page security deposit" "€500 security deposit" "$TERMS_HTML"
+
+  echo "==> Fetching ${SITE%/}/de/"
+  DE_HTML=$(curl -fsSL -H "Cache-Control: no-cache" "$SITE/de/")
+  check_present_file "German landing 4-star tax" "€2,53" "$DE_HTML"
+  check_present_file "German landing WhatsApp CTA" "Verfügbarkeit auf WhatsApp" "$DE_HTML"
+
+  echo "==> Fetching ${SITE%/}/nl/"
+  NL_HTML=$(curl -fsSL -H "Cache-Control: no-cache" "$SITE/nl/")
+  check_present_file "Dutch landing peak example" "€3.551" "$NL_HTML"
+  check_present_file "Dutch landing WhatsApp CTA" "Beschikbaarheid op WhatsApp" "$NL_HTML"
 
   echo "==> Fetching ${SITE%/}/contact.html"
   CONTACT_HTML=$(curl -fsSL -H "Cache-Control: no-cache" "$SITE/contact.html")
@@ -134,6 +151,7 @@ if [[ "$PATH_TO_CHECK" == "/" ]]; then
   check_redirect "/about/" "rates.html"
   check_redirect "/contact/" "contact.html"
   check_redirect "/check-availability/" "gallery.html"
+  check_redirect "/terms-conditions/" "terms.html"
 
   echo "==> SEO landing pages"
   SEO_HTML=$(curl -fsSL -H "Cache-Control: no-cache" "$SITE/villa-near-nice-airport.html")

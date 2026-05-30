@@ -113,12 +113,15 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {"@type": "Question", "name": "What is the minimum stay at Villa Augflor during summer?", "acceptedAnswer": {"@type": "Answer", "text": "A 7-night minimum applies from June through end of August. In shoulder season (September), 3-night stays are welcome."}},
-    {"@type": "Question", "name": "Are pets allowed at Villa Augflor?", "acceptedAnswer": {"@type": "Answer", "text": "Unfortunately pets are not permitted at Villa Augflor."}},
-    {"@type": "Question", "name": "How much does it cost to rent Villa Augflor per night?", "acceptedAnswer": {"@type": "Answer", "text": "Villa Augflor is priced at €420/night in June and September, and €480/night in July and August. All rates are for up to 6 guests."}},
-    {"@type": "Question", "name": "How far is Villa Augflor from Nice Airport?", "acceptedAnswer": {"@type": "Answer", "text": "Villa Augflor is approximately 15 minutes from Nice Côte d'Azur Airport (NCE) by car — one of the closest private pool villas in the South of France to the main Riviera airport."}},
-    {"@type": "Question", "name": "Where can I rent a villa in the South of France near Nice Airport?", "acceptedAnswer": {"@type": "Answer", "text": "Villa Augflor at 26 Chemin des Collines, Cagnes-sur-Mer (06800) is a Gîtes de France 4-star private pool villa about 15 minutes from Nice Airport. Direct booking from €420/night shoulder season and €480/night peak summer at villa-augflor.com."}},
-    {"@type": "Question", "name": "How many guests can stay at Villa Augflor?", "acceptedAnswer": {"@type": "Answer", "text": "Villa Augflor sleeps up to 6 guests in 3 bedrooms. Children are welcome."}}
+    {"@type": "Question", "name": "Is the pool private at Villa Augflor?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The pool, garden, and terraces are for exclusive use of booking guests only."}},
+    {"@type": "Question", "name": "Is Villa Augflor shared?", "acceptedAnswer": {"@type": "Answer", "text": "No. You rent the entire 3-bedroom villa with private pool and garden."}},
+    {"@type": "Question", "name": "Is Villa Augflor beachfront?", "acceptedAnswer": {"@type": "Answer", "text": "No. The villa is in hillside Cagnes-sur-Mer; beaches are a short drive. A car is recommended."}},
+    {"@type": "Question", "name": "How does direct booking work?", "acceptedAnswer": {"@type": "Answer", "text": "Enquire via WhatsApp or email, receive a written quote before payment, sign agreement, pay 30% deposit, balance 30 days before arrival."}},
+    {"@type": "Question", "name": "When do I pay for a Villa Augflor booking?", "acceptedAnswer": {"@type": "Answer", "text": "30% deposit to confirm; balance 30 days before arrival; €500 security deposit on arrival only."}},
+    {"@type": "Question", "name": "Are pets allowed at Villa Augflor?", "acceptedAnswer": {"@type": "Answer", "text": "No. Pets are not permitted."}},
+    {"@type": "Question", "name": "Are parties allowed?", "acceptedAnswer": {"@type": "Answer", "text": "No. Parties and events are prohibited. Quiet hours 22:00–08:00."}},
+    {"@type": "Question", "name": "How much does Villa Augflor cost per night?", "acceptedAnswer": {"@type": "Answer", "text": "€420/night June and September; €480/night July and August for up to 6 guests. Taxe de séjour €2.53 per paying adult per night (4-star classified rate)."}},
+    {"@type": "Question", "name": "How far is Villa Augflor from Nice Airport?", "acceptedAnswer": {"@type": "Answer", "text": "Approximately 15 minutes by car from Nice Côte d'Azur Airport (NCE)."}}
   ]
 }
 </script>
@@ -902,42 +905,217 @@ footer { background: #141210; padding: 3.5rem 2.5rem 2rem; color: rgba(255,255,2
   </div>
 </section>
 
-<!-- AREA GUIDE PROMO -->
-<section class="area-promo-bg rustic-texture section-full" id="area-guide">
-  <div class="area-promo-inner">
-    <p class="eyebrow reveal">French Riviera area guide</p>
-    <h2 class="reveal">78 places — <em>photos, filters &amp; drive times</em></h2>
-    <p class="lead reveal" style="max-width:58ch">The full guide lives on <a href="area.html" style="color:var(--accent);text-decoration:underline">area.html</a>: villages, beaches, restaurants and day trips with photos, ratings, and Google Maps links from the villa.</p>
-    <div class="area-promo-grid reveal">
-      <figure><img src="assets/photos/area/haut-de-cagnes.jpg" alt="Haut-de-Cagnes medieval village near Villa Augflor" loading="lazy" width="400" height="300"><figcaption>Haut-de-Cagnes · 8 min</figcaption></figure>
-      <figure><img src="assets/photos/area/nice.jpg" alt="Nice Promenade des Anglais from area guide" loading="lazy" width="400" height="300"><figcaption>Nice · 25 min</figcaption></figure>
-      <figure><img src="assets/photos/area/eze-town.jpg" alt="Èze village perched above the Mediterranean" loading="lazy" width="400" height="300"><figcaption>Èze · 35 min</figcaption></figure>
-      <figure><img src="assets/photos/area/antibes.jpg" alt="Antibes old town and port" loading="lazy" width="400" height="300"><figcaption>Antibes · 25 min</figcaption></figure>
+<!-- AREA GUIDEBOOK -->
+<div class="guidebook-bg rustic-texture section-full" id="guidebook">
+  <div class="guidebook-inner">
+    <p class="eyebrow">Area guide</p>
+    <h2>Your <em>Riviera playbook</em></h2>
+    <p class="lead">Everything Lana recommends — from the best boulangerie 2 minutes away to the most dramatic canyon in Europe. Updated each season.</p>
+
+    <div class="guidebook-tabs" role="tablist">
+      <button class="gtab active" onclick="showGuide(this,'places')" role="tab">Places to See</button>
+      <button class="gtab" onclick="showGuide(this,'beaches')" role="tab">Beaches</button>
+      <button class="gtab" onclick="showGuide(this,'dining')" role="tab">Dining &amp; Markets</button>
+      <button class="gtab" onclick="showGuide(this,'activities')" role="tab">Activities</button>
+      <button class="gtab" onclick="showGuide(this,'daytrips')" role="tab">Day Trips</button>
+      <button class="gtab" onclick="showGuide(this,'essentials')" role="tab">Essentials &amp; Shops</button>
     </div>
+
+    <div id="guide-places" class="guide-panel active">
+      <div class="guide-card">
+        <div class="guide-card-title">Haut-de-Cagnes</div>
+        <div class="guide-card-dist">5 min · Medieval village</div>
+        <p>The medieval hilltop village on the other side of our hill is beyond imagination — cinematographic, calm, classified as a historical site since 1948. Narrow pebbled streets cool even in summer heat, thousands of flowers, and a Renaissance château with panoramic views over sea and mountains. Take a glass of cold wine at the square café and simply exist. Use the free navette shuttle (bus 44 from Square Bourdet) to avoid parking.</p>
+      </div>
+      <div class="guide-card">
+        <div class="guide-card-title">Saint-Paul-de-Vence</div>
+        <div class="guide-card-dist">15 min · Must-see</div>
+        <p>On the hill next to the villa, this 15th-century walled village is one of the great "must-see" destinations of the entire region. Art galleries, boutiques, hidden cafés, flowers everywhere. The Fondation Maeght modern art museum — with Miró's labyrinth and Giacometti in the courtyard — is world-class. Arrive early in summer.</p>
+      </div>
+      <div class="guide-card">
+        <div class="guide-card-title">Nice</div>
+        <div class="guide-card-dist">25 min · Capital of the Riviera</div>
+        <p>A city of extraordinary layers — the Baroque Vieux-Nice, the Promenade des Anglais, the Cours Saleya flower market, the Russian Orthodox Cathedral. Founded by the Greeks (originally "Nike" — victory), it has been Italian, French, and everything in between. The spirit of Nice is unlike any other French city. The Cours Saleya morning market is essential at least once.</p>
+      </div>
+      <div class="guide-card">
+        <div class="guide-card-title">Monaco &amp; Monte-Carlo</div>
+        <div class="guide-card-dist">50 min · Grand principality</div>
+        <p>A tiny city-state famed for glamour, the Casino, the Prince's Palace (once home to Princess Grace), and some of the most prestigious events in the world — the Formula One Grand Prix, the Yacht Show, Monte Carlo Rally. Monte Carlo district is drenched in sun, money, and extraordinary Mediterranean views.</p>
+      </div>
+      <div class="guide-card">
+        <div class="guide-card-title">Èze Village</div>
+        <div class="guide-card-dist">35 min · Most dramatic view</div>
+        <p>Perched at 427 metres above the sea, Èze is the most vertiginous village on the Riviera. The Jardin Exotique at the summit has the best panoramic view on the entire coast. Visit midmorning before the tour groups arrive. Combine with a coastal drive along the Grande Corniche.</p>
+      </div>
+      <div class="guide-card">
+        <div class="guide-card-title">Antibes &amp; Juan-les-Pins</div>
+        <div class="guide-card-dist">25 min · Old town &amp; port</div>
+        <p>The walled old town, the Picasso Museum inside a real medieval castle, the extraordinary Saturday Provençal market, and the best bouillabaisse on the coast. Juan-les-Pins, attached to Antibes, has a legendary jazz festival each July. The superyacht port is a spectacle on its own terms.</p>
+      </div>
+    </div>
+
+    <div id="guide-beaches" class="guide-panel">
+      <div class="guide-card">
+        <div class="guide-card-title">Cros-de-Cagnes</div>
+        <div class="guide-card-dist">15 min · Local beach</div>
+        <p>Long sandy beach right in the village. Relaxed, local, with good seafood restaurants on the waterfront. Ideal for families — calm water and gentle entry. Best for a lazy half-day followed by lunch at La Pesquière.</p>
+      </div>
+      <div class="guide-card">
+        <div class="guide-card-title">Golfe-Juan</div>
+        <div class="guide-card-dist">25 min · Sandy beach</div>
+        <p>One of the most beautiful sandy beaches on the Riviera — clear shallow water, less crowded than Nice or Cannes, and a genuinely local atmosphere. Napoleon landed here on his return from Elba.</p>
+      </div>
+      <div class="guide-card">
+        <div class="guide-card-title">Cap d'Antibes</div>
+        <div class="guide-card-dist">25 min · Hidden coves</div>
+        <p>Rocky coves and crystal-clear water around the cape. Take the Sentier du Littoral coastal walking path for hidden swimming spots away from the crowds. One of the most scenic walks on the entire Côte d'Azur.</p>
+      </div>
+      <div class="guide-card">
+        <div class="guide-card-title">Plage de la Garoupe</div>
+        <div class="guide-card-dist">27 min · Glamorous beach</div>
+        <p>Antibes' most celebrated beach — shallow, sandy, sheltered. Beach clubs with loungers or a public section for BYO towel. Consistently beautiful water.</p>
+      </div>
+      <div class="guide-card">
+        <div class="guide-card-title">Nice Promenade</div>
+        <div class="guide-card-dist">25 min · Iconic pebble beach</div>
+        <p>The famous pebble beach of Nice along the Promenade des Anglais. Best early morning or sunset. Combine with a walk through Vieux-Nice and the Cours Saleya market.</p>
+      </div>
+      <div class="guide-card">
+        <div class="guide-card-title">Mala Beach, Cap d'Ail</div>
+        <div class="guide-card-dist">40 min · Hidden gem</div>
+        <p>A beautiful small pebble cove accessible only by coastal path. One of the Riviera's true secrets. Pack a picnic, wear shoes you can walk in, and allow an hour to reach it.</p>
+      </div>
+    </div>
+
+    <div id="guide-dining" class="guide-panel">
+      <div class="guide-card">
+        <div class="guide-card-title">Boulangeries near the villa</div>
+        <div class="guide-card-dist">2–8 min · Daily essentials</div>
+        <p><strong>Closest:</strong> Patisserie des Travails, 19 Chemin des Travails (walk 12 min / car 2 min), open 06:30–19:30. <strong>Lana's favourite:</strong> Bour Pâtisserie Boulangerie Traiteur, 94 Avenue des Alpes (car 8 min), open 06:15–20:00 daily. Exceptional croissants and pastries.</p>
+      </div>
+      <div class="guide-card">
+        <div class="guide-card-title">Restaurants in Haut-de-Cagnes</div>
+        <div class="guide-card-dist">5 min · Ask Lana for current picks</div>
+        <p>Several excellent small restaurants are nestled in the medieval village directly above the villa. Lana keeps a curated, up-to-date list with booking tips — just ask on arrival. The setting alone at these restaurants — candlelit medieval lanes — is worth the short drive.</p>
+      </div>
+      <div class="guide-card">
+        <div class="guide-card-title">Marché Provençal, Antibes</div>
+        <div class="guide-card-dist">25 min · Daily until 1pm</div>
+        <p>The best morning market on the Riviera. Local cheese, olives, socca, charcuterie, flowers, and lavender. Essential at least once. Arrive around 9am with an empty bag and no fixed plan.</p>
+      </div>
+      <div class="guide-card">
+        <div class="guide-card-title">Cours Saleya Market, Nice</div>
+        <div class="guide-card-dist">25 min · Tues–Sun morning</div>
+        <p>Nice's legendary flower and food market. Try fresh socca (Niçoise chickpea pancake) from a street stall for breakfast. One of the most atmospheric markets in France.</p>
+      </div>
+      <div class="guide-card">
+        <div class="guide-card-title">La Pesquière, Cros-de-Cagnes</div>
+        <div class="guide-card-dist">15 min · Seafront</div>
+        <p>Beloved local fish restaurant right on the beach. Book ahead. Order the dorade grillée and a bottle of local Bellet white wine. One of the best casual lunches near the villa.</p>
+      </div>
+      <div class="guide-card">
+        <div class="guide-card-title">Rosé Wine Estates</div>
+        <div class="guide-card-dist">Varied · Guided tastings</div>
+        <p>Provence produces the world's finest rosé. Château Minuty and Château Saint-Maur are both within an hour. Wine tastings can be arranged through Lana, including at estates not open to general public.</p>
+      </div>
+    </div>
+
+    <div id="guide-activities" class="guide-panel">
+      <div class="guide-card">
+        <div class="guide-card-title">Fondation Maeght</div>
+        <div class="guide-card-dist">15 min · Saint-Paul</div>
+        <p>One of Europe's great modern art museums — a Miró labyrinth, Giacometti sculptures in the courtyard, Calder mobiles, and world-class exhibitions all summer. Budget a minimum of two hours.</p>
+      </div>
+      <div class="guide-card">
+        <div class="guide-card-title">Watersports &amp; Sailing</div>
+        <div class="guide-card-dist">Antibes · 25 min</div>
+        <p>Antibes is the superyacht capital of the world. Sailing, paddleboarding, kayaking, and boat hire all available from the port. Lana can arrange half-day boat rentals and sailing lessons.</p>
+      </div>
+      <div class="guide-card">
+        <div class="guide-card-title">Gorges du Loup</div>
+        <div class="guide-card-dist">45 min · Canyon hike</div>
+        <p>Spectacular limestone gorges in the Alpes-Maritimes hinterland — refreshingly cool even in August. Combine with a visit to the village of Gourdon perched at the top. A perfect escape from coastal heat.</p>
+      </div>
+      <div class="guide-card">
+        <div class="guide-card-title">Nice Jazz Festival</div>
+        <div class="guide-card-dist">25 min · July</div>
+        <p>One of the world's great jazz festivals, held every July in Parc Phoenix. Outdoor concerts under the stars with Nice as the backdrop. Book tickets well in advance.</p>
+      </div>
+      <div class="guide-card">
+        <div class="guide-card-title">Cycling the Riviera</div>
+        <div class="guide-card-dist">From the villa</div>
+        <p>Hire road or e-bikes and follow the coastal cycle path towards Nice or Antibes. The velodrome circuit at Cros-de-Cagnes is good for families. Lana can organise bike hire delivery to the villa.</p>
+      </div>
+      <div class="guide-card">
+        <div class="guide-card-title">Tennis &amp; Golf</div>
+        <div class="guide-card-dist">Varied · 10–25 min</div>
+        <p>Several excellent tennis clubs and golf courses nearby. Lana can arrange court time and tee times including at private clubs near Mougins and Biot. The climate means outdoor courts are playable from March through October.</p>
+      </div>
+    </div>
+
+    <div id="guide-daytrips" class="guide-panel">
+      <div class="guide-card">
+        <div class="guide-card-title">Îles de Lérins</div>
+        <div class="guide-card-dist">Cannes ferry · 45 min total</div>
+        <p>Take the ferry from Cannes to Île Sainte-Honorat — a monastic island with extraordinary vineyards and deserted rocky coastline. Île Sainte-Marguerite has the cell where the Man in the Iron Mask was imprisoned. Pack a picnic and spend the day.</p>
+      </div>
+      <div class="guide-card">
+        <div class="guide-card-title">Grasse</div>
+        <div class="guide-card-dist">40 min · Perfume capital</div>
+        <p>The world capital of perfume since the 17th century. Visit Fragonard or Galimard for a perfume creation workshop — one of the best activities for all ages on the Riviera. Surrounding lavender and mimosa fields are extraordinary.</p>
+      </div>
+      <div class="guide-card">
+        <div class="guide-card-title">Tourettes-sur-Loup &amp; Gourdon</div>
+        <div class="guide-card-dist">30–45 min · Inland villages</div>
+        <p>Tourettes-sur-Loup is known for its violet festival and artisan craft shops. Gourdon, perched on a cliff 760 metres above the sea, has the most breathtaking views of the entire arrière-pays. Both can be combined in a half-day loop.</p>
+      </div>
+      <div class="guide-card">
+        <div class="guide-card-title">Menton &amp; the Italian Border</div>
+        <div class="guide-card-dist">55 min · Lemon capital</div>
+        <p>The prettiest town on the Riviera, at the Italian frontier. Famous for lemons, Baroque churches, and the Ventimiglia market just across the border on Fridays. Excellent for an authentic half-day excursion away from the tourist trail.</p>
+      </div>
+      <div class="guide-card">
+        <div class="guide-card-title">Verdon Gorge</div>
+        <div class="guide-card-dist">2 hrs · Europe's Grand Canyon</div>
+        <p>The most dramatic landscape in southern France — turquoise water, 700-metre limestone cliffs, and a canyon stretching 25 kilometres. Kayaking, rock climbing, or simply the most dramatic drive imaginable. A full-day adventure worth planning.</p>
+      </div>
+      <div class="guide-card">
+        <div class="guide-card-title">Vence &amp; Matisse Chapel</div>
+        <div class="guide-card-dist">20 min · Art pilgrimage</div>
+        <p>The Chapelle du Rosaire, designed by Henri Matisse in his final years, is a masterwork of light, ceramic, and stained glass. Quieter and more authentic than Saint-Paul. Local Tuesday market. One of the essential cultural stops of the region.</p>
+      </div>
+    </div>
+
+    <div id="guide-essentials" class="guide-panel">
+      <div class="guide-card" style="grid-column: 1 / -1;">
+        <div class="guide-card-title">Supermarkets &amp; everyday shopping</div>
+        <div class="guide-card-dist">All within 5–8 min by car</div>
+        <p style="margin-bottom:.75rem"><strong>Leclerc</strong> — 344 Chemin des Moulières, La Colle-sur-Loup. Open 08:30–20:30, Sunday 09:00–13:00 (walk 20 min / car 8 min). Also has the cheapest fuel station in the area.</p>
+        <p style="margin-bottom:.75rem"><strong>Casino Supermarché</strong> — Avenue des Alpes. Open 06:00–midnight (walk 17 min / car 5 min). Very convenient for evening top-ups.</p>
+        <p style="margin-bottom:.75rem"><strong>LIDL</strong> — 66 Avenue de Verdun. Open 08:30–20:00 (walk 17 min / car 5 min).</p>
+        <p><strong>Polygone Riviera</strong> — 119 Avenue des Alpes. Open 10:00–20:00 (car 4 min). Large shopping centre with Zara, H&amp;M, Apple Store, restaurants, and a good supermarket. The closest major retail destination to the villa.</p>
+      </div>
+      <div class="guide-card">
+        <div class="guide-card-title">Boulangeries</div>
+        <div class="guide-card-dist">2–8 min</div>
+        <p><strong>Patisserie des Travails</strong>, 19 Chemin des Travails — 2 min by car, 12 min walk. Open 06:30–19:30.<br><br><strong>Bour Pâtisserie Boulangerie</strong>, 94 Ave des Alpes — 8 min by car. Open 06:15–20:00 daily. Lana's personal favourite for croissants.</p>
+      </div>
+      <div class="guide-card">
+        <div class="guide-card-title">Useful to know</div>
+        <div class="guide-card-dist">Local tips</div>
+        <p><strong>Free shuttle bus</strong> (navette gratuite, line 44) from Square Bourdet town centre runs every 20 minutes daily to Haut-de-Cagnes — avoids parking entirely.<br><br><strong>Cheapest fuel:</strong> Leclerc station, La Colle-sur-Loup.<br><br><strong>Pharmacy:</strong> Several in the town centre, open standard French hours. Nearest urgent care at Hôpital de Cagnes-sur-Mer.</p>
+      </div>
+    </div>
+
     <div class="area-guide-cta reveal">
+      <p class="eyebrow">78 places · filters · drive times · maps</p>
+      <h3 style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.5rem,3vw,2rem);font-weight:300;margin:0 0 1rem;color:var(--deep);">Full French Riviera area guide</h3>
+      <p style="color:var(--muted);max-width:52ch;margin:0 auto 1.5rem;font-size:14px;">Interactive concierge guide from the villa — beaches, hill villages, dining, day trips, family activities, and seasonal tips with Google Maps links.</p>
       <a href="area.html" class="btn-primary" style="display:inline-block;">Browse the full area guide →</a>
+      <p style="margin-top:1rem;font-size:12px;color:var(--muted);">Quick tips above · <a href="area.html" style="color:var(--accent);text-decoration:underline">area.html</a> for the complete searchable guide</p>
     </div>
   </div>
-</section>
-
-<!-- RATES PREVIEW -->
-<section id="rates-preview" style="padding:4rem 2.5rem;max-width:900px;margin:0 auto;text-align:center;">
-  <p class="eyebrow reveal">Direct pricing</p>
-  <h2 class="reveal">Clear rates — <em>itemised on your quote</em></h2>
-  <table class="reveal" style="width:100%;max-width:560px;margin:2rem auto;border-collapse:collapse;font-size:14px;text-align:left">
-    <thead><tr style="border-bottom:2px solid var(--sand)"><th style="padding:.5rem 0">Season</th><th>Nightly</th><th>Months</th></tr></thead>
-    <tbody>
-      <tr><td style="padding:.45rem 0">Shoulder</td><td><strong>€420</strong></td><td>June · September</td></tr>
-      <tr><td style="padding:.45rem 0">Peak summer</td><td><strong>€480</strong></td><td>July · August</td></tr>
-      <tr style="border-top:1px solid var(--sand)"><td style="padding:.45rem 0">Cleaning</td><td><strong>€120</strong></td><td>Once per stay</td></tr>
-      <tr><td style="padding:.45rem 0">Taxe de séjour</td><td><strong>€2.53</strong>/adult/night</td><td>4★ classified rate · under-18s exempt</td></tr>
-      <tr><td style="padding:.45rem 0">Security deposit</td><td><strong>€500</strong></td><td>Refundable · on arrival only</td></tr>
-    </tbody>
-  </table>
-  <p class="reveal" style="font-size:14px;color:var(--muted);max-width:52ch;margin:0 auto 1.5rem">Example 7-night peak (4 adults): ≈ <strong>€3,551</strong> before security deposit (rent + cleaning + taxe).</p>
-  <p class="reveal"><a href="rates.html" class="btn-outline" style="display:inline-block;margin-right:.5rem">Full rates &amp; calendar</a> <a href="https://wa.me/33623777333?text=Hi%20Lana%2C%20please%20check%20Villa%20Augflor%20availability.%20Dates%3A%20%5Bcheck-in%5D%20to%20%5Bcheck-out%5D.%20Guests%3A%20%5Bnumber%5D." class="btn-primary" style="display:inline-block">Check availability on WhatsApp</a></p>
-</section>
-
+</div>
 
 <!-- LIVE AVAILABILITY CALENDAR -->
 <section id="availability" style="text-align:center;padding:5rem 2.5rem 4rem;">
@@ -1051,74 +1229,12 @@ footer { background: #141210; padding: 3.5rem 2.5rem 2rem; color: rgba(255,255,2
   </div>
 </div>
 
-<!-- TERMS & CONDITIONS / CANCELLATION -->
-<section class="tc-section" id="terms">
+<!-- TERMS SUMMARY -->
+<section class="tc-section" id="terms" style="padding:5rem 2.5rem;max-width:1100px;margin:0 auto;">
   <p class="eyebrow reveal">Legal &amp; policies</p>
-  <h2 class="reveal">Terms, conditions<br><em>&amp; cancellation policy</em></h2>
-  <div class="tc-tabs reveal">
-    <button class="tc-tab active" onclick="showTc(this,'booking')">Booking &amp; Payment</button>
-    <button class="tc-tab" onclick="showTc(this,'guests')">Guest Responsibility</button>
-    <button class="tc-tab" onclick="showTc(this,'cancellation')">Cancellation Policy</button>
-    <button class="tc-tab" onclick="showTc(this,'pool')">Pool &amp; Safety</button>
-  </div>
-
-  <div id="tc-booking" class="tc-panel active">
-    <h3>Payment &amp; Security Deposit</h3>
-    <p>We accept Visa, MasterCard (secure payment link), and bank transfers (IBAN after signed agreement). The Primary Guest must be at least 25 years of age and is responsible for all guests and visitors.</p>
-    <p><strong>30% deposit</strong> confirms your booking. <strong>Balance</strong> due 30 days before arrival. A <strong>€500 security deposit</strong> is payable on arrival (not at booking) and refunded within 1–2 business days after check-out, provided there is no damage.</p>
-    <p>The security deposit may cover breakages, smoking odours, lost keys (€80), emergency call-outs, or excess cleaning. Full terms are in your signed rental agreement.</p>
-
-    <h3>Check-in &amp; Check-out</h3>
-    <p>Check-in: from <strong>15:00</strong>. Check-out: by <strong>10:00</strong>. Early check-in and late check-out may be available with at least 3 days' notice (charges may apply). The property must be vacated by the agreed time or extra charges will apply.</p>
-    <p>On departure: run the dishwasher, remove all rubbish to the designated area outside the main gates (sort plastic and glass), leave keys on the table, and place the key in the locker outside the main gate. Please return any moved furniture to its original position.</p>
-
-    <h3>Privacy</h3>
-    <p>Exterior cameras cover entry points only — not pool or terrace areas. They are not live-monitored; footage may be reviewed only if a property issue is reported, in line with GDPR. Please do not tamper with equipment.</p>
-    <p>Your personal information will not be passed to any third parties. It is used solely to provide your booking and related services.</p>
-  </div>
-
-  <div id="tc-guests" class="tc-panel">
-    <h3>Guest Numbers &amp; Behaviour</h3>
-    <p>The maximum number of guests is <strong>6 people</strong>, unless agreed in writing by Villa Augflor. Parties and events are strictly prohibited. Disturbance to neighbours may result in immediate termination of the rental with no refund.</p>
-    <p>If we are required to attend the property to address a noise or disturbance complaint, a <strong>€200 charge</strong> will apply.</p>
-    <p>All fixtures, fittings, and appliances are assumed to be in good working order at the start of your stay. If anything is not, please notify us immediately so it can be recorded. Any damage not reported at the start of your stay will be deemed to have been caused by you.</p>
-    <p>Any breakages or damage must be reported before departure. Guests are responsible for damage during their stay; costs beyond the security deposit are handled per the signed rental agreement.</p>
-
-    <h3>Smoking</h3>
-    <p>Villa Augflor is a no-smoking property. Do not discard cigarette butts anywhere on the property — in summer this presents a serious fire risk. An additional €100 deodorising fee applies for odours caused by indoor smoking.</p>
-
-    <h3>Children</h3>
-    <p>Please supervise infants and children at all times, especially near the pool. Villa Augflor accepts no liability for injury to minors on the property.</p>
-
-    <h3>Lost Property</h3>
-    <p>Villa Augflor is not responsible for guests' personal belongings. Items left behind will be returned at the guest's cost via La Poste. Items will not be held indefinitely.</p>
-  </div>
-
-  <div id="tc-cancellation" class="tc-panel">
-    <h3>Cancellation Policy</h3>
-    <p><strong>We strongly recommend travel insurance</strong> for all bookings. It is the guest's responsibility to be aware of any restrictions that may impact their stay.</p>
-    <p>Because Villa Augflor is a small private seasonal property with limited availability, confirmed direct bookings are normally <strong>non-refundable</strong>. Where possible, we will try to help you move dates or receive a <strong>credit for a future stay</strong> within 12 months. Date changes must be requested by email from the original booker.</p>
-    <p>The exception is if European governments impose non-essential travel restrictions (Public Health Orders) covering all or part of your booking dates. In this case, contact us within 2 days of the government announcement and we will offer:</p>
-    <ul>
-      <li><strong>Option 1 — Credit:</strong> Full credit for amounts paid, usable within 12 months of the original arrival date.</li>
-      <li><strong>Option 2 — Refund:</strong> Full refund minus 2.95% bank fees, if you cancel no later than 14 days before check-in.</li>
-    </ul>
-
-    <h3>Cancellation by Villa Augflor</h3>
-    <p>We reserve the right to cancel bookings in exceptional circumstances: unforeseen property damage making the villa unsafe, death of the host or immediate family member, or serious breach of house rules by guests creating problems with neighbours. In the case of cancellation by us due to circumstances outside your control, you will receive a full refund.</p>
-  </div>
-
-  <div id="tc-pool" class="tc-panel">
-    <h3>Pool Rules</h3>
-    <p>The pool is for the exclusive use of guests staying at the property. No glass in or around the pool at any time — plastic cups are provided.</p>
-    <p>Do not leave hats, clothing, or small items in the pool. Repair costs may be deducted from the security deposit if the filtration system is damaged.</p>
-    <p>Please ensure that the water level does not drop below the filter box level — this can damage the pump motor. If the level appears to be dropping, call us immediately at +33 623 777 333.</p>
-    <p>Children must be supervised at all times in the pool area. The pool is approximately 1.8 m at the deepest end — there is no pool alarm or barrier; adult supervision is required.</p>
-    <p><strong>Note:</strong> The pool may be closed for winter servicing from approximately October to May each year, subject to weather conditions.</p>
-
-    <h3>After-Hours Contact</h3>
-    <p>For any urgent issues during your stay, message or call <strong>+33 623 777 333</strong> (WhatsApp available). We will respond as soon as possible.</p>
-  </div>
+  <h2 class="reveal">Terms, cancellation &amp; house rules</h2>
+  <p class="reveal" style="font-size:15px;color:var(--muted);max-width:62ch;margin:1rem 0 1.5rem;line-height:1.65;">Direct bookings: <strong>30% deposit</strong> to confirm · <strong>balance 30 days</strong> before arrival · <strong>€500 security deposit</strong> on arrival (refunded after check-out if no damage) · travel insurance recommended · confirmed bookings normally non-refundable. House rules cover quiet hours, no parties, no pets, and pool supervision.</p>
+  <p class="reveal"><a href="terms.html" class="btn-primary" style="display:inline-block;padding:.85rem 1.75rem;background:var(--accent);color:#fff;text-decoration:none;font-size:13px;letter-spacing:.08em;text-transform:uppercase;">Read full terms &amp; cancellation policy →</a> <a href="book-direct-safely.html" style="color:var(--accent);margin-left:1rem;font-size:14px;">Book direct safely</a></p>
 </section>
 
 <!-- FAQ -->
@@ -1127,6 +1243,43 @@ footer { background: #141210; padding: 3.5rem 2.5rem 2rem; color: rgba(255,255,2
   <p class="eyebrow reveal">Questions &amp; answers</p>
   <h2 class="reveal">Everything you <em>need to know</em></h2>
   <div class="faq-grid reveal">
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)"><span>Is the pool private?</span><span class="faq-toggle">+</span></div>
+      <div class="faq-a">Yes. The pool, garden, and terraces are for the exclusive use of guests staying at Villa Augflor — not shared with other households. There is no pool barrier or alarm; children must be supervised at all times (deepest end approx. 1.8 m).</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)"><span>Is the villa shared with anyone else?</span><span class="faq-toggle">+</span></div>
+      <div class="faq-a">No. You rent the entire property — three bedrooms, two bathrooms, pool, garden, parking, and living spaces are yours alone for the stay. One locked owner storage room is not accessible to guests.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)"><span>Is Villa Augflor on the beach?</span><span class="faq-toggle">+</span></div>
+      <div class="faq-a">No — we are not beachfront. The villa sits in a quiet residential hillside in Cagnes-sur-Mer. Beaches at Cros-de-Cagnes and along the coast are a short drive (typically 10–15 minutes). A car is recommended for Riviera day trips.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)"><span>How does direct booking work?</span><span class="faq-toggle">+</span></div>
+      <div class="faq-a">Message Lana on WhatsApp or email with dates and guest count. You receive a written quote (rent, cleaning €120, taxe de séjour at the 4-star rate) before any payment. After you accept, you sign a rental summary, pay a 30% deposit, and receive confirmation. See the <a href="book-direct-safely.html" style="color:var(--accent)">Book Direct Safely</a> page for all five steps.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)"><span>When do I pay?</span><span class="faq-toggle">+</span></div>
+      <div class="faq-a"><strong>30% deposit</strong> confirms your booking (secure card link or bank transfer after agreement). <strong>Balance</strong> due 30 days before arrival. <strong>€500 security deposit</strong> is payable on arrival only — not at booking — and refunded within 1–2 business days after check-out if there is no damage.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)"><span>How is the security deposit handled?</span><span class="faq-toggle">+</span></div>
+      <div class="faq-a">€500 is collected on arrival and held against minor damage, lost keys (€80), excess cleaning, or emergency call-outs. It is refunded within 1–2 business days after check-out when the property is left in good order. The collection method is confirmed in your signed rental agreement.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)"><span>What is the cancellation policy?</span><span class="faq-toggle">+</span></div>
+      <div class="faq-a">Confirmed direct bookings are normally non-refundable because availability is limited. Where possible, Lana may offer a date change or credit for a future stay within 12 months. If European governments impose non-essential travel restrictions covering your dates, contact us within 2 days for credit or refund options. Full details on <a href="terms.html" style="color:var(--accent)">terms.html</a>. Travel insurance is strongly recommended.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)"><span>Are parties or events allowed?</span><span class="faq-toggle">+</span></div>
+      <div class="faq-a">No. Villa Augflor is in a quiet residential neighbourhood. Parties, events, and loud outdoor music are not permitted. Quiet hours are 22:00–08:00. The property suits families, couples, and small groups of friends who respect neighbours.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)"><span>What if something breaks during our stay?</span><span class="faq-toggle">+</span></div>
+      <div class="faq-a">Report any issue promptly on WhatsApp (+33 623 777 333) so it can be logged and fixed. Accidental breakages should be reported before departure. Repair costs may be deducted from the security deposit; amounts beyond that are handled per your signed rental agreement.</div>
+    </div>
+
     <div class="faq-item">
       <div class="faq-q" onclick="toggleFaq(this)"><span>How quickly will Lana reply?</span><span class="faq-toggle">+</span></div>
       <div class="faq-a">Usually within a few hours on WhatsApp — often faster in European daytime. Email enquiries for formal quotes are answered within 24 hours. For urgent summer dates, WhatsApp is fastest.</div>
@@ -1225,7 +1378,7 @@ footer { background: #141210; padding: 3.5rem 2.5rem 2rem; color: rgba(255,255,2
         <li><a href="book-direct-safely.html">Book direct safely</a></li>
         <li><a href="contact.html">Contact / enquiry</a></li>
         <li><a href="#rules">House rules</a></li>
-        <li><a href="#terms">Terms &amp; conditions</a></li>
+        <li><a href="terms.html">Terms &amp; conditions</a></li>
         <li><a href="privacy-policy.html">Privacy policy</a></li>
         <li><a href="legal-notice.html">Legal notice</a></li>
         <li><a href="#faq">FAQ</a></li>
@@ -1285,12 +1438,6 @@ const observer = new IntersectionObserver((entries) => {
 reveals.forEach(el => observer.observe(el));
 
 // T&C tabs
-function showTc(btn, id) {
-  document.querySelectorAll('.tc-tab').forEach(t => t.classList.remove('active'));
-  document.querySelectorAll('.tc-panel').forEach(p => p.classList.remove('active'));
-  btn.classList.add('active');
-  document.getElementById('tc-' + id).classList.add('active');
-}
 
 // FAQ accordion
 function toggleFaq(el) {

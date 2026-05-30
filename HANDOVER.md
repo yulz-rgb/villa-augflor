@@ -1,7 +1,47 @@
 # Handover: Villa Augflor SEO & Deployment Complete
 
-**Status:** ✅ PRODUCTION LIVE — CRO Phase 1 (4★ taxe, CTAs, homepage trim) · `verify-production.sh` exit 0 · deploy `dpl_3i922ExnTGYdMdpKtEgH3QLUuJCX`  
+**Status:** ✅ PRODUCTION LIVE — CRO Phase 2 (terms page, trust FAQ, DE/NL) · run `verify-production.sh` after deploy  
 **Date:** May 30, 2026  
+
+---
+
+## Session Update — May 30, 2026 (CRO Phase 2: terms, trust FAQ, DE/NL)
+
+**Goal:** Complete remaining CRO follow-ups without asking — standalone terms, trust-focused FAQ + schema, full DE/NL landing pages, HANDOVER + deploy.
+
+### Shipped
+
+| File | Change |
+|------|--------|
+| **`terms.html`** | **New** — full booking/cancellation/pool terms (moved off homepage) |
+| **`index.html`** | Terms summary + link to `terms.html` · 9 trust FAQ items · updated FAQPage schema |
+| **`de/index.html`**, **`nl/index.html`** | Full mirrors of FR structure — trust strip, layout, pricing €2.53, 5-step booking |
+| **`vercel.json`** | `/terms-conditions/` → `terms.html` |
+| **`book-direct-safely.html`**, **`rates.html`**, **`legal-notice.html`**, **`footer-subpage.html`** | Links → `terms.html` |
+| **`scripts/verify-production.sh`** | Checks terms page, trust FAQ, DE/NL, terms redirect |
+
+### Still optional (Phase 3)
+- Area guide: price ratings (€/€€/€€€), photo aspect ratios, enrichment scores on cards
+- Full hreflang on all subpages
+- `[CONFIRM]` security deposit collection method on arrival (cash / card pre-auth / transfer)
+
+### Deploy
+```bash
+cd /Users/lana/Projects/villa-augflor-live
+bash scripts/deploy-production.sh
+```
+
+---
+**Custom Domain:** https://villa-augflor.com  
+**Latest commit:** _(updated after this commit)_  
+**Deploy:** _(updated after deploy)_
+
+---
+
+## Session Update — May 30, 2026 (push + redeploy CRO Phase 1)
+
+**Pushed:** `d0ea3bc` to `origin/main`  
+**Live deploy:** `dpl_jVyX85znapgNZGRhpRAf6ae9NchV` · `verify-production.sh` exit 0
 
 ---
 
@@ -41,7 +81,7 @@ Sync **`index.html`**, **`rates.html`**, **`book-direct-safely.html`**, **`api/b
 
 ---
 **Custom Domain:** https://villa-augflor.com  
-**Latest commit:** `1af7db0` on `main` — CRO Phase 1: 4★ taxe, CTAs, homepage trim  
+**Latest commit:** `bbc40df` on `main` — CRO Phase 1: 4★ taxe, CTAs, homepage trim  
 **Deploy:** `dpl_3i922ExnTGYdMdpKtEgH3QLUuJCX` (CRO Phase 1: 4★ taxe, CTAs, homepage trim)
 
 ---
@@ -195,7 +235,7 @@ bash scripts/deploy-production.sh
 | Quiet adults | `/adults-only-villa.html` |
 | Layout / stairs | `/villa-no-stairs.html` |
 | EU summer | `/eu-summer-2026-villa.html` |
-| Terms (canonical) | `/index.html#terms` or future `terms.html` |
+| Terms (canonical) | `/terms.html` (summary + `#terms` anchor on homepage) |
 | Legal / privacy | `/legal-notice.html`, `/privacy-policy.html` |
 
 ### Follow-ups
@@ -317,7 +357,7 @@ When Airbnb bookings change, update **`data/calendar-busy.json`** and redeploy. 
 | Guest fit | **Ideal 4** · **max 6** (3 bedrooms · 2 bathrooms) |
 | Cancellation | Non-refundable; credit for rebooking within 12 months where possible; travel insurance recommended |
 
-**Legacy WordPress URLs (301 in `vercel.json`):** `/about/` → `rates.html` · `/contact/` → `book-direct-safely.html` · `/check-availability/` → `gallery.html` · `/about/cancellation-policy/` → `book-direct-safely.html` · `/terms-conditions/` → `/#terms` · `/francais/` → `/fr/`
+**Legacy WordPress URLs (301 in `vercel.json`):** `/about/` → `rates.html` · `/contact/` → `contact.html` · `/check-availability/` → `gallery.html` · `/about/cancellation-policy/` → `book-direct-safely.html` · `/terms-conditions/` → `terms.html` · `/francais/` → `/fr/`
 
 **Agent pitfalls (past chats):** see `docs/agent-lessons-learned.md`. If Cursor opened empty `villa-augflor/`, use repo `villa-augflor-live` only. Do not claim "live" without `bash scripts/verify-production.sh` (checks `/`, `/rates.html`, `/book-direct-safely.html`, `/area.html`, legacy redirects). **Do not use `./images/` paths** — hero and about photos live under `assets/photos/optimized/` only.
 
