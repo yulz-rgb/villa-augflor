@@ -1,7 +1,44 @@
 # Handover: Villa Augflor SEO & Deployment Complete
 
-**Status:** ✅ PRODUCTION LIVE — calendar synced May 31 · verify exit 0 · deploy `dpl_2MRXXS8ipEdGoTd2oGhQSVWkPwNE`  
+**Status:** ✅ PRODUCTION LIVE — area guide filters + images fixed · verify exit 0  
 **Date:** May 31, 2026  
+
+---
+
+## Session Update — May 31, 2026 (Area guide: fix broken JS, images live)
+
+**Goal:** Area guide at `/area.html` showed no photos and filters did nothing after the image upgrade deploy.
+
+**Root cause:** `escAttr()` was removed during refactor; `render()` threw `ReferenceError` on first card, so the static no-JS fallback stayed and filters never wired.
+
+**Fix:** Restored `escAttr`, WebP-only `<picture>` (matches `.vercelignore`), simplified `resolveImageId()` to use `IMAGES` map + `AREA_IMAGE_META`.
+
+### Shipped (live after deploy)
+
+| File | Change |
+|------|--------|
+| **`scripts/area-guide.js`** | Restored `escAttr`; WebP-only images; image ID resolution fix |
+| **`scripts/verify-production.sh`** | Checks `nice-960w.webp` not removed `.jpg` |
+| **`.vercelignore`** | Excludes `_images/` (1.1GB), ships WebP area photos only |
+| **`assets/photos/area/*.webp`** | Responsive 480w/960w/1280w variants (163 files) |
+| **`scripts/area-image-meta.js`** | Alt text, crop position, credits, variant map |
+| **`scripts/area-images-pipeline.py`** | Regenerate images + credits |
+| **`styles/area-guide.css`** | 4:3 cards, gradient overlay, `object-position` |
+| **`area.html`** | Loads `area-image-meta.js`; credits link |
+
+### Deploy & git
+```bash
+cd /Users/lana/Projects/villa-augflor-live
+git push origin main
+bash scripts/deploy-production.sh
+```
+
+**Custom Domain:** https://villa-augflor.com/area.html  
+**Area photos:** `assets/photos/area/*-{480,960,1280}w.webp` — attributions in `assets/photos/area/CREDITS.txt`
+
+### Optional follow-up
+- Replace 14 alias photos (Fenocchio, jet-ski, etc.) with place-specific shots or villa-owned images
+- Add `git push` after each production deploy
 
 ---
 

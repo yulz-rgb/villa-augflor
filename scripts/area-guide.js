@@ -850,6 +850,13 @@
       '<i class="ag-dots">' + stars(score) + '</i></span>';
   }
 
+  function escAttr(s) {
+    return String(s == null ? "" : s)
+      .replace(/&/g, "&amp;")
+      .replace(/"/g, "&quot;")
+      .replace(/</g, "&lt;");
+  }
+
   function tagChips(p) {
     var chips = [];
     if (p.priceLevel) chips.push('<span class="ag-tag ag-tag-price" title="' + escAttr(p.priceNote || "") + '">' + p.priceLevel + '</span>');
@@ -897,20 +904,18 @@
   }
 
   function buildPicture(id, alt, position, lazy) {
-    var pos = position || "center center";
+    var pos = escAttr(position || "center center");
     var loading = lazy === false ? "eager" : "lazy";
-    var avifSet = buildSrcset(id, "avif");
     var webpSet = buildSrcset(id, "webp");
     var fallback = primaryImageSrc(id);
     return '' +
       '<picture>' +
-        '<source type="image/avif" srcset="' + avifSet + '" sizes="(max-width:700px) 100vw, (max-width:1200px) 50vw, 320px">' +
         '<source type="image/webp" srcset="' + webpSet + '" sizes="(max-width:700px) 100vw, (max-width:1200px) 50vw, 320px">' +
         '<img class="ag-media-img area-card__image" src="' + fallback + '" alt="' + escAttr(alt) + '" ' +
           'width="800" height="600" loading="' + loading + '" decoding="async" ' +
           'style="--image-position:' + pos + '" ' +
           'data-image-id="' + id + '" ' +
-          'onerror="window.__agImageFallback && window.__agImageFallback(this)">' +
+          'onerror="window.__agImageFallback&&window.__agImageFallback(this)">' +
       '</picture>';
   }
 
@@ -932,14 +937,10 @@
       "nice-rooftops": "nice"
     };
     var id = ALIASES[p.id] || p.id;
-    if (getImageMeta(id)) return id;
+    if (getImageMeta(id) || IMAGES[id]) return id;
     if (p.image) {
       var m = p.image.match(/area\/([^./]+)/);
       if (m) return m[1];
-    }
-    if (IMAGES[id]) {
-      var m2 = IMAGES[id].match(/area\/([^./]+)/);
-      if (m2) return m2[1];
     }
     return null;
   }
