@@ -1,0 +1,1464 @@
+{
+  "folder": "/Users/lana/Projects/villa-augflor-live/_images",
+  "removed_duplicates": 50,
+  "seo_prefix": "photo-villa-augflor-cagnes-sur-mer",
+  "max_width_px": 2000,
+  "jpeg_quality": 82,
+  "entries": [
+    {
+      "action": "removed_duplicate",
+      "file": "IMG_1719 2.HEIC",
+      "kept": "IMG_1719.HEIC",
+      "sha256": "60d0d5048d1e"
+    },
+    {
+      "action": "removed_duplicate",
+      "file": "IMG_1720 2.HEIC",
+      "kept": "IMG_1720.HEIC",
+      "sha256": "3efa157d3c21"
+    },
+    {
+      "action": "removed_duplicate",
+      "file": "IMG_1721 2.HEIC",
+      "kept": "IMG_1721.HEIC",
+      "sha256": "ee15cba23c76"
+    },
+    {
+      "action": "removed_duplicate",
+      "file": "IMG_1722 2.heic",
+      "kept": "IMG_1722.heic",
+      "sha256": "7e978c7d7bb7"
+    },
+    {
+      "action": "removed_duplicate",
+      "file": "IMG_1723 2.HEIC",
+      "kept": "IMG_1723.HEIC",
+      "sha256": "9d43f058b89f"
+    },
+    {
+      "action": "removed_duplicate",
+      "file": "IMG_1750 2.heic",
+      "kept": "IMG_1750.heic",
+      "sha256": "1fecca096c07"
+    },
+    {
+      "action": "removed_duplicate",
+      "file": "IMG_1751 2.heic",
+      "kept": "IMG_1751.heic",
+      "sha256": "f804b4f8e9a8"
+    },
+    {
+      "action": "removed_duplicate",
+      "file": "IMG_1753 2.heic",
+      "kept": "IMG_1753.heic",
+      "sha256": "8fae6e03cfda"
+    },
+    {
+      "action": "removed_duplicate",
+      "file": "IMG_1758 2.heic",
+      "kept": "IMG_1758.heic",
+      "sha256": "659be5c4b6ae"
+    },
+    {
+      "action": "removed_duplicate",
+      "file": "IMG_1760 2.heic",
+      "kept": "IMG_1760.heic",
+      "sha256": "1b522ce3af77"
+    },
+    {
+      "action": "removed_duplicate",
+      "file": "IMG_1762 2.heic",
+      "kept": "IMG_1762.heic",
+      "sha256": "57ec89b7c6c1"
+    },
+    {
+      "action": "removed_duplicate",
+      "file": "IMG_1764 2.heic",
+      "kept": "IMG_1764.heic",
+      "sha256": "1ea9c5ee335e"
+    },
+    {
+      "action": "removed_duplicate",
+      "file": "IMG_1765 2.heic",
+      "kept": "IMG_1765.heic",
+      "sha256": "4654d94035d1"
+    },
+    {
+      "action": "removed_duplicate",
+      "file": "IMG_1766 2.heic",
+      "kept": "IMG_1766.heic",
+      "sha256": "2357f05e8392"
+    },
+    {
+      "action": "removed_duplicate",
+      "file": "IMG_1768 2.heic",
+      "kept": "IMG_1768.heic",
+      "sha256": "c30248073850"
+    },
+    {
+      "action": "removed_duplicate",
+      "file": "IMG_1770 3.heic",
+      "kept": "IMG_1770.heic",
+      "sha256": "851eaa1c1311"
+    },
+    {
+      "action": "removed_duplicate",
+      "file": "IMG_1770 2.heic",
+      "kept": "IMG_1770.heic",
+      "sha256": "851eaa1c1311"
+    },
+    {
+      "action": "removed_duplicate",
+      "file": "IMG_1770 2.jpg",
+      "kept": "IMG_1770.jpg",
+      "sha256": "158a2f540601"
+    },
+    {
+      "action": "removed_duplicate",
+      "file": "IMG_1771 2.heic",
+      "kept": "IMG_1771.heic",
+      "sha256": "b2ea9df874fc"
+    },
+    {
+      "action": "removed_duplicate",
+      "file": "IMG_1772 2.heic",
+      "kept": "IMG_1772.heic",
+      "sha256": "ba640a085acd"
+    },
+    {
+      "action": "removed_duplicate",
+      "file": "IMG_1773 2.heic",
+      "kept": "IMG_1773.heic",
+      "sha256": "0a8358246d13"
+    },
+    {
+      "action": "removed_duplicate",
+      "file": "IMG_1777 2.heic",
+      "kept": "IMG_1777.heic",
+      "sha256": "2b0ab3e5cc84"
+    },
+    {
+      "action": "removed_duplicate",
+      "file": "IMG_1778 2.heic",
+      "kept": "IMG_1778.heic",
+      "sha256": "6df8c63ccbd6"
+    },
+    {
+      "action": "removed_duplicate",
+      "file": "IMG_9946 2.HEIC",
+      "kept": "IMG_9946.HEIC",
+      "sha256": "a06a22022992"
+    },
+    {
+      "action": "removed_duplicate",
+      "file": "IMG_9947 2.HEIC",
+      "kept": "IMG_9947.HEIC",
+      "sha256": "c0e95a0ee0eb"
+    },
+    {
+      "action": "removed_duplicate",
+      "file": "IMG_9953 2.HEIC",
+      "kept": "IMG_9953.HEIC",
+      "sha256": "800bc0bb0647"
+    },
+    {
+      "action": "removed_stem_duplicate",
+      "file": "IMG_1719.HEIC",
+      "kept": "IMG_1719.jpg",
+      "stem": "img_1719"
+    },
+    {
+      "action": "removed_stem_duplicate",
+      "file": "IMG_1720.HEIC",
+      "kept": "IMG_1720.jpg",
+      "stem": "img_1720"
+    },
+    {
+      "action": "removed_stem_duplicate",
+      "file": "IMG_1721.HEIC",
+      "kept": "IMG_1721.jpg",
+      "stem": "img_1721"
+    },
+    {
+      "action": "removed_stem_duplicate",
+      "file": "IMG_1722.heic",
+      "kept": "IMG_1722.jpg",
+      "stem": "img_1722"
+    },
+    {
+      "action": "removed_stem_duplicate",
+      "file": "IMG_1723.HEIC",
+      "kept": "IMG_1723.jpg",
+      "stem": "img_1723"
+    },
+    {
+      "action": "removed_stem_duplicate",
+      "file": "IMG_1750.heic",
+      "kept": "IMG_1750.jpg",
+      "stem": "img_1750"
+    },
+    {
+      "action": "removed_stem_duplicate",
+      "file": "IMG_1751.heic",
+      "kept": "IMG_1751.jpg",
+      "stem": "img_1751"
+    },
+    {
+      "action": "removed_stem_duplicate",
+      "file": "IMG_1753.heic",
+      "kept": "IMG_1753.jpg",
+      "stem": "img_1753"
+    },
+    {
+      "action": "removed_stem_duplicate",
+      "file": "IMG_1758.heic",
+      "kept": "IMG_1758.jpg",
+      "stem": "img_1758"
+    },
+    {
+      "action": "removed_stem_duplicate",
+      "file": "IMG_1760.heic",
+      "kept": "IMG_1760.jpg",
+      "stem": "img_1760"
+    },
+    {
+      "action": "removed_stem_duplicate",
+      "file": "IMG_1762.heic",
+      "kept": "IMG_1762.jpg",
+      "stem": "img_1762"
+    },
+    {
+      "action": "removed_stem_duplicate",
+      "file": "IMG_1764.heic",
+      "kept": "IMG_1764.jpg",
+      "stem": "img_1764"
+    },
+    {
+      "action": "removed_stem_duplicate",
+      "file": "IMG_1765.heic",
+      "kept": "IMG_1765.jpg",
+      "stem": "img_1765"
+    },
+    {
+      "action": "removed_stem_duplicate",
+      "file": "IMG_1766.heic",
+      "kept": "IMG_1766.jpg",
+      "stem": "img_1766"
+    },
+    {
+      "action": "removed_stem_duplicate",
+      "file": "IMG_1768.heic",
+      "kept": "IMG_1768.jpg",
+      "stem": "img_1768"
+    },
+    {
+      "action": "removed_stem_duplicate",
+      "file": "IMG_1770.heic",
+      "kept": "IMG_1770.jpg",
+      "stem": "img_1770"
+    },
+    {
+      "action": "removed_stem_duplicate",
+      "file": "IMG_1771.heic",
+      "kept": "IMG_1771.jpg",
+      "stem": "img_1771"
+    },
+    {
+      "action": "removed_stem_duplicate",
+      "file": "IMG_1772.heic",
+      "kept": "IMG_1772.jpg",
+      "stem": "img_1772"
+    },
+    {
+      "action": "removed_stem_duplicate",
+      "file": "IMG_1773.heic",
+      "kept": "IMG_1773.jpg",
+      "stem": "img_1773"
+    },
+    {
+      "action": "removed_stem_duplicate",
+      "file": "IMG_1777.heic",
+      "kept": "IMG_1777.jpg",
+      "stem": "img_1777"
+    },
+    {
+      "action": "removed_stem_duplicate",
+      "file": "IMG_1778.heic",
+      "kept": "IMG_1778.jpg",
+      "stem": "img_1778"
+    },
+    {
+      "action": "removed_stem_duplicate",
+      "file": "IMG_9946.HEIC",
+      "kept": "IMG_9946.jpg",
+      "stem": "img_9946"
+    },
+    {
+      "action": "removed_stem_duplicate",
+      "file": "IMG_9947.HEIC",
+      "kept": "IMG_9947.jpg",
+      "stem": "img_9947"
+    },
+    {
+      "action": "removed_stem_duplicate",
+      "file": "IMG_9953.HEIC",
+      "kept": "IMG_9953.jpg",
+      "stem": "img_9953"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_0202.HEIC",
+      "to": "IMG_0202.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_0657 2.heic",
+      "to": "IMG_0657 2.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_0658 2.heic",
+      "to": "IMG_0658 2.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_0661.heic",
+      "to": "IMG_0661.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_0662.HEIC",
+      "to": "IMG_0662.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_0665 2.heic",
+      "to": "IMG_0665 2.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_0667 2.heic",
+      "to": "IMG_0667 2.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_0669 2.heic",
+      "to": "IMG_0669 2.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_0671 2.HEIC",
+      "to": "IMG_0671 2.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_0673.heic",
+      "to": "IMG_0673.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_0675.heic",
+      "to": "IMG_0675.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_0821.HEIC",
+      "to": "IMG_0821.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_1148.heic",
+      "to": "IMG_1148.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_1273.heic",
+      "to": "IMG_1273.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_1305.heic",
+      "to": "IMG_1305.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_1318.heic",
+      "to": "IMG_1318.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_1692.HEIC",
+      "to": "IMG_1692.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_1693.HEIC",
+      "to": "IMG_1693.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_1694.HEIC",
+      "to": "IMG_1694.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_1698.HEIC",
+      "to": "IMG_1698.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_1700.HEIC",
+      "to": "IMG_1700.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_1744.heic",
+      "to": "IMG_1744.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_1745.heic",
+      "to": "IMG_1745.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_1746.heic",
+      "to": "IMG_1746.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_1748.heic",
+      "to": "IMG_1748.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_1749.heic",
+      "to": "IMG_1749.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_1752.heic",
+      "to": "IMG_1752.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_1754.heic",
+      "to": "IMG_1754.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_1755.heic",
+      "to": "IMG_1755.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_1756.heic",
+      "to": "IMG_1756.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_1757.heic",
+      "to": "IMG_1757.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_1759.heic",
+      "to": "IMG_1759.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_1761.heic",
+      "to": "IMG_1761.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_1763.heic",
+      "to": "IMG_1763.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_1769.heic",
+      "to": "IMG_1769.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_1774.heic",
+      "to": "IMG_1774.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_1775.heic",
+      "to": "IMG_1775.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_1776.heic",
+      "to": "IMG_1776.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_1779.heic",
+      "to": "IMG_1779.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_1780.heic",
+      "to": "IMG_1780.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_1781.heic",
+      "to": "IMG_1781.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_1782.heic",
+      "to": "IMG_1782.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_1783.heic",
+      "to": "IMG_1783.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_1784.heic",
+      "to": "IMG_1784.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_1786.HEIC",
+      "to": "IMG_1786.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_1787.HEIC",
+      "to": "IMG_1787.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_1797.HEIC",
+      "to": "IMG_1797.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_1798.HEIC",
+      "to": "IMG_1798.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_1799.HEIC",
+      "to": "IMG_1799.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_1800.HEIC",
+      "to": "IMG_1800.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_1801.HEIC",
+      "to": "IMG_1801.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_1802.HEIC",
+      "to": "IMG_1802.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_1803.HEIC",
+      "to": "IMG_1803.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_1804.HEIC",
+      "to": "IMG_1804.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_1805.HEIC",
+      "to": "IMG_1805.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_1806.HEIC",
+      "to": "IMG_1806.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_1807.HEIC",
+      "to": "IMG_1807.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_1808.HEIC",
+      "to": "IMG_1808.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_1809.HEIC",
+      "to": "IMG_1809.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_1812.HEIC",
+      "to": "IMG_1812.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_1813.HEIC",
+      "to": "IMG_1813.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_1814.HEIC",
+      "to": "IMG_1814.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_1816.HEIC",
+      "to": "IMG_1816.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_1820.heic",
+      "to": "IMG_1820.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_1821.heic",
+      "to": "IMG_1821.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_1822.heic",
+      "to": "IMG_1822.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_1823.heic",
+      "to": "IMG_1823.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_1824.heic",
+      "to": "IMG_1824.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_1825.heic",
+      "to": "IMG_1825.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_1826.HEIC",
+      "to": "IMG_1826.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_3284.HEIC",
+      "to": "IMG_3284.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_3285.HEIC",
+      "to": "IMG_3285.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_3289.HEIC",
+      "to": "IMG_3289.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_3325 2.HEIC",
+      "to": "IMG_3325 2.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_3326 2.HEIC",
+      "to": "IMG_3326 2.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_3327 2.HEIC",
+      "to": "IMG_3327 2.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_3597.HEIC",
+      "to": "IMG_3597.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_3598.HEIC",
+      "to": "IMG_3598.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_3694 2.heic",
+      "to": "IMG_3694 2.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_3696 2.heic",
+      "to": "IMG_3696 2.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_3697 2.heic",
+      "to": "IMG_3697 2.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_3698 2.heic",
+      "to": "IMG_3698 2.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_3699 2.heic",
+      "to": "IMG_3699 2.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_3700 2.heic",
+      "to": "IMG_3700 2.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_3701 2.HEIC",
+      "to": "IMG_3701 2.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_3860.HEIC",
+      "to": "IMG_3860.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_3861.HEIC",
+      "to": "IMG_3861.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_5872.HEIC",
+      "to": "IMG_5872.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_5878.HEIC",
+      "to": "IMG_5878.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_5888.HEIC",
+      "to": "IMG_5888.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_6509 2.heic",
+      "to": "IMG_6509 2.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_6511.heic",
+      "to": "IMG_6511.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_6532 2.heic",
+      "to": "IMG_6532 2.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_6534.HEIC",
+      "to": "IMG_6534.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_6535.HEIC",
+      "to": "IMG_6535.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_6536 2.HEIC",
+      "to": "IMG_6536 2.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_6655 2.HEIC",
+      "to": "IMG_6655 2.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_7222.HEIC",
+      "to": "IMG_7222.jpg"
+    },
+    {
+      "action": "converted",
+      "from": "IMG_9181.HEIC",
+      "to": "IMG_9181.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_4929.JPG",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0001.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_3543 2.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0002.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_4315.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0003.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "Ground Floor Garden Room 2.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0004.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "Living Room 2.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0005.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "Kitchen 2.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0006.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "Pool Area 2.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0007.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_5872.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0008.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_5878.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0009.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_5888.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0010.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_6509 2.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0011.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_6511.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0012.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_6532 2.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0013.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_6534.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0014.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_6535.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0015.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_6536 2.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0016.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_6655 2.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0017.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_9181.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0018.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_0202.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0019.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_0821.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0020.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_3284.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0021.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_3285.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0022.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_3289.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0023.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_3325 2.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0024.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_3326 2.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0025.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_3327 2.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0026.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_0657 2.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0027.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_0658 2.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0028.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_0661.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0029.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_0662.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0030.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_0665 2.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0031.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_0667 2.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0032.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_0669 2.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0033.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_0671 2.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0034.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_0673.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0035.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_0675.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0036.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_3597.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0037.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_3598.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0038.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_3694 2.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0039.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_3696 2.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0040.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_3697 2.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0041.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_3698 2.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0042.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_3699 2.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0043.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_3700 2.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0044.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_3701 2.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0045.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_3860.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0046.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_3861.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0047.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_7222.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0048.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1148.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0049.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1273.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0050.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1305.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0051.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1318.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0052.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1692.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0053.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1693.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0054.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1694.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0055.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1698.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0056.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1700.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0057.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_9946.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0058.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_9947.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0059.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_9953.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0060.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1719.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0061.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1720.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0062.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1721.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0063.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1722.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0064.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1723.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0065.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1729.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0066.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1741.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0067.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1744.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0068.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1745.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0069.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1746.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0070.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1748.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0071.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1749.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0072.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1750.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0073.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1751.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0074.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1752.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0075.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1753.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0076.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1754.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0077.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1755.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0078.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1756.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0079.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1757.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0080.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1758.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0081.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1759.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0082.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1760.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0083.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1761.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0084.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1762.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0085.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1763.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0086.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1764.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0087.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1765.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0088.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1766.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0089.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1768.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0090.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1769.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0091.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1770.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0092.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1771.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0093.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1772.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0094.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1773.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0095.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1774.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0096.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1775.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0097.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1776.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0098.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1777.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0099.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1778.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0100.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1779.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0101.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1780.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0102.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1781.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0103.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1782.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0104.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1783.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0105.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1784.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0106.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1786.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0107.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1787.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0108.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1797.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0109.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1798.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0110.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1799.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0111.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1800.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0112.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1801.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0113.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1802.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0114.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1803.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0115.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1804.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0116.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1805.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0117.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1806.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0118.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1807.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0119.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1808.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0120.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1809.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0121.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1812.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0122.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1813.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0123.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1814.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0124.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1816.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0125.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1820.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0126.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1821.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0127.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1822.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0128.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1823.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0129.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1824.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0130.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1825.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0131.jpg"
+    },
+    {
+      "action": "seo_rename",
+      "from": "IMG_1826.jpg",
+      "to": "photo-villa-augflor-cagnes-sur-mer-0132.jpg"
+    }
+  ]
+}
