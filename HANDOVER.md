@@ -1,6 +1,6 @@
 # Handover: Villa Augflor SEO & Deployment Complete
 
-**Status:** ✅ PRODUCTION LIVE — area guide filters + images fixed · verify exit 0  
+**Status:** ✅ PRODUCTION LIVE — area guide filters + images fixed · verify exit 0 · deploy `dpl_7H64SuCUuwfFFevCRcEmTNKnmi2F`  
 **Date:** May 31, 2026  
 
 ---
@@ -13,7 +13,7 @@
 
 **Fix:** Restored `escAttr`, WebP-only `<picture>` (matches `.vercelignore`), simplified `resolveImageId()` to use `IMAGES` map + `AREA_IMAGE_META`.
 
-### Shipped (live after deploy)
+### Shipped (live — deploy `dpl_7H64SuCUuwfFFevCRcEmTNKnmi2F`)
 
 | File | Change |
 |------|--------|
@@ -34,6 +34,7 @@ bash scripts/deploy-production.sh
 ```
 
 **Custom Domain:** https://villa-augflor.com/area.html  
+**Latest commit:** `bfc93d7` on `main` (pushed to GitHub)  
 **Area photos:** `assets/photos/area/*-{480,960,1280}w.webp` — attributions in `assets/photos/area/CREDITS.txt`
 
 ### Optional follow-up
