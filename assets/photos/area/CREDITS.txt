@@ -1,0 +1,348 @@
+Villa Augflor Area Guide — Image Credits
+=========================================
+Photos sourced from Wikimedia Commons unless noted.
+Full metadata: CREDITS.json
+
+antibes
+  Credit: François Guizot / Wikimedia Commons / Public domain
+  Source: https://commons.wikimedia.org/wiki/File%3AA_popular_history_of_France%2C_from_the_earliest_times%2C_vol._1.djvu
+  License: Public domain
+
+antibes-market
+  Credit: Javier B / Wikimedia Commons / CC BY 3.0
+  Source: https://commons.wikimedia.org/wiki/File%3AMarch%C3%A9_Proven%C3%A7al.Antibes._-_panoramio.jpg
+  License: CC BY 3.0
+
+aquasplash
+  Credit: E v Schoonhoven / Wikimedia Commons / CC BY 3.0
+  Source: https://commons.wikimedia.org/wiki/File%3AAquasplash_-_ANTIBES_-_panoramio.jpg
+  License: CC BY 3.0
+
+biot
+  Credit: Yvan Tisseyre / OT Vallée d'Aulps / Wikimedia Commons / CC BY-SA 3.0
+  Source: https://commons.wikimedia.org/wiki/File%3AVillage-lebiot.jpg
+  License: CC BY-SA 3.0
+
+boat-charter
+  Credit: Jordiferrer / Wikimedia Commons / CC BY-SA 4.0
+  Source: https://commons.wikimedia.org/wiki/File%3A2016_Port_Vauban_-_Antibes_06.jpg
+  License: CC BY-SA 4.0
+
+cannes
+  Credit: Kazimierz Mendlik / Wikimedia Commons / CC BY-SA 3.0
+  Source: https://commons.wikimedia.org/wiki/File%3ACannes_Francja_-_Bulwar_La_Croisette_Cannes_-_panoramio.jpg
+  License: CC BY-SA 3.0
+
+cannes-beach-clubs
+  Credit: Dempster, Charlotte Louisa Hawkins, 1835-1913 / Wikimedia Commons / Public domain
+  Source: https://commons.wikimedia.org/wiki/File%3AThe_Maritime_Alps_and_their_seaboard_%28IA_maritimealpsthei00demp%29.pdf
+  License: Public domain
+
+cap-ferrat-walk
+  Credit: Horizon06 / Wikimedia Commons / CC BY-SA 4.0
+  Source: https://commons.wikimedia.org/wiki/File%3A20211209_122308_Le_sentier_du_littoral_%C3%A0_Saint-Jean-Cap-Ferrat.jpg
+  License: CC BY-SA 4.0
+
+casino-monte-carlo
+  Credit: sam garza from Los Angeles, USA / Wikimedia Commons / CC BY 2.0
+  Source: https://commons.wikimedia.org/wiki/File%3AReal_Monte_Carlo_Casino.jpg
+  License: CC BY 2.0
+
+chateau-bellet
+  Credit: Château de Bellet / Wikimedia Commons / CC BY-SA 4.0
+  Source: https://commons.wikimedia.org/wiki/File%3AChateau-bellet-nice_%282%29.jpg
+  License: CC BY-SA 4.0
+
+coaraze
+  Credit: La Maison du Tourisme / Wikimedia Commons / CC BY-SA 4.0
+  Source: https://commons.wikimedia.org/wiki/File%3ACoaraze_village.jpg
+  License: CC BY-SA 4.0
+
+colombe-dor
+  Credit: Jebulon / Wikimedia Commons / CC BY-SA 3.0
+  Source: https://commons.wikimedia.org/wiki/File%3AMimosa_Colombe_d%27Or_Saint_Paul_de_Vence.JPG
+  License: CC BY-SA 3.0
+
+cours-saleya
+  Credit: Mike is Michi / Wikimedia Commons / CC BY-SA 4.0
+  Source: https://commons.wikimedia.org/wiki/File%3ACours_Saleya_flower_market_vegetable_stalls_Nice_2026.JPG
+  License: CC BY-SA 4.0
+
+cros-de-cagnes
+  Credit: Félix Vallotton / Wikimedia Commons / Public domain
+  Source: https://commons.wikimedia.org/wiki/File%3AF%C3%A9lix_Vallotton_-_Cros_de_Cagnes_-_ZKG.2017-0014_-_Kunsthaus_Z%C3%BCrich.jpg
+  License: Public domain
+
+diving
+  Credit: Pratlong, M.; Haguenauer, A.; Chenesseau, S.; Brener, K. ; Mitta, G.; Toulza, E.; Bonabaud, M.; Rialle, S. ; Aurelle, D.; Pontarotti, P. / Wikimedia Commons / CC BY 4.0
+  Source: https://commons.wikimedia.org/wiki/File%3AEvidence_for_a_genetic_sex_determination_in_Cnidaria%2C_the_Mediterranean_red_coral_%28Corallium_rubrum%29.pdf
+  License: CC BY 4.0
+
+domaine-toasc
+  Credit: Dragozov / Wikimedia Commons / CC BY 2.0
+  Source: https://commons.wikimedia.org/wiki/File%3AVignoble_de_Nice.jpg
+  License: CC BY 2.0
+
+esterel
+  Credit: Einaz80 / Wikimedia Commons / CC BY-SA 4.0
+  Source: https://commons.wikimedia.org/wiki/File%3AMassif_de_l%27Est%C3%A9rel.jpg
+  License: CC BY-SA 4.0
+
+eze-sunset-dining
+  Credit: Loveland, John Douglas Errington, 1866- [from old catalog] / Wikimedia Commons / Public domain
+  Source: https://commons.wikimedia.org/wiki/File%3AThe_romance_of_Nice_%28IA_romanceofnice00love%29.pdf
+  License: Public domain
+
+eze-town
+  Credit: Cayambe / Wikimedia Commons / CC BY-SA 3.0
+  Source: https://commons.wikimedia.org/wiki/File%3A%C3%89glise_%C3%88ze_village.jpg
+  License: CC BY-SA 3.0
+
+fondation-maeght
+  Credit: Waterborough
+
+Sculpture: Germaine Richier (1902-1959), others / Wikimedia Commons / CC BY-SA 3.0
+  Source: https://commons.wikimedia.org/wiki/File%3A11_Fondation_Maeght.JPG
+  License: CC BY-SA 3.0
+
+gorges-loup-canyon
+  Credit: Harald Hetzner / Wikimedia Commons / CC0
+  Source: https://commons.wikimedia.org/wiki/File%3AGorges_du_Loup%2C_canyon_of_the_river_Loup_in_France.jpg
+  License: CC0
+
+gourdon
+  Credit: Alberto Fernandez Fernandez / Wikimedia Commons / CC BY 2.5
+  Source: https://commons.wikimedia.org/wiki/File%3AVillage_of_Gourdon_-_Alpes-Maritimes_-_France.jpg
+  License: CC BY 2.5
+
+grasse
+  Credit: Dennis G. Jarvis / Wikimedia Commons / CC BY-SA 2.0
+  Source: https://commons.wikimedia.org/wiki/File%3AFrance-002830_-_Side_Street_in_Old_Town_%2815382535214%29.jpg
+  License: CC BY-SA 2.0
+
+haut-de-cagnes
+  Credit: Rdavout / Wikimedia Commons / CC BY-SA 3.0
+  Source: https://commons.wikimedia.org/wiki/File%3AHaut-de-Cagnes_%28vue_depuis_le_chateau%29.jpg
+  License: CC BY-SA 3.0
+
+italy-trip
+  Credit: Ian L from London, UK / Wikimedia Commons / CC BY-SA 2.0
+  Source: https://commons.wikimedia.org/wiki/File%3AVentimiglia_flowers_market.jpg
+  License: CC BY-SA 2.0
+
+juan-les-pins
+  Credit: Claude Monet / Wikimedia Commons / Public domain
+  Source: https://commons.wikimedia.org/wiki/File%3APlage_de_Juan-les-Pins_%281888%29_Claude_Monet_%28W_1187%29.jpg
+  License: Public domain
+
+juan-nightlife
+  Credit: Wikimedia Commons / Public domain
+  Source: https://commons.wikimedia.org/wiki/File%3AThe_Billboard_1922-12-23-_Vol_34_Iss_51_%28IA_sim_billboard_1922-12-23_34_51%29.pdf
+  License: Public domain
+
+la-garoupe
+  Credit: fr.zil / Wikimedia Commons / CC BY-SA 2.0
+  Source: https://commons.wikimedia.org/wiki/File%3AChemin_du_cap_d%27Antibes.jpg
+  License: CC BY-SA 2.0
+
+la-pesquiere
+  Credit: Olivier Cleynen / Wikimedia Commons / CC BY 4.0
+  Source: https://commons.wikimedia.org/wiki/File%3AAerial_photograph_of_Cros-de-Cagnes.jpg
+  License: CC BY 4.0
+
+larvotto
+  Credit: Benoît Prieur / Wikimedia Commons / CC0
+  Source: https://commons.wikimedia.org/wiki/File%3APlage_de_Larvotto_%28Monaco%29_en_novembre_2021_%283%29.jpg
+  License: CC0
+
+lerins
+  Credit: Alexkom000 / Wikimedia Commons / CC BY 4.0
+  Source: https://commons.wikimedia.org/wiki/File%3A2024-09-23_%C3%8Ele_Sainte-Marguerite_1.jpg
+  License: CC BY 4.0
+
+louis-xv
+  Credit: Jean-Charles Krafft / Wikimedia Commons / Public domain
+  Source: https://commons.wikimedia.org/wiki/File%3AH%C3%B4tel_de_Monaco_-_Princesse_de_Monaco_-_Plan_du_rez-de-chauss%C3%A9e.JPG
+  License: Public domain
+
+mamac
+  Credit: Bamzin at Portuguese Wikipedia / Wikimedia Commons / CC BY-SA 3.0
+  Source: https://commons.wikimedia.org/wiki/File%3ANice_france_mamac.JPG
+  License: CC BY-SA 3.0
+
+menton
+  Credit: Berthold Werner / Wikimedia Commons / Public domain
+  Source: https://commons.wikimedia.org/wiki/File%3AMenton_Old_Town_and_Harbour.jpg
+  License: Public domain
+
+mercantour
+  Credit: Santiago Puig Vilado… / Wikimedia Commons / CC BY-SA 3.0
+  Source: https://commons.wikimedia.org/wiki/File%3ALake_Scluos_-_National_Park_of_Mercantour_-_panoramio.jpg
+  License: CC BY-SA 3.0
+
+mirazur
+  Credit: Brown, A. M. (Alexander Menzies)
+Royal College of Physicians of Edinburgh / Wikimedia Commons / Public domain
+  Source: https://commons.wikimedia.org/wiki/File%3AWintering_at_Menton_on_the_Riviera_-_a_compagnon_de_voyage%2C_with_hints_to_invalids-_by_Alexander_M._Brown_%28IA_b21996441%29.pdf
+  License: Public domain
+
+monaco
+  Credit: Martinp1 / Wikimedia Commons / CC BY-SA 3.0
+  Source: https://commons.wikimedia.org/wiki/File%3AMonaco_Monte_Carlo_1.jpg
+  License: CC BY-SA 3.0
+
+mont-boron
+  Credit: Unknown authorUnknown author / Wikimedia Commons / Public domain
+  Source: https://commons.wikimedia.org/wiki/File%3ANice.-Vue_Prise_Mont_Boron.-_Entree_Du_Port._762-12_%28NBY_420268%29.jpg
+  License: Public domain
+
+mougins
+  Credit: Olivier Cleynen / Wikimedia Commons / CC BY 4.0
+  Source: https://commons.wikimedia.org/wiki/File%3AMougins_02.jpg
+  License: CC BY 4.0
+
+musee-chagall
+  Credit: Derbrauni / Wikimedia Commons / CC BY-SA 4.0
+  Source: https://commons.wikimedia.org/wiki/File%3AMus%C3%A9e_national_Marc_Chagall_1.jpg
+  License: CC BY-SA 4.0
+
+musee-leger
+  Credit: Ecce Art / Wikimedia Commons / CC BY-SA 3.0
+  Source: https://commons.wikimedia.org/wiki/File%3AMus%C3%A9e_national_Fernand_L%C3%A9ger.jpg
+  License: CC BY-SA 3.0
+
+musee-matisse
+  Credit: kajikawa / Wikimedia Commons / CC BY 3.0
+  Source: https://commons.wikimedia.org/wiki/File%3AMus%C3%A9e_Matisse_-_Nice_-_panoramio_%284%29.jpg
+  License: CC BY 3.0
+
+musee-oceano-family
+  Credit: Berthold Werner / Wikimedia Commons / CC BY-SA 3.0
+  Source: https://commons.wikimedia.org/wiki/File%3AMonaco_BW_2011-06-07_17-50-43.jpg
+  License: CC BY-SA 3.0
+
+musee-picasso
+  Credit: MOSSOT / Wikimedia Commons / CC BY-SA 4.0
+  Source: https://commons.wikimedia.org/wiki/File%3AAntibes_-_Ch%C3%A2teau_et_mus%C3%A9e_Picasso_-2.jpg
+  License: CC BY-SA 4.0
+
+musee-renoir
+  Credit: MOSSOT / Wikimedia Commons / CC BY-SA 3.0
+  Source: https://commons.wikimedia.org/wiki/File%3ACagnes-sur-Mer_-_Mus%C3%A9e_Renoir_-_Maison_-1.JPG
+  License: CC BY-SA 3.0
+
+nice
+  Credit: Anthony Baratier / Wikimedia Commons / CC BY-SA 4.0
+  Source: https://commons.wikimedia.org/wiki/File%3ANice_baie_des_Anges.jpg
+  License: CC BY-SA 4.0
+
+organic-wine
+  Credit: United States. Soil Conservation Service / Wikimedia Commons / Public domain
+  Source: https://commons.wikimedia.org/wiki/File%3AOrchard_and_vineyard_land_use%2C_problems_and_conservation_treatment%3B_Western_states_%28IA_CAT10514951%29.pdf
+  License: Public domain
+
+paloma
+  Credit: Marco Nürnberger from Nuremberg, Germany / Wikimedia Commons / CC BY 2.0
+  Source: https://commons.wikimedia.org/wiki/File%3APaloma_beach_sunset.jpg
+  License: CC BY 2.0
+
+parc-phoenix
+  Credit: GLOBI ۞ FUZZI / Wikimedia Commons / CC BY-SA 2.0
+  Source: https://commons.wikimedia.org/wiki/File%3AParc_Phoenix_serre_Nice.jpg
+  License: CC BY-SA 2.0
+
+peillon
+  Credit: Francois Polito / Wikimedia Commons / CC BY-SA 3.0
+  Source: https://commons.wikimedia.org/wiki/File%3APeillon_village_perche_sur_la_montagne.jpg
+  License: CC BY-SA 3.0
+
+plage-mala
+  Credit: https://www.jonmountjoy.com/ / Wikimedia Commons / CC BY 2.0
+  Source: https://commons.wikimedia.org/wiki/File%3APlage_Mala_%C3%A0_Cap_d%27ail.jpg
+  License: CC BY 2.0
+
+plage-passable
+  Credit: Ewa Jaros (czupirek), Maciej Nux / Wikimedia Commons / CC BY-SA 4.0
+  Source: https://commons.wikimedia.org/wiki/File%3APlage_de_Passable_2025-11-13.jpg
+  License: CC BY-SA 4.0
+
+polygone
+  Credit: Lulucmy / Wikimedia Commons / CC BY-SA 4.0
+  Source: https://commons.wikimedia.org/wiki/File%3APolygone_riviera.jpg
+  License: CC BY-SA 4.0
+
+porquerolles
+  Credit: "dronepicr" / Wikimedia Commons / CC BY 2.0
+  Source: https://commons.wikimedia.org/wiki/File%3ANotre-Dame_Beach_on_Porquerolles_Island%2C_France_%2853698146970%29.jpg
+  License: CC BY 2.0
+
+rose-estates
+  Credit: Janvier, Thomas Allibone, 1849-1913 / Wikimedia Commons / Public domain
+  Source: https://commons.wikimedia.org/wiki/File%3AThe_Christmas_kalends_of_Provence_and_some_other_%28IA_christmaskalends00janv%29.pdf
+  License: Public domain
+
+sailing-school
+  Credit: Peters, George Henry / Wikimedia Commons / Public domain
+  Source: https://commons.wikimedia.org/wiki/File%3AImpressions_of_a_journey_round_the_world_including_India%2C_Burmah_and_Japan_%28IA_impressionsofjou00peterich%29.pdf
+  License: Public domain
+
+saint-tropez
+  Credit: Mohatatou / Wikimedia Commons / CC BY-SA 4.0
+  Source: https://commons.wikimedia.org/wiki/File%3AYacht_Saint_Tropez_2017-2.jpg
+  License: CC BY-SA 4.0
+
+sentier-cap-antibes
+  Credit: Gilbert Bochenek / Wikimedia Commons / CC BY-SA 4.0
+  Source: https://commons.wikimedia.org/wiki/File%3ASentier_du_Littoral%2C_Cap_d%27Antibes-France.jpg
+  License: CC BY-SA 4.0
+
+socca-nice
+  Credit: Myrabella / Wikimedia Commons / CC BY-SA 3.0
+  Source: https://commons.wikimedia.org/wiki/File%3ASocca_a_Nice.jpg
+  License: CC BY-SA 3.0
+
+speed-park
+  Credit: Winglong1 / Wikimedia Commons / CC BY-SA 3.0
+  Source: https://commons.wikimedia.org/wiki/File%3AIndoor_karting.jpg
+  License: CC BY-SA 3.0
+
+st-paul-de-vence
+  Credit: Yair Haklai / Wikimedia Commons / CC BY-SA 4.0
+  Source: https://commons.wikimedia.org/wiki/File%3AView_from_Saint-Paul-de-Vence.jpg
+  License: CC BY-SA 4.0
+
+tourrettes-sur-loup
+  Credit: Harald Hetzner / Wikimedia Commons / CC0
+  Source: https://commons.wikimedia.org/wiki/File%3ATourrettes_sur_loup_HDR.jpg
+  License: CC0
+
+train-pignes
+  Credit: Alpes de Haute Provence / Wikimedia Commons / CC BY 2.0
+  Source: https://commons.wikimedia.org/wiki/File%3ATrain_des_pignes_Automotrices_Ligne_de_Nice_%C3%A0_Digne.jpg
+  License: CC BY 2.0
+
+valbonne
+  Credit: Kelly, Russell Anthony, 1893-
+Kelly, James Edward, 1856- / Wikimedia Commons / Public domain
+  Source: https://commons.wikimedia.org/wiki/File%3AKelly_of_the_Foreign_legion%3B_letters_of_L%C3%A9gionnaire_Russell_A._Kelly%2C_to_which_is_added_an_historical_sketch_of_the_Foreign_legion_%28IA_kellyofforeignle00kellrich%29.pdf
+  License: Public domain
+
+vence
+  Credit: Paul Signac / Wikimedia Commons / Public domain
+  Source: https://commons.wikimedia.org/wiki/File%3ASignac_-_View_of_town_%28St_Paul_du_Var_or_de_Vence%29%2C_1949%2C0411.86.jpg
+  License: Public domain
+
+verdon
+  Credit: Tobi 87 / Wikimedia Commons / CC BY-SA 3.0
+  Source: https://commons.wikimedia.org/wiki/File%3ARoute_des_Cr%C3%AAtes-Gorges_du_Verdon_West.jpg
+  License: CC BY-SA 3.0
+
+villa-ephrussi
+  Credit: Berthold Werner edit by Böhringer / Wikimedia Commons / CC BY-SA 3.0
+  Source: https://commons.wikimedia.org/wiki/File%3AVilla_Ephrussi_de_Rothschild_BW_2011-06-10_11-42-29a.jpg
+  License: CC BY-SA 3.0
+
+villefranche
+  Credit: Rundvald / Wikimedia Commons / Public domain
+  Source: https://commons.wikimedia.org/wiki/File%3AVillefranche-sur-Mer-Cote-dAzur4.jpg
+  License: Public domain

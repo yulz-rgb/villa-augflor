@@ -862,9 +862,142 @@
     return chips.length ? '<div class="ag-tags">' + chips.join("") + '</div>' : "";
   }
 
-  function escAttr(s) {
-    return String(s).replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;");
+  function getImageMeta(id) {
+    var meta = (typeof window !== "undefined" && window.AREA_IMAGE_META) || {};
+    return meta[id] || null;
   }
+
+  function getFallbackId(cat) {
+    var fb = (typeof window !== "undefined" && window.AREA_CATEGORY_FALLBACK) || {};
+    return fb[cat] || null;
+  }
+
+  function imageBase(id) {
+    return "assets/photos/area/" + id;
+  }
+
+  function buildSrcset(id, ext) {
+    var meta = getImageMeta(id) || {};
+    var variants = meta.variants || {};
+    var widths = Object.keys(variants).map(Number).sort(function (a, b) { return a - b; });
+    if (!widths.length) {
+      return "assets/photos/area/" + id + "-960w." + ext + " 960w";
+    }
+    return widths.map(function (w) {
+      return "assets/photos/area/" + id + "-" + w + "w." + ext + " " + w + "w";
+    }).join(", ");
+  }
+
+  function primaryImageSrc(id) {
+    var meta = getImageMeta(id) || {};
+    var variants = meta.variants || {};
+    var widths = Object.keys(variants).map(Number).sort(function (a, b) { return b - a; });
+    var w = widths[0] || 960;
+    return "assets/photos/area/" + id + "-" + w + "w.webp";
+  }
+
+  function buildPicture(id, alt, position, lazy) {
+    var pos = position || "center center";
+    var loading = lazy === false ? "eager" : "lazy";
+    var avifSet = buildSrcset(id, "avif");
+    var webpSet = buildSrcset(id, "webp");
+    var fallback = primaryImageSrc(id);
+    return '' +
+      '<picture>' +
+        '<source type="image/avif" srcset="' + avifSet + '" sizes="(max-width:700px) 100vw, (max-width:1200px) 50vw, 320px">' +
+        '<source type="image/webp" srcset="' + webpSet + '" sizes="(max-width:700px) 100vw, (max-width:1200px) 50vw, 320px">' +
+        '<img class="ag-media-img area-card__image" src="' + fallback + '" alt="' + escAttr(alt) + '" ' +
+          'width="800" height="600" loading="' + loading + '" decoding="async" ' +
+          'style="--image-position:' + pos + '" ' +
+          'data-image-id="' + id + '" ' +
+          'onerror="window.__agImageFallback && window.__agImageFallback(this)">' +
+      '</picture>';
+  }
+
+  function resolveImageId(p) {
+    var ALIASES = {
+      "marineland-note": "musee-oceano-family",
+      "gorges-loup-canyon": "gorges-du-loup",
+      "paddleboard": "cros-de-cagnes",
+      "sailing-school": "boat-charter",
+      "rose-estates": "domaine-toasc",
+      "organic-wine": "domaine-toasc",
+      "jet-ski": "boat-charter",
+      "azur-park": "aquasplash",
+      "bakery-local": "socca-nice",
+      "pizza-nice": "socca-nice",
+      "fenocchio": "socca-nice",
+      "monaco-luxury": "monaco",
+      "cap3000": "polygone",
+      "nice-rooftops": "nice"
+    };
+    var id = ALIASES[p.id] || p.id;
+    if (getImageMeta(id)) return id;
+    if (p.image) {
+      var m = p.image.match(/area\/([^./]+)/);
+      if (m) return m[1];
+    }
+    if (IMAGES[id]) {
+      var m2 = IMAGES[id].match(/area\/([^./]+)/);
+      if (m2) return m2[1];
+    }
+    return null;
+  }
+
+  function buildMediaInner(p, c) {
+    var imageId = resolveImageId(p);
+    var meta = imageId ? getImageMeta(imageId) : null;
+    var alt = p.imageAlt || (meta && meta.alt) || (p.name + " near Villa Augflor, French Riviera");
+    var position = (meta && meta.position) || "center center";
+    var fallbackCatId = getFallbackId(p.cat);
+    var credit = meta && meta.credit ? meta.credit : "";
+
+    if (imageId) {
+      return {
+        inner: buildPicture(imageId, alt, position, true) +
+          '<span class="area-card__imageOverlay" aria-hidden="true"></span>' +
+          (credit ? '<span class="ag-photo-credit" title="' + escAttr(credit) + '">Photo</span>' : ""),
+        wrapClass: "ag-media area-card__imageWrap",
+        wrapStyle: "",
+        fallbackCat: fallbackCatId || ""
+      };
+    }
+    if (fallbackCatId && getImageMeta(fallbackCatId)) {
+      var fbMeta = getImageMeta(fallbackCatId);
+      return {
+        inner: buildPicture(fallbackCatId, alt, fbMeta.position || "center center", true) +
+          '<span class="area-card__imageOverlay" aria-hidden="true"></span>',
+        wrapClass: "ag-media area-card__imageWrap ag-media--fallback",
+        wrapStyle: "",
+        fallbackCat: fallbackCatId
+      };
+    }
+    return {
+      inner: '<span class="ag-media-icon">' + svgIcon(ICONS[p.cat], "ag-i-lg") + '</span>',
+      wrapClass: "ag-media",
+      wrapStyle: ' style="background:' + c.tile + '"',
+      fallbackCat: fallbackCatId || ""
+    };
+  }
+
+  window.__agImageFallback = function (img) {
+    if (!img || img.dataset.fallbackTried === "1") return;
+    img.dataset.fallbackTried = "1";
+    var wrap = img.closest(".ag-media");
+    var catId = wrap && wrap.getAttribute("data-cat-fallback");
+    if (!catId) return;
+    var fb = primaryImageSrc(catId);
+    img.src = fb;
+    var meta = getImageMeta(catId) || {};
+    var variants = meta.variants || {};
+    var widths = Object.keys(variants).map(Number).sort(function (a, b) { return a - b; });
+    if (widths.length) {
+      img.srcset = widths.map(function (w) {
+        return "assets/photos/area/" + (variants[w] || (catId + "-" + w + "w.webp")) + " " + w + "w";
+      }).join(", ");
+    }
+    if (wrap) wrap.classList.add("ag-media--fallback");
+  };
 
   function practicalMetas(p) {
     return metaRow("Drive time", p.drive + " min") +
@@ -878,13 +1011,8 @@
 
   function card(p) {
     var c = CATEGORIES[p.cat];
-    var imgSrc = p.image || IMAGES[p.id];
-    var alt = p.imageAlt || (p.name + " near Villa Augflor, French Riviera");
     var route = routeLink(p.maps);
-    var mediaInner = imgSrc
-      ? '<img class="ag-media-img" src="' + imgSrc + '" alt="' + escAttr(alt) + '" width="620" height="388" loading="lazy" decoding="async">'
-      : '<span class="ag-media-icon">' + svgIcon(ICONS[p.cat], "ag-i-lg") + '</span>';
-    var mediaStyle = imgSrc ? "" : ' style="background:' + c.tile + '"';
+    var media = buildMediaInner(p, c);
     var ratingBadge = p.rating
       ? '<span class="ag-rating" title="' + p.reviews + '+ Google reviews"><b>' + p.rating.toFixed(1) +
         '</b> ★ <em>' + fmtReviews(p.reviews) + '</em></span>'
@@ -896,8 +1024,9 @@
 
     return '' +
       '<article class="ag-card" data-cat="' + p.cat + '" data-id="' + p.id + '">' +
-        '<div class="ag-media"' + mediaStyle + '>' +
-          mediaInner +
+        '<div class="' + media.wrapClass + '"' + media.wrapStyle +
+          ' data-cat-fallback="' + escAttr(media.fallbackCat) + '">' +
+          media.inner +
           '<span class="ag-cat-tag">' + c.label + '</span>' +
           ratingBadge +
           '<span class="ag-dist">' + p.drive + ' min · ' + p.area + '</span>' +

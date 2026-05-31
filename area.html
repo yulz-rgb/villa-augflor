@@ -26,6 +26,7 @@
 <link rel="stylesheet" href="styles/area-guide.css">
 <script defer src="scripts/subpage.js"></script>
 <script defer src="scripts/area-place-enrichment.js"></script>
+<script defer src="scripts/area-image-meta.js"></script>
 <script defer src="scripts/area-guide.js"></script>
 
 <script type="application/ld+json">
@@ -328,7 +329,7 @@
           <article class="ag-card ag-card-static"><div class="ag-body"><h3>La Colombe d'Or, Saint-Paul</h3><p class="ag-blurb">Legendary art-filled auberge — 20 min. Book terrace lunch ahead in August.</p><p><span class="ag-badge">20 min</span> <span class="ag-tag ag-tag-price">€€€</span></p><a class="ag-btn ag-btn-primary" href="https://www.google.com/maps/dir/?api=1&amp;origin=Cagnes-sur-Mer%2C%20France&amp;destination=La%20Colombe%20d%27Or%2C%20Saint-Paul-de-Vence%2C%20France">Route from villa</a></div></article>
         </div>
       </div>
-      <p class="note" style="margin-top:1.5rem">Destination photos are from <a href="https://commons.wikimedia.org/" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a> under Creative Commons licences.</p>
+      <p class="ag-credits-note">Destination photos are from <a href="https://commons.wikimedia.org/" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a> under Creative Commons licences. Full attribution: <a href="assets/photos/area/CREDITS.txt">photo credits</a>.</p>
     </div>
   </section>
 
@@ -348,7 +349,10 @@
       <h2>Cros-de-Cagnes beach — 8 minutes from the villa.</h2>
       <div class="grid grid-2" style="margin-top:1.5rem">
         <div>
-          <img src="assets/photos/area/cros-de-cagnes.jpg" alt="Cros-de-Cagnes sandy beach and seafront near Villa Augflor, Cagnes-sur-Mer" width="600" height="375" loading="lazy" decoding="async" style="width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:4px">
+          <picture>
+            <source type="image/webp" srcset="assets/photos/area/cros-de-cagnes-480w.webp 480w, assets/photos/area/cros-de-cagnes-960w.webp 960w" sizes="(max-width:700px) 100vw, 50vw">
+            <img src="assets/photos/area/cros-de-cagnes-960w.webp" alt="Cros-de-Cagnes sandy beach and seafront near Villa Augflor, Cagnes-sur-Mer" width="800" height="600" loading="lazy" decoding="async" class="area-card__image" style="width:100%;aspect-ratio:4/3;object-fit:cover;object-position:center 55%;border-radius:16px">
+          </picture>
           <p class="note" style="margin-top:.5rem">Cros-de-Cagnes — local fishermen's beach, calm water, seafront dining.</p>
         </div>
         <div class="obj-card">
