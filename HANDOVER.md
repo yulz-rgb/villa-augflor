@@ -1,7 +1,47 @@
 # Handover: Villa Augflor SEO & Deployment Complete
 
-**Status:** ✅ PRODUCTION LIVE — CRO Phase 2 · `verify-production.sh` exit 0 · deploy `dpl_4rsxSYvFKmj9khUQvrqWLPEZi2qb`  
-**Date:** May 30, 2026  
+**Status:** ✅ PRODUCTION LIVE — calendar synced May 31 · verify exit 0 · deploy `dpl_2MRXXS8ipEdGoTd2oGhQSVWkPwNE`  
+**Date:** May 31, 2026  
+
+---
+
+## Session Update — May 31, 2026 (Calendar sync + HANDOVER cleanup)
+
+**Goal:** Reconcile summer 2026 booked dates from Airbnb calendar screenshots; fix stale/contradictory HANDOVER entries.
+
+### Booked dates verified (Airbnb, May 31, 2026)
+
+| Period | Status |
+|--------|--------|
+| Jun 1–7 | **Booked** |
+| Jun 8–30 | Open |
+| Jul 1–8 | Open |
+| Jul 9–15 | **Booked** |
+| Jul 16–28 | Open |
+| Jul 29–31 | **Booked** |
+| Aug 1–2 | **Booked** |
+| Aug 3–31 | Open |
+| Sep 1–30 | Open |
+
+### Shipped (live — deploy `dpl_2MRXXS8ipEdGoTd2oGhQSVWkPwNE`)
+
+| File | Change |
+|------|--------|
+| **`data/calendar-busy.json`** | `updated` → 2026-05-31; busy dates confirmed unchanged |
+| **`api/calendar.js`** | Reads `updated` from JSON (was hardcoded 2026-05-29) |
+| **`index.html`** | Demand banner lists all booked blocks incl. Aug 1–2; restored area promo + trust FAQ (regression fix) |
+| **`HANDOVER.md`** | This session block; canonical calendar table; stale refs fixed |
+
+### Deploy
+```bash
+cd /Users/lana/Projects/villa-augflor-live
+bash scripts/deploy-production.sh
+```
+
+---
+**Custom Domain:** https://villa-augflor.com  
+**Latest commit:** `b459ed5` on `main` — HANDOVER Phase 2 deploy refs  
+**Calendar source:** `data/calendar-busy.json` (merged by `/api/calendar` with optional iCal)
 
 ---
 
@@ -279,6 +319,8 @@ bash scripts/deploy-production.sh
 
 ---
 
+## Session Update — May 29, 2026 (Certificate + calendar + gallery fix)
+
 **Goal:** Upload Gîtes de France 4-star certificate, sync summer 2026 calendar from Airbnb screenshots, fix broken "browse every room by area" link, deploy, update HANDOVER.
 
 ### What shipped (live after deploy + verify)
@@ -288,11 +330,8 @@ bash scripts/deploy-production.sh
 - **`legal-notice.html`** — classification details + certificate image
 - **`book-direct-safely.html`** — trust card links to certificate + legal notice
 
-**Calendar (Airbnb sync May 29, 2026)**
-- **`data/calendar-busy.json`** — manual busy dates (merged by `/api/calendar` with iCal when env set):
-  - Jun 1–7 booked · Jun 8–30 open
-  - Jul 1–8 open · Jul 9–15 booked · Jul 16–28 open · Jul 29–31 booked
-  - Aug 1–2 booked · Aug 3–31 open · Sep all open
+**Calendar (initial Airbnb sync May 29, 2026 — re-verified May 31)**
+- **`data/calendar-busy.json`** — manual busy dates (merged by `/api/calendar` with iCal when env set). See **Quick Start → Summer 2026 availability** for canonical table.
 - **`api/calendar.js`** — merges static JSON + Airbnb/Booking iCal feeds
 - **`scripts/subpage.js`** — fixed bug: was reading `data.busy` instead of `data.busyDates` (rates calendar showed mock data)
 - **`scripts/main.js`** — accepts `static` and `merged` calendar sources
@@ -305,10 +344,7 @@ bash scripts/deploy-production.sh
 - Checks certificate JPG returns 200
 
 ### Calendar maintenance
-When Airbnb bookings change, update **`data/calendar-busy.json`** and redeploy. iCal env vars (`AIRBNB_ICAL_URL`, `BOOKING_ICAL_URL`) optional — static file is fallback and always merged when iCal is active.
-
-### HANDOVER policy (mandatory)
-**Every agent session that changes the live site must update this HANDOVER.md before marking done** — add a dated session block with files touched, deploy status, and any follow-ups. No exceptions.
+When Airbnb bookings change, update **`data/calendar-busy.json`**, the **Quick Start** availability table below, homepage demand-banner copy, and redeploy. iCal env vars (`AIRBNB_ICAL_URL`, `BOOKING_ICAL_URL`) optional — static file is fallback and always merged when iCal is active.
 
 ---
 
@@ -336,6 +372,22 @@ When Airbnb bookings change, update **`data/calendar-busy.json`** and redeploy. 
 | Refresh area photos | `python3 scripts/download-area-photos.py` |
 
 **Rules for any update:** browser-verify on villa-augflor.com before saying "done"; gallery changes belong on `gallery.html`; Airbnb listing is separate from this site. **Update this HANDOVER.md whenever you change the live site — this is mandatory for every session; do not mark work complete without updating this file.**
+
+### Summer 2026 availability (keep `data/calendar-busy.json` + homepage banner in sync)
+
+Last synced from Airbnb: **May 31, 2026**. Update when bookings change.
+
+| Period | Status |
+|--------|--------|
+| Jun 1–7 | Booked |
+| Jun 8–30 | Open |
+| Jul 1–8 | Open |
+| Jul 9–15 | Booked |
+| Jul 16–28 | Open |
+| Jul 29–31 | Booked |
+| Aug 1–2 | Booked |
+| Aug 3–31 | Open |
+| Sep 1–30 | Open |
 
 ### Canonical pricing (keep `index.html`, `rates.html`, `book-direct-safely.html` in sync)
 
@@ -380,7 +432,7 @@ When Airbnb bookings change, update **`data/calendar-busy.json`** and redeploy. 
 **Redirects (`vercel.json`)**
 - Old WordPress paths → polished pages (see **Legacy WordPress URLs** above)
 - **Removed** redirects that hid **`rates.html`** and **`gallery.html`** — both serve as standalone pages again
-- SEO landing pages (`family-villa.html`, etc.) still redirect to homepage anchors
+- Some legacy SEO URLs still redirect (see `vercel.json`); **`family-villa.html`**, **`anniversary-getaway.html`**, **`adults-only-villa.html`**, **`villa-no-stairs.html`**, **`eu-summer-2026-villa.html`** serve real HTML
 
 **Homepage (`index.html`)**
 - SEO title: “Private Pool Villa Cagnes-sur-Mer near Nice Airport…”
@@ -554,7 +606,7 @@ All pages created, optimized, and deployed successfully:
 
 ### 2. Modified Pages - Enhanced CTAs & Pricing
 - **villa.html** — CTA upgraded from "Enquire Now" to "Check Availability Now" with pre-filled WhatsApp message
-- **rates.html** — Cost comparison calculator highlighting direct-booking savings (**~€719** on 7-night peak stay)
+- **rates.html** — Cost comparison calculator highlighting direct-booking savings (**~€676** on 7-night peak stay; canonical since CRO Phase 1)
 - **components/footer.html** — Complete reorganization with 5-section navigation to all new pages
 
 ### 3. Deployment Infrastructure
@@ -574,7 +626,7 @@ All pages created, optimized, and deployed successfully:
 ## Current State Verification
 
 ### ✅ Custom Domain villa-augflor.com
-**Last verification:** May 29, 2026 (`verify-production.sh` exit 0)
+**Last verification:** May 30, 2026 (`verify-production.sh` exit 0) — re-run after calendar deploy
 
 | Page | Status | Notes |
 |------|--------|-------|
@@ -588,7 +640,7 @@ All pages created, optimized, and deployed successfully:
 | Legacy `/about/`, `/contact/`, `/check-availability/` | ✅ 301 | → rates / book-direct / gallery |
 | index.html `#gallery` | ✅ LIVE | Mosaic preview; full gallery on `gallery.html` |
 | fr/index.html | ✅ LIVE | FR pricing aligned (dès €420/nuit) |
-| SEO landing pages (`family-villa.html`, etc.) | ✅ REDIRECT | → homepage anchors (see `vercel.json`) |
+| SEO audience pages (`family-villa.html`, `anniversary-getaway.html`, etc.) | ✅ LIVE | Real HTML; some legacy SEO URLs still 301 (see `vercel.json`) |
 
 ### ✅ Vercel Deployments
 - **villa-augflor.vercel.app** — GitHub auto-deploy (secondary subdomain)
@@ -603,13 +655,13 @@ All pages created, optimized, and deployed successfully:
 ```
 .
 ├── index.html (unified homepage: hero, trip types, about, gallery, location, reviews, book flow, terms, FAQ)
-├── rates.html (rate cards, €719 comparison, live calendar, payment terms)
+├── rates.html (rate cards, ~€676 comparison, live calendar, payment terms)
 ├── book-direct-safely.html (direct-booking trust + 5-step flow)
 ├── privacy-policy.html · legal-notice.html
 ├── gallery.html
 ├── area.html (subpage nav + area-guide.js)
 ├── fr/index.html · de/index.html · nl/index.html
-├── [legacy SEO landing pages].html (redirect to homepage anchors via vercel.json)
+├── [audience + legacy SEO pages].html (audience pages live; some legacy URLs 301 via vercel.json)
 ├── api/booking-agent.js (Vercel serverless — needs ANTHROPIC_API_KEY)
 ├── vercel.json (301 redirects incl. legacy WordPress paths)
 ```
@@ -618,7 +670,7 @@ All pages created, optimized, and deployed successfully:
 - **Owner:** yulz-rgb
 - **Repo:** villa-augflor
 - **Branch:** main
-- **Latest commit:** `a5c55ce` (unified homepage) — trust/redirect pass may be **deployed but uncommitted**; run `git log -1 --oneline` and `git status`
+- **Latest commit:** run `git log -1 --oneline` — was `b459ed5` (May 31, 2026 HANDOVER + Phase 2)
 - **Connected to Vercel:** Yes — `villa-augflor-static-live` linked to GitHub `main` (push auto-deploys; confirm with verify script)
 
 ### Local vs deployed
@@ -646,7 +698,7 @@ villa-augflor-static-live (Vercel project, GitHub-connected)
 - **13 new pages created** for high-intent keywords
 - **AggregateRating schema** on guest-reviews.html (4.79★)
 - **FAQPage schema** on villa.html and faq-booking.html (40+ Q&As)
-- **Cost comparison section** emphasizing direct-booking savings (~€719 on `rates.html` peak-week example)
+- **Cost comparison section** emphasizing direct-booking savings (~€676 on `rates.html` peak-week example)
 - **Pre-filled WhatsApp CTAs** on all pages directing to Lana: +33 6 23 77 73 33
 
 ### Performance Targets
@@ -995,5 +1047,5 @@ Also copied from `_images/`: `garden-room-*.jpg`, `kitchen-corner-wide.jpg`.
 
 ---
 
-**Last Updated:** May 30, 2026 (area guide filter fix, homepage area promo, SEO Nice Airport live)  
-**Status:** ✅ Production live · Full area guide on `/area.html` · Filters working · SEO page + llms.txt live
+**Last Updated:** May 31, 2026 (calendar sync verified · HANDOVER cleanup)  
+**Status:** ✅ Production live · Summer 2026 calendar synced · Full area guide on `/area.html` · SEO page + llms.txt live

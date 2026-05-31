@@ -7,13 +7,16 @@ const fs = require("fs");
 const path = require("path");
 const { mergeBusyFromIcsBodies } = require("../lib/ical-busy");
 
-function loadStaticBusyDates() {
+function loadStaticCalendar() {
   try {
     const file = path.join(__dirname, "..", "data", "calendar-busy.json");
     const data = JSON.parse(fs.readFileSync(file, "utf8"));
-    return Array.isArray(data.busyDates) ? data.busyDates : [];
+    return {
+      busyDates: Array.isArray(data.busyDates) ? data.busyDates : [],
+      updated: data.updated || undefined,
+    };
   } catch {
-    return [];
+    return { busyDates: [], updated: undefined };
   }
 }
 
@@ -42,14 +45,15 @@ module.exports = async (req, res) => {
 
   const airbnb = process.env.AIRBNB_ICAL_URL;
   const booking = process.env.BOOKING_ICAL_URL;
-  const staticBusy = loadStaticBusyDates();
+  const staticCalendar = loadStaticCalendar();
+  const staticBusy = staticCalendar.busyDates;
 
   if (!airbnb && !booking) {
     return res.status(200).json({
       ok: true,
       source: staticBusy.length ? "static" : "none",
       busyDates: staticBusy,
-      updated: staticBusy.length ? "2026-05-29" : undefined,
+      updated: staticCalendar.updated,
       message: staticBusy.length
         ? "Manual calendar sync — iCal env optional for automatic updates."
         : "Set AIRBNB_ICAL_URL and/or BOOKING_ICAL_URL in Vercel env to enable live calendar.",
@@ -76,6 +80,7 @@ module.exports = async (req, res) => {
         ok: true,
         source: "static",
         busyDates: staticBusy,
+        updated: staticCalendar.updated,
         errors,
       });
     }

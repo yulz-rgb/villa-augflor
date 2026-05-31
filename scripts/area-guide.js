@@ -53,18 +53,18 @@
 
   /* CC-licensed destination photos (Wikimedia Commons) — assets/photos/area/ */
   var IMAGES = {
-    "antibes-market": "assets/photos/area/antibes-market.jpg",
     "antibes": "assets/photos/area/antibes.jpg",
+    "antibes-market": "assets/photos/area/antibes-market.jpg",
     "aquasplash": "assets/photos/area/aquasplash.jpg",
     "biot": "assets/photos/area/biot.jpg",
     "boat-charter": "assets/photos/area/boat-charter.jpg",
-    "cannes-beach-clubs": "assets/photos/area/cannes-beach-clubs.jpg",
     "cannes": "assets/photos/area/cannes.jpg",
+    "cannes-beach-clubs": "assets/photos/area/cannes-beach-clubs.jpg",
     "cap-ferrat-walk": "assets/photos/area/cap-ferrat-walk.jpg",
     "cap3000": "assets/photos/area/cap3000.jpg",
     "casino-monte-carlo": "assets/photos/area/casino-monte-carlo.jpg",
-    "coaraze": "assets/photos/area/coaraze.jpg",
     "colombe-dor": "assets/photos/area/colombe-dor.jpg",
+    "coaraze": "assets/photos/area/coaraze.jpg",
     "cours-saleya": "assets/photos/area/cours-saleya.jpg",
     "cros-de-cagnes": "assets/photos/area/cros-de-cagnes.jpg",
     "diving": "assets/photos/area/diving.jpg",
@@ -98,8 +98,8 @@
     "musee-oceano-family": "assets/photos/area/musee-oceano-family.jpg",
     "musee-picasso": "assets/photos/area/musee-picasso.jpg",
     "musee-renoir": "assets/photos/area/musee-renoir.jpg",
-    "nice-rooftops": "assets/photos/area/nice-rooftops.jpg",
     "nice": "assets/photos/area/nice.jpg",
+    "nice-rooftops": "assets/photos/area/nice-rooftops.jpg",
     "paddleboard": "assets/photos/area/paddleboard.jpg",
     "paloma": "assets/photos/area/paloma.jpg",
     "parc-phoenix": "assets/photos/area/parc-phoenix.jpg",
@@ -117,7 +117,7 @@
     "vence": "assets/photos/area/vence.jpg",
     "verdon": "assets/photos/area/verdon.jpg",
     "villa-ephrussi": "assets/photos/area/villa-ephrussi.jpg",
-    "villefranche": "assets/photos/area/villefranche.jpg",
+    "villefranche": "assets/photos/area/villefranche.jpg"
   };
 
   /* ---- The data model ---- */
@@ -374,6 +374,14 @@
       website: null, maps: "Azur Park, Villeneuve-Loubet, France",
       duration: "Evening", best: "Summer evenings", season: ["summer"],
       family: 5, luxury: 1, gem: 2, tags: ["Funfair","Closest","Evenings"] },
+
+    { id: "speed-park", name: "Speed Park", cat: "family", area: "5 km",
+      blurb: "Indoor karting, bowling, arcade, karaoke and VR — high-energy fun near the coast.",
+      why: "The go-to for teenagers and rainy afternoons — karting, bowling and games under one roof.",
+      rating: 4.3, reviews: 1800, km: 5, drive: 12, walk: null, cycle: null,
+      website: null, maps: "Speed Park, Villeneuve-Loubet, France",
+      duration: "2–3 hours", best: "Book karting ahead in school holidays", season: ["spring","summer","autumn","winter"],
+      family: 5, luxury: 2, gem: 2, tags: ["Karting","Bowling","Rainy-day","Teenagers"] },
 
     { id: "gorges-loup-canyon", name: "Canyoning, Gorges du Loup", cat: "family", area: "30 km",
       blurb: "Guided canyoning, natural pools and waterfalls in the cool limestone gorge.",
@@ -765,22 +773,50 @@
     PLACES = PLACES.map(enrichPlace);
   }
 
+  var PARKING_ORDER = (typeof window !== "undefined" && window.PARKING_ORDER) || { Easy: 0, Medium: 1, Difficult: 2 };
+
+  function firstTimeScore(p) {
+    var s = (p.rating || 0) * 2 + p.family + (p.cat === "destinations" || p.cat === "villages" ? 3 : 0);
+    if (p.guestPopular) s += 2;
+    if (p.drive <= 25) s += 1;
+    return s;
+  }
+
   /* ---- Sort helpers ---- */
-  var PO = typeof PRICE_ORDER !== "undefined" ? PRICE_ORDER : { Free: 0, "€": 1, "€€": 2, "€€€": 3, "€€€€": 4 };
   var SORTS = {
     distance: function (a, b) { return a.drive - b.drive; },
     rating: function (a, b) { return (b.rating || 0) - (a.rating || 0); },
     family: function (a, b) { return b.family - a.family || (b.rating || 0) - (a.rating || 0); },
     luxury: function (a, b) { return b.luxury - a.luxury || (b.rating || 0) - (a.rating || 0); },
     gem: function (a, b) { return b.gem - a.gem || (b.rating || 0) - (a.rating || 0); },
-    priceLow: function (a, b) {
-      var pa = PO[a.priceLevel] != null ? PO[a.priceLevel] : 2;
-      var pb = PO[b.priceLevel] != null ? PO[b.priceLevel] : 2;
-      return pa - pb || a.drive - b.drive;
+    firstTime: function (a, b) { return firstTimeScore(b) - firstTimeScore(a) || a.drive - b.drive; },
+    parking: function (a, b) {
+      return (PARKING_ORDER[a.parking] || 1) - (PARKING_ORDER[b.parking] || 1) || a.drive - b.drive;
+    },
+    noCar: function (a, b) {
+      return (b.carFreePossible ? 1 : 0) - (a.carFreePossible ? 1 : 0) ||
+        (a.transport === "Train possible" ? 0 : 1) - (b.transport === "Train possible" ? 0 : 1) ||
+        a.drive - b.drive;
     }
   };
 
-  var state = { cat: "all", tag: "all", sort: "distance" };
+  var state = { cat: "all", tag: null, sort: "distance" };
+
+  function matchesTag(p, tag) {
+    if (!tag) return true;
+    switch (tag) {
+      case "rainy-day": return p.rainyDay || p.cat === "museums";
+      case "hot-day": return p.hotDay || p.cat === "beaches" || p.cat === "watersports";
+      case "no-car": return p.carFreePossible || p.transport === "Train possible";
+      case "teenagers": return p.teenagerFriendly || (p.family >= 4 && p.id !== "marineland-note");
+      case "grandparents": return p.grandparentFriendly || (p.family >= 3 && p.drive <= 40 && p.family > 0);
+      case "budget": return p.priceLevel === "Free" || p.priceLevel === "€";
+      case "romantic": return p.romantic || p.luxury >= 4;
+      case "luxury": return p.luxury >= 4;
+      case "family": return p.family >= 4;
+      default: return true;
+    }
+  }
 
   function stars(score) {
     var full = Math.round(score);
@@ -816,54 +852,67 @@
 
   function tagChips(p) {
     var chips = [];
-    if (p.priceLevel) chips.push('<span class="ag-tag ag-tag-price">' + p.priceLevel + '</span>');
+    if (p.priceLevel) chips.push('<span class="ag-tag ag-tag-price" title="' + escAttr(p.priceNote || "") + '">' + p.priceLevel + '</span>');
     if (p.beachType) chips.push('<span class="ag-tag">' + p.beachType + '</span>');
     if (p.rainyDay) chips.push('<span class="ag-tag">Rainy day</span>');
+    if (p.hotDay) chips.push('<span class="ag-tag">Hot day</span>');
     if (p.localFavourite) chips.push('<span class="ag-tag">Local pick</span>');
-    if (p.bookAhead) chips.push('<span class="ag-tag">Book ahead</span>');
-    if (p.carFreePossible) chips.push('<span class="ag-tag">Train-friendly</span>');
-    if (p.bestFor && p.bestFor.length) {
-      p.bestFor.slice(0, 2).forEach(function (b) {
-        chips.push('<span class="ag-tag">' + b + '</span>');
-      });
-    }
+    if (p.bookAhead) chips.push('<span class="ag-tag ag-tag-book">Booking advised</span>');
+    if (p.carFreePossible) chips.push('<span class="ag-tag">Car-free OK</span>');
     return chips.length ? '<div class="ag-tags">' + chips.join("") + '</div>' : "";
+  }
+
+  function escAttr(s) {
+    return String(s).replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;");
+  }
+
+  function practicalMetas(p) {
+    return metaRow("Drive time", p.drive + " min") +
+      metaRow("Price level", p.priceLevel + (p.priceNote ? " — " + p.priceNote : "")) +
+      metaRow("Family score", p.family ? stars(p.family) + " / 5" : "—") +
+      metaRow("Parking", p.parking || "—") +
+      metaRow("Best time", p.best) +
+      metaRow("Car-free possible", p.carFreePossible ? "Yes" : "No") +
+      metaRow("Booking advised", p.bookAhead ? "Yes" : "No");
   }
 
   function card(p) {
     var c = CATEGORIES[p.cat];
     var imgSrc = p.image || IMAGES[p.id];
-    var alt = p.imageAlt || (p.name + " near Villa Augflor");
-    var media = imgSrc
-      ? '<div class="ag-media" style="background-image:url(\'' + imgSrc + '\')" role="img" aria-label="' + alt + '">'
-      : '<div class="ag-media" style="background:' + c.tile + '">' +
-        '<span class="ag-media-icon">' + svgIcon(ICONS[p.cat], "ag-i-lg") + '</span>';
+    var alt = p.imageAlt || (p.name + " near Villa Augflor, French Riviera");
+    var route = routeLink(p.maps);
+    var mediaInner = imgSrc
+      ? '<img class="ag-media-img" src="' + imgSrc + '" alt="' + escAttr(alt) + '" width="620" height="388" loading="lazy" decoding="async">'
+      : '<span class="ag-media-icon">' + svgIcon(ICONS[p.cat], "ag-i-lg") + '</span>';
+    var mediaStyle = imgSrc ? "" : ' style="background:' + c.tile + '"';
     var ratingBadge = p.rating
       ? '<span class="ag-rating" title="' + p.reviews + '+ Google reviews"><b>' + p.rating.toFixed(1) +
         '</b> ★ <em>' + fmtReviews(p.reviews) + '</em></span>'
       : '<span class="ag-rating ag-rating-na">Info</span>';
+    var popular = p.guestPopular
+      ? '<span class="ag-popular">Most popular with our guests</span>' : "";
+    var hostTip = p.hostTip
+      ? '<p class="ag-host-tip"><b>Host tip:</b> ' + p.hostTip + '</p>' : "";
 
     return '' +
-      '<article class="ag-card" data-cat="' + p.cat + '">' +
-        media +
+      '<article class="ag-card" data-cat="' + p.cat + '" data-id="' + p.id + '">' +
+        '<div class="ag-media"' + mediaStyle + '>' +
+          mediaInner +
           '<span class="ag-cat-tag">' + c.label + '</span>' +
           ratingBadge +
-          '<span class="ag-dist">' + p.area + '</span>' +
+          '<span class="ag-dist">' + p.drive + ' min · ' + p.area + '</span>' +
         '</div>' +
         '<div class="ag-body">' +
+          popular +
           '<h3>' + p.name + '</h3>' +
           '<p class="ag-blurb">' + p.blurb + '</p>' +
           '<p class="ag-why"><b>Why go:</b> ' + p.why + '</p>' +
-          tagChips(p) +
+          hostTip +
           '<div class="ag-badges">' + timeBadges(p) + '</div>' +
+          tagChips(p) +
           '<div class="ag-metas">' +
-            metaRow("Typical cost", (p.priceLevel || "—") + (p.priceNote ? " · " + p.priceNote : "")) +
             metaRow("Time needed", p.duration) +
-            metaRow("Best time", p.best) +
-            metaRow("Transport", p.transport) +
-            metaRow("Parking", p.parking) +
-            metaRow("Season", p.seasonNote) +
-            (p.bookingAdvice ? metaRow("Tip", p.bookingAdvice) : "") +
+            practicalMetas(p) +
           '</div>' +
           (p.family || p.luxury || p.gem
             ? '<div class="ag-scores">' +
@@ -873,11 +922,12 @@
               '</div>'
             : "") +
           '<div class="ag-actions">' +
-            '<a class="ag-btn ag-btn-primary" target="_blank" rel="noopener" href="' + routeLink(p.maps) + '">' +
-              svgIcon("M12 21s-6-5.5-6-10a6 6 0 1112 0c0 4.5-6 10-6 10zM12 11a2 2 0 100-4 2 2 0 000 4z") + 'Route from villa</a>' +
-            '<a class="ag-btn" target="_blank" rel="noopener" href="' + mapsLink(p.maps) + '">Map</a>' +
+            '<a class="ag-btn ag-btn-primary" target="_blank" rel="noopener" href="' + route + '" data-track="route-open" data-place="' + p.id + '">' +
+              svgIcon("M12 21s-6-5.5-6-10a6 6 0 1112 0c0 4.5-6 10-6 10zM12 11a2 2 0 100-4 2 2 0 000 4z") + 'Open route</a>' +
+            '<button type="button" class="ag-btn ag-btn-copy" data-route="' + escAttr(route) + '" data-track="route-copy" data-place="' + p.id + '">Copy route</button>' +
+            '<a class="ag-btn" target="_blank" rel="noopener" href="' + mapsLink(p.maps) + '" data-track="map-open" data-place="' + p.id + '">Google Maps</a>' +
             (p.website
-              ? '<a class="ag-btn" target="_blank" rel="noopener" href="' + p.website + '">' +
+              ? '<a class="ag-btn" target="_blank" rel="noopener" href="' + p.website + '" data-track="website-open" data-place="' + p.id + '">' +
                 (p.website.indexOf("wa.me") > -1 ? "Ask us" : "Website") + '</a>'
               : "") +
           '</div>' +
@@ -891,38 +941,28 @@
     return n + " reviews";
   }
 
-  function matchesTag(p, tag) {
-    if (tag === "all") return true;
-    if (tag === "free") return p.priceLevel === "Free";
-    if (tag === "budget") return p.priceLevel === "€";
-    if (tag === "mid") return p.priceLevel === "€€";
-    if (tag === "family") return p.family >= 4 || (p.bestFor && p.bestFor.indexOf("Families") >= 0);
-    if (tag === "rainy") return p.rainyDay || (p.bestFor && p.bestFor.indexOf("Rainy day") >= 0);
-    if (tag === "local") return p.localFavourite || p.gem >= 4;
-    if (tag === "train") return p.carFreePossible || p.transport === "Train possible";
-    if (tag === "luxury") return p.luxury >= 4;
-    if (tag === "couples") return p.luxury >= 3 || (p.bestFor && /Couples|Romantic/i.test(p.bestFor.join(" ")));
-    if (tag === "teen") return p.family >= 3;
-    if (tag === "beach") return p.cat === "beaches" || !!p.beachType;
-    if (tag === "culture") return p.cat === "museums";
-    if (tag === "food") return p.cat === "food";
-    if (tag === "shopping") return p.cat === "shopping";
-    if (tag === "nature") return p.cat === "nature";
-    if (tag === "nocar") return p.carFreePossible || (p.transport && /train|walk/i.test(p.transport));
-    return true;
-  }
-
   function render() {
     var grid = document.getElementById("ag-grid");
     if (!grid) return;
     var list = PLACES.filter(function (p) {
-      if (state.cat !== "all" && p.cat !== state.cat) return false;
-      return matchesTag(p, state.tag);
+      var catOk = state.cat === "all" || p.cat === state.cat;
+      var tagOk = matchesTag(p, state.tag);
+      return catOk && tagOk;
     }).slice().sort(SORTS[state.sort] || SORTS.distance);
 
     grid.innerHTML = list.map(card).join("");
+    grid.classList.add("ag-grid-enhanced");
     var count = document.getElementById("ag-count");
     if (count) count.textContent = list.length + " place" + (list.length === 1 ? "" : "s");
+  }
+
+  function setChipState(container, attr, value, activeEl) {
+    if (!container) return;
+    container.querySelectorAll("[" + attr + "]").forEach(function (b) {
+      var on = b === activeEl;
+      b.classList.toggle("active", on);
+      b.setAttribute("aria-pressed", on ? "true" : "false");
+    });
   }
 
   function wireControls() {
@@ -932,9 +972,8 @@
         var btn = e.target.closest("[data-cat]");
         if (!btn) return;
         state.cat = btn.getAttribute("data-cat");
-        filters.querySelectorAll("[data-cat]").forEach(function (b) {
-          b.classList.toggle("active", b === btn);
-        });
+        setChipState(filters, "data-cat", state.cat, btn);
+        trackEvent("filter-cat", state.cat);
         render();
       });
     }
@@ -943,10 +982,15 @@
       tagFilters.addEventListener("click", function (e) {
         var btn = e.target.closest("[data-tag]");
         if (!btn) return;
-        state.tag = btn.getAttribute("data-tag");
-        tagFilters.querySelectorAll("[data-tag]").forEach(function (b) {
-          b.classList.toggle("active", b === btn);
-        });
+        var tag = btn.getAttribute("data-tag");
+        if (state.tag === tag) {
+          state.tag = null;
+          setChipState(tagFilters, "data-tag", null, null);
+        } else {
+          state.tag = tag;
+          setChipState(tagFilters, "data-tag", tag, btn);
+        }
+        trackEvent("filter-tag", state.tag || "none");
         render();
       });
     }
@@ -954,8 +998,47 @@
     if (sort) {
       sort.addEventListener("change", function () {
         state.sort = sort.value;
+        trackEvent("sort", state.sort);
         render();
       });
+    }
+    document.querySelectorAll("[data-tag-jump]").forEach(function (el) {
+      el.addEventListener("click", function () {
+        var tag = el.getAttribute("data-tag-jump");
+        state.tag = tag;
+        var explore = document.getElementById("explore");
+        if (explore) explore.scrollIntoView({ behavior: "smooth", block: "start" });
+        if (tagFilters) {
+          var btn = tagFilters.querySelector('[data-tag="' + tag + '"]');
+          setChipState(tagFilters, "data-tag", tag, btn);
+        }
+        trackEvent("mini-guide", tag);
+        render();
+      });
+    });
+    document.addEventListener("click", function (e) {
+      var copyBtn = e.target.closest(".ag-btn-copy");
+      if (copyBtn) {
+        var url = copyBtn.getAttribute("data-route");
+        if (url && navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(url).then(function () {
+            copyBtn.textContent = "Copied!";
+            setTimeout(function () { copyBtn.textContent = "Copy route"; }, 2000);
+          });
+        } else if (url) {
+          window.open(url, "_blank", "noopener");
+        }
+        trackEvent("route-copy", copyBtn.getAttribute("data-place"));
+        return;
+      }
+      var tracked = e.target.closest("[data-track]");
+      if (tracked) trackEvent(tracked.getAttribute("data-track"), tracked.getAttribute("data-place") || tracked.href || "");
+    });
+  }
+
+  function trackEvent(name, detail) {
+    if (typeof window.dataLayer !== "undefined") {
+      window.dataLayer.push({ event: "area_guide_" + name, detail: detail || "" });
     }
   }
 
@@ -982,23 +1065,9 @@
     var data = {
       "@context": "https://schema.org",
       "@type": "ItemList",
-      name: "Villa Augflor Area Guide — 70+ French Riviera places",
-      dateModified: "2026-05-29",
+      name: "Villa Augflor Area Guide — the French Riviera",
       itemListElement: items
     };
-    var article = {
-      "@context": "https://schema.org",
-      "@type": "Article",
-      headline: "French Riviera Area Guide from Villa Augflor",
-      datePublished: "2025-01-01",
-      dateModified: "2026-05-29",
-      author: { "@type": "Person", name: "Lana" },
-      publisher: { "@type": "Organization", name: "Villa Augflor", url: "https://villa-augflor.com" }
-    };
-    var s2 = document.createElement("script");
-    s2.type = "application/ld+json";
-    s2.textContent = JSON.stringify(article);
-    document.head.appendChild(s2);
     var s = document.createElement("script");
     s.type = "application/ld+json";
     s.textContent = JSON.stringify(data);
@@ -1006,6 +1075,8 @@
   }
 
   document.addEventListener("DOMContentLoaded", function () {
+    var fallback = document.getElementById("ag-fallback");
+    if (fallback) fallback.remove();
     wireControls();
     render();
     injectSchema();
