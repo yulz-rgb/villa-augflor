@@ -99,11 +99,11 @@ if [[ "$PATH_TO_CHECK" == "/" ]]; then
   AREA_HTML=$(curl -fsSL -H "Cache-Control: no-cache" "$SITE/area.html")
   check_present_file "Area guide ag-grid" 'id="ag-grid"' "$AREA_HTML"
 
-  PHOTO_CODE=$(curl -s -o /dev/null -w "%{http_code}" -H "Cache-Control: no-cache" "$SITE/assets/photos/area/nice.jpg")
+  PHOTO_CODE=$(curl -s -o /dev/null -w "%{http_code}" -H "Cache-Control: no-cache" "$SITE/assets/photos/area/nice-960w.webp")
   if [[ "$PHOTO_CODE" == "200" ]]; then
-    echo "OK:   Area guide sample photo (nice.jpg) returns 200"
+    echo "OK:   Area guide sample photo (nice-960w.webp) returns 200"
   else
-    echo "FAIL: Area guide photo nice.jpg returned HTTP ${PHOTO_CODE}"
+    echo "FAIL: Area guide photo nice-960w.webp returned HTTP ${PHOTO_CODE}"
     FAIL=1
   fi
 
