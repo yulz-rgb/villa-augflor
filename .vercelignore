@@ -1,0 +1,19 @@
+# Dev / source assets — not served in production
+_images/
+_documentation/
+.cursor/
+automation/
+*.MOV
+*.HEIC
+*.heic
+HANDOVER.md
+DEPLOYMENT*.md
+README*.txt
+SAVE-POINT.txt
+FINAL-SUMMARY.txt
+DO.txt
+SEO-IMPROVEMENTS.md
+
+# Area guide: ship WebP only (AVIF + JPG kept in repo for pipeline)
+assets/photos/area/*.jpg
+assets/photos/area/*.avif
