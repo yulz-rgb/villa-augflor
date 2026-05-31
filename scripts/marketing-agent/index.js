@@ -131,6 +131,31 @@ function daysInMonth(iso) {
   return new Date(Date.UTC(date.getUTCFullYear(), date.getUTCMonth() + 1, 0)).getUTCDate();
 }
 
+function endOfMonthIso(iso) {
+  const date = toDate(iso);
+  const end = new Date(Date.UTC(date.getUTCFullYear(), date.getUTCMonth() + 1, 0));
+  return toIso(end);
+}
+
+function minIso(a, b) {
+  return a <= b ? a : b;
+}
+
+function splitRangesByMonth(ranges) {
+  const split = [];
+
+  ranges.forEach((range) => {
+    let start = range.start;
+    while (start <= range.end) {
+      const end = minIso(endOfMonthIso(start), range.end);
+      split.push({ start, end });
+      start = toIso(addDays(toDate(end), 1));
+    }
+  });
+
+  return split;
+}
+
 function formatRange(range) {
   const startMonth = monthName(range.start);
   const endMonth = monthName(range.end);
@@ -300,8 +325,10 @@ function buildWeeklyPack() {
   const openDates = allSummerDates.filter((date) => !busySet.has(date));
   const openRanges = groupContiguous(openDates);
   const bookedRanges = groupContiguous(allSummerDates.filter((date) => busySet.has(date)));
-  const stillOpenSummary = summarizeRanges(openRanges);
-  const bookedSummary = summarizeRanges(bookedRanges);
+  const displayOpenRanges = splitRangesByMonth(openRanges);
+  const displayBookedRanges = splitRangesByMonth(bookedRanges);
+  const stillOpenSummary = summarizeRanges(displayOpenRanges);
+  const bookedSummary = summarizeRanges(displayBookedRanges);
   const homepageStillOpenSummary = extractHomepageStillOpen(indexHtml);
   const homepageNeedsUpdate =
     normalizeSummary(homepageStillOpenSummary) !== normalizeSummary(stillOpenSummary);
@@ -317,6 +344,8 @@ function buildWeeklyPack() {
     calendarUpdated: calendar.updated || null,
     openWindows: openRanges.map((range) => ({ ...range, label: formatRange(range) })),
     bookedWindows: bookedRanges.map((range) => ({ ...range, label: formatRange(range) })),
+    displayOpenWindows: displayOpenRanges.map((range) => ({ ...range, label: formatRange(range) })),
+    displayBookedWindows: displayBookedRanges.map((range) => ({ ...range, label: formatRange(range) })),
     stillOpenSummary,
     bookedSummary,
     homepageStillOpenSummary,
