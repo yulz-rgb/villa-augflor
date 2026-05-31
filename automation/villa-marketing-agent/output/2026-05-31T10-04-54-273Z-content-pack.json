@@ -1,0 +1,188 @@
+{
+  "schemaVersion": 1,
+  "task": "weekly",
+  "runId": "2026-05-31T10-04-54-273Z",
+  "runAt": "2026-05-31T10:04:54.273Z",
+  "dryRun": true,
+  "publishRequested": false,
+  "publishStatus": "Dry run. Instagram auto-publish disabled because MARKETING_AGENT_PUBLISH is not true.",
+  "brand": {
+    "name": "Villa Augflor",
+    "instagram": "@villa_augflor_france",
+    "tone": "elegant, honest, direct booking trust",
+    "trustAnchors": [
+      "Written quote before payment",
+      "4.79-star guest rating",
+      "38 reviews",
+      "Gites de France 4-star classification"
+    ]
+  },
+  "prompt": {
+    "path": "automation/villa-marketing-agent/AGENT-PROMPT.md",
+    "bytes": 1747
+  },
+  "canva": {
+    "templatesConfigured": false,
+    "detectedEnvVars": []
+  },
+  "availability": {
+    "sourcePath": "data/calendar-busy.json",
+    "calendarUpdated": "2026-05-31",
+    "openWindows": [
+      {
+        "start": "2026-06-08",
+        "end": "2026-07-08",
+        "label": "June 8-July 8"
+      },
+      {
+        "start": "2026-07-16",
+        "end": "2026-07-28",
+        "label": "July 16-28"
+      },
+      {
+        "start": "2026-08-03",
+        "end": "2026-09-30",
+        "label": "August 3-September 30"
+      }
+    ],
+    "bookedWindows": [
+      {
+        "start": "2026-06-01",
+        "end": "2026-06-07",
+        "label": "June 1-7"
+      },
+      {
+        "start": "2026-07-09",
+        "end": "2026-07-15",
+        "label": "July 9-15"
+      },
+      {
+        "start": "2026-07-29",
+        "end": "2026-08-02",
+        "label": "July 29-August 2"
+      }
+    ],
+    "displayOpenWindows": [
+      {
+        "start": "2026-06-08",
+        "end": "2026-06-30",
+        "label": "June 8-30"
+      },
+      {
+        "start": "2026-07-01",
+        "end": "2026-07-08",
+        "label": "July 1-8"
+      },
+      {
+        "start": "2026-07-16",
+        "end": "2026-07-28",
+        "label": "July 16-28"
+      },
+      {
+        "start": "2026-08-03",
+        "end": "2026-08-31",
+        "label": "August 3-31"
+      },
+      {
+        "start": "2026-09-01",
+        "end": "2026-09-30",
+        "label": "all of September"
+      }
+    ],
+    "displayBookedWindows": [
+      {
+        "start": "2026-06-01",
+        "end": "2026-06-07",
+        "label": "June 1-7"
+      },
+      {
+        "start": "2026-07-09",
+        "end": "2026-07-15",
+        "label": "July 9-15"
+      },
+      {
+        "start": "2026-07-29",
+        "end": "2026-07-31",
+        "label": "July 29-31"
+      },
+      {
+        "start": "2026-08-01",
+        "end": "2026-08-02",
+        "label": "August 1-2"
+      }
+    ],
+    "stillOpenSummary": "June 8-30 · July 1-8 & 16-28 · August 3-31 · all of September",
+    "bookedSummary": "June 1-7 · July 9-15 & 29-31 · August 1-2",
+    "homepageStillOpenSummary": "June 8–30 · July 1–8 & 16–28 · August 3–31 · all of September",
+    "homepageNeedsUpdate": false
+  },
+  "content": {
+    "posts": [
+      {
+        "id": "ig-carousel-availability",
+        "channel": "instagram",
+        "format": "carousel",
+        "title": "Summer dates still open",
+        "objective": "Turn availability urgency into direct enquiries without overpromising.",
+        "caption": "A quiet Riviera base with private pool, 15 minutes from Nice Airport.\n\nStill open for summer 2026: June 8-30 · July 1-8 & 16-28 · August 3-31 · all of September.\n\nWritten quote before payment. 4.79-star guest rating from 38 reviews. Ask Lana for a written direct quote before any payment.\n\nDM @villa_augflor_france or WhatsApp with dates + guests.",
+        "canvaBrief": "Elegant cream/teal carousel using pool, terrace, and bedroom photography. Keep text sparse: 'Still open', 'Private pool', 'Written quote before payment'.",
+        "frames": [
+          "Cover: Villa Augflor summer 2026 - still open",
+          "Availability: June 8-30 · July 1-8 & 16-28 · August 3-31 · all of September",
+          "Trust: written quote before payment + 4.79-star / 38 reviews",
+          "CTA: Send dates + guest count to Lana"
+        ],
+        "hashtags": [
+          "#FrenchRivieraVilla",
+          "#CotedAzur",
+          "#NiceAirport",
+          "#VillaRental",
+          "#DirectBooking"
+        ]
+      },
+      {
+        "id": "ig-story-direct-booking-trust",
+        "channel": "instagram",
+        "format": "story",
+        "title": "Direct booking trust explainer",
+        "objective": "Reduce payment anxiety for guests comparing Airbnb, Booking.com, and direct.",
+        "caption": "Book direct, but never blindly.\n\nVilla Augflor sends a written quote before payment, with the deposit, balance date, local tax, and security deposit clearly itemised.\n\nSame host. Same villa. Clearer conversation.",
+        "canvaBrief": "Three story slides with restrained typography and a document/quote visual cue. Use trust badges sparingly.",
+        "frames": [
+          "Slide 1: Book direct, never blindly",
+          "Slide 2: Written quote before payment",
+          "Slide 3: 4.79-star rating / 38 reviews / ask Lana for dates"
+        ],
+        "hashtags": [
+          "#BookDirect",
+          "#FrenchRiviera",
+          "#VillaAugflor"
+        ]
+      },
+      {
+        "id": "ig-reel-riviera-base",
+        "channel": "instagram",
+        "format": "reel",
+        "title": "A practical Riviera base",
+        "objective": "Position the villa as the calm base for families and couples who want Nice, Antibes, beaches, and hill villages nearby.",
+        "caption": "Private pool mornings. Antibes or Nice by afternoon. Dinner under the pergola.\n\nVilla Augflor is a practical South of France base for guests who want comfort, parking, air conditioning, and clear direct-booking terms.\n\nSummer 2026 still open: June 8-30 · July 1-8 & 16-28 · August 3-31 · all of September.",
+        "canvaBrief": "Vertical reel storyboard: pool water, pergola dining, garden path, map-style text overlays for Nice Airport / Antibes / Cagnes-sur-Mer.",
+        "frames": [
+          "Hook: 15 minutes from Nice Airport",
+          "Scene: private pool and garden",
+          "Scene: shaded outdoor dining",
+          "Close: send dates for a written quote"
+        ],
+        "hashtags": [
+          "#SouthOfFrance",
+          "#RivieraBase",
+          "#CagnesSurMer",
+          "#FamilyVilla"
+        ]
+      }
+    ],
+    "approvalRequiredBy": "Lana",
+    "contentPackPath": "automation/villa-marketing-agent/output/2026-05-31T10-04-54-273Z-content-pack.json",
+    "reportPath": "automation/villa-marketing-agent/output/2026-05-31T10-04-54-273Z-report.md"
+  }
+}
