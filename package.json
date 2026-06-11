@@ -2,6 +2,13 @@
   "name": "villa-augflor",
   "private": true,
   "description": "Static site + Vercel serverless (Stripe deposit + merged iCal calendar)",
+  "scripts": {
+    "availability:sync": "node scripts/availability-sync.js",
+    "availability:check": "node scripts/availability-sync.js --check",
+    "audit:area-links": "node scripts/audit-area-links.mjs",
+    "marketing:weekly": "node scripts/marketing-agent/index.js --task weekly",
+    "marketing:publish": "MARKETING_AGENT_PUBLISH=true node scripts/marketing-agent/index.js --task weekly --publish"
+  },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.51.0",
     "stripe": "^17.7.0"

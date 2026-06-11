@@ -1,2 +1,10 @@
 .vercel
 .DS_Store
+node_modules/
+.env
+.claude/
+.cursor/
+# Local source library (HEIC/MOV originals) — web-ready exports live in assets/photos
+_images/
+automation/villa-marketing-agent/output/*
+!automation/villa-marketing-agent/output/.gitkeep

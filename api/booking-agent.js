@@ -118,11 +118,8 @@ module.exports = async (req, res) => {
   let contextSuffix = "";
   if (metadata?.page) {
     const pageHints = {
-      "last-minute-villa.html": "This visitor is on the last-minute page — they want to book SOON. Lead with June availability immediately.",
       "rates.html": "This visitor is checking prices — they are in decision mode. Help them commit.",
-      "family-villa.html": "This visitor is looking at family options — ask about kids' ages, mention the ground-floor bedroom and pool safety.",
-      "anniversary-getaway.html": "This visitor wants a romantic stay — mention sunset from the garden, private pool evenings, and offer to arrange a welcome hamper.",
-      "corporate-retreats.html": "This visitor wants a team retreat — mention WiFi, meeting table that seats 8, and catering options.",
+      "last-minute-villa.html": "This visitor is on the last-minute page — they want to book SOON. Point them at the open stay windows on the page, ask for exact dates and guest count, and steer to WhatsApp for same-day confirmation.",
     };
     const hint = pageHints[metadata.page];
     if (hint) contextSuffix = `\n\n## Current Page Context\n${hint}`;

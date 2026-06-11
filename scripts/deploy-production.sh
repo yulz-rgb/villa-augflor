@@ -19,3 +19,6 @@ sleep 15
 
 echo "==> Verify live site"
 bash scripts/verify-production.sh
+
+echo "==> Ping IndexNow (non-fatal)"
+bash scripts/ping-indexnow.sh || true

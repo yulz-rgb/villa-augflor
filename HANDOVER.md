@@ -1,7 +1,56 @@
 # Handover: Villa Augflor SEO & Deployment Complete
 
-**Status:** ✅ PRODUCTION LIVE — area guide filters + images fixed · verify exit 0 · deploy `dpl_7H64SuCUuwfFFevCRcEmTNKnmi2F`  
-**Date:** May 31, 2026  
+**Status:** ✅ PRODUCTION LIVE — indexable availability + last-minute page (see June 11 session block)  
+**Date:** June 11, 2026  
+
+---
+
+## Session Update — June 11, 2026 (Indexable availability, last-minute page, IndexNow)
+
+**Goal:** Fill remaining summer weeks ASAP — make real open dates visible to Google/Bing/AI search, add a last-minute landing page, automate freshness.
+
+### Open windows (from calendar-busy.json, updated 2026-05-31 — ⚠️ 11 days stale, re-sync from Airbnb)
+
+| Window | Nights | Rate |
+|--------|--------|------|
+| 11 Jun → 9 Jul | 28 | from €420/n |
+| 16 Jul → 29 Jul | 13 | €480/n |
+| 3 Aug → into autumn | 59+ | from €420/n |
+
+### Shipped
+
+| File | Change |
+|------|--------|
+| **`scripts/availability-sync.js`** | **New** — generates static open-weeks blocks (index, rates, last-minute), schema.org `makesOffer` with `availabilityStarts/Ends`, llms.txt availability section, sitemap lastmod. Run after every calendar-busy.json update. `--check` exits 2 when stale/out-of-date (watchdog hook). |
+| **`last-minute-villa.html`** | **New** — revived URL (redirect removed from vercel.json). Targets "last minute villa Côte d'Azur/French Riviera". Open-weeks block, FAQ schema, offers schema, same-day confirmation copy. |
+| **`index.html`** | Static open-weeks block in #availability · OFFERS-LD block · absolute og:image/twitter:image (was relative — broken WhatsApp/social previews) · 3 Review items in schema · meta description mentions open July/August weeks · link to last-minute page |
+| **`rates.html`** | Static open-weeks block above live calendar |
+| **`llms.txt`** | "Current availability" section (auto-generated) + last-minute page link |
+| **`scripts/calendar-widget.js`** | Past days rendered as `past` (grey), excluded from "Open to enquire" windows and month-table counts (was showing 1–10 June as open) |
+| **`styles/subpage.css`**, **`index.html`** | `.cal-day.past` style |
+| **`sitemap.xml`** | + last-minute-villa.html (0.95), + best-beaches/family-activities/riviera-without-car (were missing), fresh lastmod |
+| **`vercel.json`** | Removed `/last-minute-villa.html → /` redirect |
+| **8 pages** | Absolute og:image + twitter:card added (gallery, contact, september, beaches, family, no-car, itinerary, where-to-stay) |
+| **`components/footer.html`**, **`footer-subpage.html`** | Last-minute link added; redirect-stub links (villa.html, guest-reviews.html, etc.) now point at real targets |
+| **`8dcf446cf15dd66ea7f5e5d8946fb007.txt`** | **New** — IndexNow key file |
+| **`scripts/ping-indexnow.sh`** | **New** — pings Bing/Yandex/Seznam after deploy (wired into deploy-production.sh, non-fatal) |
+| **`scripts/verify-production.sh`** | + checks: open-weeks blocks live, last-minute page serves real content, offers schema, IndexNow key 200, absolute og:image, llms availability, stale-month guard |
+| **`api/booking-agent.js`** | Restored last-minute page hint |
+| **`automation/villa-marketing-agent/AGENT-PROMPT.md`** | Points at availability-sync.js instead of removed "Still open:" block |
+
+### Weekly freshness loop (IMPORTANT)
+1. Update `data/calendar-busy.json` from Airbnb calendar (bump `updated`)
+2. `node scripts/availability-sync.js`
+3. `bash scripts/deploy-production.sh` (verifies + pings IndexNow)
+4. `git add -A && git commit && git push`
+
+A scheduled weekly agent runs `availability-sync.js --check` and reports staleness.
+
+### Still for Yulia (off-site, not in repo)
+- **Google Search Console**: confirm property verified; submit sitemap; request indexing for / and /last-minute-villa.html
+- **Google Business Profile**: create/claim for Villa Augflor (drives Maps + local pack traffic)
+- **Airbnb/Booking iCal env vars** (`AIRBNB_ICAL_URL`, `BOOKING_ICAL_URL`) in Vercel for automatic calendar sync
+- Consider a last-minute discount policy (e.g. −10% within 14 days) — site copy ready to mention it once decided
 
 ---
 

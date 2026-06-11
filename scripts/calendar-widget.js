@@ -6,6 +6,11 @@
     return `${y}-${String(m + 1).padStart(2, "0")}-${String(d).padStart(2, "0")}`;
   }
 
+  function todayKey() {
+    const t = new Date();
+    return ymd(t.getFullYear(), t.getMonth(), t.getDate());
+  }
+
   async function fetchBusyDates() {
     try {
       const res = await fetch("/api/calendar", { headers: { Accept: "application/json" } });
@@ -47,15 +52,16 @@
     return `${fmt(from)} – ${fmt(to)}`;
   }
 
-  /** Build human-readable open windows from busy set (season months only). */
+  /** Build human-readable open windows from busy set (season months only, today onward). */
   function openWindows(year, months, busy) {
     const ranges = [];
+    const today = todayKey();
     months.forEach((m) => {
       const days = new Date(year, m.idx + 1, 0).getDate();
       let start = null;
       for (let d = 1; d <= days; d++) {
         const key = ymd(year, m.idx, d);
-        const open = !busy || !busy.has(key);
+        const open = key >= today && (!busy || !busy.has(key));
         if (open && !start) start = key;
         if ((!open || d === days) && start) {
           const end = open && d === days ? key : ymd(year, m.idx, d - 1);
@@ -76,6 +82,53 @@
       return formatRange(r.from, r.to);
     });
     return `<strong>Open to enquire:</strong> ${parts.join(" · ")}`;
+  }
+
+  /** Month-level open / limited / booked for summary table */
+  function isDayOpen(year, monthIdx, d, busy, mockMap) {
+    const key = ymd(year, monthIdx, d);
+    if (key < todayKey()) return false;
+    if (busy && busy.has(key)) return false;
+    if (!busy && mockMap) {
+      const mock = mockMap.get(monthIdx);
+      if (mock) {
+        const w = Math.floor((d - 1 + mock.lead) / 7);
+        return !mock.bookedWeeks.has(w);
+      }
+    }
+    return true;
+  }
+
+  function monthAvailability(year, month, busy, mockMap) {
+    const days = new Date(year, month.idx + 1, 0).getDate();
+    const today = todayKey();
+    let openDays = 0;
+    let remainingDays = 0;
+    for (let d = 1; d <= days; d++) {
+      if (ymd(year, month.idx, d) >= today) remainingDays++;
+      if (isDayOpen(year, month.idx, d, busy, mockMap)) openDays++;
+    }
+    if (remainingDays === 0) return { label: "Season passed", cls: "booked" };
+    if (openDays === 0) return { label: "Fully booked", cls: "booked" };
+    if (openDays >= remainingDays * 0.65) return { label: "Open — enquire", cls: "open" };
+    return { label: "Limited — enquire", cls: "limited" };
+  }
+
+  function renderMonthTable(year, months, busy, mockMap) {
+    const host = document.querySelector("[data-month-table]");
+    if (!host) return;
+    host.innerHTML = months
+      .map((m) => {
+        const { label, cls } = monthAvailability(year, m, busy, mockMap);
+        const fullName = { Jun: "June", Jul: "July", Aug: "August", Sep: "September" }[m.name] || m.name;
+        return `<tr>
+          <td class="ma-month">${fullName} ${year}</td>
+          <td class="ma-rate">${m.price}<span style="font-size:12px;font-family:Jost,sans-serif;color:var(--muted,#7a7269)">/night</span></td>
+          <td class="ma-status ${cls}">${label}</td>
+          <td style="text-align:right"><a href="https://wa.me/33623777333?text=Hi%20Lana%2C%20please%20check%20Villa%20Augflor%20availability%20for%20${fullName}%20${year}.%20Dates%3A%20%5Bcheck-in%5D%20to%20%5Bcheck-out%5D.%20Guests%3A%20%5Bnumber%5D." style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent,#3d7a8a);text-decoration:none">Enquire</a></td>
+        </tr>`;
+      })
+      .join("");
   }
 
   async function renderCalendar() {
@@ -108,15 +161,18 @@
       const mock = mockMap ? mockMap.get(m.idx) : null;
       let cells = "";
       for (let i = 0; i < lead; i++) cells += `<div class="cal-day empty"></div>`;
+      const today = todayKey();
       for (let d = 1; d <= days; d++) {
         const key = ymd(year, m.idx, d);
         let cls = "available";
-        if (busy && busy.has(key)) cls = "booked";
+        if (key < today) cls = "past";
+        else if (busy && busy.has(key)) cls = "booked";
         else if (!busy && mock) {
           const w = Math.floor((d - 1 + mock.lead) / 7);
           cls = mock.bookedWeeks.has(w) ? "booked" : "available";
         }
-        cells += `<div class="cal-day ${cls}" title="${cls === "booked" ? "Booked" : "Open to enquire"}">${d}</div>`;
+        const title = cls === "past" ? "Past date" : cls === "booked" ? "Booked" : "Open to enquire";
+        cells += `<div class="cal-day ${cls}" title="${title}">${d}</div>`;
       }
       return `
         <div class="cal-month">
@@ -149,12 +205,26 @@
       </div>`;
     host.removeAttribute("aria-busy");
 
+    renderMonthTable(year, months, busy, mockMap);
+
     const summaryEl = document.querySelector("[data-open-windows]");
-    if (summaryEl && busy) {
-      summaryEl.innerHTML = renderOpenSummary(openWindows(year, months, effectiveBusy));
-    } else if (summaryEl && !busy) {
-      summaryEl.innerHTML =
-        'Calendar temporarily unavailable — <a href="https://wa.me/33623777333?text=Hi%20Lana%2C%20please%20check%20Villa%20Augflor%20availability.%20Dates%3A%20%5Bcheck-in%5D%20to%20%5Bcheck-out%5D.%20Guests%3A%20%5Bnumber%5D.">message Lana on WhatsApp</a> with your dates.';
+    if (summaryEl) {
+      if (busy) {
+        summaryEl.innerHTML = renderOpenSummary(openWindows(year, months, effectiveBusy));
+      } else if (mockMap) {
+        const mockBusy = new Set();
+        months.forEach((m) => {
+          const days = new Date(year, m.idx + 1, 0).getDate();
+          const mock = mockMap.get(m.idx);
+          for (let d = 1; d <= days; d++) {
+            if (!isDayOpen(year, m.idx, d, null, mockMap)) mockBusy.add(ymd(year, m.idx, d));
+          }
+        });
+        summaryEl.innerHTML = renderOpenSummary(openWindows(year, months, mockBusy));
+      } else {
+        summaryEl.innerHTML =
+          'Calendar temporarily unavailable — <a href="https://wa.me/33623777333?text=Hi%20Lana%2C%20please%20check%20Villa%20Augflor%20availability.%20Dates%3A%20%5Bcheck-in%5D%20to%20%5Bcheck-out%5D.%20Guests%3A%20%5Bnumber%5D.">message Lana on WhatsApp</a> with your dates.';
+      }
     }
   }
 
