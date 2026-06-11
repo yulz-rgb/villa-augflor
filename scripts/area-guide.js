@@ -64,6 +64,8 @@
     "cap3000": "assets/photos/area/cap3000.jpg",
     "casino-monte-carlo": "assets/photos/area/casino-monte-carlo.jpg",
     "colombe-dor": "assets/photos/area/colombe-dor.jpg",
+    "le-caruso": "assets/photos/area/le-caruso.jpg",
+    "les-remparts": "assets/photos/area/les-remparts.jpg",
     "coaraze": "assets/photos/area/coaraze.jpg",
     "cours-saleya": "assets/photos/area/cours-saleya.jpg",
     "cros-de-cagnes": "assets/photos/area/cros-de-cagnes.jpg",
@@ -122,6 +124,13 @@
     "fenocchio": "assets/photos/area/fenocchio.jpg",
     "bakery-local": "assets/photos/area/bakery-local.jpg",
     "pizza-nice": "assets/photos/area/pizza-nice.jpg",
+    "sabai-sabai": "assets/photos/area/sabai-sabai.jpg",
+    "cafe-timothe": "assets/photos/area/cafe-timothe.jpg",
+    "table-de-kamiya": "assets/photos/area/table-de-kamiya.jpg",
+    "fleur-de-sel": "assets/photos/area/fleur-de-sel.jpg",
+    "l-agape": "assets/photos/area/l-agape.jpg",
+    "ino-plage": "assets/photos/area/ino-plage.jpg",
+    "table-de-pierre": "assets/photos/area/table-de-pierre.jpg",
     "azur-park": "assets/photos/area/azur-park.jpg",
     "monaco-luxury": "assets/photos/area/monaco-luxury.jpg",
     "chateau-bellet": "assets/photos/area/chateau-bellet.jpg",
@@ -140,7 +149,7 @@
       blurb: "The Riviera's capital — Promenade des Anglais, the ochre old town and the Cours Saleya market.",
       why: "The most complete day out: beach, baroque streets, world-class museums and the best market on the coast, all walkable.",
       rating: 4.7, reviews: 60000, km: 14, drive: 19, walk: null, cycle: null,
-      website: "https://www.explore-nicecotedazur.com/en/", maps: "Vieux Nice, Nice, France",
+      website: "https://www.explorenicecotedazur.com/en/", maps: "Vieux Nice, Nice, France",
       duration: "Full day", best: "Morning market, then sunset on the Prom", season: ["spring","summer","autumn","winter"],
       family: 5, luxury: 4, gem: 1, tags: ["Old town","Market","Beach","Walkable"] },
 
@@ -188,7 +197,7 @@
       blurb: "A deep natural harbour with a perfect crescent of ochre houses and a calm swimming beach.",
       why: "Arguably the prettiest bay on the Riviera — sheltered water, fishing-port charm, easy by train.",
       rating: 4.7, reviews: 9000, km: 20, drive: 28, walk: null, cycle: null,
-      website: "https://www.villefranche-sur-mer.com/en/", maps: "Villefranche-sur-Mer, France",
+      website: "https://www.villefranche-sur-mer.fr/", maps: "Villefranche-sur-Mer, France",
       duration: "Half day", best: "Mornings for swimming, golden hour for photos", season: ["spring","summer","autumn"],
       family: 5, luxury: 4, gem: 3, tags: ["Bay","Swimming","Train-friendly","Photogenic"] },
 
@@ -213,7 +222,7 @@
       blurb: "Our own medieval hilltop village — candlelit lanes, the Grimaldi château and terrace restaurants.",
       why: "Six minutes away and the easiest 'wow' evening: take the free shuttle, dine on the square, walk it off.",
       rating: 4.6, reviews: 3500, km: 3, drive: 6, walk: 40, cycle: 12,
-      website: "https://www.cagnes-tourisme.com/en/", maps: "Haut-de-Cagnes, Cagnes-sur-Mer, France",
+      website: "https://www.cagnes-sur-mer.com/en/", maps: "Haut-de-Cagnes, Cagnes-sur-Mer, France",
       duration: "Evening", best: "At dusk, for dinner", season: ["spring","summer","autumn","winter"],
       family: 4, luxury: 4, gem: 4, tags: ["Closest","Château","Dinner","Free shuttle"] },
 
@@ -229,7 +238,7 @@
       blurb: "A lively walled town with Matisse's Chapelle du Rosaire, his final masterpiece.",
       why: "Quieter than Saint-Paul, with a real working centre and one of the great pieces of 20th-century art.",
       rating: 4.5, reviews: 8000, km: 9, drive: 14, walk: null, cycle: null,
-      website: "https://www.vence-tourisme.com/en/", maps: "Vence, France",
+      website: "https://www.vence-tourisme.com/", maps: "Vence, France",
       duration: "Half day", best: "Check chapel hours (limited)", season: ["spring","summer","autumn","winter"],
       family: 3, luxury: 4, gem: 3, tags: ["Matisse","Walled town","Less touristy"] },
 
@@ -261,7 +270,7 @@
       blurb: "An eagle's-nest village clinging to a cliff 760 m above the Loup valley.",
       why: "One of France's 'most beautiful villages', with a jaw-dropping view all the way to the sea.",
       rating: 4.5, reviews: 4500, km: 26, drive: 33, walk: null, cycle: null,
-      website: "https://www.gourdon-tourisme.fr/", maps: "Gourdon, Alpes-Maritimes, France",
+      website: "https://www.gourdon.fr/", maps: "Gourdon, Alpes-Maritimes, France",
       duration: "Half day", best: "Pair with the Gorges du Loup drive", season: ["spring","summer","autumn"],
       family: 3, luxury: 3, gem: 5, tags: ["Clifftop","Panorama","Hinterland"] },
 
@@ -269,7 +278,7 @@
       blurb: "A rare grid-plan Provençal village with arcaded squares and an easy, leafy charm.",
       why: "Friday market, relaxed café terraces and a local, unhurried feel away from the coast.",
       rating: 4.5, reviews: 2000, km: 20, drive: 24, walk: null, cycle: null,
-      website: "https://www.valbonne-sophiaantipolis-tourisme.com/", maps: "Valbonne, France",
+      website: "https://www.valbonne.fr/", maps: "Valbonne, France",
       duration: "Half day", best: "Friday morning market", season: ["spring","summer","autumn","winter"],
       family: 4, luxury: 3, gem: 4, tags: ["Market","Relaxed","Squares"] },
 
@@ -285,7 +294,7 @@
       blurb: "A near-untouched perched village of vaulted passages and steep stone stairways.",
       why: "One of the most authentic medieval villages in the Alpes-Maritimes — and almost nobody goes.",
       rating: 4.6, reviews: 1100, km: 47, drive: 51, walk: null, cycle: null,
-      website: "https://www.paysdespaillons.fr/", maps: "Peillon Village, France",
+      website: "https://www.peillon.fr/", maps: "Peillon, Alpes-Maritimes, France",
       duration: "Half day", best: "Spring & autumn", season: ["spring","autumn"],
       family: 2, luxury: 2, gem: 5, tags: ["Medieval","Authentic","Hidden gem"] },
 
@@ -294,7 +303,7 @@
       blurb: "Our local fishermen's beach — calm water, beach restaurants and seafront strolling.",
       why: "The closest swim to the villa: park, swim, lunch on the front, home for a siesta.",
       rating: 4.3, reviews: 3000, km: 2, drive: 6, walk: 35, cycle: 10,
-      website: null, maps: "Plage du Cros-de-Cagnes, Cagnes-sur-Mer, France",
+      website: null, maps: "Promenade de la Plage, Cros-de-Cagnes, 06800 Cagnes-sur-Mer, France",
       duration: "Half day", best: "Morning, before the afternoon breeze", season: ["spring","summer","autumn"],
       family: 5, luxury: 3, gem: 3, tags: ["Closest","Seafood","Calm water"] },
 
@@ -375,7 +384,7 @@
       blurb: "A cliff-top marine museum with a shark lagoon, 90 tanks and a kids' touch pool.",
       why: "The best wet-weather or with-children day on the coast — and a stunning building in its own right.",
       rating: 4.4, reviews: 30000, km: 38, drive: 39, walk: null, cycle: null,
-      website: "https://www.oceano.mc/en/", maps: "Musée Océanographique de Monaco",
+      website: "https://www.oceano.org/en/", maps: "Musée Océanographique, Avenue Saint-Martin, Monaco",
       duration: "Half day", best: "Buy timed tickets online", season: ["spring","summer","autumn","winter"],
       family: 5, luxury: 4, gem: 3, tags: ["Aquarium","Rainy-day","Iconic"] },
 
@@ -388,10 +397,10 @@
       family: 5, luxury: 1, gem: 2, tags: ["Funfair","Closest","Evenings"] },
 
     { id: "speed-park", name: "Speed Park", cat: "family", area: "5 km",
-      blurb: "Indoor karting, bowling, arcade, karaoke and VR — high-energy fun near the coast.",
+      blurb: "Indoor karting, bowling, arcade, karaoke and VR at Promenade Riviera — 4 min from the villa.",
       why: "The go-to for teenagers and rainy afternoons — karting, bowling and games under one roof.",
       rating: 4.3, reviews: 1800, km: 2, drive: 4, walk: null, cycle: null,
-      website: null, maps: "Speed Park, Villeneuve-Loubet, France",
+      website: "https://speedpark.fr/cagnes-sur-mer/", maps: "SpeedPark, 137 Avenue des Alpes, 06800 Cagnes-sur-Mer, France",
       duration: "2–3 hours", best: "Book karting ahead in school holidays", season: ["spring","summer","autumn","winter"],
       family: 5, luxury: 2, gem: 2, tags: ["Karting","Bowling","Rainy-day","Teenagers"] },
 
@@ -424,7 +433,7 @@
       blurb: "Guided jet-ski safaris along the Cap and tandem parasailing over the bay.",
       why: "The adrenaline hit — a guided jet-ski tour of the Cap d'Antibes coves is unforgettable.",
       rating: 4.6, reviews: 600, km: 12, drive: 19, walk: null, cycle: null,
-      website: null, maps: "Jet ski Juan-les-Pins, France",
+      website: null, maps: "Port Gallice, Juan-les-Pins, Antibes, France",
       duration: "1–2 hours", best: "Calm mornings, summer", season: ["summer"],
       family: 3, luxury: 4, gem: 3, tags: ["Adrenaline","Guided","Summer"] },
 
@@ -432,7 +441,7 @@
       blurb: "SUP and sea-kayak rental right on our local Cros-de-Cagnes / Villeneuve seafront.",
       why: "The easiest, closest water sport — paddle the calm morning sea minutes from the villa.",
       rating: 4.5, reviews: 400, km: 2, drive: 6, walk: 35, cycle: 10,
-      website: null, maps: "Paddle Cros-de-Cagnes, France",
+      website: null, maps: "Promenade de la Plage, Cros-de-Cagnes, 06800 Cagnes-sur-Mer, France",
       duration: "1–2 hours", best: "Early morning, flat water", season: ["spring","summer","autumn"],
       family: 5, luxury: 2, gem: 3, tags: ["Closest","Easy","Calm water"] },
 
@@ -457,7 +466,7 @@
       blurb: "Renoir's own house and olive-grove garden, kept as it was, with original works and studio.",
       why: "Our closest cultural gem — the painter's last home, seven minutes away and beautifully peaceful.",
       rating: 4.5, reviews: 2500, km: 3, drive: 7, walk: 25, cycle: 8,
-      website: "https://www.cagnes-tourisme.com/en/musee-renoir/", maps: "Musée Renoir, Cagnes-sur-Mer, France",
+      website: "https://www.cagnes-sur-mer.com/en/discover/musee-renoir/", maps: "Musée Renoir, 16 Chemin des Collettes, Cagnes-sur-Mer, France",
       duration: "1–2 hours", best: "Closed Tuesdays; quiet mornings", season: ["spring","summer","autumn","winter"],
       family: 3, luxury: 4, gem: 4, tags: ["Closest","Renoir","Garden"] },
 
@@ -473,7 +482,7 @@
       blurb: "The Château Grimaldi where Picasso worked in 1946, full of joyous post-war Mediterranean art.",
       why: "A compact, sea-view museum you can actually finish — pair it with the Antibes market and ramparts.",
       rating: 4.5, reviews: 6000, km: 11, drive: 19, walk: null, cycle: null,
-      website: "https://www.antibesjuanlespins.com/en/culture/picasso-museum", maps: "Musée Picasso, Antibes, France",
+      website: "https://www.antibesjuanlespins.com/en/must-see-must-do/culture-and-heritage/museums/picasso-museum-2031894", maps: "Musée Picasso, Place Mariejol, 06600 Antibes, France",
       duration: "1–2 hours", best: "Closed Mondays", season: ["spring","summer","autumn","winter"],
       family: 3, luxury: 4, gem: 3, tags: ["Picasso","Sea views","Château"] },
 
@@ -489,7 +498,7 @@
       blurb: "A purpose-built national museum around Chagall's luminous Biblical Message cycle.",
       why: "Small, serene and stunning — arguably the most moving single-artist museum on the coast.",
       rating: 4.6, reviews: 8000, km: 14, drive: 18, walk: null, cycle: null,
-      website: "https://www.musees-nationaux-alpesmaritimes.fr/chagall/", maps: "Musée National Marc Chagall, Nice, France",
+      website: "https://musees-nationaux-alpesmaritimes.fr/chagall/", maps: "Musée National Marc Chagall, Avenue du Docteur Ménard, Nice, France",
       duration: "1–2 hours", best: "Closed Tuesdays", season: ["spring","summer","autumn","winter"],
       family: 3, luxury: 4, gem: 4, tags: ["Chagall","Serene","National museum"] },
 
@@ -505,7 +514,7 @@
       blurb: "A national museum wrapped in giant Léger mosaics, set in a sculpture garden.",
       why: "Bold, colourful and family-friendly — and just seventeen minutes away beside Biot village.",
       rating: 4.5, reviews: 2000, km: 7, drive: 14, walk: null, cycle: 25,
-      website: "https://www.musees-nationaux-alpesmaritimes.fr/fleger/", maps: "Musée Fernand Léger, Biot, France",
+      website: "https://musees-nationaux-alpesmaritimes.fr/fleger/", maps: "Musée Fernand Léger, Place du Général de Gaulle, Biot, France",
       duration: "1–2 hours", best: "Closed Tuesdays", season: ["spring","summer","autumn","winter"],
       family: 4, luxury: 3, gem: 4, tags: ["Léger","Mosaics","Close"] },
 
@@ -522,7 +531,7 @@
       blurb: "A welcoming family estate in Nice's tiny Bellet appellation, with cellar tours and tastings.",
       why: "The closest 'proper' vineyard — taste rare Bellet wines twenty-three minutes from the villa.",
       rating: 4.6, reviews: 400, km: 18, drive: 23, walk: null, cycle: null,
-      website: "https://www.domainedetoasc.com/", maps: "Domaine de Toasc, Nice, France",
+      website: "https://www.domainedetoasc.com/", maps: "Domaine de Toasc, 157 Chemin de Crémat, Nice, France",
       duration: "1–2 hours", best: "Book the tasting in advance", season: ["spring","summer","autumn"],
       family: 2, luxury: 4, gem: 4, tags: ["Bellet","Tasting","Closest vineyard"] },
 
@@ -567,27 +576,83 @@
       duration: "Lunch / dinner", best: "Reserve well ahead; dress code", season: ["spring","summer","autumn","winter"],
       family: 1, luxury: 5, gem: 2, tags: ["3 Michelin","Grand","Monaco"] },
 
-    { id: "colombe-dor", name: "La Colombe d'Or, Saint-Paul", cat: "food", area: "10 km",
-      blurb: "A legendary auberge whose walls hold Picasso, Matisse and Léger, paid in paintings.",
-      why: "Long lunch on the fig-shaded terrace beside priceless art — pure Riviera romance.",
-      rating: 4.4, reviews: 2500, km: 6, drive: 10, walk: null, cycle: null,
-      website: "https://www.la-colombe-dor.com/en/", maps: "La Colombe d'Or, Saint-Paul-de-Vence, France",
-      duration: "Lunch / dinner", best: "Book the terrace for lunch", season: ["spring","summer","autumn"],
-      family: 2, luxury: 5, gem: 4, tags: ["Iconic","Art","Romantic"] },
+    { id: "le-caruso", name: "Le Caruso (temporarily closed), Saint-Paul", cat: "food", area: "10 km",
+      blurb: "This Provençal terrace restaurant in the old town is temporarily closed — check before you go.",
+      why: "We keep it listed so you're not caught out by older guides — for Saint-Paul lunch, try Les Remparts, Café Timothé or Sabaï-sabaï instead.",
+      rating: null, reviews: null, km: 6, drive: 10, walk: null, cycle: null,
+      website: null, maps: "Le Caruso, 1 Montée de la Castre, 06570 Saint-Paul-de-Vence, France",
+      duration: "—", best: "Temporarily closed — see Les Remparts or Café Timothé", season: ["spring","summer","autumn","winter"],
+      family: 0, luxury: 0, gem: 0, tags: ["Closed","See alternatives","Saint-Paul"] },
+
+    { id: "table-de-pierre", name: "La Table de Pierre — Saint-Paul", cat: "food", area: "5 km",
+      blurb: "Michelin-star dining at Domaine du Mas de Pierre — velvet chairs, garden views on Route des Serres.",
+      why: "Our closest luxury splurge — five minutes from the villa for elegant Provençal tasting menus; reserve on TheFork or via the hotel.",
+      rating: 4.7, reviews: 73, km: 4, drive: 5, walk: null, cycle: null,
+      website: "https://www.lemasdepierre.com/en/restaurants/table-de-pierre/", maps: "La Table de Pierre, 2320 Route des Serres, 06570 Saint-Paul-de-Vence, France",
+      duration: "Dinner", best: "Reservations required — Tue–Sat evenings; outdoor seating & fireplace", season: ["spring","summer","autumn","winter"],
+      family: 2, luxury: 5, gem: 4, tags: ["Luxury","Romantic","Villa pick","Saint-Paul"] },
+
+    { id: "sabai-sabai", name: "Sabaï-sabaï — Thai, Saint-Paul", cat: "food", area: "10 km",
+      blurb: "Our pick for great Thai in the village — pad thaï, curries and pineapple fried rice by a Thai chef.",
+      why: "Colourful terrace on Place de la Mairie — a relaxed change from Provençal plates after a Saint-Paul gallery morning.",
+      rating: 4.8, reviews: 426, km: 6, drive: 11, walk: null, cycle: null,
+      website: "https://www.xn--saba-saba-35af.fr/", maps: "Sabaï-sabaï, 5 Place de la Mairie, 06570 Saint-Paul-de-Vence, France",
+      duration: "Lunch / dinner", best: "Book terrace seats on summer evenings; closed Tuesdays", season: ["spring","summer","autumn","winter"],
+      family: 4, luxury: 2, gem: 5, tags: ["Thai","Villa pick","Terrace"] },
+
+    { id: "les-remparts", name: "Les Remparts — Views, Saint-Paul", cat: "food", area: "10 km",
+      blurb: "Hillside restaurant on the ramparts — snug dining room or candlelit terrace with views over the valley.",
+      why: "Our pick for a special Saint-Paul evening — book the terrace at sunset; casual plates inside, dressier nights on the ramparts.",
+      rating: 4.5, reviews: 1593, km: 6, drive: 11, walk: null, cycle: null,
+      website: "https://lesremparts.co/", maps: "Les Remparts, Rem Sud-Ouest Courtine Sainte-Anne, 06570 Saint-Paul-de-Vence, France",
+      duration: "Lunch / dinner", best: "Reserve terrace for sunset in summer", season: ["spring","summer","autumn","winter"],
+      family: 3, luxury: 4, gem: 4, tags: ["Views","Terrace","Romantic","Villa pick"] },
+
+    { id: "cafe-timothe", name: "Café Timothé — Organic, Saint-Paul", cat: "food", area: "10 km",
+      blurb: "Cute organic café on Rue du Bresc — dried-flower décor, wholesome plates and a calm lunch spot.",
+      why: "Our healthy Saint-Paul lunch pick — lighter and prettier than a quick crêpe, perfect after gallery-hopping in the village.",
+      rating: 4.8, reviews: 314, km: 6, drive: 10, walk: null, cycle: null,
+      website: "https://cafetimothe.com/", maps: "Café Timothé, 4 Rue du Bresc, 06570 Saint-Paul-de-Vence, France",
+      duration: "Lunch", best: "Opens from 10:30 — book ahead in summer", season: ["spring","summer","autumn","winter"],
+      family: 4, luxury: 2, gem: 5, tags: ["Organic","Villa pick","Healthy","Lunch"] },
 
     { id: "la-pesquiere", name: "Seafood at Cros-de-Cagnes", cat: "food", area: "3 km",
-      blurb: "The little row of seafront fish restaurants on our local beach (La Pesquière, La Bourride).",
-      why: "Grilled dorade and a bottle of Bellet white, feet almost in the sand — the easy local classic.",
-      rating: 4.4, reviews: 1200, km: 2, drive: 6, walk: 35, cycle: 10,
-      website: null, maps: "Restaurant La Pesquière, Cagnes-sur-Mer, France",
-      duration: "Lunch / dinner", best: "Sunset tables; book in summer", season: ["spring","summer","autumn"],
+      blurb: "Promenade de la Plage seafront — Vivo Resto, Bistrot de la Marine, La Fourchette Sur Mer. La Pesquière is Saint-Tropez, not here.",
+      why: "Daily catch from Cros fishermen's port — grilled fish and fruits de mer with your feet almost in the sand.",
+      rating: 4.6, reviews: 1700, km: 2, drive: 6, walk: 35, cycle: 10,
+      website: "https://lebistrotdelamarine.fr/", maps: "Le Bistrot de la Marine, 96 Promenade de la Plage, Cagnes-sur-Mer, France",
+      duration: "Lunch / dinner", best: "Book Bistrot or Vivo for sunset in summer", season: ["spring","summer","autumn"],
       family: 4, luxury: 3, gem: 4, tags: ["Closest","Seafood","Seafront"] },
+
+    { id: "table-de-kamiya", name: "La Table de KAMIYA — Cros Seafront", cat: "food", area: "3 km",
+      blurb: "Refined seafront restaurant on Promenade de la Plage — outdoor seating and high chairs.",
+      why: "Our Cros-de-Cagnes favourite for a special dinner — same promenade as Bistrot de la Marine, a step up with terrace views. Book ahead.",
+      rating: 4.7, reviews: 388, km: 2, drive: 6, walk: 35, cycle: 10,
+      website: "https://www.la-table-de-kamiya.fr/", maps: "La Table de KAMIYA, 52 Promenade de la Plage, 06800 Cagnes-sur-Mer, France",
+      duration: "Lunch / dinner", best: "Reserve terrace for sunset in summer", season: ["spring","summer","autumn"],
+      family: 4, luxury: 4, gem: 4, tags: ["Villa pick","Seafront","Favourite","Closest"] },
+
+    { id: "l-agape", name: "L'Agapè — Cros Seafront", cat: "food", area: "3 km",
+      blurb: "Upscale seafront dining on Promenade de la Plage — terrace, great cocktails and refined plates.",
+      why: "Our Cros splurge pick — same promenade as KAMIYA and Bistrot de la Marine; reserve for sunset cocktails and a special dinner.",
+      rating: 4.9, reviews: 262, km: 2, drive: 6, walk: 35, cycle: 10,
+      website: "https://restaurantlagape.fr/", maps: "L'Agapè, 48 Promenade de la Plage, 06800 Cagnes-sur-Mer, France",
+      duration: "Dinner", best: "Reserve terrace; reservations required", season: ["spring","summer","autumn"],
+      family: 3, luxury: 5, gem: 5, tags: ["Villa pick","Seafront","Cocktails","Closest"] },
+
+    { id: "ino-plage", name: "Ino Plage — Cros Seafront", cat: "food", area: "3 km",
+      blurb: "On-the-beach restaurant on Promenade de la Plage — pergola terrace, beach umbrellas and sea views.",
+      why: "Our beach-day dining pick — tropical terrace and deckchairs on the Cros coastline; Mediterranean and world-fusion plates with your feet in the sand.",
+      rating: 4.4, reviews: 609, km: 2, drive: 6, walk: 35, cycle: 10,
+      website: "https://inoplage.com/", maps: "Ino Plage, 15 ter Promenade de la Plage, 06800 Cagnes-sur-Mer, France",
+      duration: "Lunch / dinner", best: "Reserve pergola terrace for sunset; open daily 10:00–22:30", season: ["spring","summer","autumn"],
+      family: 4, luxury: 3, gem: 4, tags: ["Sea view","Beach","Terrace","Villa pick"] },
 
     { id: "socca-nice", name: "Socca & Niçoise in Vieux-Nice", cat: "food", area: "13 km",
       blurb: "Chickpea socca hot off the griddle (Chez Pipo, Cours Saleya) — the true Nice street snack.",
       why: "The most authentic, affordable taste of Nice — eat it standing up with a glass of rosé.",
       rating: 4.5, reviews: 5000, km: 14, drive: 19, walk: null, cycle: null,
-      website: null, maps: "Chez Pipo Socca, Nice, France",
+      website: null, maps: "Chez Pipo, 13 Rue Bavastro, 06300 Nice, France",
       duration: "Snack / lunch", best: "Lunchtime, fresh batches", season: ["spring","summer","autumn","winter"],
       family: 5, luxury: 2, gem: 3, tags: ["Local classic","Street food","Cheap eat"] },
 
@@ -599,21 +664,29 @@
       duration: "Quick stop", best: "Late afternoon", season: ["spring","summer","autumn"],
       family: 5, luxury: 2, gem: 2, tags: ["Gelato","Vieux-Nice","Kids"] },
 
-    { id: "bakery-local", name: "Best Local Bakery — Bour & Multari", cat: "food", area: "2 km",
-      blurb: "Bour Pâtisserie (Cagnes) for morning croissants; Maison Multari for modern pastry and brunch.",
+    { id: "bakery-local", name: "Bour — Local Bakery & Catering", cat: "food", area: "2 km",
+      blurb: "Bour Pastry Bread Catering (Maison Bour) — viennoiseries, tartes and entremets at 82 Avenue des Alpes; also try Maison Multari for brunch.",
       why: "Start every villa morning right — the good pastries don't last past nine.",
       rating: 4.5, reviews: 800, km: 3, drive: 6, walk: 20, cycle: 7,
-      website: null, maps: "Bour Pâtisserie, Cagnes-sur-Mer, France",
+      website: "https://maisonbour.com/", maps: "Maison Bour, 82 Avenue des Alpes, 06800 Cagnes-sur-Mer, France",
       duration: "Breakfast", best: "Go early (from 06:15)", season: ["spring","summer","autumn","winter"],
       family: 5, luxury: 3, gem: 4, tags: ["Closest","Breakfast","Pastry"] },
 
-    { id: "pizza-nice", name: "Wood-Fired Pizza, Nice", cat: "food", area: "13 km",
-      blurb: "Pissaladière and proper Niçoise wood-fired pizza in Vieux-Nice (try Pizza Cresci).",
-      why: "The southern-French take on pizza — thin, smoky and best with the onion-anchovy pissaladière.",
-      rating: 4.4, reviews: 2000, km: 13, drive: 18, walk: null, cycle: null,
-      website: null, maps: "Pizza Cresci, Nice, France",
-      duration: "Lunch / dinner", best: "Casual evenings", season: ["spring","summer","autumn","winter"],
-      family: 5, luxury: 2, gem: 2, tags: ["Pizza","Casual","Family"] },
+    { id: "fleur-de-sel", name: "Fleur de Sel — Haut-de-Cagnes", cat: "food", area: "2 km",
+      blurb: "Michelin-listed modern Mediterranean on Montée de la Bourgade — seasonal locavore plates.",
+      why: "Walkable from Villa Augflor for a special evening — listed in the Michelin guide; reserve by phone, vegan options available.",
+      rating: 4.8, reviews: 354, km: 2, drive: 6, walk: 20, cycle: 7,
+      website: "https://www.restaurant-fleurdesel.com/", maps: "Fleur de Sel, 85 Montée de la Bourgade, 06800 Cagnes-sur-Mer, France",
+      duration: "Dinner", best: "Reserve by phone; opens evenings (~7 pm)", season: ["spring","summer","autumn","winter"],
+      family: 3, luxury: 4, gem: 5, tags: ["Michelin","Villa pick","Walkable","Vegan options"] },
+
+    { id: "pizza-nice", name: "Casa Leya — Pizza & Italian, Nice", cat: "food", area: "13 km",
+      blurb: "Authentic trattoria on Cours Saleya — wood-fired pizza, pasta and antipasti.",
+      why: "Our Vieux-Nice pizza pick — real Italian ingredients and a terrace on the market square, not a tourist trap.",
+      rating: 4.5, reviews: 13500, km: 14, drive: 19, walk: null, cycle: null,
+      website: "https://www.casaleya.com/", maps: "Casa Leya, 36 Cours Saleya, 06300 Nice, France",
+      duration: "Lunch / dinner", best: "Reserve for terrace on market days", season: ["spring","summer","autumn","winter"],
+      family: 5, luxury: 2, gem: 3, tags: ["Pizza","Casual","Family","Market square"] },
 
     { id: "eze-sunset-dining", name: "Sunset Dining, Èze", cat: "food", area: "25 km",
       blurb: "Clifftop terraces (Château Eza, Château de la Chèvre d'Or) high above the sea.",
@@ -710,7 +783,7 @@
       blurb: "An open-air designer mall in Cagnes with shops, cinema, restaurants and outdoor art.",
       why: "The closest retail therapy — two minutes away, with everything from high-street to luxury.",
       rating: 4.4, reviews: 20000, km: 1, drive: 2, walk: null, cycle: 18,
-      website: "https://www.polygoneriviera.com/", maps: "Polygone Riviera, Cagnes-sur-Mer, France",
+      website: "https://www.polygone-riviera.fr/", maps: "Polygone Riviera, 119 Avenue de la Roubine, 06800 Cagnes-sur-Mer, France",
       duration: "Half day", best: "Rainy days; evenings for dinner & cinema", season: ["spring","summer","autumn","winter"],
       family: 4, luxury: 4, gem: 1, tags: ["Closest","Designer","Cinema"] },
 
@@ -718,7 +791,7 @@
       blurb: "A vast seafront shopping centre at Saint-Laurent-du-Var, one of France's largest.",
       why: "Hundreds of brands plus waterfront dining — the go-to for a serious shop or a wet afternoon.",
       rating: 4.4, reviews: 30000, km: 6, drive: 9, walk: null, cycle: null,
-      website: "https://www.cap3000.com/", maps: "CAP3000, Saint-Laurent-du-Var, France",
+      website: "https://www.cap3000.com/", maps: "Centre Commercial CAP3000, Avenue Eugène Donadeï, Saint-Laurent-du-Var, France",
       duration: "Half day", best: "Rainy days", season: ["spring","summer","autumn","winter"],
       family: 4, luxury: 3, gem: 1, tags: ["Big mall","Seafront","Brands"] },
 
@@ -726,7 +799,7 @@
       blurb: "Nice's iconic flower-and-produce market (antiques on Mondays) in the heart of the old town.",
       why: "The most atmospheric market on the coast — flowers, candied fruit, socca and people-watching.",
       rating: 4.5, reviews: 15000, km: 14, drive: 19, walk: null, cycle: null,
-      website: null, maps: "Cours Saleya Market, Nice, France",
+      website: null, maps: "Cours Saleya, 06300 Nice, France",
       duration: "Morning", best: "Tue–Sun mornings; antiques Mon", season: ["spring","summer","autumn","winter"],
       family: 5, luxury: 3, gem: 3, tags: ["Market","Flowers","Old town"] },
 
@@ -742,7 +815,7 @@
       blurb: "The golden square around Place du Casino — every grand fashion and jewellery house.",
       why: "Window-shop the world's most exclusive boutiques between the Casino and the Hôtel de Paris.",
       rating: 4.5, reviews: 4000, km: 36, drive: 35, walk: null, cycle: null,
-      website: null, maps: "Carré d'Or, Monaco",
+      website: null, maps: "Carré d'Or, 98000 Monaco",
       duration: "Half day", best: "Combine with a Monaco day", season: ["spring","summer","autumn","winter"],
       family: 2, luxury: 5, gem: 2, tags: ["Luxury","Fashion","Monaco"] },
 
@@ -751,7 +824,7 @@
       blurb: "The Belle-Époque gaming palace immortalised in film, with its terrace bar and supercars.",
       why: "Even non-gamblers should see it once — dress up, sip a cocktail and watch the world arrive.",
       rating: 4.5, reviews: 20000, km: 36, drive: 35, walk: null, cycle: null,
-      website: "https://www.montecarlosbm.com/en/casino-monaco/casino-de-monte-carlo", maps: "Casino de Monte-Carlo, Monaco",
+      website: "https://www.montecarlosbm.com/en/casino-monaco", maps: "Casino de Monte-Carlo, Place du Casino, 98000 Monaco",
       duration: "Evening", best: "After dinner; smart dress, ID required", season: ["spring","summer","autumn","winter"],
       family: 1, luxury: 5, gem: 2, tags: ["Casino","Iconic","Dress code"] },
 
@@ -775,7 +848,7 @@
       blurb: "Sea-view rooftops (Le Méridien, Hôtel Aston) and characterful old-town cocktail bars.",
       why: "A more relaxed evening — sundowners over the Baie des Anges, then old-town wine bars.",
       rating: 4.4, reviews: 3000, km: 14, drive: 19, walk: null, cycle: null,
-      website: null, maps: "Rooftop bar Nice, France",
+      website: null, maps: "Promenade des Anglais, 06000 Nice, France",
       duration: "Evening", best: "Sunset start", season: ["spring","summer","autumn"],
       family: 2, luxury: 4, gem: 3, tags: ["Rooftop","Cocktails","Sunset"] }
   ];
@@ -826,6 +899,7 @@
       case "romantic": return p.romantic || p.luxury >= 4;
       case "luxury": return p.luxury >= 4;
       case "family": return p.family >= 4;
+      case "couples": return p.romantic || p.luxury >= 4;
       default: return true;
     }
   }
@@ -1017,13 +1091,18 @@
   };
 
   function practicalMetas(p) {
-    return metaRow("Drive time", p.drive + " min") +
+    var bestFor = p.bestFor && p.bestFor.length ? p.bestFor.join(", ") : "—";
+    var trainOk = p.carFreePossible || p.transport === "Train possible" ? "Yes" : "No";
+    var booking = p.bookAhead ? "Yes — " + (p.bookingAdvice || "book ahead") : (p.bookingAdvice || "Usually walk-in");
+    return metaRow("Drive time", p.drive + " min (off-peak)") +
+      metaRow("Train-friendly", trainOk) +
+      metaRow("Best for", bestFor) +
       metaRow("Price level", p.priceLevel + (p.priceNote ? " — " + p.priceNote : "")) +
-      metaRow("Family score", p.family ? stars(p.family) + " / 5" : "—") +
       metaRow("Parking", p.parking || "—") +
+      metaRow("Booking", booking) +
       metaRow("Best time", p.best) +
-      metaRow("Car-free possible", p.carFreePossible ? "Yes" : "No") +
-      metaRow("Booking advised", p.bookAhead ? "Yes" : "No");
+      metaRow("Transport", p.transport || "—") +
+      (p.combineWith ? metaRow("Combine with", p.combineWith) : "");
   }
 
   function card(p) {
@@ -1160,6 +1239,14 @@
         }
         trackEvent("mini-guide", tag);
         render();
+      });
+    });
+    document.querySelectorAll("[data-scroll]").forEach(function (el) {
+      el.addEventListener("click", function () {
+        var sel = el.getAttribute("data-scroll");
+        var target = sel && document.querySelector(sel);
+        if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+        trackEvent("mini-guide-scroll", sel || "");
       });
     });
     document.addEventListener("click", function (e) {

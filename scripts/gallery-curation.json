@@ -1,0 +1,159 @@
+{
+  "exports": [
+    {
+      "file": "exterior-villa-augflor-2026-04.jpg",
+      "src": "assets/photos/optimized/exterior-villa-augflor-2026-04.jpg",
+      "room": "exterior",
+      "score": 182.31,
+      "enhanced": false,
+      "source": "photo-villa-augflor-cagnes-sur-mer-0083.jpg",
+      "alt": "Villa Augflor pool and garden, Cagnes-sur-Mer",
+      "title": "Pool & garden",
+      "meta": "Exterior \u00b7 May 2026"
+    },
+    {
+      "file": "exterior-villa-augflor-2026-05.jpg",
+      "src": "assets/photos/optimized/exterior-villa-augflor-2026-05.jpg",
+      "room": "exterior",
+      "score": 178.89,
+      "enhanced": false,
+      "source": "photo-villa-augflor-cagnes-sur-mer-0061.jpg",
+      "alt": "Villa Augflor pool and garden, Cagnes-sur-Mer",
+      "title": "Pool & garden",
+      "meta": "Exterior \u00b7 May 2026"
+    },
+    {
+      "file": "exterior-villa-augflor-2026-07.jpg",
+      "src": "assets/photos/optimized/exterior-villa-augflor-2026-07.jpg",
+      "room": "exterior",
+      "score": 176.92,
+      "enhanced": false,
+      "source": "photo-villa-augflor-cagnes-sur-mer-0076.jpg",
+      "alt": "Villa Augflor pool and garden, Cagnes-sur-Mer",
+      "title": "Pool & garden",
+      "meta": "Exterior \u00b7 May 2026"
+    },
+    {
+      "file": "exterior-villa-augflor-2026-08.jpg",
+      "src": "assets/photos/optimized/exterior-villa-augflor-2026-08.jpg",
+      "room": "exterior",
+      "score": 170.98,
+      "enhanced": false,
+      "source": "photo-villa-augflor-cagnes-sur-mer-0064.jpg",
+      "alt": "Villa Augflor pool and garden, Cagnes-sur-Mer",
+      "title": "Pool & garden",
+      "meta": "Exterior \u00b7 May 2026"
+    },
+    {
+      "file": "living-villa-augflor-2026-09.jpg",
+      "src": "assets/photos/optimized/living-villa-augflor-2026-09.jpg",
+      "room": "living",
+      "score": 168.54,
+      "enhanced": false,
+      "source": "photo-villa-augflor-cagnes-sur-mer-0081.jpg",
+      "alt": "Living room at Villa Augflor, French Riviera",
+      "title": "Living space",
+      "meta": "Ground floor \u00b7 2026"
+    },
+    {
+      "file": "living-villa-augflor-2026-10.jpg",
+      "src": "assets/photos/optimized/living-villa-augflor-2026-10.jpg",
+      "room": "living",
+      "score": 167.15,
+      "enhanced": false,
+      "source": "photo-villa-augflor-cagnes-sur-mer-0092.jpg",
+      "alt": "Living room at Villa Augflor, French Riviera",
+      "title": "Living space",
+      "meta": "Ground floor \u00b7 2026"
+    },
+    {
+      "file": "living-villa-augflor-2026-11.jpg",
+      "src": "assets/photos/optimized/living-villa-augflor-2026-11.jpg",
+      "room": "living",
+      "score": 165.07,
+      "enhanced": false,
+      "source": "photo-villa-augflor-cagnes-sur-mer-0090.jpg",
+      "alt": "Living room at Villa Augflor, French Riviera",
+      "title": "Living space",
+      "meta": "Ground floor \u00b7 2026"
+    },
+    {
+      "file": "living-villa-augflor-2026-12.jpg",
+      "src": "assets/photos/optimized/living-villa-augflor-2026-12.jpg",
+      "room": "living",
+      "score": 159.13,
+      "enhanced": false,
+      "source": "photo-villa-augflor-cagnes-sur-mer-0094.jpg",
+      "alt": "Living room at Villa Augflor, French Riviera",
+      "title": "Living space",
+      "meta": "Ground floor \u00b7 2026"
+    },
+    {
+      "file": "exterior-villa-augflor-2026-13.jpg",
+      "src": "assets/photos/optimized/exterior-villa-augflor-2026-13.jpg",
+      "room": "exterior",
+      "score": 157.1,
+      "enhanced": false,
+      "source": "photo-villa-augflor-cagnes-sur-mer-0099.jpg",
+      "alt": "Villa Augflor pool and garden, Cagnes-sur-Mer",
+      "title": "Pool & garden",
+      "meta": "Exterior \u00b7 May 2026"
+    },
+    {
+      "file": "living-villa-augflor-2026-14.jpg",
+      "src": "assets/photos/optimized/living-villa-augflor-2026-14.jpg",
+      "room": "living",
+      "score": 154.42,
+      "enhanced": false,
+      "source": "photo-villa-augflor-cagnes-sur-mer-0060.jpg",
+      "alt": "Living room at Villa Augflor, French Riviera",
+      "title": "Living space",
+      "meta": "Ground floor \u00b7 2026"
+    },
+    {
+      "file": "bathrooms-villa-augflor-2026-15.jpg",
+      "src": "assets/photos/optimized/bathrooms-villa-augflor-2026-15.jpg",
+      "room": "bathrooms",
+      "score": 124.58,
+      "enhanced": true,
+      "source": "photo-villa-augflor-cagnes-sur-mer-0033.jpg",
+      "alt": "Bathroom at Villa Augflor",
+      "title": "Bathroom",
+      "meta": "Bathroom \u00b7 2026"
+    },
+    {
+      "file": "asian-villa-augflor-2026-16.jpg",
+      "src": "assets/photos/optimized/asian-villa-augflor-2026-16.jpg",
+      "room": "asian",
+      "score": 111.96,
+      "enhanced": true,
+      "source": "photo-villa-augflor-cagnes-sur-mer-0034.jpg",
+      "alt": "Asian double bedroom at Villa Augflor",
+      "title": "Asian room",
+      "meta": "Upstairs \u00b7 Asian \u00b7 2026"
+    },
+    {
+      "file": "provance-villa-augflor-2026-17.jpg",
+      "src": "assets/photos/optimized/provance-villa-augflor-2026-17.jpg",
+      "room": "provance",
+      "score": 108.74,
+      "enhanced": true,
+      "source": "photo-villa-augflor-cagnes-sur-mer-0028.jpg",
+      "alt": "Provence ground-floor bedroom at Villa Augflor",
+      "title": "Provence bedroom",
+      "meta": "Ground floor \u00b7 Provence \u00b7 2026"
+    },
+    {
+      "file": "barcelona-villa-augflor-2026-18.jpg",
+      "src": "assets/photos/optimized/barcelona-villa-augflor-2026-18.jpg",
+      "room": "barcelona",
+      "score": 94.22,
+      "enhanced": true,
+      "source": "photo-villa-augflor-cagnes-sur-mer-0039.jpg",
+      "alt": "Barcelona master bedroom at Villa Augflor",
+      "title": "Master suite",
+      "meta": "Upstairs \u00b7 Barcelona \u00b7 2026"
+    }
+  ],
+  "count": 15
+}

@@ -1,6 +1,6 @@
 /* =====================================================
    Villa Augflor — Booking Agent Widget  v2
-   Claude-powered chat + urgency bar + exit intent
+   Claude-powered chat + exit intent
    Pre-mortem upgrades: FR language, mobile exit intent,
    per-person pricing, June special, GA4 events, CORS fix
    ===================================================== */
@@ -52,17 +52,6 @@
 
   // ── DOM Build ─────────────────────────────────────────
   function buildWidget() {
-    // --- Urgency Bar ---
-    const bar = document.createElement("div");
-    bar.className = "urgency-bar";
-    bar.id = "va-urgency-bar";
-    bar.innerHTML = `
-      <span class="urgency-bar__pulse"></span>
-      <span id="va-urgency-text">${urgencyText()}</span>
-      <a class="urgency-bar__cta" id="va-urgency-cta">Check availability →</a>
-      <button class="urgency-bar__close" id="va-urgency-close" aria-label="Close">✕</button>`;
-    document.body.prepend(bar);
-
     // --- Exit Intent Overlay ---
     const exit = document.createElement("div");
     exit.id = "va-exit-intent";
@@ -134,31 +123,6 @@
         <span class="va-chat-trigger__badge" id="va-trigger-badge" style="display:none">1</span>
       </button>`;
     document.body.appendChild(widget);
-  }
-
-  function urgencyText() {
-    if (LANG === "fr") {
-      return JUNE_DAYS > 0
-        ? `☀️ Été 2026 — Juin dans ${JUNE_DAYS} jours · Quelques semaines restantes · Devis écrit avant paiement`
-        : `☀️ Haute saison — Quelques semaines d'été restantes · Réservation directe sans frais plateforme`;
-    }
-    return JUNE_DAYS > 0
-      ? `☀️ Summer 2026 — June starts in ${JUNE_DAYS} days · A few weeks left · Written quote before payment`
-      : `☀️ Peak season — A few summer weeks remaining · Book direct with clarity`;
-  }
-
-  // ── Urgency Bar Logic ─────────────────────────────────
-  function initUrgencyBar() {
-    document.getElementById("va-urgency-close")?.addEventListener("click", () => {
-      document.getElementById("va-urgency-bar").style.display = "none";
-    });
-    document.getElementById("va-urgency-cta")?.addEventListener("click", () => {
-      openChat();
-      addAgentMessage(
-        `Hi! I can check our live availability right now. Which month are you thinking — June, July, or August?`,
-        QUICK_REPLIES.dates
-      );
-    });
   }
 
   // ── Chat Core ─────────────────────────────────────────
@@ -310,7 +274,7 @@
   // ── Proactive Trigger ─────────────────────────────────
   function scheduleProactive() {
     if (sessionStorage.getItem("va_chat_opened")) return;
-    const delay = PAGE === "last-minute-villa.html" ? 4000 : 9000;
+    const delay = 9000;
     setTimeout(() => {
       if (!isOpen && !proactiveDismissed) {
         showProactive();
@@ -449,17 +413,11 @@
 
         const greetings = {
           fr: {
-            "last-minute-villa.html": `Bonjour ! 🌊 Juin commence dans ${JUNE_DAYS} jours. Je peux vérifier les disponibilités maintenant — quelles dates vous intéressent ?${juneSpecialNote}`,
             "rates.html": `Bonjour ! Pour 6 personnes, la villa revient à ~€80/personne/nuit en haute saison. Devis écrit avant paiement — taxe de séjour au tarif 4 étoiles (2,53 €/adulte/nuit). Quel mois vous intéresse ?`,
-            "family-villa.html": `Bonjour ! Villa Augflor est idéale pour les familles — chambre au rez-de-chaussée, piscine privée, grand espace. Quelles dates pour votre famille ?`,
-            "anniversary-getaway.html": `Quel beau projet ! 🌹 Les soirées au bord de la piscine, le jardin au coucher du soleil, l'intimité totale... Quelles dates envisagez-vous ?`,
             default: `Bonjour ! 👋 Je suis l'assistante de Lana pour Villa Augflor. Quelques semaines d'été restantes — puis-je vérifier juin, juillet ou août pour vous ?${juneSpecialNote}`,
           },
           en: {
-            "last-minute-villa.html": `Hi! 🌊 June is just ${JUNE_DAYS} days away. I can check live availability right now — what dates are you looking at?${juneSpecialNote}`,
             "rates.html": `Hi! For 6 guests that's ~€80/person/night in peak summer. You get a written quote before payment — taxe de séjour at the 4-star rate (€2.53/adult/night). Which month are you considering?`,
-            "family-villa.html": `Hi! Villa Augflor is a wonderful family choice — ground-floor bedroom, private pool, and loads of space. What dates work for your family?`,
-            "anniversary-getaway.html": `How lovely — anniversaries at Villa Augflor are magical. 🌹 Pool evenings, sunset garden, total privacy. What dates are you thinking?`,
             default: `Hi! 👋 I'm Lana's assistant for Villa Augflor. A few summer weeks remaining — can I check June, July, or August availability for you?${juneSpecialNote}`,
           },
         };
@@ -514,9 +472,7 @@
   // ── Boot ──────────────────────────────────────────────
   function init() {
     buildWidget();
-    initUrgencyBar();
     wireEvents();
-    scheduleProactive();
     initExitIntent();
   }
 

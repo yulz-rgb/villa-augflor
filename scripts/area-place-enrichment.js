@@ -8,17 +8,25 @@
   var HOST_TIPS = {
     "haut-de-cagnes": "Take the free line 44 shuttle — skip village parking entirely.",
     "st-paul-de-vence": "Go early for parking, or arrive after 5pm when coaches leave.",
-    "cros-de-cagnes": "Morning swim before the afternoon breeze; book La Pesquière for sunset.",
+    "cros-de-cagnes": "Morning swim before the afternoon breeze; book Bistrot de la Marine or Vivo for sunset.",
     "nice": "Market mornings Tue–Sun, then old town — parking is easier before 10am.",
     "la-garoupe": "Book a beach-club lounger in July/August; public section fills fast.",
     "eze-town": "Best at sunset — golden light on the village and sea.",
     "monaco": "Take the train; parking in Monaco is expensive and scarce.",
     "fondation-maeght": "Arrive at opening; busy after midday in summer.",
-    "colombe-dor": "Book terrace lunch ahead in August.",
+    "le-caruso": "Temporarily closed — try Les Remparts or Café Timothé for Saint-Paul lunch instead.",
+    "table-de-pierre": "Our closest Michelin-star dinner — reserve on TheFork; only 5 min from the villa on Route des Serres.",
     "plage-mala": "Arrive before 10am — small cove, very popular in August.",
     "polygone": "Rainy-day favourite — cinema and covered shopping under one roof.",
     "antibes-market": "Arrive at 9am with an empty bag — best selection before noon.",
-    "cours-saleya": "Socca at Chez Pipo is best fresh off the griddle at lunchtime."
+    "cours-saleya": "Socca at Chez Pipo is best fresh off the griddle at lunchtime.",
+    "sabai-sabai": "Our go-to Thai in Saint-Paul — book the terrace on summer evenings.",
+    "les-remparts": "Book the ramparts terrace for sunset — one of the best views in Saint-Paul.",
+    "cafe-timothe": "Our cute, healthy lunch pick in Saint-Paul — opens from 10:30; book ahead in August.",
+    "table-de-kamiya": "Our Cros seafront favourite — reserve terrace seats for sunset; same promenade as Bistrot de la Marine.",
+    "l-agape": "Reserve for terrace cocktails at sunset — our upscale Cros pick on the same promenade.",
+    "ino-plage": "Book the pergola terrace for lunch after a Cros swim — beach umbrellas and sea views on the same promenade.",
+    "fleur-de-sel": "Walkable from the villa — call to book; village parking is tricky, so allow time to find a spot."
   };
 
   var GUEST_POPULAR = {
@@ -29,9 +37,18 @@
     "nice": true,
     "fondation-maeght": true,
     "la-garoupe": true,
-    "colombe-dor": true,
     "monaco": true,
-    "polygone": true
+    "polygone": true,
+    "sabai-sabai": true,
+    "les-remparts": true,
+    "cafe-timothe": true,
+    "la-pesquiere": true,
+    "table-de-kamiya": true,
+    "l-agape": true,
+    "ino-plage": true,
+    "fleur-de-sel": true,
+    "table-de-pierre": true,
+    "bakery-local": true
   };
 
   var OVERRIDES = {
@@ -41,7 +58,7 @@
       bookingAdvice: "Walk-in usually fine", transport: "Car or free shuttle",
       parking: "Medium", seasonNote: "Year-round", localFavourite: true, carFreePossible: true,
       romantic: true, hotDay: false, teenagerFriendly: false, grandparentFriendly: true,
-      imageAlt: "Haut-de-Cagnes medieval village near Villa Augflor"
+      imageAlt: "Haut-de-Cagnes hilltop village and Château Grimaldi above Cagnes-sur-Mer"
     },
     "st-paul-de-vence": {
       priceLevel: "Free", priceNote: "Village free; Fondation Maeght museum ticket",
@@ -49,16 +66,17 @@
       bookingAdvice: "Book Maeght online in summer", transport: "Car recommended",
       parking: "Difficult", seasonNote: "Best Jun–Sep; busy August midday", bookAhead: true,
       romantic: true, grandparentFriendly: true,
-      imageAlt: "Saint-Paul-de-Vence medieval village near Villa Augflor"
+      combineWith: "Fondation Maeght (12 min)",
+      imageAlt: "Saint-Paul-de-Vence walled hill village and ramparts near Villa Augflor"
     },
     "cros-de-cagnes": {
       priceLevel: "Free", priceNote: "Public beach; restaurants €€",
       beachType: "Public sandy beach",
       bestFor: ["Families", "Local favourite"],
-      bookingAdvice: "Walk-in; book La Pesquière for lunch", transport: "Car recommended",
+      bookingAdvice: "Walk-in; book Bistrot de la Marine or Vivo for lunch", transport: "Car recommended",
       parking: "Medium", seasonNote: "Best Jun–Sep", localFavourite: true,
       hotDay: true, teenagerFriendly: true, grandparentFriendly: true,
-      imageAlt: "Cros-de-Cagnes beach near Cagnes-sur-Mer"
+      imageAlt: "Cros-de-Cagnes beach promenade and waterfront, nearest beach to Villa Augflor"
     },
     "fondation-maeght": {
       priceLevel: "€€", priceNote: "Museum entry ticket (check official site)",
@@ -66,7 +84,8 @@
       bookingAdvice: "Book ahead July/August", transport: "Car recommended",
       parking: "Medium", seasonNote: "Year-round", bookAhead: true, rainyDay: true,
       grandparentFriendly: true,
-      imageAlt: "Fondation Maeght art museum near Saint-Paul-de-Vence"
+      combineWith: "Saint-Paul-de-Vence village",
+      imageAlt: "Fondation Maeght museum courtyard and sculpture garden, Saint-Paul-de-Vence"
     },
     "nice": {
       priceLevel: "€", priceNote: "Market free; museums & dining €–€€€",
@@ -108,6 +127,13 @@
       parking: "Difficult", seasonNote: "Year-round", bookAhead: true, romantic: true,
       imageAlt: "Fine dining Monaco French Riviera"
     },
+    "le-caruso": {
+      priceLevel: "Closed", priceNote: "Temporarily closed — see Les Remparts or Café Timothé",
+      bestFor: ["See alternatives"],
+      bookingAdvice: "Closed — try Les Remparts, Café Timothé or Sabaï-sabaï instead",
+      transport: "—", parking: "—", seasonNote: "Closed",
+      imageAlt: "Provençal burrata and heirloom tomato salad — Saint-Paul-de-Vence dining"
+    },
     "plage-mala": {
       priceLevel: "Free", priceNote: "Free cove; coastal path shoes recommended",
       beachType: "Rocky pebble cove",
@@ -116,13 +142,86 @@
       parking: "Difficult", seasonNote: "Best Jun–Sep", hotDay: true, romantic: true,
       imageAlt: "Plage Mala hidden cove Cap d'Ail French Riviera"
     },
+    "sabai-sabai": {
+      priceLevel: "€", priceNote: "About €20–30 per person",
+      bestFor: ["Couples", "Local favourite", "Villa pick"],
+      bookingAdvice: "Reserve for terrace in summer; closed Tuesdays",
+      transport: "Car recommended", parking: "Difficult", seasonNote: "Year-round",
+      localFavourite: true, romantic: true, grandparentFriendly: true,
+      combineWith: "Saint-Paul-de-Vence village or Fondation Maeght",
+      imageAlt: "Sabaï-sabaï Thai restaurant terrace on Place de la Mairie, Saint-Paul-de-Vence"
+    },
+    "les-remparts": {
+      priceLevel: "€€", priceNote: "About €30–80 per person",
+      bestFor: ["Couples", "Romantic", "Villa pick"],
+      bookingAdvice: "Reserve terrace for sunset in peak season",
+      transport: "Car recommended", parking: "Difficult", seasonNote: "Year-round",
+      localFavourite: true, romantic: true, bookAhead: true, grandparentFriendly: true,
+      combineWith: "Saint-Paul-de-Vence village or Fondation Maeght",
+      imageAlt: "Les Remparts candlelit terrace with valley views at sunset, Saint-Paul-de-Vence"
+    },
+    "cafe-timothe": {
+      priceLevel: "€", priceNote: "About €20–30 per person",
+      bestFor: ["Couples", "Local favourite", "Villa pick"],
+      bookingAdvice: "Reserve in summer; opens from 10:30",
+      transport: "Car recommended", parking: "Difficult", seasonNote: "Year-round",
+      localFavourite: true, romantic: true, grandparentFriendly: true,
+      combineWith: "Saint-Paul-de-Vence village or Fondation Maeght",
+      imageAlt: "Café Timothé organic restaurant interior with dried flowers, Saint-Paul-de-Vence"
+    },
+    "table-de-kamiya": {
+      priceLevel: "€€", priceNote: "About €40–80 per person",
+      bestFor: ["Couples", "Local favourite", "Villa pick"],
+      bookingAdvice: "Reserve terrace for sunset in peak season",
+      transport: "Car recommended", parking: "Medium", seasonNote: "Best Jun–Sep",
+      localFavourite: true, romantic: true, bookAhead: true, grandparentFriendly: true,
+      combineWith: "Morning swim at Cros beach first",
+      imageAlt: "La Table de KAMIYA seafront restaurant, Promenade de la Plage, Cros-de-Cagnes"
+    },
+    "l-agape": {
+      priceLevel: "€€€", priceNote: "About €50–100 per person",
+      bestFor: ["Couples", "Local favourite", "Villa pick", "Luxury"],
+      bookingAdvice: "Reservations required; reserve terrace for cocktails at sunset",
+      transport: "Car recommended", parking: "Medium", seasonNote: "Best Jun–Sep",
+      localFavourite: true, romantic: true, bookAhead: true, grandparentFriendly: true,
+      combineWith: "Morning swim at Cros beach first",
+      imageAlt: "L'Agapè seafront restaurant terrace, Promenade de la Plage, Cros-de-Cagnes"
+    },
+    "ino-plage": {
+      priceLevel: "€€", priceNote: "About €20–60 per person",
+      bestFor: ["Couples", "Families", "Villa pick"],
+      bookingAdvice: "Reserve pergola terrace in peak season; open daily 10:00–22:30",
+      transport: "Car recommended", parking: "Medium", seasonNote: "Best Jun–Sep",
+      localFavourite: true, romantic: true, bookAhead: true, hotDay: true,
+      teenagerFriendly: true, grandparentFriendly: true,
+      combineWith: "Morning swim at Cros beach first",
+      imageAlt: "Ino Plage savoury pie and fresh salad at the Cros seafront, Promenade de la Plage"
+    },
+    "fleur-de-sel": {
+      priceLevel: "€€", priceNote: "About €40–60 per person",
+      bestFor: ["Couples", "Local favourite", "Villa pick"],
+      bookingAdvice: "Reserve by phone; opens evenings; vegan options available",
+      transport: "Walkable from villa", parking: "Difficult", seasonNote: "Year-round",
+      localFavourite: true, romantic: true, bookAhead: true, carFreePossible: true,
+      combineWith: "Haut-de-Cagnes village stroll before dinner",
+      imageAlt: "Fleur de Sel restaurant, Montée de la Bourgade, Haut-de-Cagnes"
+    },
+    "table-de-pierre": {
+      priceLevel: "€€€€", priceNote: "Tasting menus from ~€99; reserve well ahead",
+      bestFor: ["Couples", "Luxury", "Villa pick"],
+      bookingAdvice: "Reservations required — TheFork or hotel; Tue–Sat dinner",
+      transport: "Car recommended", parking: "Easy", seasonNote: "Year-round",
+      localFavourite: true, romantic: true, bookAhead: true, grandparentFriendly: true,
+      combineWith: "Saint-Paul-de-Vence village or Fondation Maeght",
+      imageAlt: "La Table de Pierre elegant dining room with pink velvet chairs, Domaine du Mas de Pierre"
+    },
     "polygone": {
       priceLevel: "€", priceNote: "Shopping varies; cinema ticket",
       bestFor: ["Families", "Rainy day", "Teenagers"],
       bookingAdvice: "Walk-in; book cinema online", transport: "Car recommended",
       parking: "Easy", seasonNote: "Year-round", rainyDay: true,
       teenagerFriendly: true, grandparentFriendly: true,
-      imageAlt: "Polygone Riviera shopping centre Cagnes-sur-Mer"
+      imageAlt: "Polygone Riviera shopping promenade and Le Guetteur sculpture, Cagnes-sur-Mer"
     },
     "aquasplash": {
       priceLevel: "€€", priceNote: "Day ticket; summer only",
@@ -130,7 +229,7 @@
       bookingAdvice: "Book online in peak season", transport: "Car recommended",
       parking: "Easy", seasonNote: "Jul–Aug", hotDay: true,
       teenagerFriendly: true, grandparentFriendly: true,
-      imageAlt: "Aquasplash water park Antibes near Villa Augflor"
+      imageAlt: "Aquasplash Side Winder water slide, Antibes"
     },
     "speed-park": {
       priceLevel: "€€", priceNote: "Activity passes vary",
@@ -138,14 +237,14 @@
       bookingAdvice: "Book karting ahead in school holidays", transport: "Car recommended",
       parking: "Easy", seasonNote: "Year-round", rainyDay: true,
       teenagerFriendly: true,
-      imageAlt: "Speed Park indoor activities near Cagnes-sur-Mer"
+      imageAlt: "Speed Park bowling alleys with neon lanes near Cagnes-sur-Mer"
     },
     "musee-renoir": {
       priceLevel: "€€", priceNote: "Museum ticket",
       bestFor: ["Couples", "First-time Riviera", "Rainy day"],
       bookingAdvice: "Closed Tuesdays", transport: "Car or walk from villa area",
       parking: "Easy", seasonNote: "Year-round", rainyDay: true, grandparentFriendly: true,
-      imageAlt: "Musée Renoir Cagnes-sur-Mer near Villa Augflor"
+      imageAlt: "Musée Renoir villa and garden, Cagnes-sur-Mer"
     },
     "rose-estates": {
       priceLevel: "€€€", priceNote: "Chauffeured tour on request",
@@ -276,6 +375,8 @@
 
   global.enrichPlace = function (p) {
     var enriched = merge(catDefaults(p), OVERRIDES[p.id] || {});
+    var combineMap = (typeof global !== "undefined" && global.AREA_COMBINE_WITH) || {};
+    if (combineMap[p.id]) enriched.combineWith = combineMap[p.id];
     enriched.duration = p.duration || enriched.duration || "Half day";
     enriched.seasonNote = (OVERRIDES[p.id] && OVERRIDES[p.id].seasonNote) || enriched.seasonNote;
     return merge(p, enriched);

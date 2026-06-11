@@ -1,21 +1,22 @@
 {
   "nice": {
     "destinationId": "nice",
-    "wikimediaTitle": "File:Nice baie des Anges.jpg",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ANice_baie_des_Anges.jpg",
-    "author": "Anthony Baratier",
+    "wikimediaTitle": "File:Nice (06) Cours Saleya 802.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ANice_%2806%29_Cours_Saleya_802.jpg",
+    "author": "GFreihalter",
     "license": "CC BY-SA 4.0",
-    "credit": "Anthony Baratier / Wikimedia Commons / CC BY-SA 4.0",
+    "credit": "GFreihalter / Wikimedia Commons / CC BY-SA 4.0",
     "imageFile": "assets/photos/area/nice.jpg"
   },
   "antibes": {
     "destinationId": "antibes",
-    "wikimediaTitle": "File:A popular history of France, from the earliest times, vol. 1.djvu",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AA_popular_history_of_France%2C_from_the_earliest_times%2C_vol._1.djvu",
-    "author": "François Guizot",
-    "license": "Public domain",
-    "credit": "François Guizot / Wikimedia Commons / Public domain",
-    "imageFile": "assets/photos/area/antibes.jpg"
+    "wikimediaTitle": "File:Antibes - Château et musée Picasso -2.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AAntibes_-_Ch%C3%A2teau_et_mus%C3%A9e_Picasso_-2.jpg",
+    "author": "MOSSOT",
+    "license": "CC BY-SA 4.0",
+    "credit": "MOSSOT / Wikimedia Commons / CC BY-SA 4.0",
+    "imageFile": "assets/photos/area/antibes.jpg",
+    "reassignNote": "Regional photo matched to antibes card (source asset: musee-picasso)"
   },
   "cannes": {
     "destinationId": "cannes",
@@ -91,11 +92,11 @@
   },
   "vence": {
     "destinationId": "vence",
-    "wikimediaTitle": "File:Signac - View of town (St Paul du Var or de Vence), 1949,0411.86.jpg",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ASignac_-_View_of_town_%28St_Paul_du_Var_or_de_Vence%29%2C_1949%2C0411.86.jpg",
-    "author": "Paul Signac",
-    "license": "Public domain",
-    "credit": "Paul Signac / Wikimedia Commons / Public domain",
+    "wikimediaTitle": "File:Chapelle du Rosaire de Vence (4426949800).jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AChapelle_du_Rosaire_de_Vence_%284426949800%29.jpg",
+    "author": "m-louis .® from Osaka, Japan",
+    "license": "CC BY-SA 2.0",
+    "credit": "m-louis .® from Osaka, Japan / Wikimedia Commons / CC BY-SA 2.0",
     "imageFile": "assets/photos/area/vence.jpg"
   },
   "mougins": {
@@ -136,11 +137,10 @@
   },
   "valbonne": {
     "destinationId": "valbonne",
-    "wikimediaTitle": "File:Kelly of the Foreign legion; letters of Légionnaire Russell A. Kelly, to which is added an historical sketch of the Foreign legion (IA kellyofforeignle00kellrich).pdf",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AKelly_of_the_Foreign_legion%3B_letters_of_L%C3%A9gionnaire_Russell_A._Kelly%2C_to_which_is_added_an_historical_sketch_of_the_Foreign_legion_%28IA_kellyofforeignle00kellrich%29.pdf",
-    "author": "Kelly, Russell Anthony, 1893-\nKelly, James Edward, 1856-",
-    "license": "Public domain",
-    "credit": "Kelly, Russell Anthony, 1893-\nKelly, James Edward, 1856- / Wikimedia Commons / Public domain",
+    "sourceUrl": "",
+    "author": "Valbonne village",
+    "license": "Used with permission",
+    "credit": "Valbonne village / photo provided for Villa Augflor area guide",
     "imageFile": "assets/photos/area/valbonne.jpg"
   },
   "peillon": {
@@ -154,11 +154,10 @@
   },
   "cros-de-cagnes": {
     "destinationId": "cros-de-cagnes",
-    "wikimediaTitle": "File:Félix Vallotton - Cros de Cagnes - ZKG.2017-0014 - Kunsthaus Zürich.jpg",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AF%C3%A9lix_Vallotton_-_Cros_de_Cagnes_-_ZKG.2017-0014_-_Kunsthaus_Z%C3%BCrich.jpg",
-    "author": "Félix Vallotton",
-    "license": "Public domain",
-    "credit": "Félix Vallotton / Wikimedia Commons / Public domain",
+    "sourceUrl": "https://villa-augflor.com",
+    "author": "Villa Augflor",
+    "license": "All rights reserved",
+    "credit": "Villa Augflor",
     "imageFile": "assets/photos/area/cros-de-cagnes.jpg"
   },
   "la-garoupe": {
@@ -199,11 +198,11 @@
   },
   "juan-les-pins": {
     "destinationId": "juan-les-pins",
-    "wikimediaTitle": "File:Plage de Juan-les-Pins (1888) Claude Monet (W 1187).jpg",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3APlage_de_Juan-les-Pins_%281888%29_Claude_Monet_%28W_1187%29.jpg",
-    "author": "Claude Monet",
-    "license": "Public domain",
-    "credit": "Claude Monet / Wikimedia Commons / Public domain",
+    "wikimediaTitle": "File:Juan-Les-Pins - Boulevard Édouard Baudoin - View West on Plage les Pirates.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AJuan-Les-Pins_-_Boulevard_%C3%89douard_Baudoin_-_View_West_on_Plage_les_Pirates.jpg",
+    "author": "Txllxt TxllxT",
+    "license": "CC BY-SA 4.0",
+    "credit": "Txllxt TxllxT / Wikimedia Commons / CC BY-SA 4.0",
     "imageFile": "assets/photos/area/juan-les-pins.jpg"
   },
   "larvotto": {
@@ -217,11 +216,10 @@
   },
   "parc-phoenix": {
     "destinationId": "parc-phoenix",
-    "wikimediaTitle": "File:Parc Phoenix serre Nice.jpg",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AParc_Phoenix_serre_Nice.jpg",
-    "author": "GLOBI ۞ FUZZI",
-    "license": "CC BY-SA 2.0",
-    "credit": "GLOBI ۞ FUZZI / Wikimedia Commons / CC BY-SA 2.0",
+    "sourceUrl": "https://www.parc-phoenix.org/",
+    "author": "Parc Phoenix",
+    "license": "Used with permission",
+    "credit": "Parc Phoenix / parc-phoenix.org",
     "imageFile": "assets/photos/area/parc-phoenix.jpg"
   },
   "musee-oceano-family": {
@@ -235,11 +233,10 @@
   },
   "speed-park": {
     "destinationId": "speed-park",
-    "wikimediaTitle": "File:Indoor karting.jpg",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AIndoor_karting.jpg",
-    "author": "Winglong1",
-    "license": "CC BY-SA 3.0",
-    "credit": "Winglong1 / Wikimedia Commons / CC BY-SA 3.0",
+    "sourceUrl": "https://villa-augflor.com",
+    "author": "Villa Augflor",
+    "license": "All rights reserved",
+    "credit": "Villa Augflor",
     "imageFile": "assets/photos/area/speed-park.jpg"
   },
   "gorges-loup-canyon": {
@@ -271,38 +268,36 @@
   },
   "diving": {
     "destinationId": "diving",
-    "wikimediaTitle": "File:Evidence for a genetic sex determination in Cnidaria, the Mediterranean red coral (Corallium rubrum).pdf",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AEvidence_for_a_genetic_sex_determination_in_Cnidaria%2C_the_Mediterranean_red_coral_%28Corallium_rubrum%29.pdf",
-    "author": "Pratlong, M.; Haguenauer, A.; Chenesseau, S.; Brener, K. ; Mitta, G.; Toulza, E.; Bonabaud, M.; Rialle, S. ; Aurelle, D.; Pontarotti, P.",
-    "license": "CC BY 4.0",
-    "credit": "Pratlong, M.; Haguenauer, A.; Chenesseau, S.; Brener, K. ; Mitta, G.; Toulza, E.; Bonabaud, M.; Rialle, S. ; Aurelle, D.; Pontarotti, P. / Wikimedia Commons / CC BY 4.0",
+    "wikimediaTitle": "File:Plongée sur la Gabinière.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3APlong%C3%A9e_sur_la_Gabini%C3%A8re.jpg",
+    "author": "Waielbi",
+    "license": "CC BY-SA 3.0",
+    "credit": "Waielbi / Wikimedia Commons / CC BY-SA 3.0",
     "imageFile": "assets/photos/area/diving.jpg"
   },
   "sailing-school": {
     "destinationId": "sailing-school",
-    "wikimediaTitle": "File:Impressions of a journey round the world including India, Burmah and Japan (IA impressionsofjou00peterich).pdf",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AImpressions_of_a_journey_round_the_world_including_India%2C_Burmah_and_Japan_%28IA_impressionsofjou00peterich%29.pdf",
-    "author": "Peters, George Henry",
-    "license": "Public domain",
-    "credit": "Peters, George Henry / Wikimedia Commons / Public domain",
+    "wikimediaTitle": "File:Täispurjes katamaraan - A catamaran in full sail (9025066124).jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AT%C3%A4ispurjes_katamaraan_-_A_catamaran_in_full_sail_%289025066124%29.jpg",
+    "author": "National Archives of Estonia",
+    "license": "No restrictions",
+    "credit": "National Archives of Estonia / Wikimedia Commons / No restrictions",
     "imageFile": "assets/photos/area/sailing-school.jpg"
   },
   "musee-renoir": {
     "destinationId": "musee-renoir",
-    "wikimediaTitle": "File:Cagnes-sur-Mer - Musée Renoir - Maison -1.JPG",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ACagnes-sur-Mer_-_Mus%C3%A9e_Renoir_-_Maison_-1.JPG",
-    "author": "MOSSOT",
-    "license": "CC BY-SA 3.0",
-    "credit": "MOSSOT / Wikimedia Commons / CC BY-SA 3.0",
+    "sourceUrl": "https://www.cagnes-sur-mer.com/en/discover/musee-renoir/",
+    "author": "Cagnes-sur-Mer",
+    "license": "Used with permission",
+    "credit": "Cagnes-sur-Mer / cagnes-sur-mer.com",
     "imageFile": "assets/photos/area/musee-renoir.jpg"
   },
   "fondation-maeght": {
     "destinationId": "fondation-maeght",
-    "wikimediaTitle": "File:11 Fondation Maeght.JPG",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3A11_Fondation_Maeght.JPG",
-    "author": "Waterborough\n\nSculpture: Germaine Richier (1902-1959), others",
-    "license": "CC BY-SA 3.0",
-    "credit": "Waterborough\n\nSculpture: Germaine Richier (1902-1959), others / Wikimedia Commons / CC BY-SA 3.0",
+    "sourceUrl": "https://www.fondation-maeght.com/",
+    "author": "Fondation Maeght",
+    "license": "Used with permission",
+    "credit": "Fondation Maeght / fondation-maeght.com",
     "imageFile": "assets/photos/area/fondation-maeght.jpg"
   },
   "musee-picasso": {
@@ -379,48 +374,52 @@
   },
   "rose-estates": {
     "destinationId": "rose-estates",
-    "wikimediaTitle": "File:The Christmas kalends of Provence and some other (IA christmaskalends00janv).pdf",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AThe_Christmas_kalends_of_Provence_and_some_other_%28IA_christmaskalends00janv%29.pdf",
-    "author": "Janvier, Thomas Allibone, 1849-1913",
-    "license": "Public domain",
-    "credit": "Janvier, Thomas Allibone, 1849-1913 / Wikimedia Commons / Public domain",
-    "imageFile": "assets/photos/area/rose-estates.jpg"
+    "wikimediaTitle": "File:Vignoble de Nice.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AVignoble_de_Nice.jpg",
+    "author": "Dragozov",
+    "license": "CC BY 2.0",
+    "credit": "Dragozov / Wikimedia Commons / CC BY 2.0",
+    "imageFile": "assets/photos/area/rose-estates.jpg",
+    "reassignNote": "Regional photo matched to rose-estates card (source asset: domaine-toasc)"
   },
   "organic-wine": {
     "destinationId": "organic-wine",
-    "wikimediaTitle": "File:Orchard and vineyard land use, problems and conservation treatment; Western states (IA CAT10514951).pdf",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AOrchard_and_vineyard_land_use%2C_problems_and_conservation_treatment%3B_Western_states_%28IA_CAT10514951%29.pdf",
-    "author": "United States. Soil Conservation Service",
-    "license": "Public domain",
-    "credit": "United States. Soil Conservation Service / Wikimedia Commons / Public domain",
-    "imageFile": "assets/photos/area/organic-wine.jpg"
+    "wikimediaTitle": "File:Chateau-bellet-nice (2).jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AChateau-bellet-nice_%282%29.jpg",
+    "author": "Château de Bellet",
+    "license": "CC BY-SA 4.0",
+    "credit": "Château de Bellet / Wikimedia Commons / CC BY-SA 4.0",
+    "imageFile": "assets/photos/area/organic-wine.jpg",
+    "reassignNote": "Regional photo matched to organic-wine card (source asset: chateau-bellet)"
   },
   "mirazur": {
     "destinationId": "mirazur",
-    "wikimediaTitle": "File:Wintering at Menton on the Riviera - a compagnon de voyage, with hints to invalids- by Alexander M. Brown (IA b21996441).pdf",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AWintering_at_Menton_on_the_Riviera_-_a_compagnon_de_voyage%2C_with_hints_to_invalids-_by_Alexander_M._Brown_%28IA_b21996441%29.pdf",
-    "author": "Brown, A. M. (Alexander Menzies)\nRoyal College of Physicians of Edinburgh",
+    "wikimediaTitle": "File:Menton Old Town and Harbour.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AMenton_Old_Town_and_Harbour.jpg",
+    "author": "Berthold Werner",
     "license": "Public domain",
-    "credit": "Brown, A. M. (Alexander Menzies)\nRoyal College of Physicians of Edinburgh / Wikimedia Commons / Public domain",
+    "credit": "Berthold Werner / Wikimedia Commons / Public domain",
     "imageFile": "assets/photos/area/mirazur.jpg"
   },
   "louis-xv": {
     "destinationId": "louis-xv",
-    "wikimediaTitle": "File:Hôtel de Monaco - Princesse de Monaco - Plan du rez-de-chaussée.JPG",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AH%C3%B4tel_de_Monaco_-_Princesse_de_Monaco_-_Plan_du_rez-de-chauss%C3%A9e.JPG",
-    "author": "Jean-Charles Krafft",
-    "license": "Public domain",
-    "credit": "Jean-Charles Krafft / Wikimedia Commons / Public domain",
-    "imageFile": "assets/photos/area/louis-xv.jpg"
+    "wikimediaTitle": "File:Real Monte Carlo Casino.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AReal_Monte_Carlo_Casino.jpg",
+    "author": "sam garza from Los Angeles, USA",
+    "license": "CC BY 2.0",
+    "credit": "sam garza from Los Angeles, USA / Wikimedia Commons / CC BY 2.0",
+    "imageFile": "assets/photos/area/louis-xv.jpg",
+    "reassignNote": "Regional photo matched to louis-xv card (source asset: casino-monte-carlo)"
   },
   "colombe-dor": {
     "destinationId": "colombe-dor",
-    "wikimediaTitle": "File:Mimosa Colombe d'Or Saint Paul de Vence.JPG",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AMimosa_Colombe_d%27Or_Saint_Paul_de_Vence.JPG",
-    "author": "Jebulon",
-    "license": "CC BY-SA 3.0",
-    "credit": "Jebulon / Wikimedia Commons / CC BY-SA 3.0",
-    "imageFile": "assets/photos/area/colombe-dor.jpg"
+    "wikimediaTitle": "File:View from Saint-Paul-de-Vence.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AView_from_Saint-Paul-de-Vence.jpg",
+    "author": "Yair Haklai",
+    "license": "CC BY-SA 4.0",
+    "credit": "Yair Haklai / Wikimedia Commons / CC BY-SA 4.0",
+    "imageFile": "assets/photos/area/colombe-dor.jpg",
+    "reassignNote": "Regional photo matched to colombe-dor card (source asset: st-paul-de-vence)"
   },
   "socca-nice": {
     "destinationId": "socca-nice",
@@ -433,12 +432,13 @@
   },
   "eze-sunset-dining": {
     "destinationId": "eze-sunset-dining",
-    "wikimediaTitle": "File:The romance of Nice (IA romanceofnice00love).pdf",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AThe_romance_of_Nice_%28IA_romanceofnice00love%29.pdf",
-    "author": "Loveland, John Douglas Errington, 1866- [from old catalog]",
-    "license": "Public domain",
-    "credit": "Loveland, John Douglas Errington, 1866- [from old catalog] / Wikimedia Commons / Public domain",
-    "imageFile": "assets/photos/area/eze-sunset-dining.jpg"
+    "wikimediaTitle": "File:Église Èze village.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3A%C3%89glise_%C3%88ze_village.jpg",
+    "author": "Cayambe",
+    "license": "CC BY-SA 3.0",
+    "credit": "Cayambe / Wikimedia Commons / CC BY-SA 3.0",
+    "imageFile": "assets/photos/area/eze-sunset-dining.jpg",
+    "reassignNote": "Regional photo matched to eze-sunset-dining card (source asset: eze-town)"
   },
   "sentier-cap-antibes": {
     "destinationId": "sentier-cap-antibes",
@@ -460,12 +460,13 @@
   },
   "mont-boron": {
     "destinationId": "mont-boron",
-    "wikimediaTitle": "File:Nice.-Vue Prise Mont Boron.- Entree Du Port. 762-12 (NBY 420268).jpg",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ANice.-Vue_Prise_Mont_Boron.-_Entree_Du_Port._762-12_%28NBY_420268%29.jpg",
-    "author": "Unknown authorUnknown author",
-    "license": "Public domain",
-    "credit": "Unknown authorUnknown author / Wikimedia Commons / Public domain",
-    "imageFile": "assets/photos/area/mont-boron.jpg"
+    "wikimediaTitle": "File:Sentier du Littoral, Cap d'Antibes-France.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ASentier_du_Littoral%2C_Cap_d%27Antibes-France.jpg",
+    "author": "Gilbert Bochenek",
+    "license": "CC BY-SA 4.0",
+    "credit": "Gilbert Bochenek / Wikimedia Commons / CC BY-SA 4.0",
+    "imageFile": "assets/photos/area/mont-boron.jpg",
+    "reassignNote": "Regional photo for mont-boron (source: sentier-cap-antibes)"
   },
   "italy-trip": {
     "destinationId": "italy-trip",
@@ -505,11 +506,10 @@
   },
   "polygone": {
     "destinationId": "polygone",
-    "wikimediaTitle": "File:Polygone riviera.jpg",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3APolygone_riviera.jpg",
-    "author": "Lulucmy",
-    "license": "CC BY-SA 4.0",
-    "credit": "Lulucmy / Wikimedia Commons / CC BY-SA 4.0",
+    "sourceUrl": "https://villa-augflor.com",
+    "author": "Villa Augflor",
+    "license": "All rights reserved",
+    "credit": "Villa Augflor",
     "imageFile": "assets/photos/area/polygone.jpg"
   },
   "cours-saleya": {
@@ -541,21 +541,23 @@
   },
   "cannes-beach-clubs": {
     "destinationId": "cannes-beach-clubs",
-    "wikimediaTitle": "File:The Maritime Alps and their seaboard (IA maritimealpsthei00demp).pdf",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AThe_Maritime_Alps_and_their_seaboard_%28IA_maritimealpsthei00demp%29.pdf",
-    "author": "Dempster, Charlotte Louisa Hawkins, 1835-1913",
-    "license": "Public domain",
-    "credit": "Dempster, Charlotte Louisa Hawkins, 1835-1913 / Wikimedia Commons / Public domain",
-    "imageFile": "assets/photos/area/cannes-beach-clubs.jpg"
+    "wikimediaTitle": "File:Cannes Francja - Bulwar La Croisette Cannes - panoramio.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ACannes_Francja_-_Bulwar_La_Croisette_Cannes_-_panoramio.jpg",
+    "author": "Kazimierz Mendlik",
+    "license": "CC BY-SA 3.0",
+    "credit": "Kazimierz Mendlik / Wikimedia Commons / CC BY-SA 3.0",
+    "imageFile": "assets/photos/area/cannes-beach-clubs.jpg",
+    "reassignNote": "Regional photo matched to cannes-beach-clubs card (source asset: cannes)"
   },
   "juan-nightlife": {
     "destinationId": "juan-nightlife",
-    "wikimediaTitle": "File:The Billboard 1922-12-23- Vol 34 Iss 51 (IA sim billboard 1922-12-23 34 51).pdf",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AThe_Billboard_1922-12-23-_Vol_34_Iss_51_%28IA_sim_billboard_1922-12-23_34_51%29.pdf",
-    "author": "Unknown",
-    "license": "Public domain",
-    "credit": "Wikimedia Commons / Public domain",
-    "imageFile": "assets/photos/area/juan-nightlife.jpg"
+    "wikimediaTitle": "File:Chemin du cap d'Antibes.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AChemin_du_cap_d%27Antibes.jpg",
+    "author": "fr.zil",
+    "license": "CC BY-SA 2.0",
+    "credit": "fr.zil / Wikimedia Commons / CC BY-SA 2.0",
+    "imageFile": "assets/photos/area/juan-nightlife.jpg",
+    "reassignNote": "Regional photo matched to juan-nightlife card (source asset: la-garoupe)"
   },
   "coaraze": {
     "destinationId": "coaraze",
@@ -586,8 +588,8 @@
   },
   "aquasplash": {
     "destinationId": "aquasplash",
-    "wikimediaTitle": "File:Aquasplash - ANTIBES - panoramio.jpg",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AAquasplash_-_ANTIBES_-_panoramio.jpg",
+    "wikimediaTitle": "File:Aquasplash SIDE WINDER - panoramio.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AAquasplash_SIDE_WINDER_-_panoramio.jpg",
     "author": "E v Schoonhoven",
     "license": "CC BY 3.0",
     "credit": "E v Schoonhoven / Wikimedia Commons / CC BY 3.0",
@@ -595,11 +597,10 @@
   },
   "la-pesquiere": {
     "destinationId": "la-pesquiere",
-    "wikimediaTitle": "File:Aerial photograph of Cros-de-Cagnes.jpg",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AAerial_photograph_of_Cros-de-Cagnes.jpg",
-    "author": "Olivier Cleynen",
-    "license": "CC BY 4.0",
-    "credit": "Olivier Cleynen / Wikimedia Commons / CC BY 4.0",
+    "sourceUrl": "https://lebistrotdelamarine.fr/",
+    "author": "Le Bistrot de la Marine",
+    "license": "Used with permission",
+    "credit": "Le Bistrot de la Marine / lebistrotdelamarine.fr",
     "imageFile": "assets/photos/area/la-pesquiere.jpg"
   },
   "cap-ferrat-walk": {
@@ -610,5 +611,150 @@
     "license": "CC BY-SA 4.0",
     "credit": "Horizon06 / Wikimedia Commons / CC BY-SA 4.0",
     "imageFile": "assets/photos/area/cap-ferrat-walk.jpg"
+  },
+  "jet-ski": {
+    "destinationId": "jet-ski",
+    "wikimediaTitle": "File:Nice Jet Ski under power - geograph.org.uk - 1873272.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ANice_Jet_Ski_under_power_-_geograph.org.uk_-_1873272.jpg",
+    "author": "John Carver",
+    "license": "CC BY-SA 2.0",
+    "credit": "John Carver / Wikimedia Commons / CC BY-SA 2.0",
+    "imageFile": "assets/photos/area/jet-ski.jpg"
+  },
+  "paddleboard": {
+    "destinationId": "paddleboard",
+    "sourceUrl": "https://villa-augflor.com",
+    "author": "Villa Augflor",
+    "license": "All rights reserved",
+    "credit": "Villa Augflor",
+    "imageFile": "assets/photos/area/paddleboard.jpg"
+  },
+  "nice-rooftops": {
+    "destinationId": "nice-rooftops",
+    "wikimediaTitle": "File:Villefranche-sur-Mer-Cote-dAzur4.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AVillefranche-sur-Mer-Cote-dAzur4.jpg",
+    "author": "Rundvald",
+    "license": "Public domain",
+    "credit": "Rundvald / Wikimedia Commons / Public domain",
+    "imageFile": "assets/photos/area/nice-rooftops.jpg",
+    "reassignNote": "Regional photo matched to nice-rooftops card (source asset: villefranche)"
+  },
+  "cap3000": {
+    "destinationId": "cap3000",
+    "sourceUrl": "https://www.cap3000.com/",
+    "author": "CAP 3000",
+    "license": "Used with permission",
+    "credit": "CAP 3000 / cap3000.com",
+    "imageFile": "assets/photos/area/cap3000.jpg"
+  },
+  "monaco-luxury": {
+    "destinationId": "monaco-luxury",
+    "wikimediaTitle": "File:Plage de Larvotto (Monaco) en novembre 2021 (3).jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3APlage_de_Larvotto_%28Monaco%29_en_novembre_2021_%283%29.jpg",
+    "author": "Benoît Prieur",
+    "license": "CC0",
+    "credit": "Benoît Prieur / Wikimedia Commons / CC0",
+    "imageFile": "assets/photos/area/monaco-luxury.jpg",
+    "reassignNote": "Regional photo for monaco-luxury (source: larvotto)"
+  },
+  "gorges-du-loup": {
+    "destinationId": "gorges-du-loup",
+    "wikimediaTitle": "File:Gorges du Loup, canyon of the river Loup in France.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AGorges_du_Loup%2C_canyon_of_the_river_Loup_in_France.jpg",
+    "author": "Harald Hetzner",
+    "license": "CC0",
+    "credit": "Harald Hetzner / Wikimedia Commons / CC0",
+    "imageFile": "assets/photos/area/gorges-du-loup.jpg",
+    "reassignNote": "Regional photo matched to gorges-du-loup card (source asset: gorges-loup-canyon)"
+  },
+  "azur-park": {
+    "destinationId": "azur-park",
+    "wikimediaTitle": "File:Indoor karting.jpg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AIndoor_karting.jpg",
+    "author": "Winglong1",
+    "license": "CC BY-SA 3.0",
+    "credit": "Winglong1 / Wikimedia Commons / CC BY-SA 3.0",
+    "imageFile": "assets/photos/area/azur-park.jpg",
+    "reassignNote": "Regional photo for azur-park (source: speed-park)"
+  },
+  "bakery-local": {
+    "destinationId": "bakery-local",
+    "sourceUrl": "https://maisonbour.com/",
+    "author": "Maison Bour",
+    "license": "Used with permission",
+    "credit": "Maison Bour / maisonbour.com",
+    "imageFile": "assets/photos/area/bakery-local.jpg"
+  },
+  "sabai-sabai": {
+    "destinationId": "sabai-sabai",
+    "sourceUrl": "https://xn--saba-saba-35af.fr/",
+    "author": "Sabaï-sabaï",
+    "license": "Used with permission",
+    "credit": "Sabaï-sabaï / sabaï-sabaï.fr",
+    "imageFile": "assets/photos/area/sabai-sabai.jpg"
+  },
+  "les-remparts": {
+    "destinationId": "les-remparts",
+    "sourceUrl": "https://lesremparts.co/",
+    "author": "Les Remparts",
+    "license": "Used with permission",
+    "credit": "Les Remparts / lesremparts.co",
+    "imageFile": "assets/photos/area/les-remparts.jpg"
+  },
+  "cafe-timothe": {
+    "destinationId": "cafe-timothe",
+    "sourceUrl": "https://cafetimothe.com/",
+    "author": "Café Timothé",
+    "license": "Used with permission",
+    "credit": "Café Timothé / cafetimothe.com (Uniiti gallery)",
+    "imageFile": "assets/photos/area/cafe-timothe.jpg"
+  },
+  "table-de-kamiya": {
+    "destinationId": "table-de-kamiya",
+    "sourceUrl": "https://www.la-table-de-kamiya.fr/",
+    "author": "La Table de KAMIYA",
+    "license": "Used with permission",
+    "credit": "La Table de KAMIYA / la-table-de-kamiya.fr",
+    "imageFile": "assets/photos/area/table-de-kamiya.jpg"
+  },
+  "l-agape": {
+    "destinationId": "l-agape",
+    "sourceUrl": "https://restaurantlagape.fr/",
+    "author": "L'Agapè",
+    "license": "Used with permission",
+    "credit": "L'Agapè / restaurantlagape.fr",
+    "imageFile": "assets/photos/area/l-agape.jpg"
+  },
+  "ino-plage": {
+    "destinationId": "ino-plage",
+    "sourceUrl": "https://inoplage.com/wp-content/uploads/2022/12/IMG_3710-e1670426410833.jpg",
+    "author": "Ino Plage",
+    "license": "Used with permission",
+    "credit": "Ino Plage / inoplage.com",
+    "imageFile": "assets/photos/area/ino-plage.jpg"
+  },
+  "fleur-de-sel": {
+    "destinationId": "fleur-de-sel",
+    "sourceUrl": "https://www.restaurant-fleurdesel.com/",
+    "author": "Fleur de Sel",
+    "license": "Used with permission",
+    "credit": "Fleur de Sel / photo courtesy of restaurant",
+    "imageFile": "assets/photos/area/fleur-de-sel.jpg"
+  },
+  "table-de-pierre": {
+    "destinationId": "table-de-pierre",
+    "sourceUrl": "https://www.lemasdepierre.com/en/restaurants/table-de-pierre/",
+    "author": "La Table de Pierre",
+    "license": "Used with permission",
+    "credit": "La Table de Pierre / lemasdepierre.com (photo Jérôme Mondière)",
+    "imageFile": "assets/photos/area/table-de-pierre.jpg"
+  },
+  "le-caruso": {
+    "destinationId": "le-caruso",
+    "sourceUrl": "https://lesremparts.co/wp-content/uploads/2021/06/Fabbio-Galatioto-%C2%A9-2021-DSC_0210-uai-1333x1333.jpg",
+    "author": "Les Remparts",
+    "license": "Used with permission",
+    "credit": "Les Remparts / lesremparts.co (representative Saint-Paul dining)",
+    "imageFile": "assets/photos/area/le-caruso.jpg"
   }
 }

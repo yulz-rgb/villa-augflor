@@ -1,0 +1,44 @@
+PHOTOS — WHAT TO DO (READ THIS FIRST)
+=====================================
+
+WHERE SHOULD PHOTOS LIVE?
+-------------------------
+1. FASTEST FOR A REAL WEBSITE: put compressed images ON THE SAME HOST as the HTML
+   (e.g. in this folder: assets/photos/). Your hosting (Vercel, Netlify, your domain)
+   serves them like any other file. No GitHub-size limits on the live site.
+
+2. DO NOT rely on Cursor chat uploads for hosting. Cursor is for editing code, not
+   for storing your image library.
+
+3. GITHUB: okay for SMALL sites, but Git repos get slow if you commit dozens of
+   5 MB originals. If you use GitHub, only commit OPTIMISED images (see below),
+   or use Git LFS (advanced).
+
+4. BEST FOR NON-DEVELOPERS WHO WANT MAX SPEED WORLDWIDE: Cloudinary or Imgix (free
+   tiers exist). You upload once; they auto-resize and serve WebP from a CDN.
+   You then paste HTTPS URLs into your HTML. (I can wire a config file for URLs
+   if you choose this route.)
+
+
+HOW TO MAKE THEM LOAD FAST (AND NOT BREAK)
+--------------------------------------------
+• Export WIDTH: hero image max 2000 px wide; gallery images 1600 px wide.
+• FORMAT: WebP (best) or high-quality JPEG (quality ~75–82 in Lightroom/Photopea).
+• FILE SIZE: aim for 150–400 KB per hero/gallery image (not 5 MB phone originals).
+• NAMES: use simple ASCII names, no spaces: pool-sunset.webp, kitchen-01.webp
+• IN HTML: keep loading="lazy" on every image below the fold; hero can stay eager.
+• FULL SIZE FOR LIGHTBOX: set data-full="…" to a slightly larger URL or same URL.
+
+
+HOW TO PUT THEM IN THIS PROJECT
+--------------------------------
+1. Copy optimised files into:  assets/photos/
+2. In index.html, gallery.html, villa.html, area.html — replace each
+   https://images.unsplash.com/... URL with:  assets/photos/your-file.webp
+3. Deploy. Done.
+
+
+ONE-LINE SUMMARY
+----------------
+Keep originals on your computer for backup; put OPTIMISED files on your web host
+(or a CDN). Never paste huge originals into Git.

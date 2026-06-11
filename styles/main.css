@@ -1,3 +1,5 @@
+@import url('logo.css');
+
 /* =========================================================
    Villa Augflor — Design System
    Luxury-minimal. Mobile-first. High-contrast CTAs.
@@ -148,7 +150,7 @@ section .wrap-sm > h2 {
 .page-home-editorial .site-header .menu-toggle span::after {
   background-color: #f7f5f2;
 }
-.page-home-editorial .site-header .logo small {
+.page-home-editorial .site-header .logo-tag {
   color: rgba(247,245,242,.72);
 }
 .page-home-editorial .site-header .nav-cta .btn-primary {
@@ -168,11 +170,8 @@ section .wrap-sm > h2 {
   display: flex; align-items: center; justify-content: space-between;
   height: 68px;
 }
-.logo {
-  font-family: var(--serif); font-size: 1.35rem; letter-spacing: .02em;
-  display: flex; align-items: baseline; gap: .5rem;
-}
-.logo small { font-size: .65rem; letter-spacing: .3em; text-transform: uppercase; color: var(--mute); font-family: var(--sans); }
+.logo small,
+.logo-tag { color: var(--mute); }
 .nav-links { display: none; gap: 2rem; }
 .nav-links a { font-size: .92rem; color: var(--ink-soft); position: relative; }
 .nav-links a:hover { color: var(--ink); }
@@ -667,7 +666,7 @@ section .wrap-sm > h2 {
   border-top: 1px solid #cfc3b0; margin-top: 2.5rem; padding-top: 1.5rem;
   display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between; font-size: .78rem;
 }
-.footer-logo { font-family: var(--serif); font-size: 1.5rem; color: var(--forest); margin-bottom: .75rem; }
+.footer-logo { color: var(--forest); margin-bottom: .75rem; }
 
 /* ---------- Utilities ---------- */
 .u-center { text-align: center; }

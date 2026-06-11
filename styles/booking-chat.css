@@ -3,56 +3,6 @@
    Luxury-minimal aesthetic, matching main design system
    ===================================================== */
 
-/* --- Urgency Banner --- */
-.urgency-bar {
-  position: sticky;
-  top: 0;
-  z-index: 900;
-  background: linear-gradient(90deg, #3d7a8a 0%, #2d6878 100%);
-  color: #fff;
-  font-family: var(--sans, "Inter", sans-serif);
-  font-size: 0.82rem;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  text-align: center;
-  padding: 0.55rem 3rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
-}
-.urgency-bar__pulse {
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #ff6b5b;
-  animation: urgency-pulse 1.6s ease-in-out infinite;
-  flex-shrink: 0;
-}
-@keyframes urgency-pulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.5; transform: scale(1.4); }
-}
-.urgency-bar__cta {
-  color: #fff;
-  text-decoration: underline;
-  text-decoration-color: rgba(255,255,255,0.5);
-  cursor: pointer;
-  white-space: nowrap;
-}
-.urgency-bar__close {
-  position: absolute;
-  right: 0.75rem;
-  background: none;
-  border: none;
-  color: rgba(255,255,255,0.7);
-  cursor: pointer;
-  font-size: 1rem;
-  line-height: 1;
-  padding: 0.25rem;
-}
-
 /* --- Chat Widget Container --- */
 #va-chat-widget {
   position: fixed;

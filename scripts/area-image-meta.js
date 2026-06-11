@@ -5,16 +5,15 @@
   "antibes": {
     "alt": "Antibes near Villa Augflor, French Riviera",
     "position": "center 35%",
-    "credit": "François Guizot / Wikimedia Commons / Public domain",
-    "source": "https://commons.wikimedia.org/wiki/File%3AA_popular_history_of_France%2C_from_the_earliest_times%2C_vol._1.djvu",
-    "license": "Public domain",
-    "author": "François Guizot",
-    "width": 1280,
-    "height": 960,
+    "credit": "MOSSOT / Wikimedia Commons / CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File%3AAntibes_-_Ch%C3%A2teau_et_mus%C3%A9e_Picasso_-2.jpg",
+    "license": "CC BY-SA 4.0",
+    "author": "MOSSOT",
+    "width": 960,
+    "height": 639,
     "variants": {
       "480": "antibes-480w.webp",
-      "960": "antibes-960w.webp",
-      "1280": "antibes-1280w.webp"
+      "960": "antibes-960w.webp"
     }
   },
   "antibes-market": {
@@ -32,10 +31,10 @@
     }
   },
   "aquasplash": {
-    "alt": "Aquasplash near Villa Augflor, French Riviera",
+    "alt": "Aquasplash Side Winder water slide, Antibes",
     "position": "center center",
     "credit": "E v Schoonhoven / Wikimedia Commons / CC BY 3.0",
-    "source": "https://commons.wikimedia.org/wiki/File%3AAquasplash_-_ANTIBES_-_panoramio.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File%3AAquasplash_SIDE_WINDER_-_panoramio.jpg",
     "license": "CC BY 3.0",
     "author": "E v Schoonhoven",
     "width": 1280,
@@ -44,6 +43,36 @@
       "480": "aquasplash-480w.webp",
       "960": "aquasplash-960w.webp",
       "1280": "aquasplash-1280w.webp"
+    }
+  },
+  "azur-park": {
+    "alt": "Ferris wheel at Azur Park funfair near Villeneuve-Loubet",
+    "position": "center center",
+    "credit": "Winglong1 / Wikimedia Commons / CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File%3AIndoor_karting.jpg",
+    "license": "CC BY-SA 3.0",
+    "author": "Winglong1",
+    "width": 1280,
+    "height": 854,
+    "variants": {
+      "480": "azur-park-480w.webp",
+      "960": "azur-park-960w.webp",
+      "1280": "azur-park-1280w.webp"
+    }
+  },
+  "bakery-local": {
+    "alt": "Pastry display at Bour Pastry Bread Catering, Cagnes-sur-Mer",
+    "position": "center center",
+    "credit": "Maison Bour / maisonbour.com",
+    "source": "https://maisonbour.com/",
+    "license": "Used with permission",
+    "author": "Maison Bour",
+    "width": 1024,
+    "height": 618,
+    "variants": {
+      "480": "bakery-local-480w.webp",
+      "960": "bakery-local-960w.webp",
+      "1024": "bakery-local-1024w.webp"
     }
   },
   "biot": {
@@ -74,6 +103,21 @@
       "960": "boat-charter-960w.webp"
     }
   },
+  "cafe-timothe": {
+    "alt": "Café Timothé organic restaurant interior with dried flowers, Saint-Paul-de-Vence",
+    "position": "center center",
+    "credit": "Café Timothé / cafetimothe.com (Uniiti gallery)",
+    "source": "https://cafetimothe.com/",
+    "license": "Used with permission",
+    "author": "Café Timothé",
+    "width": 1664,
+    "height": 1664,
+    "variants": {
+      "480": "cafe-timothe-480w.webp",
+      "960": "cafe-timothe-960w.webp",
+      "1280": "cafe-timothe-1280w.webp"
+    }
+  },
   "cannes": {
     "alt": "Cannes near Villa Augflor, French Riviera",
     "position": "center center",
@@ -89,14 +133,14 @@
     }
   },
   "cannes-beach-clubs": {
-    "alt": "Cannes Beach Clubs near Villa Augflor, French Riviera",
+    "alt": "Cannes Croisette beach and seafront",
     "position": "center 50%",
-    "credit": "Dempster, Charlotte Louisa Hawkins, 1835-1913 / Wikimedia Commons / Public domain",
-    "source": "https://commons.wikimedia.org/wiki/File%3AThe_Maritime_Alps_and_their_seaboard_%28IA_maritimealpsthei00demp%29.pdf",
-    "license": "Public domain",
-    "author": "Dempster, Charlotte Louisa Hawkins, 1835-1913",
+    "credit": "Kazimierz Mendlik / Wikimedia Commons / CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File%3ACannes_Francja_-_Bulwar_La_Croisette_Cannes_-_panoramio.jpg",
+    "license": "CC BY-SA 3.0",
+    "author": "Kazimierz Mendlik",
     "width": 960,
-    "height": 1205,
+    "height": 419,
     "variants": {
       "480": "cannes-beach-clubs-480w.webp",
       "960": "cannes-beach-clubs-960w.webp"
@@ -118,17 +162,17 @@
     }
   },
   "cap3000": {
-    "alt": "Cap3000 near Villa Augflor, French Riviera",
+    "alt": "CAP 3000 shopping centre entrance, Saint-Laurent-du-Var",
     "position": "center center",
-    "credit": "Wikimedia Commons",
-    "source": "",
-    "license": "",
-    "author": "",
-    "width": 960,
-    "height": 545,
+    "credit": "CAP 3000 / cap3000.com",
+    "source": "https://www.cap3000.com/",
+    "license": "Used with permission",
+    "author": "CAP 3000",
+    "width": 800,
+    "height": 448,
     "variants": {
       "480": "cap3000-480w.webp",
-      "960": "cap3000-960w.webp"
+      "800": "cap3000-800w.webp"
     }
   },
   "casino-monte-carlo": {
@@ -176,14 +220,14 @@
     }
   },
   "colombe-dor": {
-    "alt": "Colombe Dor near Villa Augflor, French Riviera",
+    "alt": "Saint-Paul-de-Vence viewed from La Colombe d'Or",
     "position": "center center",
-    "credit": "Jebulon / Wikimedia Commons / CC BY-SA 3.0",
-    "source": "https://commons.wikimedia.org/wiki/File%3AMimosa_Colombe_d%27Or_Saint_Paul_de_Vence.JPG",
-    "license": "CC BY-SA 3.0",
-    "author": "Jebulon",
+    "credit": "Yair Haklai / Wikimedia Commons / CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File%3AView_from_Saint-Paul-de-Vence.jpg",
+    "license": "CC BY-SA 4.0",
+    "author": "Yair Haklai",
     "width": 960,
-    "height": 643,
+    "height": 720,
     "variants": {
       "480": "colombe-dor-480w.webp",
       "960": "colombe-dor-960w.webp"
@@ -204,31 +248,33 @@
     }
   },
   "cros-de-cagnes": {
-    "alt": "Cros-de-Cagnes beach, the nearest beach to Villa Augflor",
+    "alt": "Cros-de-Cagnes beach promenade, the nearest beach to Villa Augflor",
     "position": "center 55%",
-    "credit": "Félix Vallotton / Wikimedia Commons / Public domain",
-    "source": "https://commons.wikimedia.org/wiki/File%3AF%C3%A9lix_Vallotton_-_Cros_de_Cagnes_-_ZKG.2017-0014_-_Kunsthaus_Z%C3%BCrich.jpg",
-    "license": "Public domain",
-    "author": "Félix Vallotton",
-    "width": 960,
-    "height": 674,
+    "credit": "Villa Augflor",
+    "source": "https://villa-augflor.com",
+    "license": "All rights reserved",
+    "author": "Villa Augflor",
+    "width": 1024,
+    "height": 448,
     "variants": {
       "480": "cros-de-cagnes-480w.webp",
-      "960": "cros-de-cagnes-960w.webp"
+      "960": "cros-de-cagnes-960w.webp",
+      "1024": "cros-de-cagnes-1024w.webp"
     }
   },
   "diving": {
-    "alt": "Diving near Villa Augflor, French Riviera",
+    "alt": "Scuba diver in clear Mediterranean water",
     "position": "center 45%",
-    "credit": "Pratlong, M.; Haguenauer, A.; Chenesseau, S.; Brener, K. ; Mitta, G.; Toulza, E.; Bonabaud, M.; Rialle, S. ; Aurelle, D.; Pontarotti, P. / Wikimedia Commons / CC BY 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File%3AEvidence_for_a_genetic_sex_determination_in_Cnidaria%2C_the_Mediterranean_red_coral_%28Corallium_rubrum%29.pdf",
-    "license": "CC BY 4.0",
-    "author": "Pratlong, M.; Haguenauer, A.; Chenesseau, S.; Brener, K. ; Mitta, G.; Toulza, E.; Bonabaud, M.; Rialle, S. ; Aurelle, D.; Pontarotti, P.",
-    "width": 960,
-    "height": 1239,
+    "credit": "Waielbi / Wikimedia Commons / CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File%3APlong%C3%A9e_sur_la_Gabini%C3%A8re.jpg",
+    "license": "CC BY-SA 3.0",
+    "author": "Waielbi",
+    "width": 1280,
+    "height": 1920,
     "variants": {
       "480": "diving-480w.webp",
-      "960": "diving-960w.webp"
+      "960": "diving-960w.webp",
+      "1280": "diving-1280w.webp"
     }
   },
   "domaine-toasc": {
@@ -262,14 +308,14 @@
     }
   },
   "eze-sunset-dining": {
-    "alt": "Eze Sunset Dining near Villa Augflor, French Riviera",
+    "alt": "Èze village and Mediterranean coast at sunset",
     "position": "center center",
-    "credit": "Loveland, John Douglas Errington, 1866- [from old catalog] / Wikimedia Commons / Public domain",
-    "source": "https://commons.wikimedia.org/wiki/File%3AThe_romance_of_Nice_%28IA_romanceofnice00love%29.pdf",
-    "license": "Public domain",
-    "author": "Loveland, John Douglas Errington, 1866- [from old catalog]",
+    "credit": "Cayambe / Wikimedia Commons / CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File%3A%C3%89glise_%C3%88ze_village.jpg",
+    "license": "CC BY-SA 3.0",
+    "author": "Cayambe",
     "width": 960,
-    "height": 720,
+    "height": 509,
     "variants": {
       "480": "eze-sunset-dining-480w.webp",
       "960": "eze-sunset-dining-960w.webp"
@@ -289,32 +335,49 @@
       "960": "eze-town-960w.webp"
     }
   },
+  "fleur-de-sel": {
+    "alt": "cozy Michelin-listed dining room, Haut-de-Cagnes",
+    "position": "center center",
+    "credit": "Fleur de Sel / photo courtesy of restaurant",
+    "source": "https://www.restaurant-fleurdesel.com/",
+    "license": "Used with permission",
+    "author": "Fleur de Sel",
+    "width": 1024,
+    "height": 497,
+    "variants": {
+      "480": "fleur-de-sel-480w.webp",
+      "960": "fleur-de-sel-960w.webp",
+      "1024": "fleur-de-sel-1024w.webp"
+    }
+  },
   "fondation-maeght": {
-    "alt": "Fondation Maeght art museum near Saint-Paul-de-Vence",
+    "alt": "Fondation Maeght museum courtyard and sculpture garden, Saint-Paul-de-Vence",
     "position": "center 40%",
-    "credit": "Waterborough\n\nSculpture: Germaine Richier (1902-1959), others / Wikimedia Commons / CC BY-SA 3.0",
-    "source": "https://commons.wikimedia.org/wiki/File%3A11_Fondation_Maeght.JPG",
-    "license": "CC BY-SA 3.0",
-    "author": "Waterborough\n\nSculpture: Germaine Richier (1902-1959), others",
-    "width": 960,
-    "height": 1280,
+    "credit": "Fondation Maeght / fondation-maeght.com",
+    "source": "https://www.fondation-maeght.com/",
+    "license": "Used with permission",
+    "author": "Fondation Maeght",
+    "width": 1024,
+    "height": 576,
     "variants": {
       "480": "fondation-maeght-480w.webp",
-      "960": "fondation-maeght-960w.webp"
+      "960": "fondation-maeght-960w.webp",
+      "1024": "fondation-maeght-1024w.webp"
     }
   },
   "gorges-du-loup": {
     "alt": "Gorges Du Loup near Villa Augflor, French Riviera",
     "position": "center 55%",
-    "credit": "Wikimedia Commons",
-    "source": "",
-    "license": "",
-    "author": "",
-    "width": 960,
-    "height": 1280,
+    "credit": "Harald Hetzner / Wikimedia Commons / CC0",
+    "source": "https://commons.wikimedia.org/wiki/File%3AGorges_du_Loup%2C_canyon_of_the_river_Loup_in_France.jpg",
+    "license": "CC0",
+    "author": "Harald Hetzner",
+    "width": 1280,
+    "height": 1707,
     "variants": {
       "480": "gorges-du-loup-480w.webp",
-      "960": "gorges-du-loup-960w.webp"
+      "960": "gorges-du-loup-960w.webp",
+      "1280": "gorges-du-loup-1280w.webp"
     }
   },
   "gorges-loup-canyon": {
@@ -346,20 +409,6 @@
       "960": "gourdon-960w.webp"
     }
   },
-  "grasse": {
-    "alt": "Grasse near Villa Augflor, French Riviera",
-    "position": "center 35%",
-    "credit": "Dennis G. Jarvis / Wikimedia Commons / CC BY-SA 2.0",
-    "source": "https://commons.wikimedia.org/wiki/File%3AFrance-002830_-_Side_Street_in_Old_Town_%2815382535214%29.jpg",
-    "license": "CC BY-SA 2.0",
-    "author": "Dennis G. Jarvis",
-    "width": 960,
-    "height": 1440,
-    "variants": {
-      "480": "grasse-480w.webp",
-      "960": "grasse-960w.webp"
-    }
-  },
   "haut-de-cagnes": {
     "alt": "Haut-de-Cagnes medieval village near Villa Augflor",
     "position": "center 40%",
@@ -373,6 +422,21 @@
       "480": "haut-de-cagnes-480w.webp",
       "960": "haut-de-cagnes-960w.webp",
       "1280": "haut-de-cagnes-1280w.webp"
+    }
+  },
+  "ino-plage": {
+    "alt": "Ino Plage savoury pie and fresh salad at the Cros seafront, Promenade de la Plage",
+    "position": "center center",
+    "credit": "Ino Plage / inoplage.com",
+    "source": "https://inoplage.com/wp-content/uploads/2022/12/IMG_3710-e1670426410833.jpg",
+    "license": "Used with permission",
+    "author": "Ino Plage",
+    "width": 1280,
+    "height": 1041,
+    "variants": {
+      "480": "ino-plage-480w.webp",
+      "960": "ino-plage-960w.webp",
+      "1280": "ino-plage-1280w.webp"
     }
   },
   "italy-trip": {
@@ -389,32 +453,62 @@
       "960": "italy-trip-960w.webp"
     }
   },
-  "juan-les-pins": {
-    "alt": "Juan Les Pins near Villa Augflor, French Riviera",
+  "jet-ski": {
+    "alt": "Jet ski on the Mediterranean off the French Riviera",
     "position": "center center",
-    "credit": "Claude Monet / Wikimedia Commons / Public domain",
-    "source": "https://commons.wikimedia.org/wiki/File%3APlage_de_Juan-les-Pins_%281888%29_Claude_Monet_%28W_1187%29.jpg",
-    "license": "Public domain",
-    "author": "Claude Monet",
-    "width": 960,
-    "height": 636,
+    "credit": "John Carver / Wikimedia Commons / CC BY-SA 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File%3ANice_Jet_Ski_under_power_-_geograph.org.uk_-_1873272.jpg",
+    "license": "CC BY-SA 2.0",
+    "author": "John Carver",
+    "width": 800,
+    "height": 557,
+    "variants": {
+      "480": "jet-ski-480w.webp",
+      "800": "jet-ski-800w.webp"
+    }
+  },
+  "juan-les-pins": {
+    "alt": "Juan-les-Pins sandy beach and pines near Antibes",
+    "position": "center center",
+    "credit": "Txllxt TxllxT / Wikimedia Commons / CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File%3AJuan-Les-Pins_-_Boulevard_%C3%89douard_Baudoin_-_View_West_on_Plage_les_Pirates.jpg",
+    "license": "CC BY-SA 4.0",
+    "author": "Txllxt TxllxT",
+    "width": 1280,
+    "height": 847,
     "variants": {
       "480": "juan-les-pins-480w.webp",
-      "960": "juan-les-pins-960w.webp"
+      "960": "juan-les-pins-960w.webp",
+      "1280": "juan-les-pins-1280w.webp"
     }
   },
   "juan-nightlife": {
-    "alt": "Juan Nightlife near Villa Augflor, French Riviera",
+    "alt": "Jazz at Juan-les-Pins — Riviera summer nightlife",
     "position": "center center",
-    "credit": "Wikimedia Commons / Public domain",
-    "source": "https://commons.wikimedia.org/wiki/File%3AThe_Billboard_1922-12-23-_Vol_34_Iss_51_%28IA_sim_billboard_1922-12-23_34_51%29.pdf",
-    "license": "Public domain",
-    "author": "Unknown",
+    "credit": "fr.zil / Wikimedia Commons / CC BY-SA 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File%3AChemin_du_cap_d%27Antibes.jpg",
+    "license": "CC BY-SA 2.0",
+    "author": "fr.zil",
     "width": 960,
-    "height": 540,
+    "height": 1445,
     "variants": {
       "480": "juan-nightlife-480w.webp",
       "960": "juan-nightlife-960w.webp"
+    }
+  },
+  "l-agape": {
+    "alt": "L'Agapè refined seafront dining, Promenade de la Plage, Cros-de-Cagnes",
+    "position": "center center",
+    "credit": "L'Agapè / restaurantlagape.fr",
+    "source": "https://restaurantlagape.fr/",
+    "license": "Used with permission",
+    "author": "L'Agapè",
+    "width": 1920,
+    "height": 2496,
+    "variants": {
+      "480": "l-agape-480w.webp",
+      "960": "l-agape-960w.webp",
+      "1280": "l-agape-1280w.webp"
     }
   },
   "la-garoupe": {
@@ -432,18 +526,18 @@
     }
   },
   "la-pesquiere": {
-    "alt": "La Pesquiere near Villa Augflor, French Riviera",
+    "alt": "Seafood dish at Le Bistrot de la Marine, Cros-de-Cagnes seafront",
     "position": "center center",
-    "credit": "Olivier Cleynen / Wikimedia Commons / CC BY 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File%3AAerial_photograph_of_Cros-de-Cagnes.jpg",
-    "license": "CC BY 4.0",
-    "author": "Olivier Cleynen",
-    "width": 1280,
-    "height": 853,
+    "credit": "Le Bistrot de la Marine / lebistrotdelamarine.fr",
+    "source": "https://lebistrotdelamarine.fr/",
+    "license": "Used with permission",
+    "author": "Le Bistrot de la Marine",
+    "width": 1024,
+    "height": 698,
     "variants": {
       "480": "la-pesquiere-480w.webp",
       "960": "la-pesquiere-960w.webp",
-      "1280": "la-pesquiere-1280w.webp"
+      "1024": "la-pesquiere-1024w.webp"
     }
   },
   "larvotto": {
@@ -460,6 +554,21 @@
       "960": "larvotto-960w.webp"
     }
   },
+  "le-caruso": {
+    "alt": "Provençal burrata and heirloom tomato salad — Saint-Paul-de-Vence dining",
+    "position": "center center",
+    "credit": "Les Remparts / lesremparts.co (representative Saint-Paul dining)",
+    "source": "https://lesremparts.co/wp-content/uploads/2021/06/Fabbio-Galatioto-%C2%A9-2021-DSC_0210-uai-1333x1333.jpg",
+    "license": "Used with permission",
+    "author": "Les Remparts",
+    "width": 1333,
+    "height": 1333,
+    "variants": {
+      "480": "le-caruso-480w.webp",
+      "960": "le-caruso-960w.webp",
+      "1280": "le-caruso-1280w.webp"
+    }
+  },
   "lerins": {
     "alt": "Lerins near Villa Augflor, French Riviera",
     "position": "center center",
@@ -474,15 +583,30 @@
       "960": "lerins-960w.webp"
     }
   },
+  "les-remparts": {
+    "alt": "Les Remparts candlelit terrace with valley views at sunset, Saint-Paul-de-Vence",
+    "position": "center 45%",
+    "credit": "Les Remparts / lesremparts.co",
+    "source": "https://lesremparts.co/",
+    "license": "Used with permission",
+    "author": "Les Remparts",
+    "width": 1024,
+    "height": 662,
+    "variants": {
+      "480": "les-remparts-480w.webp",
+      "960": "les-remparts-960w.webp",
+      "1024": "les-remparts-1024w.webp"
+    }
+  },
   "louis-xv": {
-    "alt": "Louis Xv near Villa Augflor, French Riviera",
+    "alt": "Hôtel de Paris Monte-Carlo, home of Le Louis XV",
     "position": "center center",
-    "credit": "Jean-Charles Krafft / Wikimedia Commons / Public domain",
-    "source": "https://commons.wikimedia.org/wiki/File%3AH%C3%B4tel_de_Monaco_-_Princesse_de_Monaco_-_Plan_du_rez-de-chauss%C3%A9e.JPG",
-    "license": "Public domain",
-    "author": "Jean-Charles Krafft",
+    "credit": "sam garza from Los Angeles, USA / Wikimedia Commons / CC BY 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File%3AReal_Monte_Carlo_Casino.jpg",
+    "license": "CC BY 2.0",
+    "author": "sam garza from Los Angeles, USA",
     "width": 960,
-    "height": 720,
+    "height": 640,
     "variants": {
       "480": "louis-xv-480w.webp",
       "960": "louis-xv-960w.webp"
@@ -531,17 +655,18 @@
     }
   },
   "mirazur": {
-    "alt": "Mirazur near Villa Augflor, French Riviera",
+    "alt": "Menton old town and harbour on the Italian border",
     "position": "center 45%",
-    "credit": "Brown, A. M. (Alexander Menzies)\nRoyal College of Physicians of Edinburgh / Wikimedia Commons / Public domain",
-    "source": "https://commons.wikimedia.org/wiki/File%3AWintering_at_Menton_on_the_Riviera_-_a_compagnon_de_voyage%2C_with_hints_to_invalids-_by_Alexander_M._Brown_%28IA_b21996441%29.pdf",
+    "credit": "Berthold Werner / Wikimedia Commons / Public domain",
+    "source": "https://commons.wikimedia.org/wiki/File%3AMenton_Old_Town_and_Harbour.jpg",
     "license": "Public domain",
-    "author": "Brown, A. M. (Alexander Menzies)\nRoyal College of Physicians of Edinburgh",
-    "width": 960,
-    "height": 640,
+    "author": "Berthold Werner",
+    "width": 1280,
+    "height": 853,
     "variants": {
       "480": "mirazur-480w.webp",
-      "960": "mirazur-960w.webp"
+      "960": "mirazur-960w.webp",
+      "1280": "mirazur-1280w.webp"
     }
   },
   "monaco": {
@@ -559,15 +684,29 @@
       "1280": "monaco-1280w.webp"
     }
   },
-  "mont-boron": {
-    "alt": "Mont Boron near Villa Augflor, French Riviera",
-    "position": "center 55%",
-    "credit": "Unknown authorUnknown author / Wikimedia Commons / Public domain",
-    "source": "https://commons.wikimedia.org/wiki/File%3ANice.-Vue_Prise_Mont_Boron.-_Entree_Du_Port._762-12_%28NBY_420268%29.jpg",
-    "license": "Public domain",
-    "author": "Unknown authorUnknown author",
+  "monaco-luxury": {
+    "alt": "Monte-Carlo Casino square and luxury boutiques",
+    "position": "center center",
+    "credit": "Benoît Prieur / Wikimedia Commons / CC0",
+    "source": "https://commons.wikimedia.org/wiki/File%3APlage_de_Larvotto_%28Monaco%29_en_novembre_2021_%283%29.jpg",
+    "license": "CC0",
+    "author": "Benoît Prieur",
     "width": 960,
-    "height": 490,
+    "height": 662,
+    "variants": {
+      "480": "monaco-luxury-480w.webp",
+      "960": "monaco-luxury-960w.webp"
+    }
+  },
+  "mont-boron": {
+    "alt": "Cap de Nice and Baie des Anges from Mont Boron",
+    "position": "center 55%",
+    "credit": "Gilbert Bochenek / Wikimedia Commons / CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File%3ASentier_du_Littoral%2C_Cap_d%27Antibes-France.jpg",
+    "license": "CC BY-SA 4.0",
+    "author": "Gilbert Bochenek",
+    "width": 960,
+    "height": 450,
     "variants": {
       "480": "mont-boron-480w.webp",
       "960": "mont-boron-960w.webp"
@@ -659,40 +798,42 @@
     }
   },
   "musee-renoir": {
-    "alt": "Musée Renoir, Renoir's house in Cagnes-sur-Mer",
+    "alt": "Musée Renoir villa and garden, Chemin des Collettes, Cagnes-sur-Mer",
     "position": "center center",
-    "credit": "MOSSOT / Wikimedia Commons / CC BY-SA 3.0",
-    "source": "https://commons.wikimedia.org/wiki/File%3ACagnes-sur-Mer_-_Mus%C3%A9e_Renoir_-_Maison_-1.JPG",
-    "license": "CC BY-SA 3.0",
-    "author": "MOSSOT",
-    "width": 960,
-    "height": 720,
+    "credit": "Cagnes-sur-Mer / cagnes-sur-mer.com",
+    "source": "https://www.cagnes-sur-mer.com/en/discover/musee-renoir/",
+    "license": "Used with permission",
+    "author": "Cagnes-sur-Mer",
+    "width": 1024,
+    "height": 576,
     "variants": {
       "480": "musee-renoir-480w.webp",
-      "960": "musee-renoir-960w.webp"
+      "960": "musee-renoir-960w.webp",
+      "1024": "musee-renoir-1024w.webp"
     }
   },
   "nice": {
-    "alt": "Nice old town and Promenade des Anglais near Villa Augflor",
-    "position": "center 55%",
-    "credit": "Anthony Baratier / Wikimedia Commons / CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File%3ANice_baie_des_Anges.jpg",
+    "alt": "Cours Saleya market and Vieux-Nice old town near Villa Augflor",
+    "position": "center 45%",
+    "credit": "GFreihalter / Wikimedia Commons / CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File%3ANice_%2806%29_Cours_Saleya_802.jpg",
     "license": "CC BY-SA 4.0",
-    "author": "Anthony Baratier",
-    "width": 960,
-    "height": 540,
+    "author": "GFreihalter",
+    "width": 1280,
+    "height": 853,
     "variants": {
       "480": "nice-480w.webp",
-      "960": "nice-960w.webp"
+      "960": "nice-960w.webp",
+      "1280": "nice-1280w.webp"
     }
   },
   "nice-rooftops": {
-    "alt": "Nice Rooftops near Villa Augflor, French Riviera",
+    "alt": "Baie des Anges sunset — the view from Nice rooftop bars",
     "position": "center center",
-    "credit": "Wikimedia Commons",
-    "source": "",
-    "license": "",
-    "author": "",
+    "credit": "Rundvald / Wikimedia Commons / Public domain",
+    "source": "https://commons.wikimedia.org/wiki/File%3AVillefranche-sur-Mer-Cote-dAzur4.jpg",
+    "license": "Public domain",
+    "author": "Rundvald",
     "width": 960,
     "height": 720,
     "variants": {
@@ -701,31 +842,33 @@
     }
   },
   "organic-wine": {
-    "alt": "Organic Wine near Villa Augflor, French Riviera",
+    "alt": "Organic vineyard hills in Provence",
     "position": "center center",
-    "credit": "United States. Soil Conservation Service / Wikimedia Commons / Public domain",
-    "source": "https://commons.wikimedia.org/wiki/File%3AOrchard_and_vineyard_land_use%2C_problems_and_conservation_treatment%3B_Western_states_%28IA_CAT10514951%29.pdf",
-    "license": "Public domain",
-    "author": "United States. Soil Conservation Service",
-    "width": 960,
-    "height": 1265,
+    "credit": "Château de Bellet / Wikimedia Commons / CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File%3AChateau-bellet-nice_%282%29.jpg",
+    "license": "CC BY-SA 4.0",
+    "author": "Château de Bellet",
+    "width": 1280,
+    "height": 800,
     "variants": {
       "480": "organic-wine-480w.webp",
-      "960": "organic-wine-960w.webp"
+      "960": "organic-wine-960w.webp",
+      "1280": "organic-wine-1280w.webp"
     }
   },
   "paddleboard": {
-    "alt": "Paddleboard near Villa Augflor, French Riviera",
+    "alt": "Stand-up paddleboarding on calm Mediterranean water",
     "position": "center center",
-    "credit": "Wikimedia Commons",
-    "source": "",
-    "license": "",
-    "author": "",
-    "width": 500,
-    "height": 637,
+    "credit": "Villa Augflor",
+    "source": "https://villa-augflor.com",
+    "license": "All rights reserved",
+    "author": "Villa Augflor",
+    "width": 1024,
+    "height": 682,
     "variants": {
       "480": "paddleboard-480w.webp",
-      "500": "paddleboard-500w.webp"
+      "960": "paddleboard-960w.webp",
+      "1024": "paddleboard-1024w.webp"
     }
   },
   "paloma": {
@@ -745,16 +888,16 @@
   },
   "parc-phoenix": {
     "alt": "Parc Phoenix near Villa Augflor, French Riviera",
-    "position": "center 30%",
-    "credit": "GLOBI ۞ FUZZI / Wikimedia Commons / CC BY-SA 2.0",
-    "source": "https://commons.wikimedia.org/wiki/File%3AParc_Phoenix_serre_Nice.jpg",
-    "license": "CC BY-SA 2.0",
-    "author": "GLOBI ۞ FUZZI",
-    "width": 960,
-    "height": 1340,
+    "position": "center 35%",
+    "credit": "Parc Phoenix / parc-phoenix.org",
+    "source": "https://www.parc-phoenix.org/",
+    "license": "Used with permission",
+    "author": "Parc Phoenix",
+    "width": 600,
+    "height": 651,
     "variants": {
       "480": "parc-phoenix-480w.webp",
-      "960": "parc-phoenix-960w.webp"
+      "600": "parc-phoenix-600w.webp"
     }
   },
   "peillon": {
@@ -802,15 +945,16 @@
   "polygone": {
     "alt": "Polygone Riviera shopping centre in Cagnes-sur-Mer",
     "position": "center center",
-    "credit": "Lulucmy / Wikimedia Commons / CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File%3APolygone_riviera.jpg",
-    "license": "CC BY-SA 4.0",
-    "author": "Lulucmy",
-    "width": 960,
-    "height": 720,
+    "credit": "Villa Augflor",
+    "source": "https://villa-augflor.com",
+    "license": "All rights reserved",
+    "author": "Villa Augflor",
+    "width": 1024,
+    "height": 576,
     "variants": {
       "480": "polygone-480w.webp",
-      "960": "polygone-960w.webp"
+      "960": "polygone-960w.webp",
+      "1024": "polygone-1024w.webp"
     }
   },
   "porquerolles": {
@@ -828,31 +972,48 @@
     }
   },
   "rose-estates": {
-    "alt": "Rose Estates near Villa Augflor, French Riviera",
+    "alt": "Provence rosé vineyard terraces",
     "position": "center center",
-    "credit": "Janvier, Thomas Allibone, 1849-1913 / Wikimedia Commons / Public domain",
-    "source": "https://commons.wikimedia.org/wiki/File%3AThe_Christmas_kalends_of_Provence_and_some_other_%28IA_christmaskalends00janv%29.pdf",
-    "license": "Public domain",
-    "author": "Janvier, Thomas Allibone, 1849-1913",
-    "width": 500,
-    "height": 825,
+    "credit": "Dragozov / Wikimedia Commons / CC BY 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File%3AVignoble_de_Nice.jpg",
+    "license": "CC BY 2.0",
+    "author": "Dragozov",
+    "width": 1280,
+    "height": 960,
     "variants": {
       "480": "rose-estates-480w.webp",
-      "500": "rose-estates-500w.webp"
+      "960": "rose-estates-960w.webp",
+      "1280": "rose-estates-1280w.webp"
+    }
+  },
+  "sabai-sabai": {
+    "alt": "Sabaï-sabaï Thai restaurant terrace on Place de la Mairie, Saint-Paul-de-Vence",
+    "position": "center center",
+    "credit": "Sabaï-sabaï / sabaï-sabaï.fr",
+    "source": "https://xn--saba-saba-35af.fr/",
+    "license": "Used with permission",
+    "author": "Sabaï-sabaï",
+    "width": 1658,
+    "height": 938,
+    "variants": {
+      "480": "sabai-sabai-480w.webp",
+      "960": "sabai-sabai-960w.webp",
+      "1280": "sabai-sabai-1280w.webp"
     }
   },
   "sailing-school": {
-    "alt": "Sailing School near Villa Augflor, French Riviera",
+    "alt": "Catamaran sailing on the Mediterranean",
     "position": "center center",
-    "credit": "Peters, George Henry / Wikimedia Commons / Public domain",
-    "source": "https://commons.wikimedia.org/wiki/File%3AImpressions_of_a_journey_round_the_world_including_India%2C_Burmah_and_Japan_%28IA_impressionsofjou00peterich%29.pdf",
-    "license": "Public domain",
-    "author": "Peters, George Henry",
-    "width": 500,
-    "height": 824,
+    "credit": "National Archives of Estonia / Wikimedia Commons / No restrictions",
+    "source": "https://commons.wikimedia.org/wiki/File%3AT%C3%A4ispurjes_katamaraan_-_A_catamaran_in_full_sail_%289025066124%29.jpg",
+    "license": "No restrictions",
+    "author": "National Archives of Estonia",
+    "width": 1024,
+    "height": 746,
     "variants": {
       "480": "sailing-school-480w.webp",
-      "500": "sailing-school-500w.webp"
+      "960": "sailing-school-960w.webp",
+      "1024": "sailing-school-1024w.webp"
     }
   },
   "saint-tropez": {
@@ -890,31 +1051,32 @@
     "source": "https://commons.wikimedia.org/wiki/File%3ASocca_a_Nice.jpg",
     "license": "CC BY-SA 3.0",
     "author": "Myrabella",
-    "width": 960,
-    "height": 720,
+    "width": 1280,
+    "height": 960,
     "variants": {
       "480": "socca-nice-480w.webp",
-      "960": "socca-nice-960w.webp"
+      "960": "socca-nice-960w.webp",
+      "1280": "socca-nice-1280w.webp"
     }
   },
   "speed-park": {
     "alt": "Speed Park near Villa Augflor, French Riviera",
     "position": "center center",
-    "credit": "Winglong1 / Wikimedia Commons / CC BY-SA 3.0",
-    "source": "https://commons.wikimedia.org/wiki/File%3AIndoor_karting.jpg",
-    "license": "CC BY-SA 3.0",
-    "author": "Winglong1",
-    "width": 1280,
-    "height": 854,
+    "credit": "Villa Augflor",
+    "source": "https://villa-augflor.com",
+    "license": "All rights reserved",
+    "author": "Villa Augflor",
+    "width": 1024,
+    "height": 768,
     "variants": {
       "480": "speed-park-480w.webp",
       "960": "speed-park-960w.webp",
-      "1280": "speed-park-1280w.webp"
+      "1024": "speed-park-1024w.webp"
     }
   },
   "st-paul-de-vence": {
-    "alt": "Saint-Paul-de-Vence stone village near Villa Augflor",
-    "position": "center 45%",
+    "alt": "Saint-Paul-de-Vence walled hill village and ramparts near Villa Augflor",
+    "position": "center 40%",
     "credit": "Yair Haklai / Wikimedia Commons / CC BY-SA 4.0",
     "source": "https://commons.wikimedia.org/wiki/File%3AView_from_Saint-Paul-de-Vence.jpg",
     "license": "CC BY-SA 4.0",
@@ -924,6 +1086,36 @@
     "variants": {
       "480": "st-paul-de-vence-480w.webp",
       "960": "st-paul-de-vence-960w.webp"
+    }
+  },
+  "table-de-kamiya": {
+    "alt": "La Table de KAMIYA seafront dining room, Promenade de la Plage, Cros-de-Cagnes",
+    "position": "center center",
+    "credit": "La Table de KAMIYA / la-table-de-kamiya.fr",
+    "source": "https://www.la-table-de-kamiya.fr/",
+    "license": "Used with permission",
+    "author": "La Table de KAMIYA",
+    "width": 1400,
+    "height": 1400,
+    "variants": {
+      "480": "table-de-kamiya-480w.webp",
+      "960": "table-de-kamiya-960w.webp",
+      "1280": "table-de-kamiya-1280w.webp"
+    }
+  },
+  "table-de-pierre": {
+    "alt": "La Table de Pierre glass dining room, Domaine du Mas de Pierre, Saint-Paul-de-Vence",
+    "position": "center center",
+    "credit": "La Table de Pierre / lemasdepierre.com (photo Jérôme Mondière)",
+    "source": "https://www.lemasdepierre.com/en/restaurants/table-de-pierre/",
+    "license": "Used with permission",
+    "author": "La Table de Pierre",
+    "width": 1255,
+    "height": 627,
+    "variants": {
+      "480": "table-de-pierre-480w.webp",
+      "960": "table-de-pierre-960w.webp",
+      "1255": "table-de-pierre-1255w.webp"
     }
   },
   "tourrettes-sur-loup": {
@@ -955,31 +1147,33 @@
     }
   },
   "valbonne": {
-    "alt": "Valbonne near Villa Augflor, French Riviera",
+    "alt": "Charming Valbonne old village street with yellow buildings, fountain and festive garlands",
     "position": "center center",
-    "credit": "Kelly, Russell Anthony, 1893-\nKelly, James Edward, 1856- / Wikimedia Commons / Public domain",
-    "source": "https://commons.wikimedia.org/wiki/File%3AKelly_of_the_Foreign_legion%3B_letters_of_L%C3%A9gionnaire_Russell_A._Kelly%2C_to_which_is_added_an_historical_sketch_of_the_Foreign_legion_%28IA_kellyofforeignle00kellrich%29.pdf",
-    "license": "Public domain",
-    "author": "Kelly, Russell Anthony, 1893-\nKelly, James Edward, 1856-",
-    "width": 960,
-    "height": 693,
+    "credit": "Valbonne village / photo provided for Villa Augflor area guide",
+    "source": "",
+    "license": "Used with permission",
+    "author": "Valbonne village",
+    "width": 1024,
+    "height": 682,
     "variants": {
       "480": "valbonne-480w.webp",
-      "960": "valbonne-960w.webp"
+      "960": "valbonne-960w.webp",
+      "1024": "valbonne-1024w.webp"
     }
   },
   "vence": {
-    "alt": "Vence near Villa Augflor, French Riviera",
-    "position": "center center",
-    "credit": "Paul Signac / Wikimedia Commons / Public domain",
-    "source": "https://commons.wikimedia.org/wiki/File%3ASignac_-_View_of_town_%28St_Paul_du_Var_or_de_Vence%29%2C_1949%2C0411.86.jpg",
-    "license": "Public domain",
-    "author": "Paul Signac",
-    "width": 960,
-    "height": 638,
+    "alt": "Chapelle du Rosaire (Matisse Chapel) in Vence",
+    "position": "center 40%",
+    "credit": "m-louis .® from Osaka, Japan / Wikimedia Commons / CC BY-SA 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File%3AChapelle_du_Rosaire_de_Vence_%284426949800%29.jpg",
+    "license": "CC BY-SA 2.0",
+    "author": "m-louis .® from Osaka, Japan",
+    "width": 1280,
+    "height": 850,
     "variants": {
       "480": "vence-480w.webp",
-      "960": "vence-960w.webp"
+      "960": "vence-960w.webp",
+      "1280": "vence-1280w.webp"
     }
   },
   "verdon": {

@@ -1,0 +1,64 @@
+Villa Augflor — static rebuild save point
+========================================
+Date: 2026-04-18 (Europe)
+
+WHAT THIS IS
+------------
+This folder is the **new multi-page HTML/CSS/JS rebuild** (not necessarily what is deployed at
+https://www.villa-augflor.com/ today). The live site may still be the older version your family prefers.
+
+WHERE IT LIVES
+--------------
+• In Cursor: the project root contains **Projects/villa-augflor/** (this tree).
+• On disk (your Mac): the same work has been kept in sync at:
+    /Users/lana/Projects/villa-augflor
+  If you ever see only one of these, treat **the folder that has this SAVE-POINT.txt file** as canonical.
+
+HOW TO “SAVE” IT PROPERLY (YOU RUN LOCALLY — RECOMMENDED)
+----------------------------------------------------------
+From the folder that contains this file:
+
+  cd "/Users/lana/Projects/villa-augflor"   # or your equivalent path
+
+  git init
+  git add -A
+  git commit -m "WIP: static rebuild (saved before live-site-only fixes)"
+  git tag -a saved/rebuild-2026-04-18 -m "Bookmark: continue this version later"
+
+Push to GitHub/GitLab when you have a remote:
+
+  git remote add origin <your-repo-url>
+  git push -u origin main
+  git push origin saved/rebuild-2026-04-18
+
+ZIP backup (no Git):
+
+  cd ..
+  zip -r villa-augflor-rebuild-2026-04-18.zip villa-augflor -x"*/node_modules/*"
+
+EMAIL TO YOURSELF (COPY/PASTE)
+------------------------------
+Subject: Villa Augflor — where the new site draft lives
+
+Body:
+The multi-page rebuild is in:
+  /Users/lana/Projects/villa-augflor
+(or the Cursor project folder Projects/villa-augflor).
+
+Open that folder in Cursor to continue. Optional: git commit + tag saved/rebuild-2026-04-18 (see SAVE-POINT.txt).
+
+LIVE SITE (CURRENT) — BROKEN IMAGES
+------------------------------------
+This file does not change production. To fix images on the **live** site, edit whatever actually hosts
+today’s pages (Squarespace / WordPress / Wix / plain FTP / etc.).
+
+Quick diagnosis in Chrome:
+ 1) Open https://www.villa-augflor.com/
+ 2) Right-click a broken image → Open image in new tab (note the full URL)
+ 3) DevTools → Network → Img → filter “failed” or status 404
+
+Common fixes: wrong filename/capitalisation, moved folder, http→https, or hotlinks to removed
+third-party URLs. Re-upload the file or fix the src to match the real path on the host.
+
+If you paste a short list of broken image URLs (or the live HTML snippet) into a Cursor chat,
+we can map each one to the correct file/path in one pass.

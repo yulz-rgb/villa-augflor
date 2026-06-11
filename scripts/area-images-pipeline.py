@@ -81,6 +81,9 @@ SEARCH = {
     "mirazur": "Menton coast terraced gardens",
     "louis-xv": "Hôtel de Paris Monaco dining",
     "colombe-dor": "La Colombe d'Or Saint-Paul-de-Vence",
+    "le-caruso": "Saint-Paul-de-Vence old town restaurant",
+    "les-remparts": "Saint-Paul-de-Vence ramparts valley view",
+    "sabai-sabai": "Saint-Paul-de-Vence village square",
     "la-pesquiere": "Cros-de-Cagnes port restaurant",
     "socca-nice": "Socca Nice street food",
     "fenocchio": "Fenocchio ice cream Nice",
@@ -108,8 +111,17 @@ SEARCH = {
     "nice-rooftops": "Nice Baie des Anges sunset rooftop",
 }
 
+# Re-download these even when a .jpg already exists (bad search hits, PDFs, paintings, aliases).
 FORCE = {
-    "haut-de-cagnes", "monaco", "antibes", "cap-ferrat-walk", "paloma",
+    "antibes", "cros-de-cagnes", "juan-les-pins", "diving", "sailing-school",
+    "vence", "rose-estates", "organic-wine", "mirazur", "louis-xv",
+    "colombe-dor", "eze-sunset-dining", "cannes-beach-clubs",
+    "juan-nightlife", "mont-boron", "grasse", "nice-rooftops",
+    "jet-ski", "fenocchio", "pizza-nice", "azur-park",
+    "monaco-luxury", "paddleboard", "gorges-du-loup",
+    "haut-de-cagnes", "monaco", "cap-ferrat-walk", "paloma",
+    "le-caruso", "les-remparts", "sabai-sabai", "nice", "st-paul-de-vence",
+    "aquasplash", "musee-chagall", "socca-nice",
 }
 
 # Exact Wikimedia File: titles — avoids bad search hits (PDFs, scans, wrong locations)
@@ -125,23 +137,44 @@ CURATED = {
     "peillon": "File:Peillon village perche sur la montagne.jpg",
     "azur-park": "File:Grande roue à Antibes.jpg",
     "speed-park": "File:Indoor karting.jpg",
-    "jet-ski": "File:Jet ski in Saint-Tropez.jpg",
-    "sailing-school": "File:Catamaran sailing in the Mediterranean.jpg",
+    "jet-ski": "File:Nice Jet Ski under power - geograph.org.uk - 1873272.jpg",
+    "sailing-school": "File:Täispurjes katamaraan - A catamaran in full sail (9025066124).jpg",
     "chateau-bellet": "File:Chateau-bellet-nice (2).jpg",
     "rose-estates": "File:Vignoble de Provence rosé.jpg",
     "organic-wine": "File:Vineyard in Provence.jpg",
     "fenocchio": "File:Glaces Fenocchio à Nice.jpg",
-    "bakery-local": "File:Croissant au beurre.jpg",
     "pizza-nice": "File:Pizza au feu de bois.jpg",
     "monaco-luxury": "File:Monte Carlo Casino square.jpg",
-    "aquasplash": "File:Aquasplash - ANTIBES - panoramio.jpg",
-    "la-pesquiere": "File:Aerial photograph of Cros-de-Cagnes.jpg",
-    "cap3000": "File:Centre commercial CAP 3000.jpg",
+    "aquasplash": "File:Aquasplash SIDE WINDER - panoramio.jpg",
+    "cros-de-cagnes": "File:Aerial photograph of Cros-de-Cagnes.jpg",
     "nice-rooftops": "File:Promenade des Anglais Nice sunset.jpg",
     "coaraze": "File:Coaraze village.jpg",
     "gorges-du-loup": "File:Cascade du Saut du Loup.jpg",
     "esterel": "File:Massif de l'Estérel.jpg",
+    "juan-les-pins": "File:Juan-Les-Pins - Boulevard Édouard Baudoin - View West on Plage les Pirates.jpg",
+    "diving": "File:Plongée sur la Gabinière.jpg",
+    "valbonne": "File:0 Valbonne - Place des arcades.JPG",
+    "vence": "File:Chapelle du Rosaire de Vence (4426949800).jpg",
+    "le-caruso": "File:Saint-Paul-de-Vence BW 2011-06-09 12-19-00.JPG",
+    "les-remparts": "File:France-002658 - Great View (15932145372).jpg",
+    "sabai-sabai": "File:Saint-Paul-De-Vence and La Colle-sur-Loup 01.jpg",
+    "nice": "File:Nice (06) Cours Saleya 802.jpg",
+    "st-paul-de-vence": "File:Saint-Paul-de-Vence BW 2011-06-09 11-37-54.JPG",
+    "mirazur": "File:Menton Old Town and Harbour.jpg",
+    "louis-xv": "File:Monte-Carlo Hôtel de Paris.jpg",
+    "colombe-dor": "File:Saint-Paul-de-Vence seen from La Colombe d'Or.jpg",
+    "eze-sunset-dining": "File:Èze - General View from Grand-Corniche - 01.jpg",
+    "cannes-beach-clubs": "File:06400 Cannes beach Croisette.jpg",
+    "juan-nightlife": "File:Scène de Jazz à Juan-Les-Pins.jpg",
+    "mont-boron": "File:Cap de Nice et Baie des Anges.jpg",
+    "grasse": "File:06130 Grasse, France - panoramio.jpg",
 }
+
+REJECT_TITLE = (
+    ".pdf", ".djvu", ".svg", "diagram", "map of", "logo", " ia_", "(ia ",
+    "monet", "signac", "vallotton", "guizot", "krafft", "plan du", "billboard",
+    "painting", "illustration", "scan", " engraving", "postcard", "stamp",
+)
 
 # Per-image object-position for 4:3 crop (meaningful area visible)
 POSITION = {
@@ -149,7 +182,7 @@ POSITION = {
     "antibes-market": "center 40%",
     "paloma": "center 55%",
     "la-garoupe": "center 45%",
-    "parc-phoenix": "center 30%",
+    "parc-phoenix": "center 35%",
     "grasse": "center 35%",
     "fondation-maeght": "center 40%",
     "gorges-du-loup": "center 55%",
@@ -163,7 +196,10 @@ POSITION = {
     "monaco": "center 45%",
     "haut-de-cagnes": "center 40%",
     "eze-town": "center 45%",
-    "st-paul-de-vence": "center 45%",
+    "st-paul-de-vence": "center 40%",
+    "les-remparts": "center 45%",
+    "vence": "center 40%",
+    "nice": "center 45%",
     "cros-de-cagnes": "center 55%",
     "plage-mala": "center 50%",
     "villefranche": "center 55%",
@@ -189,15 +225,52 @@ CATEGORY_FALLBACK = {
 ALT_OVERRIDES = {
     "haut-de-cagnes": "Haut-de-Cagnes medieval village near Villa Augflor",
     "cros-de-cagnes": "Cros-de-Cagnes beach, the nearest beach to Villa Augflor",
-    "st-paul-de-vence": "Saint-Paul-de-Vence stone village near Villa Augflor",
-    "fondation-maeght": "Fondation Maeght art museum near Saint-Paul-de-Vence",
-    "nice": "Nice old town and Promenade des Anglais near Villa Augflor",
+    "st-paul-de-vence": "Saint-Paul-de-Vence walled hill village and ramparts near Villa Augflor",
+    "fondation-maeght": "Fondation Maeght museum courtyard and sculpture garden, Saint-Paul-de-Vence",
+    "nice": "Cours Saleya market and Vieux-Nice old town near Villa Augflor",
     "la-garoupe": "Plage de la Garoupe sandy beach on Cap d'Antibes",
     "monaco": "Monaco harbour and Monte-Carlo viewed from the French Riviera",
     "plage-mala": "Plage Mala turquoise cove below Cap d'Ail",
     "polygone": "Polygone Riviera shopping centre in Cagnes-sur-Mer",
-    "musee-renoir": "Musée Renoir, Renoir's house in Cagnes-sur-Mer",
+    "musee-renoir": "Musée Renoir villa and garden, Chemin des Collettes, Cagnes-sur-Mer",
     "marineland-note": "Oceanographic Museum Monaco — alternative to closed Marineland",
+    "cros-de-cagnes": "Cros-de-Cagnes beach promenade, the nearest beach to Villa Augflor",
+    "juan-les-pins": "Juan-les-Pins sandy beach and pines near Antibes",
+    "diving": "Scuba diver in clear Mediterranean water",
+    "sailing-school": "Catamaran sailing on the Mediterranean",
+    "valbonne": "Charming Valbonne old village street with yellow buildings, fountain and festive garlands",
+    "vence": "Vence old town square in the Alpes-Maritimes",
+    "rose-estates": "Provence rosé vineyard terraces",
+    "organic-wine": "Organic vineyard hills in Provence",
+    "mirazur": "Menton old town and harbour on the Italian border",
+    "louis-xv": "Hôtel de Paris Monte-Carlo, home of Le Louis XV",
+    "la-pesquiere": "Seafood dish at Le Bistrot de la Marine, Cros-de-Cagnes seafront",
+    "eze-sunset-dining": "Èze village and Mediterranean coast at sunset",
+    "cannes-beach-clubs": "Cannes Croisette beach and seafront",
+    "juan-nightlife": "Jazz at Juan-les-Pins — Riviera summer nightlife",
+    "mont-boron": "Cap de Nice and Baie des Anges from Mont Boron",
+    "grasse": "Grasse old town, perfume capital of the Riviera",
+    "nice-rooftops": "Baie des Anges sunset — the view from Nice rooftop bars",
+    "fenocchio": "Fenocchio gelato display in Vieux-Nice",
+    "bakery-local": "Pastry display at Bour Pastry Bread Catering, Cagnes-sur-Mer",
+    "pizza-nice": "Wood-fired pizza from a Niçoise pizzeria",
+    "paddleboard": "Stand-up paddleboarding on calm Mediterranean water",
+    "jet-ski": "Jet ski on the Mediterranean off the French Riviera",
+    "azur-park": "Ferris wheel at Azur Park funfair near Villeneuve-Loubet",
+    "aquasplash": "Aquasplash Side Winder water slide, Antibes",
+    "monaco-luxury": "Monte-Carlo Casino square and luxury boutiques",
+    "cap3000": "CAP 3000 shopping centre entrance, Saint-Laurent-du-Var",
+    "colombe-dor": "Saint-Paul-de-Vence viewed from La Colombe d'Or",
+    "le-caruso": "Provençal burrata and heirloom tomato salad — Saint-Paul-de-Vence dining",
+    "les-remparts": "Les Remparts candlelit terrace with valley views at sunset, Saint-Paul-de-Vence",
+    "sabai-sabai": "Sabaï-sabaï Thai restaurant terrace on Place de la Mairie, Saint-Paul-de-Vence",
+    "vence": "Chapelle du Rosaire (Matisse Chapel) in Vence",
+    "fleur-de-sel": "cozy Michelin-listed dining room, Haut-de-Cagnes",
+    "cafe-timothe": "Café Timothé organic restaurant interior with dried flowers, Saint-Paul-de-Vence",
+    "table-de-kamiya": "La Table de KAMIYA seafront dining room, Promenade de la Plage, Cros-de-Cagnes",
+    "l-agape": "L'Agapè refined seafront dining, Promenade de la Plage, Cros-de-Cagnes",
+    "ino-plage": "Ino Plage savoury pie and fresh salad at the Cros seafront, Promenade de la Plage",
+    "table-de-pierre": "La Table de Pierre glass dining room, Domaine du Mas de Pierre, Saint-Paul-de-Vence",
 }
 
 
@@ -223,7 +296,7 @@ def search_title(query: str) -> str | None:
     for hit in data.get("query", {}).get("search", []):
         title = hit.get("title", "")
         low = title.lower()
-        if title.startswith("File:") and not any(x in low for x in skip):
+        if title.startswith("File:") and not any(x in low for x in skip + REJECT_TITLE):
             return title
     return None
 
@@ -310,7 +383,9 @@ def download_one(pid: str, query: str, credits: dict, optimize_only: bool = Fals
         return dest.exists()
 
     curated = CURATED.get(pid)
-    if dest.exists() and pid not in FORCE and not curated:
+    must_fetch = pid in FORCE
+
+    if dest.exists() and not must_fetch:
         if pid not in credits:
             print(f"  credit-only {pid}")
         else:
@@ -322,9 +397,9 @@ def download_one(pid: str, query: str, credits: dict, optimize_only: bool = Fals
             print(f"  FAIL {pid}: no search hit")
             return dest.exists()
         low = title.lower()
-        if any(x in low for x in (".pdf", ".djvu", ".svg", "diagram", "map of", "logo")):
+        if any(x in low for x in REJECT_TITLE):
             print(f"  FAIL {pid}: rejected non-photo {title}")
-            return dest.exists()
+            return dest.exists() if not curated else False
         info = fetch_image_info(title)
         if not info:
             print(f"  FAIL {pid}: no imageinfo")
@@ -356,7 +431,7 @@ def download_one(pid: str, query: str, credits: dict, optimize_only: bool = Fals
             "imageFile": f"assets/photos/area/{pid}.jpg",
         }
         print(f"  OK {pid} <- {title} ({size // 1024} KB, {info.get('width')}x{info.get('height')})")
-        time.sleep(0.4)
+        time.sleep(1.0 if pid in FORCE else 0.4)
         return True
     except Exception as exc:
         print(f"  ERR {pid}: {exc}")
@@ -476,6 +551,8 @@ def main() -> None:
     CREDITS_JSON.write_text(json.dumps(credits, indent=2, ensure_ascii=False), encoding="utf-8")
     write_credits_txt(credits)
     build_meta_js(credits, dimensions)
+    import subprocess
+    subprocess.run(["python3", str(ROOT / "scripts" / "generate-area-qc.py")], check=False)
     print(f"\nDone: {len(credits)} credits, meta → {META_JS.name}")
 
 
