@@ -145,11 +145,21 @@
   "makesOffer": [
     {
       "@type": "Offer",
-      "name": "Villa Augflor open dates 11 Jun to 9 Jul (28 nights)",
+      "name": "Villa Augflor open dates 12 Jun to 18 Jun (6 nights)",
       "price": "420",
       "priceCurrency": "EUR",
       "availability": "https://schema.org/InStock",
-      "availabilityStarts": "2026-06-11",
+      "availabilityStarts": "2026-06-12",
+      "availabilityEnds": "2026-06-18",
+      "url": "https://villa-augflor.com/"
+    },
+    {
+      "@type": "Offer",
+      "name": "Villa Augflor open dates 27 Jun to 9 Jul (12 nights)",
+      "price": "420",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock",
+      "availabilityStarts": "2026-06-27",
       "availabilityEnds": "2026-07-09",
       "url": "https://villa-augflor.com/"
     },
@@ -286,15 +296,15 @@ body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--d
 .urgency-banner a { color: #fff; text-decoration: underline; }
 
 /* NAV */
-nav { position: fixed; top: 37px; left: 0; right: 0; z-index: 100; padding: 1.25rem 2.5rem; display: flex; justify-content: space-between; align-items: center; transition: background .4s, box-shadow .4s; }
+nav { position: fixed; top: 37px; left: 0; right: 0; z-index: 100; padding: 1.25rem 2.5rem; display: flex; justify-content: space-between; align-items: center; transition: background .4s, box-shadow .4s; flex-wrap: wrap; }
 nav.scrolled { background: rgba(247,243,238,0.97); box-shadow: 0 1px 0 rgba(0,0,0,0.08); }
-.nav-logo { color: var(--white); transition: color .3s; }
+.nav-logo { color: var(--white); transition: color .3s; white-space: nowrap; }
 nav.scrolled .nav-logo { color: var(--deep); }
-.nav-links { display: flex; gap: 2rem; align-items: center; }
-.nav-links a { font-size: 13px; font-weight: 400; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,0.85); text-decoration: none; transition: color .3s; }
+.nav-links { display: flex; gap: 2rem; align-items: center; flex-wrap: wrap; }
+.nav-links a { font-size: 13px; font-weight: 400; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,0.85); text-decoration: none; transition: color .3s; white-space: nowrap; }
 nav.scrolled .nav-links a { color: var(--muted); }
 .nav-links a:hover { color: var(--accent); }
-.nav-cta { background: var(--accent) !important; color: var(--white) !important; padding: .5rem 1.25rem; border-radius: 2px; font-size: 12px !important; letter-spacing: .12em; }
+.nav-cta { background: var(--accent) !important; color: var(--white) !important; padding: .5rem 1.25rem; border-radius: 2px; font-size: 12px !important; letter-spacing: .12em; white-space: normal; }
 .nav-cta:hover { background: var(--accent-light) !important; }
 
 /* HERO */
@@ -760,7 +770,9 @@ footer { background: #141210; padding: 3.5rem 2.5rem 2rem; color: rgba(255,255,2
   .footer-inner { grid-template-columns: 1fr 1fr; gap: 2rem; }
   .footer-bottom { flex-direction: column; gap: .5rem; }
   nav { padding: 1rem 1.25rem; }
-  .nav-links { gap: 1rem; }
+  .nav-links { gap: 0.75rem; }
+  .nav-links a { font-size: 12px; }
+  .nav-cta { padding: .4rem 1rem !important; font-size: 11px !important; }
   section { padding: 4rem 1.25rem; }
   .hero-content { padding: 0 1.25rem; }
   .features-bg, .reviews-bg, .rules-bg, .area-promo-bg { padding: 4rem 1.25rem; }
@@ -771,21 +783,36 @@ footer { background: #141210; padding: 3.5rem 2.5rem 2rem; color: rgba(255,255,2
 }
 @media (max-width: 600px) {
   .trust-strip { grid-template-columns: repeat(2, 1fr); }
+  .trust-item { padding: .5rem 0.5rem; }
+  .trust-num { font-size: 24px; }
+  .trust-label { font-size: 9px; }
+  nav { padding: 0.75rem 1rem; gap: 1rem; }
+  .nav-logo { font-size: 18px; }
+  .logo-tag { display: none; }
+  .nav-links { width: 100%; gap: 0.5rem; justify-content: flex-start; }
   .nav-links .nav-hide { display: none; }
+  .nav-links a { font-size: 11px; padding: 0.4rem 0.6rem; }
+  .nav-cta { padding: 0.4rem 0.8rem !important; font-size: 10px !important; letter-spacing: .08em; line-height: 1.3; flex: 1; min-width: 140px; text-align: center; }
   .form-row { grid-template-columns: 1fr; }
   .about-imgs { height: 320px; }
   .availability-bar { grid-template-columns: repeat(3, 1fr); }
   .guide-panel.active, .essentials-grid { grid-template-columns: 1fr; }
   .footer-inner { grid-template-columns: 1fr; }
-  .hero-imgs { grid-template-columns: 1fr 1fr; }
-  .hero-col-left { grid-column: 1 / 3; grid-row: 1; }
-  .hero-content { width: 100%; max-width: none; padding: 0 1.25rem; }
+  .hero { padding-bottom: 3rem; }
+  .hero-content { width: 100%; max-width: none; padding: 0 1rem; }
+  .hero-title { font-size: clamp(32px, 6vw, 56px); margin-bottom: 1rem; }
+  .hero-sub { font-size: 14px; margin-bottom: 0.5rem; }
+  .hero-trust-line, .hero-price-line { font-size: 12px; margin-bottom: 1rem; }
+  .hero-actions { gap: 0.5rem; }
+  .btn-primary, .btn-outline { padding: .6rem 1rem; font-size: 11px; flex: 1; text-align: center; }
   .hi2, .hi3 { display: none; }
   .area-promo-grid { grid-template-columns: 1fr 1fr; }
   .area-promo-features { grid-template-columns: 1fr; }
   .gtab { padding: .6rem .75rem; font-size: 11px; }
   .gallery-grid { grid-template-columns: 1fr 1fr; gap: 4px; }
   .gallery-grid .g-img:nth-child(3n) { grid-column: span 2; grid-row: span 1; height: 200px !important; }
+  .hero-imgs { grid-template-columns: 1fr 1fr; }
+  .hero-col-left { grid-column: 1 / 3; grid-row: 1; }
 }
 </style>
 <link rel="stylesheet" href="styles/cro-home.css">
@@ -861,11 +888,15 @@ footer { background: #141210; padding: 3.5rem 2.5rem 2rem; color: rgba(255,255,2
 
     <!-- OPEN-WEEKS:START -->
 <div class="open-weeks" data-open-weeks-static style="max-width:680px;margin:0 auto 2rem;text-align:left;background:rgba(255,255,255,.55);border:1px solid var(--sand,#e4dccf);border-radius:4px;padding:1.25rem 1.5rem;">
-  <p style="margin:0 0 .75rem;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted,#7a7269);">Open stay windows · updated 11 June 2026</p>
+  <p style="margin:0 0 .75rem;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted,#7a7269);">Open stay windows · updated 12 June 2026</p>
   <ul style="list-style:none;margin:0;padding:0;font-size:15.5px;">
     <li style="margin:0 0 .55rem;line-height:1.45;">
-      <strong>11 Jun → 9 Jul</strong> · up to 28 nights · from €420/night
-      — <a href="https://wa.me/33623777333?text=Hi%20Lana%2C%20we'd%20like%20to%20book%20Villa%20Augflor.%20Dates%3A%2011%20Jun%20to%209%20Jul%20(or%20part%20of%20this%20window).%20Guests%3A%20%5Bnumber%5D." rel="noopener" style="color:var(--accent,#3d7a8a);text-decoration:underline;white-space:nowrap;">enquire about these dates</a>
+      <strong>12 Jun → 18 Jun</strong> · up to 6 nights · €420/night <em style="font-style:normal;opacity:.75">(short-stay window — ask Lana)</em>
+      — <a href="https://wa.me/33623777333?text=Hi%20Lana%2C%20we'd%20like%20to%20book%20Villa%20Augflor.%20Dates%3A%2012%20Jun%20to%2018%20Jun%20(or%20part%20of%20this%20window).%20Guests%3A%20%5Bnumber%5D." rel="noopener" style="color:var(--accent,#3d7a8a);text-decoration:underline;white-space:nowrap;">enquire about these dates</a>
+    </li>
+    <li style="margin:0 0 .55rem;line-height:1.45;">
+      <strong>27 Jun → 9 Jul</strong> · up to 12 nights · from €420/night
+      — <a href="https://wa.me/33623777333?text=Hi%20Lana%2C%20we'd%20like%20to%20book%20Villa%20Augflor.%20Dates%3A%2027%20Jun%20to%209%20Jul%20(or%20part%20of%20this%20window).%20Guests%3A%20%5Bnumber%5D." rel="noopener" style="color:var(--accent,#3d7a8a);text-decoration:underline;white-space:nowrap;">enquire about these dates</a>
     </li>
     <li style="margin:0 0 .55rem;line-height:1.45;">
       <strong>16 Jul → 29 Jul</strong> · up to 13 nights · €480/night
