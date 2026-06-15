@@ -1,0 +1,74 @@
+{
+  "generatedAt": "2026-06-15T09:05:54.569Z",
+  "openSummary": {
+    "windows": [
+      {
+        "start": "2026-06-15",
+        "end": "2026-06-17"
+      },
+      {
+        "start": "2026-06-27",
+        "end": "2026-07-08"
+      },
+      {
+        "start": "2026-07-16",
+        "end": "2026-07-28"
+      },
+      {
+        "start": "2026-08-03",
+        "end": "2026-09-13"
+      }
+    ],
+    "updated": "2026-06-15T09:05:54.559Z",
+    "busyCount": 28
+  },
+  "posts": [
+    {
+      "type": "feed",
+      "theme": "pool_privacy",
+      "imageHint": "assets/photos/optimized/swimming-pool.jpg",
+      "canvaTemplate": "CANVA_BRAND_TEMPLATE_FEED",
+      "caption": "Your own pool, walled garden, no shared facilities — Villa Augflor, Cagnes-sur-Mer.\n\n15 min Nice Airport · ideal 4 / max 6 · 4.79★ · written quote before payment.\n\nOpen windows (next 90 days): 15 Jun → 17 Jun · 27 Jun → 8 Jul · 16 Jul → 28 Jul · 3 Aug → 13 Sept\n\nEnquire: https://wa.me/33623777333?text=Hi%20Lana%2C%20please%20check%20Villa%20Augflor%20availability.%20Dates%3A%20%5Bcheck-in%5D%20to%20%5Bcheck-out%5D.%20Guests%3A%20%5Bnumber%5D.\n\n#VillaAugflor #CagnesSurMer #CoteDAzur #FrenchRiviera #PrivatePool #NiceAirport #VillaRental #SouthOfFrance #DirectBooking",
+      "canvaFields": {
+        "headline": "Private pool villa · Côte d'Azur",
+        "subline": "15 min Nice Airport · from €420/n direct",
+        "cta": "Written quote before payment"
+      }
+    },
+    {
+      "type": "story",
+      "theme": "open_dates",
+      "imageHint": "assets/photos/optimized/garden-dining-patio.jpg",
+      "canvaTemplate": "CANVA_BRAND_TEMPLATE_STORY",
+      "caption": "Summer dates still open at Villa Augflor 🌿\nOpen windows (next 90 days): 15 Jun → 17 Jun · 27 Jun → 8 Jul · 16 Jul → 28 Jul · 3 Aug → 13 Sept\nSwipe up / link in bio → WhatsApp Lana for a written quote.",
+      "canvaFields": {
+        "headline": "Summer 2026 — open weeks",
+        "subline": "Open windows (next 90 days): 15 Jun → 17 Jun · 27 Jun → 8 Jul · 16 Jul → 28 Jul · 3 Aug → 13 Sept",
+        "cta": "Check dates on WhatsApp"
+      }
+    },
+    {
+      "type": "reel",
+      "theme": "direct_savings",
+      "imageHint": "assets/photos/optimized/photo-swimming-pool-backyard-garden-lounge.jpg",
+      "canvaTemplate": "CANVA_BRAND_TEMPLATE_REEL",
+      "caption": "Same villa. Clearer total.\n\nDirect booking example: ~€676 saved vs platform fees on a peak week (see villa-augflor.com/rates).\n\nCompare on Airbnb first if you prefer — then message for a written direct quote.\n\n#VillaAugflor #CagnesSurMer #CoteDAzur #FrenchRiviera #PrivatePool #NiceAirport #VillaRental #SouthOfFrance #DirectBooking",
+      "canvaFields": {
+        "headline": "Book direct · save ~€676/week",
+        "subline": "4.79★ · 38 reviews · Gîtes de France 4★",
+        "cta": "villa-augflor.com"
+      }
+    }
+  ],
+  "instagram": {
+    "ok": false,
+    "reason": "Missing INSTAGRAM_ACCESS_TOKEN or INSTAGRAM_BUSINESS_ACCOUNT_ID",
+    "published": []
+  },
+  "canva": {
+    "ok": false,
+    "reason": "Missing CANVA_ACCESS_TOKEN — content pack includes Canva field map for manual design",
+    "designs": []
+  },
+  "publishMode": false
+}
