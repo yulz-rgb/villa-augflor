@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 140" role="img" aria-label="Villa Augflor — Côte d'Azur">
+  <rect width="520" height="140" fill="#f7f3ee"/>
+  <g fill="#2d5f6d">
+    <text x="260" y="74" text-anchor="middle" font-family="Georgia, 'Cormorant Garamond', serif" font-size="56" font-weight="400" letter-spacing="1">Villa Augflor</text>
+  </g>
+  <text x="260" y="104" text-anchor="middle" font-family="'Jost', Arial, sans-serif" font-size="15" letter-spacing="7" fill="#3d7a8a">CÔTE D'AZUR</text>
+  <line x1="170" y1="88" x2="350" y2="88" stroke="#b8976a" stroke-width="1"/>
+</svg>
