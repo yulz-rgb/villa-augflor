@@ -74,7 +74,7 @@ ${posts.map((p, i) => `### ${i + 1}. ${p.type} — ${p.theme}\n${p.caption}\n`).
 
 async function runWeekly(publish) {
   ensureOut();
-  const openSummary = getOpenDateSummary(120);
+  const openSummary = getOpenDateSummary(90);
   const posts = weeklyPosts(openSummary);
 
   const siteUrl = process.env.SITE_URL || "https://villa-augflor.com";

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-15T09:02:44.166Z",
+  "generatedAt": "2026-06-15T09:05:54.569Z",
   "openSummary": {
     "windows": [
       {
@@ -16,10 +16,10 @@
       },
       {
         "start": "2026-08-03",
-        "end": "2026-10-13"
+        "end": "2026-09-13"
       }
     ],
-    "updated": "2026-06-15T09:02:44.166Z",
+    "updated": "2026-06-15T09:05:54.559Z",
     "busyCount": 28
   },
   "posts": [
@@ -28,7 +28,7 @@
       "theme": "pool_privacy",
       "imageHint": "assets/photos/optimized/swimming-pool.jpg",
       "canvaTemplate": "CANVA_BRAND_TEMPLATE_FEED",
-      "caption": "Your own pool, walled garden, no shared facilities — Villa Augflor, Cagnes-sur-Mer.\n\n15 min Nice Airport · ideal 4 / max 6 · 4.79★ · written quote before payment.\n\nOpen windows (next 4 months): 2026-06-15 → 2026-06-17 · 2026-06-27 → 2026-07-08 · 2026-07-16 → 2026-07-28\n\nEnquire: https://wa.me/33623777333?text=Hi%20Lana%2C%20please%20check%20Villa%20Augflor%20availability.%20Dates%3A%20%5Bcheck-in%5D%20to%20%5Bcheck-out%5D.%20Guests%3A%20%5Bnumber%5D.\n\n#VillaAugflor #CagnesSurMer #CoteDAzur #FrenchRiviera #PrivatePool #NiceAirport #VillaRental #SouthOfFrance #DirectBooking",
+      "caption": "Your own pool, walled garden, no shared facilities — Villa Augflor, Cagnes-sur-Mer.\n\n15 min Nice Airport · ideal 4 / max 6 · 4.79★ · written quote before payment.\n\nOpen windows (next 90 days): 15 Jun → 17 Jun · 27 Jun → 8 Jul · 16 Jul → 28 Jul · 3 Aug → 13 Sept\n\nEnquire: https://wa.me/33623777333?text=Hi%20Lana%2C%20please%20check%20Villa%20Augflor%20availability.%20Dates%3A%20%5Bcheck-in%5D%20to%20%5Bcheck-out%5D.%20Guests%3A%20%5Bnumber%5D.\n\n#VillaAugflor #CagnesSurMer #CoteDAzur #FrenchRiviera #PrivatePool #NiceAirport #VillaRental #SouthOfFrance #DirectBooking",
       "canvaFields": {
         "headline": "Private pool villa · Côte d'Azur",
         "subline": "15 min Nice Airport · from €420/n direct",
@@ -40,10 +40,10 @@
       "theme": "open_dates",
       "imageHint": "assets/photos/optimized/garden-dining-patio.jpg",
       "canvaTemplate": "CANVA_BRAND_TEMPLATE_STORY",
-      "caption": "Summer dates still open at Villa Augflor 🌿\nOpen windows (next 4 months): 2026-06-15 → 2026-06-17 · 2026-06-27 → 2026-07-08 · 2026-07-16 → 2026-07-28\nSwipe up / link in bio → WhatsApp Lana for a written quote.",
+      "caption": "Summer dates still open at Villa Augflor 🌿\nOpen windows (next 90 days): 15 Jun → 17 Jun · 27 Jun → 8 Jul · 16 Jul → 28 Jul · 3 Aug → 13 Sept\nSwipe up / link in bio → WhatsApp Lana for a written quote.",
       "canvaFields": {
         "headline": "Summer 2026 — open weeks",
-        "subline": "Open windows (next 4 months): 2026-06-15 → 2026-06-17 · 2026-06-27 → 2026-07-08 · 2026-07-16 → 2026-07-28",
+        "subline": "Open windows (next 90 days): 15 Jun → 17 Jun · 27 Jun → 8 Jul · 16 Jul → 28 Jul · 3 Aug → 13 Sept",
         "cta": "Check dates on WhatsApp"
       }
     },

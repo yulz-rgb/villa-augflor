@@ -4,13 +4,22 @@ const WA =
 const HASHTAGS =
   "#VillaAugflor #CagnesSurMer #CoteDAzur #FrenchRiviera #PrivatePool #NiceAirport #VillaRental #SouthOfFrance #DirectBooking";
 
+function formatDate(ymd) {
+  const [year, month, day] = ymd.split("-").map(Number);
+  return new Date(Date.UTC(year, month - 1, day)).toLocaleDateString("en-GB", {
+    timeZone: "UTC",
+    day: "numeric",
+    month: "short",
+  });
+}
+
 function urgencyLine(windows) {
   if (!windows.length) return "Ask Lana for current availability — summer weeks fill quickly.";
-  const top = windows.slice(0, 3).map((w) => {
-    if (w.start === w.end) return w.start;
-    return `${w.start} → ${w.end}`;
+  const labels = windows.map((w) => {
+    if (w.start === w.end) return formatDate(w.start);
+    return `${formatDate(w.start)} → ${formatDate(w.end)}`;
   });
-  return `Open windows (next 4 months): ${top.join(" · ")}`;
+  return `Open windows (next 90 days): ${labels.join(" · ")}`;
 }
 
 function weeklyPosts(openSummary) {
