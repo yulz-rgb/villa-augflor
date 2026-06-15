@@ -408,3 +408,9 @@
   .va-chat-panel { width: calc(100vw - 2rem); right: -1rem; }
   .va-proactive-bubble { width: calc(100vw - 5rem); }
 }
+
+/* The mobile sticky CTA bar (≤900px) already offers WhatsApp contact —
+   hide the chat bubble there so the bottom corner has a single entry point. */
+@media (max-width: 900px) {
+  #va-chat-widget { display: none; }
+}

@@ -200,6 +200,12 @@ section .wrap-sm > h2 {
 
 @media (max-width: 520px) {
   .nav-enquire { display: none; }
+  /* One CTA is enough on a phone — the ghost WhatsApp button duplicates it */
+  .nav-cta .btn-ghost { display: none; }
+  .logo-tag { display: none; }
+  .logo { white-space: nowrap; font-size: 1.2rem; }
+  .nav-cta { gap: .35rem; }
+  .nav-cta .btn { padding: .6rem .85rem; font-size: .82rem; }
 }
 
 /* ---------- Hero ---------- */

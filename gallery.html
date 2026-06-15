@@ -48,7 +48,8 @@ a { color: inherit; text-decoration: none; }
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: .95rem 0;
+  padding-top: .95rem;
+  padding-bottom: .95rem;
 }
 .brand { color: var(--deep); }
 .top-actions {
@@ -70,7 +71,8 @@ a { color: inherit; text-decoration: none; }
   border-color: var(--accent);
 }
 .hero {
-  padding: clamp(3rem, 7vw, 5rem) 0 2.5rem;
+  padding-top: clamp(3rem, 7vw, 5rem);
+  padding-bottom: 2.5rem;
 }
 .eyebrow {
   display: inline-block;
@@ -144,6 +146,10 @@ img {
   .grid { grid-template-columns: 1fr; }
   .img-link { height: 250px; }
   .top-actions .btn:first-child { display: none; }
+  .logo-tag { display: none; }
+  .brand { font-size: 1.15rem; white-space: nowrap; }
+  .topbar-inner { gap: .5rem; }
+  .top-actions .btn-primary { font-size: .65rem; padding: .5rem .7rem; text-align: center; }
 }
 
 .lightbox-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.92); z-index: 1000; align-items: center; justify-content: center; }
@@ -301,14 +307,12 @@ figure.gallery-item:focus-visible { outline: 2px solid var(--accent); outline-of
 <section class="section">
       <div class="wrap">
         <h2>Garden Room</h2>
-        <p class="section-note">Garden room · pool access · A/C. (6 photos)</p>
+        <p class="section-note">Garden room · pool access · A/C. (4 photos)</p>
         <div class="grid">
           <figure class="gallery-item" data-idx="56" onclick="openLightbox(56)" role="button" tabindex="0" aria-label="View full size: Garden room floral display at Villa Augflor"><div class="img-link"><img src="assets/photos/optimized/garden-room.jpg" alt="Garden room floral display at Villa Augflor" loading="lazy"></div></figure>
           <figure class="gallery-item" data-idx="57" onclick="openLightbox(57)" role="button" tabindex="0" aria-label="View full size: Garden room with piano and pool view at Villa Augflor"><div class="img-link"><img src="assets/photos/optimized/ground-floor-garden-room.jpg" alt="Garden room with piano and pool view at Villa Augflor" loading="lazy"></div></figure>
           <figure class="gallery-item" data-idx="58" onclick="openLightbox(58)" role="button" tabindex="0" aria-label="View full size: Garden room at Villa Augflor with pool access"><div class="img-link"><img src="assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0004.jpg" alt="Garden room at Villa Augflor with pool access" loading="lazy"></div></figure>
           <figure class="gallery-item" data-idx="59" onclick="openLightbox(59)" role="button" tabindex="0" aria-label="View full size: Garden room at Villa Augflor with pool access"><div class="img-link"><img src="assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0070.jpg" alt="Garden room at Villa Augflor with pool access" loading="lazy"></div></figure>
-          <figure class="gallery-item" data-idx="60" onclick="openLightbox(60)" role="button" tabindex="0" aria-label="View full size: Garden room at Villa Augflor with pool access"><div class="img-link"><img src="assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0071.jpg" alt="Garden room at Villa Augflor with pool access" loading="lazy"></div></figure>
-          <figure class="gallery-item" data-idx="61" onclick="openLightbox(61)" role="button" tabindex="0" aria-label="View full size: Garden room at Villa Augflor with pool access"><div class="img-link"><img src="assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0113.jpg" alt="Garden room at Villa Augflor with pool access" loading="lazy"></div></figure>
         </div>
       </div>
     </section>
@@ -317,49 +321,46 @@ figure.gallery-item:focus-visible { outline: 2px solid var(--accent); outline-of
         <h2>Ground Floor Bedroom — Provence</h2>
         <p class="section-note">Ground-floor bedroom — best for guests avoiding stairs. (13 photos)</p>
         <div class="grid">
-          <figure class="gallery-item" data-idx="62" onclick="openLightbox(62)" role="button" tabindex="0" aria-label="View full size: Provence ground-floor bedroom at Villa Augflor"><div class="img-link"><img src="assets/photos/optimized/ground-floor-le-provance-bedroom.jpg" alt="Provence ground-floor bedroom at Villa Augflor" loading="lazy"></div></figure>
-          <figure class="gallery-item" data-idx="63" onclick="openLightbox(63)" role="button" tabindex="0" aria-label="View full size: Provence ground-floor bedroom at Villa Augflor"><div class="img-link"><img src="assets/photos/optimized/ground-floor-bedroom-le-provance.jpg" alt="Provence ground-floor bedroom at Villa Augflor" loading="lazy"></div></figure>
-          <figure class="gallery-item" data-idx="64" onclick="openLightbox(64)" role="button" tabindex="0" aria-label="View full size: Provence ground-floor bedroom at Villa Augflor"><div class="img-link"><img src="assets/photos/optimized/ground-floor-bedroom.jpg" alt="Provence ground-floor bedroom at Villa Augflor" loading="lazy"></div></figure>
-          <figure class="gallery-item" data-idx="65" onclick="openLightbox(65)" role="button" tabindex="0" aria-label="View full size: Provence ground-floor bedroom at Villa Augflor"><div class="img-link"><img src="assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0028.jpg" alt="Provence ground-floor bedroom at Villa Augflor" loading="lazy"></div></figure>
-          <figure class="gallery-item" data-idx="66" onclick="openLightbox(66)" role="button" tabindex="0" aria-label="View full size: Provence ground-floor bedroom at Villa Augflor"><div class="img-link"><img src="assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0061.jpg" alt="Provence ground-floor bedroom at Villa Augflor" loading="lazy"></div></figure>
-          <figure class="gallery-item" data-idx="67" onclick="openLightbox(67)" role="button" tabindex="0" aria-label="View full size: Provence ground-floor bedroom at Villa Augflor"><div class="img-link"><img src="assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0063.jpg" alt="Provence ground-floor bedroom at Villa Augflor" loading="lazy"></div></figure>
-          <figure class="gallery-item" data-idx="68" onclick="openLightbox(68)" role="button" tabindex="0" aria-label="View full size: Provence ground-floor bedroom at Villa Augflor"><div class="img-link"><img src="assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0064.jpg" alt="Provence ground-floor bedroom at Villa Augflor" loading="lazy"></div></figure>
-          <figure class="gallery-item" data-idx="69" onclick="openLightbox(69)" role="button" tabindex="0" aria-label="View full size: Provence ground-floor bedroom at Villa Augflor"><div class="img-link"><img src="assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0066.jpg" alt="Provence ground-floor bedroom at Villa Augflor" loading="lazy"></div></figure>
-          <figure class="gallery-item" data-idx="70" onclick="openLightbox(70)" role="button" tabindex="0" aria-label="View full size: Provence ground-floor bedroom at Villa Augflor"><div class="img-link"><img src="assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0067.jpg" alt="Provence ground-floor bedroom at Villa Augflor" loading="lazy"></div></figure>
-          <figure class="gallery-item" data-idx="71" onclick="openLightbox(71)" role="button" tabindex="0" aria-label="View full size: Provence ground-floor bedroom at Villa Augflor"><div class="img-link"><img src="assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0114.jpg" alt="Provence ground-floor bedroom at Villa Augflor" loading="lazy"></div></figure>
-          <figure class="gallery-item" data-idx="72" onclick="openLightbox(72)" role="button" tabindex="0" aria-label="View full size: Provence ground-floor bedroom at Villa Augflor"><div class="img-link"><img src="assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0115.jpg" alt="Provence ground-floor bedroom at Villa Augflor" loading="lazy"></div></figure>
-          <figure class="gallery-item" data-idx="73" onclick="openLightbox(73)" role="button" tabindex="0" aria-label="View full size: Provence ground-floor bedroom at Villa Augflor"><div class="img-link"><img src="assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0117.jpg" alt="Provence ground-floor bedroom at Villa Augflor" loading="lazy"></div></figure>
-          <figure class="gallery-item" data-idx="74" onclick="openLightbox(74)" role="button" tabindex="0" aria-label="View full size: Provence ground-floor bedroom at Villa Augflor"><div class="img-link"><img src="assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0118.jpg" alt="Provence ground-floor bedroom at Villa Augflor" loading="lazy"></div></figure>
+          <figure class="gallery-item" data-idx="60" onclick="openLightbox(60)" role="button" tabindex="0" aria-label="View full size: Provence ground-floor bedroom at Villa Augflor"><div class="img-link"><img src="assets/photos/optimized/ground-floor-le-provance-bedroom.jpg" alt="Provence ground-floor bedroom at Villa Augflor" loading="lazy"></div></figure>
+          <figure class="gallery-item" data-idx="61" onclick="openLightbox(61)" role="button" tabindex="0" aria-label="View full size: Provence ground-floor bedroom at Villa Augflor"><div class="img-link"><img src="assets/photos/optimized/ground-floor-bedroom-le-provance.jpg" alt="Provence ground-floor bedroom at Villa Augflor" loading="lazy"></div></figure>
+          <figure class="gallery-item" data-idx="62" onclick="openLightbox(62)" role="button" tabindex="0" aria-label="View full size: Provence ground-floor bedroom at Villa Augflor"><div class="img-link"><img src="assets/photos/optimized/ground-floor-bedroom.jpg" alt="Provence ground-floor bedroom at Villa Augflor" loading="lazy"></div></figure>
+          <figure class="gallery-item" data-idx="63" onclick="openLightbox(63)" role="button" tabindex="0" aria-label="View full size: Provence ground-floor bedroom at Villa Augflor"><div class="img-link"><img src="assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0028.jpg" alt="Provence ground-floor bedroom at Villa Augflor" loading="lazy"></div></figure>
+          <figure class="gallery-item" data-idx="64" onclick="openLightbox(64)" role="button" tabindex="0" aria-label="View full size: Provence ground-floor bedroom at Villa Augflor"><div class="img-link"><img src="assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0061.jpg" alt="Provence ground-floor bedroom at Villa Augflor" loading="lazy"></div></figure>
+          <figure class="gallery-item" data-idx="65" onclick="openLightbox(65)" role="button" tabindex="0" aria-label="View full size: Provence ground-floor bedroom at Villa Augflor"><div class="img-link"><img src="assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0063.jpg" alt="Provence ground-floor bedroom at Villa Augflor" loading="lazy"></div></figure>
+          <figure class="gallery-item" data-idx="66" onclick="openLightbox(66)" role="button" tabindex="0" aria-label="View full size: Provence ground-floor bedroom at Villa Augflor"><div class="img-link"><img src="assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0064.jpg" alt="Provence ground-floor bedroom at Villa Augflor" loading="lazy"></div></figure>
+          <figure class="gallery-item" data-idx="67" onclick="openLightbox(67)" role="button" tabindex="0" aria-label="View full size: Provence ground-floor bedroom at Villa Augflor"><div class="img-link"><img src="assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0066.jpg" alt="Provence ground-floor bedroom at Villa Augflor" loading="lazy"></div></figure>
+          <figure class="gallery-item" data-idx="68" onclick="openLightbox(68)" role="button" tabindex="0" aria-label="View full size: Provence ground-floor bedroom at Villa Augflor"><div class="img-link"><img src="assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0067.jpg" alt="Provence ground-floor bedroom at Villa Augflor" loading="lazy"></div></figure>
+          <figure class="gallery-item" data-idx="69" onclick="openLightbox(69)" role="button" tabindex="0" aria-label="View full size: Provence ground-floor bedroom at Villa Augflor"><div class="img-link"><img src="assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0114.jpg" alt="Provence ground-floor bedroom at Villa Augflor" loading="lazy"></div></figure>
+          <figure class="gallery-item" data-idx="70" onclick="openLightbox(70)" role="button" tabindex="0" aria-label="View full size: Provence ground-floor bedroom at Villa Augflor"><div class="img-link"><img src="assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0115.jpg" alt="Provence ground-floor bedroom at Villa Augflor" loading="lazy"></div></figure>
+          <figure class="gallery-item" data-idx="71" onclick="openLightbox(71)" role="button" tabindex="0" aria-label="View full size: Provence ground-floor bedroom at Villa Augflor"><div class="img-link"><img src="assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0117.jpg" alt="Provence ground-floor bedroom at Villa Augflor" loading="lazy"></div></figure>
+          <figure class="gallery-item" data-idx="72" onclick="openLightbox(72)" role="button" tabindex="0" aria-label="View full size: Provence ground-floor bedroom at Villa Augflor"><div class="img-link"><img src="assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0118.jpg" alt="Provence ground-floor bedroom at Villa Augflor" loading="lazy"></div></figure>
         </div>
       </div>
     </section>
 <section class="section">
       <div class="wrap">
         <h2>Master Bedroom — &ldquo;Barcelona&rdquo;</h2>
-        <p class="section-note">Loft master — steep staircase; lower ceilings. (6 photos)</p>
+        <p class="section-note">Loft master — steep staircase; lower ceilings. (5 photos)</p>
         <div class="grid">
-          <figure class="gallery-item" data-idx="75" onclick="openLightbox(75)" role="button" tabindex="0" aria-label="View full size: Barcelona master bedroom at Villa Augflor"><div class="img-link"><img src="assets/photos/optimized/master-bedroom-barcelona-2.jpg" alt="Barcelona master bedroom at Villa Augflor" loading="lazy"></div></figure>
-          <figure class="gallery-item" data-idx="76" onclick="openLightbox(76)" role="button" tabindex="0" aria-label="View full size: Barcelona master bedroom at Villa Augflor"><div class="img-link"><img src="assets/photos/optimized/master-bedroom-barcelona.jpg" alt="Barcelona master bedroom at Villa Augflor" loading="lazy"></div></figure>
-          <figure class="gallery-item" data-idx="77" onclick="openLightbox(77)" role="button" tabindex="0" aria-label="View full size: Barcelona master bedroom at Villa Augflor"><div class="img-link"><img src="assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0039.jpg" alt="Barcelona master bedroom at Villa Augflor" loading="lazy"></div></figure>
-          <figure class="gallery-item" data-idx="78" onclick="openLightbox(78)" role="button" tabindex="0" aria-label="View full size: Barcelona master bedroom at Villa Augflor"><div class="img-link"><img src="assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0078.jpg" alt="Barcelona master bedroom at Villa Augflor" loading="lazy"></div></figure>
-          <figure class="gallery-item" data-idx="79" onclick="openLightbox(79)" role="button" tabindex="0" aria-label="View full size: Barcelona master bedroom at Villa Augflor"><div class="img-link"><img src="assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0079.jpg" alt="Barcelona master bedroom at Villa Augflor" loading="lazy"></div></figure>
-          <figure class="gallery-item" data-idx="80" onclick="openLightbox(80)" role="button" tabindex="0" aria-label="View full size: Barcelona master bedroom at Villa Augflor"><div class="img-link"><img src="assets/photos/optimized/upstairs-master-bedroom-barcelona.jpg" alt="Barcelona master bedroom at Villa Augflor" loading="lazy"></div></figure>
+          <figure class="gallery-item" data-idx="73" onclick="openLightbox(73)" role="button" tabindex="0" aria-label="View full size: Barcelona master bedroom at Villa Augflor"><div class="img-link"><img src="assets/photos/optimized/master-bedroom-barcelona-2.jpg" alt="Barcelona master bedroom at Villa Augflor" loading="lazy"></div></figure>
+          <figure class="gallery-item" data-idx="74" onclick="openLightbox(74)" role="button" tabindex="0" aria-label="View full size: Barcelona master bedroom at Villa Augflor"><div class="img-link"><img src="assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0039.jpg" alt="Barcelona master bedroom at Villa Augflor" loading="lazy"></div></figure>
+          <figure class="gallery-item" data-idx="75" onclick="openLightbox(75)" role="button" tabindex="0" aria-label="View full size: Barcelona master bedroom at Villa Augflor"><div class="img-link"><img src="assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0078.jpg" alt="Barcelona master bedroom at Villa Augflor" loading="lazy"></div></figure>
+          <figure class="gallery-item" data-idx="76" onclick="openLightbox(76)" role="button" tabindex="0" aria-label="View full size: Barcelona master bedroom at Villa Augflor"><div class="img-link"><img src="assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0079.jpg" alt="Barcelona master bedroom at Villa Augflor" loading="lazy"></div></figure>
+          <figure class="gallery-item" data-idx="77" onclick="openLightbox(77)" role="button" tabindex="0" aria-label="View full size: Barcelona master bedroom at Villa Augflor"><div class="img-link"><img src="assets/photos/optimized/upstairs-master-bedroom-barcelona.jpg" alt="Barcelona master bedroom at Villa Augflor" loading="lazy"></div></figure>
         </div>
       </div>
     </section>
 <section class="section">
       <div class="wrap">
         <h2>Upstairs Double Bedroom — &ldquo;Asian&rdquo;</h2>
-        <p class="section-note">Loft double — steep staircase. (8 photos)</p>
+        <p class="section-note">Loft double — steep staircase. (6 photos)</p>
         <div class="grid">
-          <figure class="gallery-item" data-idx="81" onclick="openLightbox(81)" role="button" tabindex="0" aria-label="View full size: Asian double bedroom at Villa Augflor"><div class="img-link"><img src="assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0034.jpg" alt="Asian double bedroom at Villa Augflor" loading="lazy"></div></figure>
-          <figure class="gallery-item" data-idx="82" onclick="openLightbox(82)" role="button" tabindex="0" aria-label="View full size: Asian double bedroom at Villa Augflor"><div class="img-link"><img src="assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0035.jpg" alt="Asian double bedroom at Villa Augflor" loading="lazy"></div></figure>
-          <figure class="gallery-item" data-idx="83" onclick="openLightbox(83)" role="button" tabindex="0" aria-label="View full size: Asian double bedroom at Villa Augflor"><div class="img-link"><img src="assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0043.jpg" alt="Asian double bedroom at Villa Augflor" loading="lazy"></div></figure>
-          <figure class="gallery-item" data-idx="84" onclick="openLightbox(84)" role="button" tabindex="0" aria-label="View full size: Asian double bedroom at Villa Augflor"><div class="img-link"><img src="assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0044.jpg" alt="Asian double bedroom at Villa Augflor" loading="lazy"></div></figure>
-          <figure class="gallery-item" data-idx="85" onclick="openLightbox(85)" role="button" tabindex="0" aria-label="View full size: Asian double bedroom at Villa Augflor"><div class="img-link"><img src="assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0045.jpg" alt="Asian double bedroom at Villa Augflor" loading="lazy"></div></figure>
-          <figure class="gallery-item" data-idx="86" onclick="openLightbox(86)" role="button" tabindex="0" aria-label="View full size: Asian double bedroom at Villa Augflor"><div class="img-link"><img src="assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0083.jpg" alt="Asian double bedroom at Villa Augflor" loading="lazy"></div></figure>
-          <figure class="gallery-item" data-idx="87" onclick="openLightbox(87)" role="button" tabindex="0" aria-label="View full size: Asian double bedroom at Villa Augflor"><div class="img-link"><img src="assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0084.jpg" alt="Asian double bedroom at Villa Augflor" loading="lazy"></div></figure>
-          <figure class="gallery-item" data-idx="88" onclick="openLightbox(88)" role="button" tabindex="0" aria-label="View full size: Asian double bedroom at Villa Augflor"><div class="img-link"><img src="assets/photos/optimized/upstairs-asian-bedroom.jpg" alt="Asian double bedroom at Villa Augflor" loading="lazy"></div></figure>
+          <figure class="gallery-item" data-idx="78" onclick="openLightbox(78)" role="button" tabindex="0" aria-label="View full size: Asian double bedroom at Villa Augflor"><div class="img-link"><img src="assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0034.jpg" alt="Asian double bedroom at Villa Augflor" loading="lazy"></div></figure>
+          <figure class="gallery-item" data-idx="79" onclick="openLightbox(79)" role="button" tabindex="0" aria-label="View full size: Asian double bedroom at Villa Augflor"><div class="img-link"><img src="assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0035.jpg" alt="Asian double bedroom at Villa Augflor" loading="lazy"></div></figure>
+          <figure class="gallery-item" data-idx="80" onclick="openLightbox(80)" role="button" tabindex="0" aria-label="View full size: Asian double bedroom at Villa Augflor"><div class="img-link"><img src="assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0043.jpg" alt="Asian double bedroom at Villa Augflor" loading="lazy"></div></figure>
+          <figure class="gallery-item" data-idx="81" onclick="openLightbox(81)" role="button" tabindex="0" aria-label="View full size: Asian double bedroom at Villa Augflor"><div class="img-link"><img src="assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0045.jpg" alt="Asian double bedroom at Villa Augflor" loading="lazy"></div></figure>
+          <figure class="gallery-item" data-idx="82" onclick="openLightbox(82)" role="button" tabindex="0" aria-label="View full size: Asian double bedroom at Villa Augflor"><div class="img-link"><img src="assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0084.jpg" alt="Asian double bedroom at Villa Augflor" loading="lazy"></div></figure>
+          <figure class="gallery-item" data-idx="83" onclick="openLightbox(83)" role="button" tabindex="0" aria-label="View full size: Asian double bedroom at Villa Augflor"><div class="img-link"><img src="assets/photos/optimized/upstairs-asian-bedroom.jpg" alt="Asian double bedroom at Villa Augflor" loading="lazy"></div></figure>
         </div>
       </div>
     </section>
@@ -368,25 +369,22 @@ figure.gallery-item:focus-visible { outline: 2px solid var(--accent); outline-of
         <h2>Ground Floor Bathroom</h2>
         <p class="section-note">Ground-floor bathroom. (2 photos)</p>
         <div class="grid">
-          <figure class="gallery-item" data-idx="89" onclick="openLightbox(89)" role="button" tabindex="0" aria-label="View full size: Bathroom at Villa Augflor"><div class="img-link"><img src="assets/photos/optimized/ground-floor-bathroom.jpg" alt="Bathroom at Villa Augflor" loading="lazy"></div></figure>
-          <figure class="gallery-item" data-idx="90" onclick="openLightbox(90)" role="button" tabindex="0" aria-label="View full size: LED shower niches"><div class="img-link"><img src="assets/photos/optimized/photo-bathroom-interior-shower-led-niches.jpg" alt="LED shower niches" loading="lazy"></div></figure>
+          <figure class="gallery-item" data-idx="84" onclick="openLightbox(84)" role="button" tabindex="0" aria-label="View full size: Bathroom at Villa Augflor"><div class="img-link"><img src="assets/photos/optimized/ground-floor-bathroom.jpg" alt="Bathroom at Villa Augflor" loading="lazy"></div></figure>
+          <figure class="gallery-item" data-idx="85" onclick="openLightbox(85)" role="button" tabindex="0" aria-label="View full size: LED shower niches"><div class="img-link"><img src="assets/photos/optimized/photo-bathroom-interior-shower-led-niches.jpg" alt="LED shower niches" loading="lazy"></div></figure>
         </div>
       </div>
     </section>
 <section class="section">
       <div class="wrap">
         <h2>Upstairs Bathroom</h2>
-        <p class="section-note">Upstairs bathroom (loft). (9 photos)</p>
+        <p class="section-note">Upstairs bathroom (loft). (6 photos)</p>
         <div class="grid">
-          <figure class="gallery-item" data-idx="91" onclick="openLightbox(91)" role="button" tabindex="0" aria-label="View full size: Bathroom at Villa Augflor"><div class="img-link"><img src="assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0009.jpg" alt="Bathroom at Villa Augflor" loading="lazy"></div></figure>
-          <figure class="gallery-item" data-idx="92" onclick="openLightbox(92)" role="button" tabindex="0" aria-label="View full size: Bathroom at Villa Augflor"><div class="img-link"><img src="assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0010.jpg" alt="Bathroom at Villa Augflor" loading="lazy"></div></figure>
-          <figure class="gallery-item" data-idx="93" onclick="openLightbox(93)" role="button" tabindex="0" aria-label="View full size: Bathroom at Villa Augflor"><div class="img-link"><img src="assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0014.jpg" alt="Bathroom at Villa Augflor" loading="lazy"></div></figure>
-          <figure class="gallery-item" data-idx="94" onclick="openLightbox(94)" role="button" tabindex="0" aria-label="View full size: Bathroom at Villa Augflor"><div class="img-link"><img src="assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0015.jpg" alt="Bathroom at Villa Augflor" loading="lazy"></div></figure>
-          <figure class="gallery-item" data-idx="95" onclick="openLightbox(95)" role="button" tabindex="0" aria-label="View full size: Bathroom at Villa Augflor"><div class="img-link"><img src="assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0016.jpg" alt="Bathroom at Villa Augflor" loading="lazy"></div></figure>
-          <figure class="gallery-item" data-idx="96" onclick="openLightbox(96)" role="button" tabindex="0" aria-label="View full size: Bathroom at Villa Augflor"><div class="img-link"><img src="assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0033.jpg" alt="Bathroom at Villa Augflor" loading="lazy"></div></figure>
-          <figure class="gallery-item" data-idx="97" onclick="openLightbox(97)" role="button" tabindex="0" aria-label="View full size: Bathroom at Villa Augflor"><div class="img-link"><img src="assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0080.jpg" alt="Bathroom at Villa Augflor" loading="lazy"></div></figure>
-          <figure class="gallery-item" data-idx="98" onclick="openLightbox(98)" role="button" tabindex="0" aria-label="View full size: Bathroom at Villa Augflor"><div class="img-link"><img src="assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0081.jpg" alt="Bathroom at Villa Augflor" loading="lazy"></div></figure>
-          <figure class="gallery-item" data-idx="99" onclick="openLightbox(99)" role="button" tabindex="0" aria-label="View full size: Bathroom at Villa Augflor"><div class="img-link"><img src="assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0082.jpg" alt="Bathroom at Villa Augflor" loading="lazy"></div></figure>
+          <figure class="gallery-item" data-idx="86" onclick="openLightbox(86)" role="button" tabindex="0" aria-label="View full size: Bathroom at Villa Augflor"><div class="img-link"><img src="assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0009.jpg" alt="Bathroom at Villa Augflor" loading="lazy"></div></figure>
+          <figure class="gallery-item" data-idx="87" onclick="openLightbox(87)" role="button" tabindex="0" aria-label="View full size: Bathroom at Villa Augflor"><div class="img-link"><img src="assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0010.jpg" alt="Bathroom at Villa Augflor" loading="lazy"></div></figure>
+          <figure class="gallery-item" data-idx="88" onclick="openLightbox(88)" role="button" tabindex="0" aria-label="View full size: Bathroom at Villa Augflor"><div class="img-link"><img src="assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0014.jpg" alt="Bathroom at Villa Augflor" loading="lazy"></div></figure>
+          <figure class="gallery-item" data-idx="89" onclick="openLightbox(89)" role="button" tabindex="0" aria-label="View full size: Bathroom at Villa Augflor"><div class="img-link"><img src="assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0015.jpg" alt="Bathroom at Villa Augflor" loading="lazy"></div></figure>
+          <figure class="gallery-item" data-idx="90" onclick="openLightbox(90)" role="button" tabindex="0" aria-label="View full size: Bathroom at Villa Augflor"><div class="img-link"><img src="assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0016.jpg" alt="Bathroom at Villa Augflor" loading="lazy"></div></figure>
+          <figure class="gallery-item" data-idx="91" onclick="openLightbox(91)" role="button" tabindex="0" aria-label="View full size: Bathroom at Villa Augflor"><div class="img-link"><img src="assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0082.jpg" alt="Bathroom at Villa Augflor" loading="lazy"></div></figure>
         </div>
       </div>
     </section>
@@ -395,7 +393,8 @@ figure.gallery-item:focus-visible { outline: 2px solid var(--accent); outline-of
         <h2>Parking &amp; stairs</h2>
         <p class="section-note">Two-car parking. Steep staircase to loft — plan for mobility needs.</p>
         <div class="grid">
-          <figure class="gallery-item" data-idx="100" onclick="openLightbox(100)" role="button" tabindex="0" aria-label="View full size: Villa Augflor private pool and garden, Cagnes-sur-Mer"><div class="img-link"><img src="assets/photos/optimized/outdoor-parking.jpg" alt="Villa Augflor private pool and garden, Cagnes-sur-Mer" loading="lazy"></div></figure>
+          <figure class="gallery-item" data-idx="92" onclick="openLightbox(92)" role="button" tabindex="0" aria-label="View full size: Villa Augflor private pool and garden, Cagnes-sur-Mer"><div class="img-link"><img src="assets/photos/optimized/outdoor-parking.jpg" alt="Villa Augflor private pool and garden, Cagnes-sur-Mer" loading="lazy"></div></figure>
+          <figure class="gallery-item" data-idx="93" onclick="openLightbox(93)" role="button" tabindex="0" aria-label="View full size: Steep open-tread staircase to the loft at Villa Augflor"><div class="img-link"><img src="assets/photos/optimized/interior-floating-staircase.jpg" alt="Steep open-tread staircase to the loft at Villa Augflor" loading="lazy"></div></figure>
         </div>
       </div>
     </section>
@@ -474,8 +473,6 @@ const galleryImages = [
   'assets/photos/optimized/ground-floor-garden-room.jpg',
   'assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0004.jpg',
   'assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0070.jpg',
-  'assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0071.jpg',
-  'assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0113.jpg',
   'assets/photos/optimized/ground-floor-le-provance-bedroom.jpg',
   'assets/photos/optimized/ground-floor-bedroom-le-provance.jpg',
   'assets/photos/optimized/ground-floor-bedroom.jpg',
@@ -490,7 +487,6 @@ const galleryImages = [
   'assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0117.jpg',
   'assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0118.jpg',
   'assets/photos/optimized/master-bedroom-barcelona-2.jpg',
-  'assets/photos/optimized/master-bedroom-barcelona.jpg',
   'assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0039.jpg',
   'assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0078.jpg',
   'assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0079.jpg',
@@ -498,9 +494,7 @@ const galleryImages = [
   'assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0034.jpg',
   'assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0035.jpg',
   'assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0043.jpg',
-  'assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0044.jpg',
   'assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0045.jpg',
-  'assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0083.jpg',
   'assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0084.jpg',
   'assets/photos/optimized/upstairs-asian-bedroom.jpg',
   'assets/photos/optimized/ground-floor-bathroom.jpg',
@@ -510,11 +504,9 @@ const galleryImages = [
   'assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0014.jpg',
   'assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0015.jpg',
   'assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0016.jpg',
-  'assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0033.jpg',
-  'assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0080.jpg',
-  'assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0081.jpg',
   'assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0082.jpg',
-  'assets/photos/optimized/outdoor-parking.jpg'
+  'assets/photos/optimized/outdoor-parking.jpg',
+  'assets/photos/optimized/interior-floating-staircase.jpg'
 ];
 const galleryAlts = [
   "Villa Augflor private pool and garden, Cagnes-sur-Mer",
@@ -577,8 +569,6 @@ const galleryAlts = [
   "Garden room with piano and pool view at Villa Augflor",
   "Garden room at Villa Augflor with pool access",
   "Garden room at Villa Augflor with pool access",
-  "Garden room at Villa Augflor with pool access",
-  "Garden room at Villa Augflor with pool access",
   "Provence ground-floor bedroom at Villa Augflor",
   "Provence ground-floor bedroom at Villa Augflor",
   "Provence ground-floor bedroom at Villa Augflor",
@@ -597,9 +587,6 @@ const galleryAlts = [
   "Barcelona master bedroom at Villa Augflor",
   "Barcelona master bedroom at Villa Augflor",
   "Barcelona master bedroom at Villa Augflor",
-  "Barcelona master bedroom at Villa Augflor",
-  "Asian double bedroom at Villa Augflor",
-  "Asian double bedroom at Villa Augflor",
   "Asian double bedroom at Villa Augflor",
   "Asian double bedroom at Villa Augflor",
   "Asian double bedroom at Villa Augflor",
@@ -614,10 +601,8 @@ const galleryAlts = [
   "Bathroom at Villa Augflor",
   "Bathroom at Villa Augflor",
   "Bathroom at Villa Augflor",
-  "Bathroom at Villa Augflor",
-  "Bathroom at Villa Augflor",
-  "Bathroom at Villa Augflor",
-  "Villa Augflor private pool and garden, Cagnes-sur-Mer"
+  "Villa Augflor private pool and garden, Cagnes-sur-Mer",
+  "Steep open-tread staircase to the loft at Villa Augflor"
 ];
 let currentImg = 0;
 function openLightbox(idx) {

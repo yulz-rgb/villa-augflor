@@ -407,4 +407,8 @@ footer {
 @media (max-width: 600px) {
   .nav-links a:not(.nav-cta) { display: none; }
   .footer-inner { grid-template-columns: 1fr; }
+  nav#nav { padding: 0.75rem 1rem; }
+  .nav-logo { font-size: 19px; white-space: nowrap; }
+  .logo-tag { display: none; }
+  .nav-cta { white-space: nowrap; }
 }

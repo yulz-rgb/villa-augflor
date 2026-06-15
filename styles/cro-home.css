@@ -147,7 +147,10 @@
   gap: 0.5rem;
   grid-template-columns: 1fr 1fr;
   border-top: 1px solid rgba(255,255,255,0.1);
+  transform: translateY(110%);
+  transition: transform .35s ease;
 }
+.mobile-sticky-cta.visible { transform: translateY(0); }
 .mobile-sticky-cta a {
   text-align: center;
   padding: 0.75rem 0.5rem;
@@ -534,4 +537,8 @@
   body { padding-bottom: 4.5rem; }
   .month-avail-table { font-size: 13px; }
   .month-avail-table .ma-rate { font-size: 16px; }
+}
+/* Narrow phones: the bar buttons wrap to two lines, so it is taller */
+@media (max-width: 520px) {
+  body { padding-bottom: 6.5rem; }
 }
