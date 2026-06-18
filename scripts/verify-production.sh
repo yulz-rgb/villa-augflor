@@ -227,7 +227,7 @@ if [[ "$PATH_TO_CHECK" == "/" ]]; then
   check_present_file "llms.txt current availability section" "Current availability" "$LLMS"
 
   echo "==> Static open-weeks availability (June 2026 SEO refresh)"
-  check_present "Homepage static open weeks block" "data-open-weeks-static"
+  check_absent "Homepage static open weeks block" "data-open-weeks-static"
   check_present "Homepage absolute og:image" 'property="og:image" content="https://villa-augflor.com/'
   check_present_file "Rates static open weeks block" "data-open-weeks-static" "$RATES_HTML"
 
