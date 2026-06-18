@@ -128,7 +128,7 @@ function htmlBlock(windows, updatedHuman) {
     `  <ul style="list-style:none;margin:0;padding:0;font-size:15.5px;">`,
     items,
     `  </ul>`,
-    `  <p style="margin:.75rem 0 0;font-size:13.5px;color:var(--muted,#7a7269);">7-night minimum in high season — shorter gaps occasionally accepted, always worth asking. Lana confirms exact dates on enquiry.</p>`,
+    `  <p style="margin:.75rem 0 0;font-size:13.5px;color:var(--muted,#7a7269);">5-night minimum in high season — shorter gaps occasionally accepted, always worth asking. Lana confirms exact dates on enquiry.</p>`,
     `</div>`,
   ].join("\n");
 }
@@ -149,7 +149,7 @@ function llmsBlock(windows, updated) {
     ``,
     ...lines,
     ``,
-    `7-night minimum in July/August (shorter on request). Availability changes — confirm via WhatsApp +33 6 23 77 73 33.`,
+    `5-night minimum in July/August (shorter on request). Availability changes — confirm via WhatsApp +33 6 23 77 73 33.`,
     ``,
   ].join("\n");
 }
