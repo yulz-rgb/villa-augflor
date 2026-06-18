@@ -315,7 +315,7 @@ nav.scrolled .nav-links a { color: var(--muted); }
 .hero { height: 100vh; min-height: 620px; position: relative; display: flex; align-items: flex-end; padding-top: 5.5rem; padding-bottom: 3.25rem; overflow: hidden; }
 .hero-bg { position: absolute; inset: 0; background: linear-gradient(160deg, #1c2e35 0%, #2d4a55 40%, #3d6070 100%); }
 /* Top scrim keeps the transparent nav legible over bright hero photos */
-.hero::after { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 150px; background: linear-gradient(to bottom, rgba(16,20,24,0.55) 0%, rgba(16,20,24,0) 100%); z-index: 1; pointer-events: none; }
+.hero::after { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 170px; background: linear-gradient(to bottom, rgba(16,20,24,0.5) 0%, rgba(16,20,24,0) 100%); z-index: 1; pointer-events: none; }
 /* Override .section-full's 6rem padding so hero copy clears the fixed nav (desktop) */
 @media (min-width: 901px) {
   .hero.section-full { padding-top: 5.5rem; padding-bottom: 3.25rem; }
@@ -329,7 +329,7 @@ nav.scrolled .nav-links a { color: var(--muted); }
   .hero-trust-line { margin-bottom: 0.4rem; }
   .hero-price-line { margin-bottom: 0.9rem; }
 }
-.hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(18,22,26,0.3) 0%, rgba(18,22,26,0.65) 100%); }
+.hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(18,22,26,0.08) 0%, rgba(18,22,26,0.34) 100%); }
 .hero-imgs {
   position: absolute;
   inset: 0;
@@ -937,20 +937,45 @@ footer { background: #141210; padding: 3.5rem 2.5rem 2rem; color: rgba(255,255,2
   </div>
 </section>
 
-<section class="book-direct-strip">
+<section class="book-direct-strip" id="book-direct">
   <div class="book-direct-inner">
-    <p class="eyebrow reveal">Book direct with confidence</p>
-    <h2 class="reveal" style="max-width:20ch;">Clear process · <em>no surprises</em></h2>
-    <p class="lead reveal" style="max-width:58ch;margin-bottom:0;">Same villa as on Airbnb and Booking.com — direct booking gives you a written quote, signed agreement, and personal support from Lana.</p>
-    <div class="book-direct-grid reveal">
-      <div class="book-direct-item"><strong>Written quote first</strong>Full itemised total — rent, cleaning, taxe de séjour — before any payment.</div>
-      <div class="book-direct-item"><strong>Signed rental agreement</strong>Dates, house rules, and contact details confirmed in writing.</div>
-      <div class="book-direct-item"><strong>Secure card link or bank transfer</strong>30% deposit to confirm · balance 30 days before arrival.</div>
-      <div class="book-direct-item"><strong>Verified on Airbnb &amp; Booking.com</strong>Compare platform reviews, then book direct if you prefer.</div>
-      <div class="book-direct-item"><strong>4-star classified</strong>Official Gîtes de France meublé de tourisme classification.</div>
-      <div class="book-direct-item"><strong>Direct host support</strong>WhatsApp from enquiry through check-in — transfers, chefs, local tips.</div>
+    <div class="bd-head reveal">
+      <p class="eyebrow">Book direct with confidence</p>
+      <h2>From enquiry to <em>front door</em></h2>
+      <p class="lead">Same villa as on Airbnb and Booking.com — booking direct with Lana means a written quote, a signed agreement, and one person on WhatsApp the whole way.</p>
     </div>
-    <p class="reveal" style="margin-top:1.5rem;font-size:14px;color:var(--muted);"><a href="book-direct-safely.html" style="color:var(--accent);text-decoration:underline">How direct booking works →</a> · <a href="https://www.airbnb.fr/rooms/26836386/reviews" target="_blank" rel="noopener noreferrer" style="color:var(--accent);text-decoration:underline">Read reviews on Airbnb</a></p>
+
+    <ol class="bd-flow reveal">
+      <li class="bd-stepc">
+        <span class="bd-num">01</span>
+        <div class="bd-stepc-body">
+          <h3>Written quote first</h3>
+          <p>Your full itemised total — rent, cleaning and taxe de séjour — in writing before you pay a cent.</p>
+        </div>
+      </li>
+      <li class="bd-stepc">
+        <span class="bd-num">02</span>
+        <div class="bd-stepc-body">
+          <h3>Signed agreement</h3>
+          <p>Dates, house rules and contacts confirmed on paper. Both sides protected, nothing left vague.</p>
+        </div>
+      </li>
+      <li class="bd-stepc">
+        <span class="bd-num">03</span>
+        <div class="bd-stepc-body">
+          <h3>Secure deposit</h3>
+          <p>30% by card link or transfer to lock it in · balance 30 days before you arrive.</p>
+        </div>
+      </li>
+    </ol>
+
+    <div class="bd-assure reveal">
+      <span><b>Verified</b> on Airbnb &amp; Booking.com</span>
+      <span><b>Gîtes de France 4★</b> classified</span>
+      <span><b>Direct support</b> — transfers, chefs, local tips</span>
+    </div>
+
+    <p class="bd-foot reveal"><a href="book-direct-safely.html">How direct booking works →</a> · <a href="https://www.airbnb.fr/rooms/26836386/reviews" target="_blank" rel="noopener noreferrer">Read reviews on Airbnb</a></p>
   </div>
 </section>
 

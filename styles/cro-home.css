@@ -50,6 +50,70 @@
   font-size: 15px;
 }
 
+/* Book-direct: editorial numbered booking flow */
+.bd-head { text-align: center; max-width: 60ch; margin: 0 auto 3rem; }
+.bd-head h2 { margin-bottom: 0.6rem; }
+.bd-head .lead { margin: 0 auto; }
+.bd-flow {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+}
+.bd-stepc { position: relative; padding-top: 0.25rem; }
+.bd-num {
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-size: 64px;
+  line-height: 0.9;
+  color: var(--accent);
+  margin-bottom: 0.9rem;
+  position: relative;
+}
+/* directional connector trailing from each number toward the next step */
+.bd-stepc:not(:last-child) .bd-num::after {
+  content: "";
+  position: absolute;
+  top: 0.62em;
+  left: 2.5em;
+  right: -2.5rem;
+  height: 1px;
+  background: linear-gradient(to right, var(--accent) 0%, rgba(61,122,138,0.45) 45%, rgba(61,122,138,0) 100%);
+}
+.bd-stepc h3 {
+  font-family: 'Jost', sans-serif;
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: var(--deep);
+  margin: 0 0 0.45rem;
+}
+.bd-stepc p { font-size: 14.5px; color: var(--muted); line-height: 1.6; margin: 0; }
+.bd-assure {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem 2.25rem;
+  margin-top: 3rem;
+  padding-top: 1.85rem;
+  border-top: 1px solid var(--sand);
+  text-align: center;
+}
+.bd-assure span { font-size: 13.5px; color: var(--muted); letter-spacing: 0.01em; }
+.bd-assure b { color: var(--deep); font-weight: 500; }
+.bd-foot { margin-top: 1.6rem; font-size: 14px; color: var(--muted); text-align: center; }
+.bd-foot a { color: var(--accent); text-decoration: underline; }
+@media (max-width: 760px) {
+  .bd-flow { grid-template-columns: 1fr; gap: 1.9rem; }
+  .bd-stepc { display: grid; grid-template-columns: auto 1fr; column-gap: 1.1rem; align-items: start; padding-top: 0; }
+  .bd-num { font-size: 46px; margin-bottom: 0; }
+  .bd-stepc:not(:last-child) .bd-num::after { display: none; }
+  .bd-assure { gap: 0.85rem; }
+}
+
 .pricing-section {
   background: #f0ebe3;
   padding: 5rem 2.5rem;
