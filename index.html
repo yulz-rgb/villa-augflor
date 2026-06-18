@@ -169,12 +169,12 @@
     },
     {
       "@type": "Offer",
-      "name": "Villa Augflor open dates 3 Aug to 14 Aug (11 nights)",
-      "price": "420",
+      "name": "Villa Augflor open dates 3 Aug to 15 Aug (12 nights)",
+      "price": "480",
       "priceCurrency": "EUR",
       "availability": "https://schema.org/InStock",
       "availabilityStarts": "2026-08-03",
-      "availabilityEnds": "2026-08-14",
+      "availabilityEnds": "2026-08-15",
       "url": "https://villa-augflor.com/"
     },
     {
@@ -824,6 +824,19 @@ footer { background: #141210; padding: 3.5rem 2.5rem 2rem; color: rgba(255,255,2
   .hi5 { grid-column: 2; grid-row: 1; }
   .glance-dl { grid-template-columns: 1fr !important; }
 }
+
+/* AT A GLANCE — factual answer block for search & AI */
+.glance { background: var(--white); border-top: 1px solid var(--sand); border-bottom: 1px solid var(--sand); padding: 3.5rem 2.5rem; max-width: none; }
+.glance-inner { max-width: 1100px; margin: 0 auto; }
+.glance-head { text-align: center; margin-bottom: 2rem; }
+.glance-head h2 { margin-bottom: .6rem; }
+.glance-head .lead { margin: 0 auto; }
+.glance-dl { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--sand); border-radius: 4px; overflow: hidden; background: var(--cream); }
+.glance-dl > div { padding: 1.05rem 1.35rem; border-right: 1px solid var(--sand); border-bottom: 1px solid var(--sand); }
+.glance-dl dt { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin-bottom: .3rem; }
+.glance-dl dd { font-size: 14.5px; color: var(--deep); line-height: 1.5; }
+.glance-dl dd a { color: var(--accent); text-decoration: underline; }
+@media (max-width: 760px) { .glance-dl { grid-template-columns: 1fr 1fr; } }
 </style>
 <link rel="stylesheet" href="styles/cro-home.css">
 <link rel="stylesheet" href="styles/enquiry-form.css">
@@ -889,6 +902,28 @@ footer { background: #141210; padding: 3.5rem 2.5rem 2rem; color: rgba(255,255,2
   </div>
 </div>
 
+<!-- VILLA AUGFLOR AT A GLANCE — factual answer block for search & AI -->
+<section class="glance" id="at-a-glance" aria-labelledby="glance-h">
+  <div class="glance-inner">
+    <div class="glance-head">
+      <p class="eyebrow">At a glance</p>
+      <h2 id="glance-h">Villa Augflor <em>key facts</em></h2>
+      <p class="lead">A private 3-bedroom pool villa in Cagnes-sur-Mer on the Côte d'Azur — about 13 minutes from Nice Airport, between Nice, Antibes and Cannes. Booked direct with the owner.</p>
+    </div>
+    <dl class="glance-dl">
+      <div><dt>What it is</dt><dd>Private 3-bedroom villa with private pool &amp; Mediterranean garden — the whole villa, never shared</dd></div>
+      <div><dt>Where</dt><dd>26 Chemin des Collines, 06800 Cagnes-sur-Mer, Alpes-Maritimes, France</dd></div>
+      <div><dt>Nice Airport (NCE)</dt><dd>About 13 minutes by car · car recommended for beaches &amp; day trips</dd></div>
+      <div><dt>Sleeps</dt><dd>Ideal 4 guests · maximum 6 · 3 bedrooms · 2 bathrooms</dd></div>
+      <div><dt>Pool</dt><dd>Private, for booking guests only · deepest end ~1.8&nbsp;m · no shared access</dd></div>
+      <div><dt>Price (direct)</dt><dd>From €420/night · peak summer (Jul–Aug) from €480/night · 5-night minimum</dd></div>
+      <div><dt>Rating</dt><dd>4.79★ from 38 verified reviews · 10+ years hosting</dd></div>
+      <div><dt>Best for</dt><dd>Families &amp; couples · quiet groups up to 6 · no parties, no pets</dd></div>
+      <div><dt>How to book</dt><dd>Direct with owner Lana · written quote before payment · <a href="https://wa.me/33623777333">WhatsApp</a> or <a href="contact.html">enquiry form</a></dd></div>
+    </dl>
+    <p style="text-align:center;margin-top:1.25rem;font-size:13px;color:var(--muted);">Same villa as on <a href="https://www.airbnb.fr/rooms/26836386" target="_blank" rel="noopener noreferrer" style="color:var(--accent);text-decoration:underline;">Airbnb</a> and <a href="https://www.booking.com/hotel/fr/family-villa-augflor-with-pool-and-garden.en-gb.html?dest_id=14691946&amp;dest_type=hotel" target="_blank" rel="noopener noreferrer" style="color:var(--accent);text-decoration:underline;">Booking.com</a> · check-in 15:00 / check-out 10:00 · official 4-star furnished tourist accommodation</p>
+  </div>
+</section>
 
 <!-- DIRECT BOOKING TRUST + EARLY AVAILABILITY -->
 <section class="early-avail-section" id="availability">
@@ -897,6 +932,8 @@ footer { background: #141210; padding: 3.5rem 2.5rem 2rem; color: rgba(255,255,2
     <h2 class="reveal" style="max-width:22ch;margin:0 auto 0.5rem;">Rates &amp; <em>open dates</em></h2>
     <p class="lead reveal" style="margin:0 auto 2rem;text-align:center;max-width:52ch;">5-night minimum · ideal 4 guests · max 6 · confirm exact dates with Lana before booking.</p>
 
+    <!-- OPEN-WEEKS:START -->
+<!-- OPEN-WEEKS:END -->
 
     <div class="live-calendar reveal" data-calendar style="max-width:1000px;margin:0 auto;" aria-busy="true"></div>
 
