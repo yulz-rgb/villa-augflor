@@ -4,6 +4,7 @@
   "description": "Static villa website with verified publishing and safe calendar enquiries",
   "scripts": {
     "build": "node scripts/technical-tests.cjs && node scripts/build-site.cjs",
+    "postbuild": "node scripts/preserve-public-routes.cjs",
     "test": "node scripts/technical-tests.cjs",
     "availability:sync": "node scripts/availability-sync.js",
     "availability:check": "node scripts/availability-sync.js --check",
