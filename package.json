@@ -1,16 +1,16 @@
 {
   "name": "villa-augflor",
   "private": true,
-  "description": "Static site + Vercel serverless (Stripe deposit + merged iCal calendar)",
+  "description": "Static villa website with verified publishing and safe calendar enquiries",
   "scripts": {
+    "build": "node scripts/technical-tests.cjs && node scripts/build-site.cjs",
+    "test": "node scripts/technical-tests.cjs",
     "availability:sync": "node scripts/availability-sync.js",
     "availability:check": "node scripts/availability-sync.js --check",
     "audit:area-links": "node scripts/audit-area-links.mjs",
     "marketing:weekly": "node scripts/marketing-agent/index.js --task weekly",
     "marketing:publish": "MARKETING_AGENT_PUBLISH=true node scripts/marketing-agent/index.js --task weekly --publish"
   },
-  "dependencies": {
-    "@anthropic-ai/sdk": "^0.51.0",
-    "stripe": "^17.7.0"
-  }
+  "dependencies": { "@anthropic-ai/sdk": "^0.51.0", "stripe": "^17.7.0" },
+  "devDependencies": { "sharp": "0.34.5" }
 }
