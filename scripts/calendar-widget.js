@@ -1,232 +1,47 @@
-/* Shared live availability calendar — homepage + rates page */
+/* Calendar is an enquiry aid, never an inventory guarantee. No simulated bookings. */
 (function () {
-  "use strict";
-
-  function ymd(y, m, d) {
-    return `${y}-${String(m + 1).padStart(2, "0")}-${String(d).padStart(2, "0")}`;
-  }
-
-  function todayKey() {
-    const t = new Date();
-    return ymd(t.getFullYear(), t.getMonth(), t.getDate());
-  }
-
-  async function fetchBusyDates() {
+  'use strict';
+  var YEAR = 2027;
+  var months = [5, 6, 7, 8];
+  var locale = document.documentElement.lang || 'en';
+  var pad = function(n){return String(n).padStart(2,'0');};
+  var key = function(y,m,d){return y+'-'+pad(m+1)+'-'+pad(d);};
+  var today = new Intl.DateTimeFormat('en-CA',{timeZone:'Europe/Paris',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
+  async function render() {
+    var hosts = document.querySelectorAll('[data-calendar]');
+    if (!hosts.length) return;
+    var busy = new Set(), source = 'unknown', updated = '';
+    var ctrl = new AbortController(), timeout = setTimeout(function(){ctrl.abort();},9000);
     try {
-      const res = await fetch("/api/calendar", { headers: { Accept: "application/json" } });
-      if (!res.ok) throw new Error(String(res.status));
-      const data = await res.json();
-      if (data && data.ok && Array.isArray(data.busyDates) && data.busyDates.length && data.source !== "none") {
-        return { busy: new Set(data.busyDates), source: data.source, message: data.message || "" };
+      var response = await fetch('/api/calendar',{headers:{Accept:'application/json'},signal:ctrl.signal});
+      if (!response.ok) throw new Error('Calendar unavailable');
+      var data = await response.json();
+      if (data && data.ok && Array.isArray(data.busyDates)) {
+        data.busyDates.filter(function(d){return /^\d{4}-\d{2}-\d{2}$/.test(d);}).forEach(function(d){busy.add(d);});
+        source = data.source || 'unknown';
+        if (typeof data.updated === 'string' && !isNaN(Date.parse(data.updated))) updated = new Date(data.updated).toLocaleDateString(locale);
       }
-      if (data && data.source === "none") {
-        return { busy: new Set(), source: "none", message: data.message || "" };
+    } catch (_) { /* Unknown dates remain unknown; never fabricate available or booked days. */ }
+    finally { clearTimeout(timeout); }
+    var html=months.map(function(month){
+      var first = new Date(Date.UTC(YEAR,month,1)), days = new Date(Date.UTC(YEAR,month+1,0)).getUTCDate();
+      var name = first.toLocaleDateString(locale,{month:'long',year:'numeric',timeZone:'UTC'});
+      var cells = ['M','T','W','T','F','S','S'].map(function(d){return '<div class="cal-day empty cal-dow" aria-hidden="true">'+d+'</div>';}).join('');
+      for(var lead=0;lead<(first.getUTCDay()+6)%7;lead++)cells+='<div class="cal-day empty"></div>';
+      for(var day=1;day<=days;day++){
+        var date=key(YEAR,month,day), state=date<today?'past':busy.has(date)?'booked':'unknown';
+        var label=state==='past'?'Past date':state==='booked'?'Blocked in the available calendar data':'Ask Lana to confirm this date';
+        cells+='<div class="cal-day '+state+'" title="'+date+' — '+label+'">'+day+'</div>';
       }
-    } catch {
-      /* fall through */
-    }
-    return { busy: null, source: "mock", message: "" };
+      return '<div class="cal-month"><h4>'+name+'</h4><div class="cal-days">'+cells+'</div></div>';
+    }).join('');
+    var note=(source==='merged'||source==='ical')?'Blocked dates were fetched from configured calendars. All other dates still require Lana\u2019s confirmation.':'Live availability is not verified. Please ask Lana to confirm your dates.';
+    if(source==='partial')note='Some calendar sources could not be checked. Do not treat unmarked dates as available.';
+    if(source==='static')note='Historic or manually entered blocks only'+(updated?' (updated '+updated+')':'')+'. Please confirm all dates with Lana.';
+    hosts.forEach(function(host){host.innerHTML='<div class="cal-months">'+html+'</div><div class="cal-legend"><span>Unmarked: confirmation required</span><span>Marked: blocked in available data</span></div><p class="va-calendar-note"></p>';host.querySelector('.va-calendar-note').textContent=note;host.removeAttribute('aria-busy');});
+    document.querySelectorAll('[data-open-windows]').forEach(function(el){el.textContent='Summer 2027: send your dates and guest count to Lana. Availability and prices require written confirmation.';});
+    var table=document.querySelector('[data-month-table]');
+    if(table)table.innerHTML=months.map(function(month){var name=new Date(Date.UTC(YEAR,month,1)).toLocaleDateString(locale,{month:'long',year:'numeric',timeZone:'UTC'});return '<tr><td>'+name+'</td><td>Quote on request</td><td>Confirmation required</td><td><a href="/contact.html">Enquire</a></td></tr>';}).join('');
   }
-
-  function mockBusyWeeks(year, months, rnd) {
-    const map = new Map();
-    months.forEach((m) => {
-      const days = new Date(year, m.idx + 1, 0).getDate();
-      const lead = (new Date(year, m.idx, 1).getDay() + 6) % 7;
-      const weeks = Math.ceil((days + lead) / 7);
-      const booked = new Set();
-      for (let w = 0; w < weeks; w++) {
-        if (rnd() < 0.35) booked.add(w);
-      }
-      map.set(m.idx, { lead, bookedWeeks: booked });
-    });
-    return map;
-  }
-
-  function formatRange(from, to) {
-    const fmt = (iso) => {
-      const d = new Date(iso + "T12:00:00");
-      return d.toLocaleDateString("en-GB", { day: "numeric", month: "short" });
-    };
-    if (from === to) return fmt(from);
-    return `${fmt(from)} – ${fmt(to)}`;
-  }
-
-  /** Build human-readable open windows from busy set (season months only, today onward). */
-  function openWindows(year, months, busy) {
-    const ranges = [];
-    const today = todayKey();
-    months.forEach((m) => {
-      const days = new Date(year, m.idx + 1, 0).getDate();
-      let start = null;
-      for (let d = 1; d <= days; d++) {
-        const key = ymd(year, m.idx, d);
-        const open = key >= today && (!busy || !busy.has(key));
-        if (open && !start) start = key;
-        if ((!open || d === days) && start) {
-          const end = open && d === days ? key : ymd(year, m.idx, d - 1);
-          ranges.push({ month: m.name, from: start, to: end });
-          start = null;
-        }
-      }
-    });
-    return ranges;
-  }
-
-  function renderOpenSummary(ranges) {
-    if (!ranges.length) return "Contact Lana for current availability.";
-    const parts = ranges.map((r) => {
-      const sameMonth = r.from.slice(0, 7) === r.to.slice(0, 7);
-      if (sameMonth && r.from === r.to) return `${r.month} ${formatRange(r.from, r.to)}`;
-      if (sameMonth) return `${r.month} ${formatRange(r.from, r.to)}`;
-      return formatRange(r.from, r.to);
-    });
-    return `<strong>Open to enquire:</strong> ${parts.join(" · ")}`;
-  }
-
-  /** Month-level open / limited / booked for summary table */
-  function isDayOpen(year, monthIdx, d, busy, mockMap) {
-    const key = ymd(year, monthIdx, d);
-    if (key < todayKey()) return false;
-    if (busy && busy.has(key)) return false;
-    if (!busy && mockMap) {
-      const mock = mockMap.get(monthIdx);
-      if (mock) {
-        const w = Math.floor((d - 1 + mock.lead) / 7);
-        return !mock.bookedWeeks.has(w);
-      }
-    }
-    return true;
-  }
-
-  function monthAvailability(year, month, busy, mockMap) {
-    const days = new Date(year, month.idx + 1, 0).getDate();
-    const today = todayKey();
-    let openDays = 0;
-    let remainingDays = 0;
-    for (let d = 1; d <= days; d++) {
-      if (ymd(year, month.idx, d) >= today) remainingDays++;
-      if (isDayOpen(year, month.idx, d, busy, mockMap)) openDays++;
-    }
-    if (remainingDays === 0) return { label: "Season passed", cls: "booked" };
-    if (openDays === 0) return { label: "Fully booked", cls: "booked" };
-    if (openDays >= remainingDays * 0.65) return { label: "Open — enquire", cls: "open" };
-    return { label: "Limited — enquire", cls: "limited" };
-  }
-
-  function renderMonthTable(year, months, busy, mockMap) {
-    const host = document.querySelector("[data-month-table]");
-    if (!host) return;
-    host.innerHTML = months
-      .map((m) => {
-        const { label, cls } = monthAvailability(year, m, busy, mockMap);
-        const fullName = { Jun: "June", Jul: "July", Aug: "August", Sep: "September" }[m.name] || m.name;
-        return `<tr>
-          <td class="ma-month">${fullName} ${year}</td>
-          <td class="ma-rate">${m.price}<span style="font-size:12px;font-family:Jost,sans-serif;color:var(--muted,#7a7269)">/night</span></td>
-          <td class="ma-status ${cls}">${label}</td>
-          <td style="text-align:right"><a href="https://wa.me/33623777333?text=Hi%20Lana%2C%20please%20check%20Villa%20Augflor%20availability%20for%20${fullName}%20${year}.%20Dates%3A%20%5Bcheck-in%5D%20to%20%5Bcheck-out%5D.%20Guests%3A%20%5Bnumber%5D." style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent,#3d7a8a);text-decoration:none">Enquire</a></td>
-        </tr>`;
-      })
-      .join("");
-  }
-
-  async function renderCalendar() {
-    const host = document.querySelector("[data-calendar]");
-    if (!host) return;
-
-    host.setAttribute("aria-busy", "true");
-    const year = 2026;
-    const months = [
-      { name: "Jun", idx: 5, price: "€420" },
-      { name: "Jul", idx: 6, price: "€480" },
-      { name: "Aug", idx: 7, price: "€480" },
-      { name: "Sep", idx: 8, price: "€420" },
-    ];
-
-    const { busy, source, message } = await fetchBusyDates();
-    const rnd = (() => {
-      let s = 20260529;
-      return () => {
-        s = (s * 9301 + 49297) % 233280;
-        return s / 233280;
-      };
-    })();
-    const mockMap = busy ? null : mockBusyWeeks(year, months, rnd);
-    const effectiveBusy = busy || new Set();
-
-    const html = months.map((m) => {
-      const days = new Date(year, m.idx + 1, 0).getDate();
-      const lead = (new Date(year, m.idx, 1).getDay() + 6) % 7;
-      const mock = mockMap ? mockMap.get(m.idx) : null;
-      let cells = "";
-      for (let i = 0; i < lead; i++) cells += `<div class="cal-day empty"></div>`;
-      const today = todayKey();
-      for (let d = 1; d <= days; d++) {
-        const key = ymd(year, m.idx, d);
-        let cls = "available";
-        if (key < today) cls = "past";
-        else if (busy && busy.has(key)) cls = "booked";
-        else if (!busy && mock) {
-          const w = Math.floor((d - 1 + mock.lead) / 7);
-          cls = mock.bookedWeeks.has(w) ? "booked" : "available";
-        }
-        const title = cls === "past" ? "Past date" : cls === "booked" ? "Booked" : "Open to enquire";
-        cells += `<div class="cal-day ${cls}" title="${title}">${d}</div>`;
-      }
-      return `
-        <div class="cal-month">
-          <h4>${m.name} ${year} — ${m.price}/n</h4>
-          <div class="cal-days">
-            <div class="cal-day empty cal-dow">M</div>
-            <div class="cal-day empty cal-dow">T</div>
-            <div class="cal-day empty cal-dow">W</div>
-            <div class="cal-day empty cal-dow">T</div>
-            <div class="cal-day empty cal-dow">F</div>
-            <div class="cal-day empty cal-dow">S</div>
-            <div class="cal-day empty cal-dow">S</div>
-            ${cells}
-          </div>
-        </div>`;
-    }).join("");
-
-    let legendNote = "Indicative — Lana confirms on enquiry";
-    if (source === "merged" || source === "ical") legendNote = "Live sync from Airbnb + Booking · updates ~5 min";
-    else if (source === "static") legendNote = "Synced from Airbnb May 2026 · confirm on enquiry";
-    else if (source === "none") legendNote = message || "Confirm dates with Lana";
-    else if (source === "mock") legendNote = "Preview only — confirm dates with Lana";
-
-    host.innerHTML = `
-      <div class="cal-months">${html}</div>
-      <div class="cal-legend">
-        <span><i class="cal-swatch cal-swatch-open"></i> Open to enquire</span>
-        <span><i class="cal-swatch cal-swatch-booked"></i> Booked</span>
-        <span>${legendNote}</span>
-      </div>`;
-    host.removeAttribute("aria-busy");
-
-    renderMonthTable(year, months, busy, mockMap);
-
-    const summaryEl = document.querySelector("[data-open-windows]");
-    if (summaryEl) {
-      if (busy) {
-        summaryEl.innerHTML = renderOpenSummary(openWindows(year, months, effectiveBusy));
-      } else if (mockMap) {
-        const mockBusy = new Set();
-        months.forEach((m) => {
-          const days = new Date(year, m.idx + 1, 0).getDate();
-          const mock = mockMap.get(m.idx);
-          for (let d = 1; d <= days; d++) {
-            if (!isDayOpen(year, m.idx, d, null, mockMap)) mockBusy.add(ymd(year, m.idx, d));
-          }
-        });
-        summaryEl.innerHTML = renderOpenSummary(openWindows(year, months, mockBusy));
-      } else {
-        summaryEl.innerHTML =
-          'Calendar temporarily unavailable — <a href="https://wa.me/33623777333?text=Hi%20Lana%2C%20please%20check%20Villa%20Augflor%20availability.%20Dates%3A%20%5Bcheck-in%5D%20to%20%5Bcheck-out%5D.%20Guests%3A%20%5Bnumber%5D.">message Lana on WhatsApp</a> with your dates.';
-      }
-    }
-  }
-
-  document.addEventListener("DOMContentLoaded", renderCalendar);
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',render);else render();
 })();

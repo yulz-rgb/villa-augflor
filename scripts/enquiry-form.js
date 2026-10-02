@@ -1,97 +1,35 @@
-(function () {
-  var TRIP_TYPES = [
-    { value: "family", label: "Family" },
-    { value: "couple", label: "Couple" },
-    { value: "friends", label: "Friends" },
-    { value: "other", label: "Other" }
-  ];
-
-  function buildMessage(data) {
-    var lines = [
-      "Villa Augflor enquiry",
-      "",
-      "Check-in: " + (data.checkin || "—"),
-      "Check-out: " + (data.checkout || "—"),
-      "Adults: " + (data.adults || "—"),
-      "Children: " + (data.children || "0"),
-      "Country: " + (data.country || "—"),
-      "Email: " + (data.email || "—"),
-      "Phone/WhatsApp: " + (data.phone || "—"),
-      "Trip type: " + (data.trip || "—"),
-      "",
-      "Must-haves or concerns:",
-      data.notes || "—"
-    ];
-    return lines.join("\n");
+/* Progressive enquiry handoff. Nothing is sent, booked or paid on this website. */
+(function(){
+ 'use strict';
+ function mount(root){
+  root.innerHTML='<form class="enquiry-form'+(root.dataset.compact==='true'?' enquiry-form--compact':'')+'"><div class="enquiry-grid">'+
+   '<label>Check-in date<input type="date" name="checkin" required></label><label>Check-out date<input type="date" name="checkout" required></label>'+
+   '<label>Adults<input type="number" name="adults" min="1" max="6" step="1" value="2" required inputmode="numeric"></label><label>Children<input type="number" name="children" min="0" max="5" step="1" value="0" required inputmode="numeric"></label>'+
+   '<label>Email (optional)<input type="email" name="email" autocomplete="email" maxlength="200"></label><label>Phone (optional)<input type="tel" name="phone" autocomplete="tel" maxlength="50"></label>'+
+   '<label class="enquiry-full">Anything else Lana should know?<textarea name="notes" rows="3" maxlength="1500" placeholder="Flexible dates, room preferences or questions"></textarea></label></div>'+
+   '<div class="enquiry-actions"><button type="submit" class="btn-primary" name="channel" value="whatsapp">Continue to WhatsApp</button><button type="submit" class="btn-outline" name="channel" value="email">Prepare email</button><button type="button" class="btn-outline" data-copy>Copy enquiry</button></div>'+
+   '<p class="enquiry-note">Maximum 6 guests including children. These are enquiry dates, not a reservation. You review and send the message in WhatsApp or your email app. <a href="/privacy-policy.html">Privacy</a>.</p><p class="enquiry-note" role="status" aria-live="polite"></p></form>';
+  var form=root.querySelector('form'),status=form.querySelector('[role=status]'),inputs=form.elements;
+  var today=new Intl.DateTimeFormat('en-CA',{timeZone:'Europe/Paris',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
+  inputs.checkin.min=today;inputs.checkout.min=today;
+  function valid(){
+   inputs.checkout.setCustomValidity('');inputs.adults.setCustomValidity('');inputs.checkin.setCustomValidity('');
+   if(inputs.checkin.value && inputs.checkin.value<today)inputs.checkin.setCustomValidity('Please select a future arrival date.');
+   if(inputs.checkout.value && inputs.checkin.value && inputs.checkout.value<=inputs.checkin.value)inputs.checkout.setCustomValidity('Departure must be after arrival.');
+   if(Number(inputs.adults.value)+Number(inputs.children.value)>6)inputs.adults.setCustomValidity('The villa accommodates a maximum of 6 guests, including children.');
+   return form.reportValidity();
   }
-
-  function renderForm(root, compact) {
-    var id = "vf-" + Math.random().toString(36).slice(2, 9);
-    var tripOptions = TRIP_TYPES.map(function (t) {
-      return '<option value="' + t.value + '">' + t.label + "</option>";
-    }).join("");
-
-    root.innerHTML =
-      '<form class="enquiry-form' + (compact ? " enquiry-form--compact" : "") + '" id="' + id + '" novalidate>' +
-      '<div class="enquiry-grid">' +
-      '<label>Check-in date<input type="date" name="checkin" required></label>' +
-      '<label>Check-out date<input type="date" name="checkout" required></label>' +
-      '<label>Adults<input type="number" name="adults" min="1" max="6" value="2" required></label>' +
-      '<label>Children<input type="number" name="children" min="0" max="4" value="0"></label>' +
-      '<label>Country<input type="text" name="country" autocomplete="country-name" required></label>' +
-      '<label>Email<input type="email" name="email" autocomplete="email" required></label>' +
-      '<label>WhatsApp / phone<input type="tel" name="phone" autocomplete="tel"></label>' +
-      '<label>Trip type<select name="trip" required><option value="">Select…</option>' + tripOptions + "</select></label>" +
-      '<label class="enquiry-full">Must-haves or concerns<textarea name="notes" rows="3" placeholder="Ground-floor bedroom, cot, dietary needs, mobility…"></textarea></label>' +
-      "</div>" +
-      '<div class="enquiry-actions">' +
-      '<button type="submit" class="btn-primary">Prepare email enquiry</button>' +
-      '<a class="btn-outline enquiry-wa" href="#" target="_blank" rel="noopener noreferrer">Open in WhatsApp</a>' +
-      "</div>" +
-      '<p class="enquiry-note">No server upload — your message opens in your email app or WhatsApp for you to send.</p>' +
-      "</form>";
-
-    var form = root.querySelector("form");
-    var wa = root.querySelector(".enquiry-wa");
-
-    function getData() {
-      var fd = new FormData(form);
-      return {
-        checkin: fd.get("checkin"),
-        checkout: fd.get("checkout"),
-        adults: fd.get("adults"),
-        children: fd.get("children") || "0",
-        country: fd.get("country"),
-        email: fd.get("email"),
-        phone: fd.get("phone"),
-        trip: fd.get("trip"),
-        notes: fd.get("notes")
-      };
-    }
-
-    function updateWa() {
-      var d = getData();
-      var text = "Hi Lana, please check Villa Augflor.\n\n" + buildMessage(d);
-      wa.href = "https://wa.me/33623777333?text=" + encodeURIComponent(text);
-    }
-
-    form.addEventListener("input", updateWa);
-    updateWa();
-
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      if (!form.checkValidity()) {
-        form.reportValidity();
-        return;
-      }
-      var d = getData();
-      var subject = encodeURIComponent("Villa Augflor enquiry — " + (d.checkin || "dates TBC"));
-      var body = encodeURIComponent(buildMessage(d));
-      window.location.href = "mailto:villa.augflor@gmail.com?subject=" + subject + "&body=" + body;
-    });
-  }
-
-  document.querySelectorAll("[data-enquiry-form]").forEach(function (el) {
-    renderForm(el, el.getAttribute("data-compact") === "true");
+  form.addEventListener('input',function(){inputs.checkout.setCustomValidity('');inputs.adults.setCustomValidity('');inputs.checkin.setCustomValidity('');status.textContent='';});
+  function message(){return 'Hi Lana, please check Villa Augflor for:\nArrival: '+inputs.checkin.value+'\nDeparture: '+inputs.checkout.value+'\nAdults: '+inputs.adults.value+'\nChildren: '+inputs.children.value+(inputs.email.value?'\nEmail: '+inputs.email.value:'')+(inputs.phone.value?'\nPhone: '+inputs.phone.value:'')+'\n\n'+inputs.notes.value+'\n\nPlease confirm availability and send a full itemised written quote. I understand this is not a reservation.';}
+  form.addEventListener('submit',function(e){
+   e.preventDefault();if(!valid())return;
+   var channel=e.submitter&&e.submitter.value==='email'?'email':'whatsapp',text=message();
+   window.dispatchEvent(new CustomEvent('villa-enquiry-handoff',{detail:{channel:channel,page:location.pathname}}));
+   status.textContent='Your enquiry is prepared. Complete sending it in '+(channel==='email'?'your email app':'WhatsApp')+'. No message has been sent by this website.';
+   location.href=channel==='email'?'mailto:villa.augflor@gmail.com?subject='+encodeURIComponent('Villa Augflor enquiry — '+inputs.checkin.value)+'&body='+encodeURIComponent(text):'https://wa.me/33623777333?text='+encodeURIComponent(text);
   });
+  form.querySelector('[data-copy]').addEventListener('click',async function(){if(!valid())return;try{await navigator.clipboard.writeText(message());status.textContent='Copied. Paste the enquiry into a message to Lana and send it.';}catch(_){status.textContent='Copy is unavailable in this browser. Please use WhatsApp or email.';}});
+ }
+ function start(){document.querySelectorAll('[data-enquiry-form]').forEach(mount);}
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start);else start();
 })();

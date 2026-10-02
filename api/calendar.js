@@ -1,104 +1,32 @@
-/**
- * GET /api/calendar
- * Fetches secret iCal URLs from env, merges with data/calendar-busy.json, returns JSON.
- * Never expose iCal URLs to the browser — they stay server-side only.
- */
-const fs = require("fs");
-const path = require("path");
-const { mergeBusyFromIcsBodies } = require("../lib/ical-busy");
-
-function loadStaticCalendar() {
-  try {
-    const file = path.join(__dirname, "..", "data", "calendar-busy.json");
-    const data = JSON.parse(fs.readFileSync(file, "utf8"));
-    return {
-      busyDates: Array.isArray(data.busyDates) ? data.busyDates : [],
-      updated: data.updated || undefined,
-    };
-  } catch {
-    return { busyDates: [], updated: undefined };
+/** GET: known blocked nights only. Unblocked nights are NOT confirmed inventory. */
+'use strict';
+const fs=require('node:fs'),path=require('node:path');
+const {mergeBusyFromIcsBodies}=require('../lib/ical-busy');
+function manual(){try{const d=JSON.parse(fs.readFileSync(path.join(__dirname,'..','data','calendar-busy.json'),'utf8'));return{busyDates:Array.isArray(d.busyDates)?d.busyDates.filter(x=>/^\d{4}-\d{2}-\d{2}$/.test(x)):[],updated:d.updated};}catch{return{busyDates:[]};}}
+async function readFeed(url){
+ const u=new URL(url);if(u.protocol!=='https:')throw new Error('invalid_feed');
+ const ctrl=new AbortController(),timer=setTimeout(()=>ctrl.abort(),6500);
+ try{
+  const r=await fetch(u,{signal:ctrl.signal,headers:{'User-Agent':'VillaAugflor-CalendarSync/2.0',Accept:'text/calendar'}});
+  if(!r.ok||Number(r.headers.get('content-length')||0)>2000000)throw new Error('feed_unavailable');
+  const text=await r.text();if(text.length>2000000||!/^BEGIN:VCALENDAR\s*$/mi.test(text)||!/^END:VCALENDAR\s*$/mi.test(text))throw new Error('invalid_calendar');
+  if(/^RRULE[;:]/mi.test(text))throw new Error('unsupported_recurrence');
+  for(const m of text.matchAll(/^DT(?:START|END)[^:]*:(\d{4})(\d{2})(\d{2})/gmi)){
+   const iso=m[1]+'-'+m[2]+'-'+m[3],d=new Date(iso+'T00:00:00Z');
+   if(isNaN(d)||d.toISOString().slice(0,10)!==iso||Number(m[1])<2000||Number(m[1])>2040)throw new Error('invalid_date');
   }
+  return mergeBusyFromIcsBodies([text]);
+ }finally{clearTimeout(timer);}
 }
-
-async function fetchText(url) {
-  const ctrl = new AbortController();
-  const t = setTimeout(() => ctrl.abort(), 12000);
-  try {
-    const res = await fetch(url, {
-      signal: ctrl.signal,
-      headers: { "User-Agent": "VillaAugflor-CalendarSync/1.0" },
-    });
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    return await res.text();
-  } finally {
-    clearTimeout(t);
-  }
-}
-
-module.exports = async (req, res) => {
-  res.setHeader("Cache-Control", "public, s-maxage=300, stale-while-revalidate=600");
-
-  if (req.method !== "GET") {
-    res.setHeader("Allow", "GET");
-    return res.status(405).json({ error: "Method not allowed" });
-  }
-
-  const airbnb = process.env.AIRBNB_ICAL_URL;
-  const booking = process.env.BOOKING_ICAL_URL;
-  const staticCalendar = loadStaticCalendar();
-  const staticBusy = staticCalendar.busyDates;
-
-  if (!airbnb && !booking) {
-    return res.status(200).json({
-      ok: true,
-      source: staticBusy.length ? "static" : "none",
-      busyDates: staticBusy,
-      updated: staticCalendar.updated,
-      message: staticBusy.length
-        ? "Manual calendar sync — iCal env optional for automatic updates."
-        : "Set AIRBNB_ICAL_URL and/or BOOKING_ICAL_URL in Vercel env to enable live calendar.",
-    });
-  }
-
-  const bodies = [];
-  const errors = [];
-
-  try {
-    if (airbnb) bodies.push(await fetchText(airbnb));
-  } catch (e) {
-    errors.push({ feed: "airbnb", error: String(e && e.message ? e.message : e) });
-  }
-  try {
-    if (booking) bodies.push(await fetchText(booking));
-  } catch (e) {
-    errors.push({ feed: "booking", error: String(e && e.message ? e.message : e) });
-  }
-
-  if (!bodies.length) {
-    if (staticBusy.length) {
-      return res.status(200).json({
-        ok: true,
-        source: "static",
-        busyDates: staticBusy,
-        updated: staticCalendar.updated,
-        errors,
-      });
-    }
-    return res.status(502).json({
-      ok: false,
-      source: "error",
-      busyDates: [],
-      errors,
-    });
-  }
-
-  const icalBusy = mergeBusyFromIcsBodies(bodies);
-  const busyDates = [...new Set([...staticBusy, ...icalBusy])].sort();
-  return res.status(200).json({
-    ok: true,
-    source: "merged",
-    busyDates,
-    feeds: { airbnb: Boolean(airbnb), booking: Boolean(booking) },
-    errors: errors.length ? errors : undefined,
-  });
+module.exports=async(req,res)=>{
+ res.setHeader('X-Content-Type-Options','nosniff');
+ if(req.method!=='GET'){res.setHeader('Allow','GET');return res.status(405).json({error:'Method not allowed'});}
+ const stored=manual();
+ const urls=[process.env.AIRBNB_ICAL_URL,process.env.BOOKING_ICAL_URL,process.env.VRBO_ICAL_URL].filter(Boolean);
+ const results=await Promise.allSettled(urls.map(readFeed));
+ const good=results.filter(r=>r.status==='fulfilled'),failed=results.length-good.length;
+ const dates=[...new Set([...stored.busyDates,...good.flatMap(r=>r.value)])].sort();
+ const source=failed?'partial':good.length>1?'merged':good.length===1?'ical':stored.busyDates.length?'static':'none';
+ res.setHeader('Cache-Control',failed?'no-store':'public, s-maxage=300, stale-while-revalidate=60');
+ return res.status(200).json({ok:true,source,busyDates:dates,updated:good.length?new Date().toISOString():stored.updated,configuredFeeds:urls.length,successfulFeeds:good.length,availabilityGuaranteed:false,message:'Blocked dates are an enquiry aid only. Lana confirms all availability and prices in writing.'});
 };
