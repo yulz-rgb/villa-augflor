@@ -56,11 +56,11 @@ function cleanSchema(html) {
   html=html.replace(/<!--\s*OFFERS-LD:START\s*-->[\s\S]*?<!--\s*OFFERS-LD:END\s*-->/gi,'');
   return html.replace(/<script\b[^>]*type=["']application\/ld\+json["'][^>]*>[\s\S]*?<\/script>/gi,'');
 }
-function schemaFor(rel,title,images) {
+function schemaFor(rel,title,images,propertyImages=images) {
  const url=pageUrl(rel), locale=(rel.match(/^(fr|de|nl)\//)||[])[1]||'en';
  const home=/^(?:(?:fr|de|nl)\/)?index\.html$/.test(rel);
- const graph=[{'@type':'WebSite','@id':SITE+'/#website',url:SITE+'/',name:'Villa Augflor',inLanguage:['en','fr','de','nl']},{'@type':rel==='contact.html'?'ContactPage':'WebPage','@id':url+'#webpage',url,name:title,inLanguage:locale,isPartOf:{'@id':SITE+'/#website'},about:{'@id':SITE+'/#villa'}}];
- if(home) graph.push({'@type':'LodgingBusiness','@id':SITE+'/#villa',name:'Villa Augflor',url:SITE+'/',description:'Private 3-bedroom holiday villa with a private pool and Mediterranean garden in Cagnes-sur-Mer, France. Ideal for four guests; maximum six. Dates and prices require written confirmation by the host.',telephone:'+33623777333',email:'villa.augflor@gmail.com',address:{'@type':'PostalAddress',streetAddress:'26 Chemin des Collines',addressLocality:'Cagnes-sur-Mer',postalCode:'06800',addressCountry:'FR'},containsPlace:{'@type':'Accommodation',name:'Entire Villa Augflor',numberOfBedrooms:3,numberOfBathroomsTotal:2,occupancy:{'@type':'QuantitativeValue',value:6}},image:images.slice(0,8),sameAs:['https://www.airbnb.fr/rooms/26836386','https://www.booking.com/hotel/fr/family-villa-augflor-with-pool-and-garden.en-gb.html','https://www.instagram.com/villa_augflor_france/'],amenityFeature:[{name:'Private swimming pool',value:true},{name:'Wi-Fi',value:true},{name:'Air conditioning',value:true},{name:'Garden',value:true}].map(x=>({'@type':'LocationFeatureSpecification',...x}))});
+ const graph=[{'@type':'WebSite','@id':SITE+'/#website',url:SITE+'/',name:'Villa Augflor',inLanguage:['en','fr','de','nl']},{'@type':rel==='contact.html'?'ContactPage':rel==='gallery.html'?'ImageGallery':'WebPage','@id':url+'#webpage',url,name:title,inLanguage:locale,isPartOf:{'@id':SITE+'/#website'},about:{'@id':SITE+'/#villa'},...(images.length?{primaryImageOfPage:images[0]}:{})}];
+ if(home) graph.push({'@type':'LodgingBusiness','@id':SITE+'/#villa',name:'Villa Augflor',url:SITE+'/',description:'Private 3-bedroom holiday villa with a private pool and Mediterranean garden in Cagnes-sur-Mer, France. Ideal for four guests; maximum six. Dates and prices require written confirmation by the host.',telephone:'+33623777333',email:'villa.augflor@gmail.com',address:{'@type':'PostalAddress',streetAddress:'26 Chemin des Collines',addressLocality:'Cagnes-sur-Mer',postalCode:'06800',addressCountry:'FR'},containsPlace:{'@type':'Accommodation',name:'Entire Villa Augflor',numberOfBedrooms:3,numberOfBathroomsTotal:2,occupancy:{'@type':'QuantitativeValue',value:6}},image:propertyImages.slice(0,8),sameAs:['https://www.airbnb.fr/rooms/26836386','https://www.booking.com/hotel/fr/family-villa-augflor-with-pool-and-garden.en-gb.html','https://www.instagram.com/villa_augflor_france/'],amenityFeature:[{name:'Private swimming pool',value:true},{name:'Wi-Fi',value:true},{name:'Air conditioning',value:true},{name:'Garden',value:true}].map(x=>({'@type':'LocationFeatureSpecification',...x}))});
  else graph.push({'@type':'BreadcrumbList',itemListElement:[{'@type':'ListItem',position:1,name:'Villa Augflor',item:SITE+'/'},{'@type':'ListItem',position:2,name:title,item:url}]});
  return '<script type="application/ld+json">'+JSON.stringify({'@context':'https://schema.org','@graph':graph}).replace(/</g,'\\u003c')+'</script>';
 }
@@ -101,7 +101,7 @@ function transform(html,rel) {
  html=html.replace('</head>',links+'\n<meta name="augflor-release" content="'+RELEASE+'">\n<link rel="stylesheet" href="/styles/technical-upgrade.css">\n</head>');
  html=html.replace(/<body\b([^>]*)>/,'<body$1><a class="va-skip" href="#va-main">Skip to content</a>');
  html=html.replace(/<(main|section)\b/,'<span id="va-main" tabindex="-1"></span><$1');
- if(!/(?:privacy-policy|legal-notice|terms)\.html$/.test(rel)) html=html.replace(/<\/section>/i,'</section><aside class="va-season-notice" aria-label="2027 booking information">'+esc(notice[lang])+' <a href="/contact.html">'+({en:'Enquire',fr:'Nous contacter',de:'Anfragen',nl:'Aanvragen'}[lang])+'</a></aside>');
+ if(!html.includes('class="visual-stay"')&&!/(?:privacy-policy|legal-notice|terms)\.html$/.test(rel)) html=html.replace(/<\/section>/i,'</section><aside class="va-season-notice" aria-label="2027 booking information">'+esc(notice[lang])+' <a href="/contact.html">'+({en:'Enquire',fr:'Nous contacter',de:'Anfragen',nl:'Aanvragen'}[lang])+'</a></aside>');
  html=html.replace(/<script\b[^>]*src="(?:\.\.\/|\/)?scripts\/booking-chat\.js"[^>]*><\/script>/g,'');
  // Stale chat fallbacks and false sent/availability claims must not reach visitors.
  html=html.replace(/<link\b(?=[^>]*rel=["']preload["'])(?=[^>]*as=["']image["'])[^>]*>/gi,'');
@@ -137,7 +137,7 @@ async function build() {
     const hash=crypto.createHash('sha256').update(fs.readFileSync(file)).update('webp84-v1').digest('hex').slice(0,16);
     const widths=[480,800,1200,1600].filter(w=>w<width);widths.push(Math.min(width,1600));
     const variants=[];
-    for(const w of [...new Set(widths)]) {const rel='assets/responsive/'+hash+'-'+w+'.webp'; const out=path.join(OUT,rel);fs.mkdirSync(path.dirname(out),{recursive:true});await sharp(file).rotate().resize({width:w,withoutEnlargement:true}).webp({quality:84,effort:4}).toFile(out);variants.push({width:w,url:'/'+rel,bytes:fs.statSync(out).size});}
+    for(const w of [...new Set(widths)]) {const stem=path.basename(file,path.extname(file)).toLowerCase().replace(/[^a-z0-9-]+/g,'-').slice(0,64);const rel='assets/responsive/'+stem+'-'+hash+'-'+w+'.webp'; const out=path.join(OUT,rel);fs.mkdirSync(path.dirname(out),{recursive:true});await sharp(file).rotate().resize({width:w,withoutEnlargement:true}).webp({quality:84,effort:4}).toFile(out);variants.push({width:w,url:'/'+rel,bytes:fs.statSync(out).size});}
     const largest=variants[variants.length-1];sourceBytes+=fs.statSync(file).size;optimizedBytes+=largest.bytes;optimizedImages++;
     return{width,height,variants,largest};
   })(); imageCache.set(file,p);return p;
@@ -146,29 +146,33 @@ async function build() {
  for(const rel of pages) {
   const source=path.join(ROOT,rel);assert(fs.existsSync(source),'Missing sitemap page '+rel);
   let{html,title,home,lang}=transform(fs.readFileSync(source,'utf8'),rel);
-  const tags=[...new Set(html.match(/<img\b[^>]*>/gi)||[])];const images=[];
+  const tags=[...new Set(html.match(/<img\b[^>]*>/gi)||[])];const images=[],propertyImages=[];
   for(const tag of tags) {
    const src=attr(tag,'src'),file=localFile(src,rel);if(!file||!/\.(jpe?g|png|webp)$/i.test(file))continue;
    let optimized;try{optimized=await image(file);}catch(e){console.warn('Image left unchanged:',src,e.message);continue;}if(!optimized)continue;
    let next=setAttr(setAttr(tag,'width',optimized.width),'height',optimized.height);
    next=setAttr(next,'src',optimized.largest.url);next=setAttr(next,'srcset',optimized.variants.map(v=>v.url+' '+v.width+'w').join(', '));
-   const hero=/va-hero-photo/.test(tag);
-   next=setAttr(next,'sizes',hero?'(max-width: 900px) 50vw, 34vw':'(max-width: 640px) 100vw, (max-width: 1100px) 50vw, 800px');
-   next=setAttr(next,'decoding','async');next=setAttr(next,'loading',hero&&!/va-hi[23]/.test(tag)?'eager':'lazy');next=setAttr(next,'fetchpriority',hero&&/private pool and garden/.test(tag)?'high':'auto');
-   html=html.split(tag).join(next);images.push(SITE+optimized.largest.url);
+   const hero=/va-hero-photo|data-priority="hero"/.test(tag);
+   const visual=html.includes('class="visual-stay"');
+   next=setAttr(next,'sizes',hero?(visual?'100vw':'(max-width: 900px) 50vw, 34vw'):'(max-width: 640px) 100vw, (max-width: 1100px) 50vw, 800px');
+   next=setAttr(next,'decoding','async');next=setAttr(next,'loading',hero&&!/va-hi[23]/.test(tag)?'eager':'lazy');next=setAttr(next,'fetchpriority',hero?'high':'auto');
+   html=html.split(tag).join(next);
+   // Fullscreen gallery uses the locally optimized large source, not a duplicate original download.
+   html=html.replaceAll('href="'+src+'" data-photo','href="'+optimized.largest.url+'" data-photo');
+   images.push(SITE+optimized.largest.url);if(!src.includes('/area/'))propertyImages.push(SITE+optimized.largest.url);
   }
   if(home && lang==='en') {
    const heroTag=(html.match(/<img\b[^>]*alt="Villa Augflor private pool and garden"[^>]*>/)||[])[0];
-   if(heroTag) html=html.replace('</head>','<link rel="preload" as="image" href="'+attr(heroTag,'src')+'" imagesrcset="'+attr(heroTag,'srcset')+'" imagesizes="(max-width: 900px) 50vw, 34vw" fetchpriority="high">\n</head>');
+   if(heroTag) html=html.replace('</head>','<link rel="preload" as="image" href="'+attr(heroTag,'src')+'" imagesrcset="'+attr(heroTag,'srcset')+'" imagesizes="'+(html.includes('class="visual-stay"')?'100vw':'(max-width: 900px) 50vw, 34vw')+'" fetchpriority="high">\n</head>');
   }
   if(images.length) {html=setMeta(html,'og:image',images[0],true);html=setMeta(html,'og:image:type','image/webp',true);html=setMeta(html,'og:image:alt','Villa Augflor, private holiday villa in Cagnes-sur-Mer',true);html=setMeta(html,'twitter:image',images[0]);html=html.replace(/<meta\b(?=[^>]*property=["']og:image:(?:width|height)["'])[^>]*>/gi,'');}
-  html=html.replace('</head>',schemaFor(rel,title,images)+'\n</head>');
+  html=html.replace('</head>',schemaFor(rel,title,images,propertyImages)+'\n</head>');
   // Existing inline CSS is retained to preserve cascade order and layout.
   assert(!html.includes('data-include='),'Unresolved component '+rel);
   assert((html.match(/rel="canonical"/g)||[]).length===1,'Canonical count '+rel);
   for(const m of html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)) JSON.parse(m[1]);
   assert(!/availabilityStarts|reservationId|"AggregateOffer"/.test(html),'Stale booking schema '+rel);
-  write(rel,html);documents.push({path:rel,url:pageUrl(rel),language:lang,images:images.slice(0,8)});
+  write(rel,html);documents.push({path:rel,url:pageUrl(rel),language:lang,images:[...new Set(images)].slice(0,40)});
  }
  const alternates=Object.entries({en:'/',fr:'/fr/',de:'/de/',nl:'/nl/','x-default':'/'});
  write('sitemap.xml','<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">'+documents.map(d=>'<url><loc>'+esc(d.url)+'</loc><lastmod>'+RELEASE+'</lastmod>'+(/^(?:(?:fr|de|nl)\/)?index\.html$/.test(d.path)?alternates.map(([lang,p])=>'<xhtml:link rel="alternate" hreflang="'+lang+'" href="'+SITE+p+'"/>').join(''):'')+d.images.map(img=>'<image:image><image:loc>'+esc(img)+'</image:loc></image:image>').join('')+'</url>').join('\n')+'</urlset>');

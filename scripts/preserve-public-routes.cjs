@@ -16,7 +16,7 @@ const oldDate="new Intl.DateTimeFormat('en-CA',{timeZone:'Europe/Paris',year:'nu
 const isoDate="(function(){var d={};new Intl.DateTimeFormat('en',{timeZone:'Europe/Paris',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date()).forEach(function(p){d[p.type]=p.value;});return d.year+'-'+d.month+'-'+d.day;})()";
 for(const name of ['calendar-widget.js','enquiry-form.js']){
  const file=path.join(out,'scripts',name);let js=fs.readFileSync(file,'utf8');
- if(!js.includes(oldDate))throw new Error('Date transform no longer matches '+name);
+ if(!js.includes(oldDate)&&!js.includes(isoDate))throw new Error('Date transform no longer matches '+name);
  js=js.replaceAll(oldDate,isoDate);
  if(name==='calendar-widget.js')js=js.replace("['M','T','W','T','F','S','S']","[0,1,2,3,4,5,6].map(function(i){return new Date(Date.UTC(2001,0,1+i)).toLocaleDateString(locale,{weekday:'narrow',timeZone:'UTC'});})");
  fs.writeFileSync(file,js);

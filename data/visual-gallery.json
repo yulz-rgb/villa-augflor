@@ -1,0 +1,176 @@
+[
+  {
+    "src": "assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0132.jpg",
+    "category": "pool",
+    "caption": "Pool & garden",
+    "alt": "Pool & garden at Villa Augflor, Cagnes-sur-Mer"
+  },
+  {
+    "src": "assets/photos/optimized/57e54e80-bbc5-45d9-928b-6b0ffca182d2.jpg",
+    "category": "pool",
+    "caption": "Poolside in the sunshine",
+    "alt": "Poolside in the sunshine at Villa Augflor, Cagnes-sur-Mer"
+  },
+  {
+    "src": "assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0095.jpg",
+    "category": "pool",
+    "caption": "Pool terrace",
+    "alt": "Pool terrace at Villa Augflor, Cagnes-sur-Mer"
+  },
+  {
+    "src": "assets/photos/optimized/sunset-by-the-pool.jpg",
+    "category": "pool",
+    "caption": "Pool at sunset",
+    "alt": "Pool at sunset at Villa Augflor, Cagnes-sur-Mer"
+  },
+  {
+    "src": "assets/photos/airbnb/pool-at-sunset.webp",
+    "category": "pool",
+    "caption": "Sunset by your private pool",
+    "alt": "Sunset by your private pool at Villa Augflor"
+  },
+  {
+    "src": "assets/photos/optimized/pool-area-4.jpg",
+    "category": "pool",
+    "caption": "After dark",
+    "alt": "After dark at Villa Augflor, Cagnes-sur-Mer"
+  },
+  {
+    "src": "assets/photos/optimized/garden-dining-patio.jpg",
+    "category": "garden",
+    "caption": "Dining beneath the vines",
+    "alt": "Dining beneath the vines at Villa Augflor, Cagnes-sur-Mer"
+  },
+  {
+    "src": "assets/photos/optimized/exterior-terrace-lounge-roses.jpg",
+    "category": "garden",
+    "caption": "Shaded garden lounge",
+    "alt": "Shaded garden lounge at Villa Augflor, Cagnes-sur-Mer"
+  },
+  {
+    "src": "assets/photos/airbnb/garden-dining.webp",
+    "category": "garden",
+    "caption": "Garden dining under the apricot tree",
+    "alt": "Garden dining under the apricot tree at Villa Augflor"
+  },
+  {
+    "src": "assets/photos/optimized/apricot-tree.jpg",
+    "category": "garden",
+    "caption": "Mediterranean garden",
+    "alt": "Mediterranean garden at Villa Augflor, Cagnes-sur-Mer"
+  },
+  {
+    "src": "assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0104.jpg",
+    "category": "garden",
+    "caption": "Garden path",
+    "alt": "Garden path at Villa Augflor, Cagnes-sur-Mer"
+  },
+  {
+    "src": "assets/photos/optimized/outdoor-coffee-table.jpg",
+    "category": "garden",
+    "caption": "Terrace at sunset",
+    "alt": "Terrace at sunset at Villa Augflor, Cagnes-sur-Mer"
+  },
+  {
+    "src": "assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0005.jpg",
+    "category": "living",
+    "caption": "Living & dining room",
+    "alt": "Living & dining room at Villa Augflor, Cagnes-sur-Mer"
+  },
+  {
+    "src": "assets/photos/optimized/living-room-main-2026.jpg",
+    "category": "living",
+    "caption": "The living room",
+    "alt": "The living room at Villa Augflor, Cagnes-sur-Mer"
+  },
+  {
+    "src": "assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0004.jpg",
+    "category": "living",
+    "caption": "Garden room by the pool",
+    "alt": "Garden room by the pool at Villa Augflor, Cagnes-sur-Mer"
+  },
+  {
+    "src": "assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0006.jpg",
+    "category": "living",
+    "caption": "Kitchen",
+    "alt": "Kitchen at Villa Augflor, Cagnes-sur-Mer"
+  },
+  {
+    "src": "assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0028.jpg",
+    "category": "bedrooms",
+    "caption": "Provence · ground floor",
+    "alt": "Provence · ground floor at Villa Augflor, Cagnes-sur-Mer"
+  },
+  {
+    "src": "assets/photos/optimized/master-bedroom-barcelona-2.jpg",
+    "category": "bedrooms",
+    "caption": "Barcelona · upstairs",
+    "alt": "Barcelona · upstairs at Villa Augflor, Cagnes-sur-Mer"
+  },
+  {
+    "src": "assets/photos/airbnb/provence-bedroom.webp",
+    "category": "bedrooms",
+    "caption": "Provence bedroom · ground floor",
+    "alt": "Provence bedroom · ground floor at Villa Augflor"
+  },
+  {
+    "src": "assets/photos/airbnb/barcelona-bedroom.webp",
+    "category": "bedrooms",
+    "caption": "Barcelona bedroom · upstairs",
+    "alt": "Barcelona bedroom · upstairs at Villa Augflor"
+  },
+  {
+    "src": "assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0034.jpg",
+    "category": "bedrooms",
+    "caption": "Asian room · upstairs",
+    "alt": "Asian room · upstairs at Villa Augflor, Cagnes-sur-Mer"
+  },
+  {
+    "src": "assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0045.jpg",
+    "category": "bedrooms",
+    "caption": "Asian room",
+    "alt": "Asian room at Villa Augflor, Cagnes-sur-Mer"
+  },
+  {
+    "src": "assets/photos/optimized/ground-floor-bathroom.jpg",
+    "category": "bathrooms",
+    "caption": "Ground-floor bathroom",
+    "alt": "Ground-floor bathroom at Villa Augflor, Cagnes-sur-Mer"
+  },
+  {
+    "src": "assets/photos/optimized/photo-bathroom-interior-shower-led-niches.jpg",
+    "category": "bathrooms",
+    "caption": "Ground-floor shower",
+    "alt": "Ground-floor shower at Villa Augflor, Cagnes-sur-Mer"
+  },
+  {
+    "src": "assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0033.jpg",
+    "category": "bathrooms",
+    "caption": "Upstairs bathroom",
+    "alt": "Upstairs bathroom at Villa Augflor, Cagnes-sur-Mer"
+  },
+  {
+    "src": "assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0078.jpg",
+    "category": "bathrooms",
+    "caption": "Barcelona bathtub",
+    "alt": "Barcelona bathtub at Villa Augflor, Cagnes-sur-Mer"
+  },
+  {
+    "src": "assets/photos/optimized/photo-villa-augflor-cagnes-sur-mer-0082.jpg",
+    "category": "bathrooms",
+    "caption": "Upstairs shower",
+    "alt": "Upstairs shower at Villa Augflor, Cagnes-sur-Mer"
+  },
+  {
+    "src": "assets/photos/optimized/outdoor-parking.jpg",
+    "category": "arrival",
+    "caption": "Private parking",
+    "alt": "Private parking at Villa Augflor, Cagnes-sur-Mer"
+  },
+  {
+    "src": "assets/photos/optimized/entrance-gate-cypress.jpg",
+    "category": "arrival",
+    "caption": "Entrance gate",
+    "alt": "Entrance gate at Villa Augflor, Cagnes-sur-Mer"
+  }
+]
