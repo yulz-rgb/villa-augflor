@@ -148,7 +148,7 @@ async function build() {
   let{html,title,home,lang}=transform(fs.readFileSync(source,'utf8'),rel);
   const tags=[...new Set(html.match(/<img\b[^>]*>/gi)||[])];const images=[],propertyImages=[];
   for(const tag of tags) {
-   const src=attr(tag,'src'),file=localFile(src,rel);if(!file||!/\.(jpe?g|png|webp)$/i.test(file))continue;
+   const src=attr(tag,'src'),file=localFile(src,rel);if(!file||!/\.(jpe?g|png|webp|avif)$/i.test(file))continue;
    let optimized;try{optimized=await image(file);}catch(e){console.warn('Image left unchanged:',src,e.message);continue;}if(!optimized)continue;
    let next=setAttr(setAttr(tag,'width',optimized.width),'height',optimized.height);
    next=setAttr(next,'src',optimized.largest.url);next=setAttr(next,'srcset',optimized.variants.map(v=>v.url+' '+v.width+'w').join(', '));
