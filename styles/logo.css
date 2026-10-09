@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz@6..96&display=swap');
 
-/* Villa Augflor wordmark — Bodoni name + tracked sans tagline */
+/* Villa Augflor wordmark - Bodoni name + tracked sans tagline */
 .nav-logo,
 .footer-logo,
 .logo,
@@ -29,3 +29,38 @@
 .footer-logo { font-size: 24px; }
 .logo { font-size: 1.35rem; }
 .brand { font-size: 1.5rem; }
+
+.page-hero.media-hero .wrap {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 430px);
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: center;
+  max-width: 1180px;
+}
+
+.page-hero-copy { min-width: 0; }
+
+.page-hero-photo {
+  margin: 0;
+  padding: .65rem;
+  border: 1px solid var(--sand);
+  background: var(--white);
+}
+
+.page-hero-photo img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.page-hero-photo figcaption {
+  margin-top: .65rem;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+@media (max-width: 900px) {
+  .page-hero.media-hero .wrap { grid-template-columns: 1fr; }
+  .page-hero-photo { order: -1; }
+}
